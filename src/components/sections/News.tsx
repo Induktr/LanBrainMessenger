@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import NewsCard from './NewsCard';
+import NewsCard from '../News/NewsCard';
 import { updates } from '../../data/updates';
 import { Link } from 'react-router-dom';
 import { CloudinaryPlayIcon, CloudinaryArrowIcon, CloudinaryLinkIcon } from '../Icons/CloudinaryIcons';
