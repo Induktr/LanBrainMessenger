@@ -1,0 +1,53 @@
+{
+  "navigation": {
+    "features": "Features",
+    "faq": "FAQ",
+    "poll": "Poll",
+    "updates": "Updates"
+  },
+  "hero": {
+    "title": "Connect Smarter with BrainMessenger",
+    "subtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless communication across all your devices.",
+    "downloadButtons": {
+      "desktop": "Download for Desktop",
+      "android": "Download for Android",
+      "windows": "Download for Windows"
+    }
+  },
+  "features": {
+    "title": "Features",
+    "cards": {
+      "security": {
+        "title": "End-to-End Encryption",
+        "description": "Your messages are secured with state-of-the-art encryption"
+      },
+      "speed": {
+        "title": "Lightning Fast",
+        "description": "Instant message delivery across all devices"
+      },
+      "sync": {
+        "title": "Seamless Sync",
+        "description": "Access your messages from any device, anytime"
+      }
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "readMore": "Read More",
+    "publishedOn": "Published on {date}"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close"
+  },
+  "account": {
+    "settings": "Settings",
+    "deleteAccount": "Delete Account",
+    "deleteAccountConfirmTitle": "Delete Account?",
+    "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone. All your data, including polls, votes, and settings will be permanently deleted.",
+    "cancel": "Cancel",
+    "confirmDelete": "Yes, Delete Account"
+  }
+}
