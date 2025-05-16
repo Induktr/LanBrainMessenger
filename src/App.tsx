@@ -5,7 +5,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import AppErrorBoundary from './components/ui/ErrorBoundary';
 import Header from './components/Header/Header';
 import Hero from './components/sections/Hero';
-import Features from './components/Features/Features';
+import Features from './components/sections/Features';
 import News from "./components/sections/News";
 import Footer from './components/layout/Footer';
 import Container from './components/ui/Container';

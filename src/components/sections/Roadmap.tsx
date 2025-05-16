@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { motion, useAnimation, Variants } from 'framer-motion'; // Import Variants
+import { motion, useAnimation, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface RoadmapIconProps {
   src: string;
@@ -30,12 +31,12 @@ const ROADMAP_ICONS = {
 };
 
 interface Milestone {
-  date: string;
-  title: string;
-  description: string;
+  dateKey: string;
+  titleKey: string;
+  descriptionKey: string;
   status: 'completed' | 'in-progress' | 'upcoming';
   icon: React.ReactNode;
-  features: string[];
+  featuresKeys: string[];
 }
 
 interface RoadmapProps {}
@@ -45,8 +46,9 @@ const Roadmap: React.FC<RoadmapProps> = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    // Removed threshold due to potential typing issue with react-intersection-observer version
   });
+
+  const { t } = useLanguage();
 
   React.useEffect(() => {
     if (inView) {
@@ -56,156 +58,156 @@ const Roadmap: React.FC<RoadmapProps> = () => {
 
   const milestones: Milestone[] = [
     {
-      date: 'January 2024',
-      title: 'Project Launch',
-      description: 'Initial release of BrainMessenger with core messaging functionality',
+      dateKey: 'roadmap.date.jan2024',
+      titleKey: 'roadmap.title.projectLaunch',
+      descriptionKey: 'roadmap.description.projectLaunch',
       status: 'completed',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.projectLaunch}
-          alt="Project Launch"
+          alt={t('roadmap.iconAlt.projectLaunch')}
         />
       ),
-      features: [
-        'Secure messaging infrastructure',
-        'Cross-platform compatibility',
-        'Basic user interface'
+      featuresKeys: [
+        'roadmap.features.secureMessagingInfrastructure',
+        'roadmap.features.crossPlatformCompatibility',
+        'roadmap.features.basicUserInterface'
       ]
     },
     {
-      date: 'March 2024',
-      title: 'Enhanced Security & Features',
-      description: 'Major security upgrades and new feature implementations',
+      dateKey: 'roadmap.date.mar2024',
+      titleKey: 'roadmap.title.enhancedSecurity',
+      descriptionKey: 'roadmap.description.enhancedSecurity',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.security}
-          alt="Enhanced Security"
+          alt={t('roadmap.iconAlt.enhancedSecurity')}
         />
       ),
-      features: [
-        'End-to-end encryption',
-        'Two-factor authentication',
-        'File sharing capabilities'
+      featuresKeys: [
+        'roadmap.features.endToEndEncryption',
+        'roadmap.features.twoFactorAuthentication',
+        'roadmap.features.fileSharingCapabilities'
       ]
     },
     {
-      date: 'June 2024',
-      title: 'Advanced Collaboration Tools',
-      description: 'Introduction of team collaboration features',
+      dateKey: 'roadmap.date.jun2024',
+      titleKey: 'roadmap.title.advancedCollaboration',
+      descriptionKey: 'roadmap.description.advancedCollaboration',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.advancedcoloboration}
-          alt="Advanced Collaboration Tools"
+          alt={t('roadmap.iconAlt.advancedCollaboration')}
         />
       ),
-      features: [
-        'Team workspaces',
-        'Real-time collaboration',
-        'Advanced file sharing'
+      featuresKeys: [
+        'roadmap.features.teamWorkspaces',
+        'roadmap.features.realTimeCollaboration',
+        'roadmap.features.advancedFileSharing'
       ]
     },
     {
-      date: 'September 2024',
-      title: 'Advanced Collaboration Tools',
-      description: 'Introduction of team collaboration features',
+      dateKey: 'roadmap.date.sep2024',
+      titleKey: 'roadmap.title.advancedCollaboration',
+      descriptionKey: 'roadmap.description.advancedCollaboration',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.advancedcoloboration}
-          alt="Advanced Collaboration Tools"
+          alt={t('roadmap.iconAlt.advancedCollaboration')}
         />
       ),
-      features: [
-        'Team workspaces',
-        'Real-time collaboration',
-        'Advanced file sharing'
+      featuresKeys: [
+        'roadmap.features.teamWorkspaces',
+        'roadmap.features.realTimeCollaboration',
+        'roadmap.features.advancedFileSharing'
       ]
     },
     {
-      date: 'November 2024',
-      title: 'Mobile Enhancement',
-      description: 'Focus on mobile experience and performance',
+      dateKey: 'roadmap.date.nov2024',
+      titleKey: 'roadmap.title.mobileEnhancement',
+      descriptionKey: 'roadmap.description.mobileEnhancement',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.mobile}
-          alt="Mobile Enhancement"
+          alt={t('roadmap.iconAlt.mobileEnhancement')}
         />
       ),
-      features: [
-        'Native mobile apps',
-        'Offline functionality',
-        'Push notifications'
+      featuresKeys: [
+        'roadmap.features.nativeMobileApps',
+        'roadmap.features.offlineFunctionality',
+        'roadmap.features.pushNotifications'
       ]
     },
     {
-      date: 'January 2025',
-      title: 'AI Integration',
-      description: 'Implementation of AI-powered features',
+      dateKey: 'roadmap.date.jan2025',
+      titleKey: 'roadmap.title.aiIntegration',
+      descriptionKey: 'roadmap.description.aiIntegration',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.ai}
-          alt="AI Integration"
+          alt={t('roadmap.iconAlt.aiIntegration')}
         />
       ),
-      features: [
-        'Smart message categorization',
-        'Automated responses',
-        'Content analysis'
+      featuresKeys: [
+        'roadmap.features.smartMessageCategorization',
+        'roadmap.features.automatedResponses',
+        'roadmap.features.contentAnalysis'
       ]
     },
     {
-      date: 'March 2025',
-      title: 'Global Expansion',
-      description: 'Focus on international markets and localization',
+      dateKey: 'roadmap.date.mar2025',
+      titleKey: 'roadmap.title.globalExpansion',
+      descriptionKey: 'roadmap.description.globalExpansion',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.global}
-          alt="Global Expansion"
+          alt={t('roadmap.iconAlt.globalExpansion')}
         />
       ),
-      features: [
-        'Multi-language support',
-        'Regional data centers',
-        'Cultural adaptations'
+      featuresKeys: [
+        'roadmap.features.multiLanguageSupport',
+        'roadmap.features.regionalDataCenters',
+        'roadmap.features.culturalAdaptations'
       ]
     },
     {
-      date: 'June 2025',
-      title: 'Enterprise Solutions',
-      description: 'Dedicated features for enterprise clients',
+      dateKey: 'roadmap.date.jun2025',
+      titleKey: 'roadmap.title.enterpriseSolutions',
+      descriptionKey: 'roadmap.description.enterpriseSolutions',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.ecosystem}
-          alt="Enterprise Solutions"
+          alt={t('roadmap.iconAlt.enterpriseSolutions')}
         />
       ),
-      features: [
-        'Advanced admin controls',
-        'Custom integrations',
-        'Enterprise support'
+      featuresKeys: [
+        'roadmap.features.advancedAdminControls',
+        'roadmap.features.customIntegrations',
+        'roadmap.features.enterpriseSupport'
       ]
     },
     {
-      date: 'Beyond 2025',
-      title: 'Future Innovation',
-      description: 'Continuous innovation and feature expansion',
+      dateKey: 'roadmap.date.beyond2025',
+      titleKey: 'roadmap.title.futureInnovation',
+      descriptionKey: 'roadmap.description.futureInnovation',
       status: 'upcoming',
       icon: (
         <RoadmapIcon
           src={ROADMAP_ICONS.future}
-          alt="Future Innovation"
+          alt={t('roadmap.iconAlt.futureInnovation')}
         />
       ),
-      features: [
-        'Emerging technologies',
-        'Community-driven features',
-        'Platform expansion'
+      featuresKeys: [
+        'roadmap.features.emergingTechnologies',
+        'roadmap.features.communityDrivenFeatures',
+        'roadmap.features.platformExpansion'
       ]
     }
   ];
@@ -221,14 +223,24 @@ const Roadmap: React.FC<RoadmapProps> = () => {
     }
   };
 
-  // Define a type for the iconVariants object with an index signature
+  const getTranslatedStatus = (status: Milestone['status']): string => {
+    switch (status) {
+      case 'completed':
+        return t('roadmap.status.completed');
+      case 'in-progress':
+        return t('roadmap.status.inProgress');
+      default:
+        return t('roadmap.status.upcoming');
+    }
+  };
+
   const iconVariants: Variants = {
     hidden: {
       scale: 0,
       opacity: 0,
-      rotate: -180
+      rotate: -180,
     },
-    visible: (index: number) => ({ // Add type annotation for index
+    visible: (index: number) => ({
       scale: 1,
       opacity: 1,
       rotate: 0,
@@ -270,10 +282,10 @@ const Roadmap: React.FC<RoadmapProps> = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[var(--text-primary)] mb-4">
-            Development Roadmap
+            {t('roadmap.title.section')}
           </h2>
           <p className="text-[var(--text-secondary)] text-lg">
-            Our journey to revolutionize secure messaging
+            {t('roadmap.subtitle.section')}
           </p>
         </motion.div>
 
@@ -295,7 +307,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
           <div className="relative z-10">
             {milestones.map((milestone, index) => (
               <motion.div
-                key={milestone.date}
+                key={milestone.dateKey}
                 variants={{
                   hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
                   visible: {
@@ -324,18 +336,18 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                           {milestone.icon}
                         </motion.div>
                         <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                          {milestone.title}
+                          {t(milestone.titleKey)}
                         </h3>
                       </div>
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(milestone.status)} text-white`}>
-                        {milestone.status}
+                        {getTranslatedStatus(milestone.status)}
                       </span>
                     </div>
                     <p className="text-[var(--text-secondary)] mb-4">
-                      {milestone.description}
+                      {t(milestone.descriptionKey)}
                     </p>
                     <ul className="space-y-2">
-                      {milestone.features.map((feature, idx) => (
+                      {milestone.featuresKeys.map((featureKey, idx) => (
                         <motion.li
                           key={idx}
                           variants={{
@@ -352,7 +364,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                             className="flex items-center gap-2 text-[var(--text-secondary)]"
                           >
                             <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]" />
-                            {feature}
+                            {t(featureKey)}
                           </motion.li>
                         ))}
                       </ul>
@@ -392,7 +404,7 @@ const Roadmap: React.FC<RoadmapProps> = () => {
                       }}
                       className="text-[var(--text-primary)] font-semibold bg-[var(--primary)] px-4 py-2 rounded-full shadow-md"
                     >
-                      {milestone.date}
+                      {t(milestone.dateKey)}
                     </motion.span>
                   </div>
                 </motion.div>

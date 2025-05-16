@@ -1,53 +1,378 @@
 {
-  "navigation": {
+  "header": {
     "features": "Features",
+    "news": "News",
     "faq": "FAQ",
-    "poll": "Poll",
-    "updates": "Updates"
-  },
+    "faqLink": "FAQ",
+    "docs": "Docs",
+    "updates": "Updates",
+    "selectLanguage": "Select language",
+    "changeLanguageTooltip": "Change language",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "settings": "Settings",
+    "signOut": "Sign Out",
+    "deleteAccount": "Delete Account",
+    "deleteAccountConfirmTitle": "Confirm Account Deletion",
+    "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone.",
+    "cancel": "Cancel",
+    "confirmDelete": "Confirm Deletion",
+    "signIn": "Sign In"
+ },
   "hero": {
-    "title": "Connect Smarter with BrainMessenger",
-    "subtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless communication across all your devices.",
-    "downloadButtons": {
-      "desktop": "Download for Desktop",
-      "android": "Download for Android",
-      "windows": "Download for Windows"
-    }
+    "heroTitle": "Welcome to BrainMessenger",
+    "heroSubtitle": "Your Smart Communication Platform",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "connectSmarterTitle": "Connect Smarter with BrainMessenger",
+    "connectSmarterSubtitle": "Experience the next generation of messaging with advanced features, unparalleled security, and seamless communication across all your devices.",
+    "downloadButton": "Download",
+    "downloadWindows": "Download for Windows",
+    "downloadAndroid": "Download for Android"
   },
   "features": {
-    "title": "Features",
-    "cards": {
-      "security": {
-        "title": "End-to-End Encryption",
-        "description": "Your messages are secured with state-of-the-art encryption"
+    "featuresTitle": "Key Features",
+    "featuresSubtitle": "Discover what makes us unique",
+    "secureMessaging": "Secure Messaging",
+    "secureMessagingDesc": "End-to-end encryption for your privacy",
+    "smartAssistant": "Smart Assistant",
+    "smartAssistantDesc": "AI-powered help at your fingertips",
+    "crossPlatform": "Cross Platform",
+    "crossPlatformDesc": "Use on any device, anywhere"
+  },
+  "news": {
+    "latestNews": "Latest news",
+    "readMore": "Read More"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about BrainMessenger",
+    "searchAlt": "Search icon",
+    "searchPlaceholder": "Search questions...",
+    "allQuestions": "All Questions",
+    "noResults": "No questions found matching your search.",
+    "categories": {
+      "general": "General",
+      "technical": "Technical",
+      "security": "Security",
+      "pricing": "Pricing"
+    }
+  },
+  "poll": {
+    "pollTitle": "Community Poll",
+    "pollSubtitle": "Share your opinion",
+    "submit": "Submit",
+    "results": "View Results"
+  },
+  "updates": {
+    "pageTitle": "Latest Updates",
+    "pageSubtitle": "Stay informed about our latest features and improvements",
+    "impactTitle": "Impact & Case Studies",
+    "allUpdatesTitle": "All Updates",
+    "modal": {
+      "keyFeaturesTitle": "Key Features",
+      "impactMetricsTitle": "Impact Metrics",
+      "featureOverviewTitle": "Feature Overview",
+      "additionalInfoTitle": "Additional Information",
+      "placeholder": "......"
+    },
+    "caseStudy": {
+      "title": "It's coming soon...",
+      "description": "At this juncture, the project is only about to commence its launch. Participants will receive updates via notifications and look forward to advancements and project initiation.",
+      "metricPlaceholder": "....."
+    }
+  },
+  "docs": {
+    "design": {
+      "title": "BrainMessenger Design Documentation",
+      "subtitle": "Quality and Value System",
+      "section1": {
+        "title": "1. Introduction: Design as the Foundation of Value",
+        "name": "BrainMessenger Design System",
+        "description": "This design system defines the visual and functional standards for the BrainMessenger interface. Our goal is to create an interface that not only looks good but is also <strong>intuitive, efficient, and accessible</strong> (Principle 2: Value Creation), based on the principles of <strong>quality > quantity</strong> (Principle 3) and <strong>pragmatism</strong> (Principle 12) in decision-making.",
+        "goal": "To ensure <strong>consistency, reliability, and a positive user experience</strong> across all platforms (Windows, Android, web), making BrainMessenger a <strong>useful ASSET</strong> (Principle 10) for users.",
+        "principles_title": "Principles guiding the design:",
+        "principles": [
+          "<strong>Value Creation (Principle 2):</strong> Design must be functional and solve user problems as conveniently and efficiently as possible.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Focus on the refinement of key elements, not on a multitude of poorly thought-out details. The design must be <strong>reliable</strong> and <strong>well-designed</strong>.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Choosing design solutions that are feasible given technical constraints (e.g., optimizing animations).",
+          "<strong>Integrity (Principle 7):</strong> Visual and functional integrity across all platforms.",
+          "<strong>Health as a Foundation (Principle 5):</strong> Attention to accessibility (WCAG) so that the design does not create excessive burden (visual, cognitive) on the user."
+        ]
       },
-      "speed": {
-        "title": "Lightning Fast",
-        "description": "Instant message delivery across all devices"
+      "section2": {
+        "title": "2. Color Palette: The Visual Language of BrainMessenger",
+        "intro": "Colors are separated for Light and Dark modes, supporting theme switching (\"Night Mode\" function). All colors are specified in HEX.",
+        "light_mode_title": "2.1. Light Mode",
+        "light_mode_table": [
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Main gradient for accent elements (\"Get Started\" buttons, icons)"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors, important notifications)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links, interactive elements"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
+          ["<strong>Background</strong>", "`#FFFFFF`", "Main background"],
+          ["<strong>Surface</strong>", "`#F0F0F0`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#333333`", "Primary text"],
+          ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Secondary text, hints, metadata"],
+          ["<strong>Disabled</strong>", "`#B0B0B0`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#E8E8D9`", "Borders, separators"]
+        ],
+        "dark_mode_title": "2.2. Dark Mode",
+        "dark_mode_table": [
+          ["Category", "Color (HEX)", "Purpose"],
+          ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Main gradient for accent elements"],
+          ["<strong>Accent</strong>", "`#FF6347`", "Accent elements (errors)"],
+          ["<strong>Secondary</strong>", "`#00BFFF`", "Secondary buttons, links"],
+          ["<strong>Success</strong>", "`#96C93D`", "Confirmations, successful actions"],
+          ["<strong>Background</strong>", "`#1A1A1A`", "Main background"],
+          ["<strong>Surface</strong>", "`#333333`", "Cards, panels, message backgrounds"],
+          ["<strong>Text Primary</strong>", "`#FFFFFF`", "Primary text"],
+          ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Secondary text, hints"],
+          ["<strong>Disabled</strong>", "`#4D4D4D`", "Inactive elements"],
+          ["<strong>Border</strong>", "`#B0B0B0`", "Borders, separators"]
+        ],
+        "premium_colors_title": "2.3. Premium Feature Colors (Visual Highlighting of Value)",
+        "premium_colors": [
+          "<strong>Premium Accent:</strong> `#FFD600` (Gold)",
+          "<strong>Premium Secondary:</strong> `#2196F3` (Blue)",
+          "Used for visual highlighting of premium features (e.g., in neural network animations, special UI elements), emphasizing their <strong>additional value</strong> (Principle 2, 10)."
+        ],
+        "color_application_title": "2.4. Color Application (Examples)",
+        "color_application": [
+          {
+            "title": "Welcome Screen (from screenshot):",
+            "items": [
+              "Background: `#1A1A1A` (Dark Mode).",
+              "\"Get Started\" Button: Gradient `#F2F047` → `#1ED94F`.",
+              "Chat Icon: `#F2F047` (outline) with a white symbol inside.",
+              "Text: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (hint)."
+            ]
+          },
+          {
+            "title": "Theme Switching:",
+            "items": [
+              "Implemented via a global `themeMode` flag (`Light`/`Dark`).",
+              "Example in React Native:\n```jsx\nimport { useColorScheme } from 'react-native'\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light'\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF' // Example of background selection\n```"
+            ]
+          }
+        ],
+        "usage_recommendations_title": "2.5. Color Usage Recommendations",
+        "usage_recommendations": [
+          "<strong>Gradients:</strong> Use `#A7F43A` → `#00C853` or `#F2F047` → `#1ED94F` (depending on the theme) for key actions and accent elements that draw attention to <strong>value</strong> (Principle 2).",
+          "<strong>Dark Theme:</strong> Use `#1A1A1A` or `#212121` as the main background to reduce eye strain (related to Principle 5: Health).",
+          "<strong>Contrast:</strong> Always check the contrast of text and elements to ensure <strong>accessibility</strong> (WCAG 2.1 AA) and compliance with Principle 7 (Integrity). Use tools like WebAIM Contrast Checker."
+        ]
       },
-      "sync": {
-        "title": "Seamless Sync",
-        "description": "Access your messages from any device, anytime"
+      "section3": {
+        "title": "3. Typography: Readability as the Basis of Efficiency",
+        "intro": "The choice and application of fonts are based on ensuring maximum readability and accessibility, which is critically important for effective information absorption and reducing cognitive load (related to Principle 5: Health and Principle 2: Value).",
+        "primary_font_title": "3.1. Primary Font",
+        "primary_font": [
+          "<strong>Family:</strong> Roboto (Google Fonts)",
+          "<strong>Fallback:</strong> Sans-serif",
+          "<strong>Reason:</strong> High readability on different screen sizes, broad character support (multilingualism), open license, and availability."
+        ],
+        "sizes_styles_title": "3.2. Sizes and Styles (Hierarchy Scale)",
+        "sizes_styles_table": [
+          ["Level", "Size", "Weight", "Usage"],
+          ["H1 (Heading)", "24px", "Bold", "Main screen titles (e.g., \"Chats\")"],
+          ["H2 (Subheading)", "18px", "Medium", "Secondary titles, group names"],
+          ["Body", "16px", "Regular", "Main message text, chat list"],
+          ["Caption", "14px", "Regular", "Photo captions, message time, small text"],
+          ["Button", "16px", "Medium", "Action button text"]
+        ],
+        "notes_title": "Notes:",
+        "notes": [
+          "<strong>Line Height:</strong> Minimum 1.5 for body text to improve readability.",
+          "<strong>Customization (Principle 2):</strong> The user can choose an alternative font in settings (e.g., Open Sans) to adapt to their preferences.",
+          "<strong>Accessibility:</strong> Ensuring contrast and minimum font size to comply with WCAG."
+        ]
+      },
+      "section4": {
+        "title": "4. Animations: Optimization and Meaning (Principle 12: Pragmatism)",
+        "intro": "Animations in BrainMessenger are used to enhance user experience, provide visual feedback, and make the interface lively. However, they must be <strong>pragmatic, optimized</strong> (<2 ГБ RAM), and <strong>not create excessive burden</strong> (related to Principle 5: Health).",
+        "principles_title": "4.1. Animation Principles",
+        "principles": [
+          "<strong>Meaning:</strong> Every animation should have a clear purpose – to explain a transition, draw attention to something important, confirm an action.",
+          "<strong>Smoothness:</strong> Using `ease-in-out` or `ease-out` for natural movement.",
+          "<strong>Optimization:</strong> Animations should not slow down the interface or consume excessive resources. Duration is chosen for a balance between smoothness and speed.",
+          "<strong>Accessibility:</strong> Avoiding overly fast or flashing animations that can cause discomfort or seizures in sensitive users."
+        ],
+        "list_title": "4.2. List of Animations (Examples)",
+        "list_table": [
+          ["Name", "Description", "Trigger", "Parameters", "Related Principles", "Colors (Light/Dark)"],
+          ["Slide Transition", "Sliding of slides (Welcome Screen)", "Swipe/click on arrow", "0.3 sec, slide left/right", "P2 (Onboarding)", "#96C93D / #96C93D"],
+          ["Chat Opening", "Chat appears from bottom up", "Click on chat in list", "0.3 sec, ease-in-out", "P2 (Navigation)", "#00BFFF / #00BFFF"],
+          ["Button Press", "Visual feedback on click (scaling down)", "Click on button", "0.2 sec, scale", "P2 (Feedback)", "Gradient #F2F047→#1ED94F"],
+          ["Message Sending", "Message appears with smooth fade-in", "Click \"Send\"", "0.3 sec, fade-in", "P2 (Feedback)", "#96C93D / #96C93D"],
+          ["Screen Transition", "Screen slides left/right (basic navigation)", "Navigation", "0.3 sec, slide", "P2 (Navigation)", "#B0B0B0 / #4D4D4D"],
+          ["Icon Animation (Morph)", "Icon transformation (e.g., mute → unmute)", "Click (state toggle)", "0.4 sec, morph", "P2 (State)", "#FF6347 / #FF6347"],
+          ["Ripple Effect on Press", "Radial waves from press point (feedback)", "Click on button/element", "0.3 sec, ripple", "P2 (Feedback)", "#F2F047 / #F2F047"],
+          ["Glitch Effect (Premium)", "Text distortion for premium (visualization)", "Subscription activation", "0.2 sec, glitch", "P2, P10 (Highlighting)", "#FF6347 / #FF6347"],
+          ["Neural Connections (Premium)", "Pulsating lines (Asset visualization)", "Premium screen", "0.5 sec, pulse", "P2, P10 (Highlighting)", "#96C93D / #96C93D"]
+        ],
+        "implementation_examples_title": "4.3. Implementation Examples (Code Snippets)",
+        "css_ripple_title": "CSS for Ripple Effect:",
+        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Or other colors/gradient */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }",
+        "rn_icon_title": "React Native for Animated Icon:",
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Example library\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Example library\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Creating an animated Icon component\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Example usage with scale animation (assuming 'scale' is an Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+      },
+      "section5": {
+        "title": "5. Alignment and Grid: Structure and Order (Principle 9: System)",
+        "intro": "Using a consistent alignment system and modular grid is the foundation for creating a <strong>systematic, easily maintainable, and visually harmonious</strong> interface (Principle 9: System).",
+        "base_grid": "<strong>Base Grid:</strong> 8px (base step for defining element sizes, padding, intervals). All values should be multiples of 8 (or 4 for very small elements).",
+        "alignment_title": "<strong>Alignment:</strong>",
+        "alignment": [
+          "The principle of <strong>visual hierarchy</strong> is used: more important elements are placed higher or visually dominate.",
+          "<strong>Vertical Flow:</strong> Content on screens is organized from top to bottom: Title → Input Field → Action Button.",
+          "<strong>Horizontal Alignment:</strong> Elements in containers are aligned to the left (for LTR) or right (for RTL) unless centering is necessary (e.g., headers in the top bar).",
+          "<strong>Padding/Margin:</strong> Values from the scale, multiples of 8px (8, 16, 24, 32, 40, 48 px, etc.), are used to create clear intervals between elements and groups of elements."
+        ],
+        "adaptability_title": "<strong>Adaptability and Responsiveness:</strong>",
+        "adaptability": [
+          "The design adapts to different screen sizes to ensure <strong>value</strong> (Principle 2) on any device.",
+          "<strong>Mobile Devices:</strong> 320px–767px (Usually a single-column layout).",
+          "<strong>Tablets:</strong> 768px–1023px (Possibly a two-column layout, side panels).",
+          "<strong>Desktop:</strong> 1024px+ (Wide layout, multi-column design, side panels)."
+        ]
+      },
+      "section6": {
+        "title": "6. Accessibility Principles (WCAG 2.1 AA): Design for All (Principle 5: Health, Principle 7: Integrity)",
+        "intro": "<strong>Accessibility is not an option, but a fundamental requirement</strong> (similar to Principle 5: Health as a Foundation) for creating a <strong>holistic</strong> (Principle 7) and <strong>valuable</strong> (Principle 2) product that can be used by everyone, regardless of their abilities or the technologies they use. We strive to comply with WCAG 2.1 AA level.",
+        "principles": [
+          "<strong>Color Contrast:</strong> Text elements must have a minimum contrast of 4.5:1 (for normal text) and 3:1 (for large text or icons) relative to the background. This is checked for both themes (Light/Dark).",
+          "<strong>Keyboard Navigation:</strong> All interactive elements (buttons, links, input fields) must be accessible for keyboard navigation (Tab, Shift+Tab) and activation (Enter, Space).",
+          "<strong>Screen Reader Support:</strong> Using semantic markup (HTML) and ARIA attributes to provide context and information to screen reader users (e.g., descriptions for icons, element states).",
+          "<strong>Visual Focus Indicator:</strong> There must be a clear and visible indicator of the currently focused element for keyboard users (e.g., a blue outline `#007BFF`).",
+          "<strong>Error Handling:</strong> Error messages must be clear, understandable, and easily identifiable by users, including screen reader users.",
+          "<strong>RTL Support (Right-to-Left):</strong> The design adapts for languages with right-to-left writing direction (e.g., Arabic), including mirroring the layout, icons, and text (see DocLocIn.md)."
+        ]
+      },
+      "section7": {
+        "title": "7. Notes and Recommendations",
+        "notes": [
+          "<strong>User Customization:</strong> Remember that some aspects of the design (chat colors, fonts) can be changed by the user in settings. The design system must account for this flexibility.",
+          "<strong>Testing on Real Devices:</strong> All design components must be tested on a variety of devices, with different screen resolutions and in different lighting conditions, to ensure their effectiveness and accessibility.",
+          "<strong>Living Documentation:</strong> This design system is a living document. It will be supplemented with new components, templates, and recommendations as the product develops, reflecting the principles of <strong>continuous improvement</strong> (Principle 1) and a <strong>systemic approach</strong> (Principle 9).",
+          "<strong>Design as part of the Kaizen Process:</strong> Design decisions are analyzed and improved based on feedback and real-world usage, integrating into the overall Kaizen process (Principle 9, 14)."
+        ]
       }
     }
   },
-  "news": {
-    "title": "Latest News",
-    "readMore": "Read More",
-    "publishedOn": "Published on {date}"
-  },
   "common": {
     "loading": "Loading...",
-    "error": "An error occurred",
+    "error": "An error occurred. Please try again.",
+    "noData": "No data available.",
     "retry": "Retry",
-    "close": "Close"
+    "seeAll": "See All",
+    "backToHome": "Back to Home"
   },
-  "account": {
-    "settings": "Settings",
-    "deleteAccount": "Delete Account",
-    "deleteAccountConfirmTitle": "Delete Account?",
-    "deleteAccountConfirmMessage": "Are you sure you want to delete your account? This action cannot be undone. All your data, including polls, votes, and settings will be permanently deleted.",
-    "cancel": "Cancel",
-    "confirmDelete": "Yes, Delete Account"
+  "roadmap": {
+    "title": {
+      "section": "Development Roadmap",
+      "projectLaunch": "Project Launch",
+      "enhancedSecurity": "Enhanced Security & Features",
+      "advancedCollaboration": "Advanced Collaboration Tools",
+      "mobileEnhancement": "Mobile Enhancement",
+      "aiIntegration": "AI Integration",
+      "globalExpansion": "Global Expansion",
+      "enterpriseSolutions": "Enterprise Solutions",
+      "futureInnovation": "Future Innovation"
+    },
+    "subtitle": {
+      "section": "Our journey to revolutionize secure messaging"
+    },
+    "date": {
+      "jan2024": "January 2024",
+      "mar2024": "March 2024",
+      "jun2024": "June 2024",
+      "sep2024": "September 2024",
+      "nov2024": "November 2024",
+      "jan2025": "January 2025",
+      "mar2025": "March 2025",
+      "jun2025": "June 2025",
+      "beyond2025": "Beyond 2025"
+    },
+    "description": {
+      "projectLaunch": "Initial release of BrainMessenger with core messaging functionality",
+      "enhancedSecurity": "Major security upgrades and new feature implementations",
+      "advancedCollaboration": "Introduction of team collaboration features",
+      "mobileEnhancement": "Focus on mobile experience and performance",
+      "aiIntegration": "Implementation of AI-powered features",
+      "globalExpansion": "Focus on international markets and localization",
+      "enterpriseSolutions": "Dedicated features for enterprise clients",
+      "futureInnovation": "Continuous innovation and feature expansion"
+    },
+    "features": {
+      "secureMessagingInfrastructure": "Secure messaging infrastructure",
+      "crossPlatformCompatibility": "Cross-platform compatibility",
+      "basicUserInterface": "Basic user interface",
+      "endToEndEncryption": "End-to-end encryption",
+      "twoFactorAuthentication": "Two-factor authentication",
+      "fileSharingCapabilities": "File sharing capabilities",
+      "teamWorkspaces": "Team workspaces",
+      "realTimeCollaboration": "Real-time collaboration",
+      "advancedFileSharing": "Advanced file sharing",
+      "nativeMobileApps": "Native mobile apps",
+      "offlineFunctionality": "Offline functionality",
+      "pushNotifications": "Push notifications",
+      "smartMessageCategorization": "Smart message categorization",
+      "automatedResponses": "Automated responses",
+      "contentAnalysis": "Content analysis",
+      "multiLanguageSupport": "Multi-language support",
+      "regionalDataCenters": "Regional data centers",
+      "culturalAdaptations": "Cultural adaptations",
+      "advancedAdminControls": "Advanced admin controls",
+      "customIntegrations": "Custom integrations",
+      "enterpriseSupport": "Enterprise support",
+      "emergingTechnologies": "Emerging technologies",
+      "communityDrivenFeatures": "Community-driven features",
+      "platformExpansion": "Platform expansion"
+    },
+    "status": {
+      "completed": "completed",
+      "inProgress": "in-progress",
+      "upcoming": "upcoming"
+    },
+    "iconAlt": {
+      "projectLaunch": "Project Launch icon",
+      "enhancedSecurity": "Enhanced Security icon",
+      "advancedCollaboration": "Advanced Collaboration icon",
+      "mobileEnhancement": "Mobile Enhancement icon",
+      "aiIntegration": "AI Integration icon",
+      "globalExpansion": "Global Expansion icon",
+      "enterpriseSolutions": "Enterprise Solutions icon",
+      "futureInnovation": "Future Innovation icon"
+    }
+  },
+  "footer": {
+    "sectionTitle": {
+      "brand": "Brain Messenger",
+      "quickLinks": "Quick Links",
+      "contact": "Contact Us",
+      "social": "Follow Us"
+    },
+    "brandContent": "Connecting minds by empowering communication through innovative messaging solutions",
+    "quickLinks": {
+      "home": "Home",
+      "features": "Features",
+      "news": "News",
+      "roadmap": "Roadmap",
+      "faq": "FAQ",
+      "doc": "Doc"
+    },
+    "iconAlt": {
+      "quickLinks": "Quick Links icon",
+      "email": "Email icon"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn"
+    },
+    "previousSection": "Previous section",
+    "nextSection": "Next section",
+    "copyright": "2024 Brain Messenger. All rights reserved."
   }
 }

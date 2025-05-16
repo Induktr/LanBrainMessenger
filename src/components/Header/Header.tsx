@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiMenu, FiX, FiBell, FiTrash2, FiSettings } from 'react-icons/fi';
 import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -46,20 +46,19 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const { language, changeLanguage, languages, t, isLoading } = useLanguage();
-  const navigate = useNavigate();
   const langMenuRef = useRef<HTMLDivElement>(null);
 
   const menuItems: MenuItem[] = [
-    { name: t('features'), to: 'features', type: 'scroll' },
-    { name: t('faq'), to: '/faq', type: 'route' },
-    { name: t('docs'), to: '/docs', type: 'route' }
+    { name: t('header.features'), to: 'features', type: 'scroll' }, // Changed t('features') to t('header.features')
+    { name: t('header.faqLink'), to: '/faq', type: 'route' },
+    { name: t('header.docs'), to: '/docs', type: 'route' }
   ];
 
   const renderNavLink = (item: MenuItem) => {
     if (item.type === 'scroll') {
       return (
         <a
-          key={item.name}
+          key={`${item.type}-${item.to}`} // Changed key to be more unique
           href={`#${item.to}`}
           className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
           onClick={(e) => {
@@ -74,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ children }) => {
     }
     return (
       <Link
-        key={item.name}
+        key={`${item.type}-${item.to}`} // Changed key to be more unique
         to={item.to}
         className="text-[var(--text-primary)] hover:text-[var(--accent-primary)] transition-colors"
         onClick={() => setIsOpen(false)}

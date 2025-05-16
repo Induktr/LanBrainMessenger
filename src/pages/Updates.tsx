@@ -17,6 +17,7 @@ import {
   ThemeIcon
 } from '../components/Icons/UpdateIcons'; // Keep imports for now, will refactor icon system later
 import { CloudinaryPlayIcon, CloudinaryArrowIcon, CloudinaryLinkIcon } from '../components/Icons/CloudinaryIcons'; // Keep imports for now
+import { useLanguage } from '../context/LanguageContext'; // Import useLanguage
 
 const updatesData: UpdateItem[] = [ // Apply UpdateItem interface
   {
@@ -75,8 +76,8 @@ interface UpdateModalProps {
 }
 
 const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
+  const { t } = useLanguage(); // Use the translation hook
   if (!update) return null;
-  // const Icon = update.icon; // No longer a component
 
   return (
     <motion.div
@@ -106,45 +107,45 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             {update.iconUrl && <img src={update.iconUrl} alt={update.title} className="w-6 h-6" />}
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-[var(--text-primary)]">{update.title}</h3>
-            <p className="text-[var(--text-secondary)]">{update.date}</p>
+            <h3 className="text-2xl font-bold text-[var(--text-primary)]">{update.title}</h3> {/* This title comes from updatesData, which will be translated later */}
+            <p className="text-[var(--text-secondary)]">{update.date}</p> {/* This date comes from updatesData, which will be translated later */}
           </div>
         </div>
 
         <div className="prose prose-invert max-w-none">
-          <p className="text-[var(--text-secondary)] mb-6">{update.description}</p>
+          <p className="text-[var(--text-secondary)] mb-6">{update.description}</p> {/* This description comes from updatesData, which will be translated later */}
 
           <div className="space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">Key Features</h4>
+              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.keyFeaturesTitle')}</h4> {/* Use translation key */}
               <ul className="list-disc pl-6 text-[var(--text-secondary)]">
-                <li>......</li>
-                <li>.....</li>
-                <li>.....</li>
+                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
+                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
+                <li>{t('updates.modal.placeholder')}</li> {/* Use translation key for placeholder */}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">Impact Metrics</h4>
+              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.impactMetricsTitle')}</h4> {/* Use translation key */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-[var(--secondary)] p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-[var(--accent-primary)]">......</div>
-                  <div className="text-sm text-[var(--text-secondary)]">......</div>
+                  <div className="text-2xl font-bold text-[var(--accent-primary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
+                  <div className="text-sm text-[var(--text-secondary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
                 </div>
                 <div className="bg-[var(--secondary)] p-4 rounded-lg text-center">
-                  <div className="text-2xl font-bold text-[var(--accent-primary)]">.....</div>
-                  <div className="text-sm text-[var(--text-secondary)]">.....</div>
+                  <div className="text-2xl font-bold text-[var(--accent-primary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
+                  <div className="text-sm text-[var(--text-secondary)]">{t('updates.modal.placeholder')}</div> {/* Use translation key for placeholder */}
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">Feature Overview</h4>
+              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.featureOverviewTitle')}</h4> {/* Use translation key */}
               <div className="aspect-video rounded-lg overflow-hidden bg-[var(--secondary)] mb-6">
                 <iframe
                   className="w-full h-full"
                   src="https://youtu.be/9cH5Em0F7pc?si=mi9VoAX9xcDfP3Bj"
-                  title="Feature Overview"
+                  title={t('updates.modal.featureOverviewTitle')} // Use translation key for iframe title
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -153,9 +154,9 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ update, onClose }) => {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">Additional Information</h4>
+              <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">{t('updates.modal.additionalInfoTitle')}</h4> {/* Use translation key */}
               <p className="text-[var(--text-secondary)]">
-               ..........
+               {t('updates.modal.placeholder')} {/* Use translation key for placeholder */}
               </p>
             </div>
           </div>
@@ -173,24 +174,25 @@ interface Metric {
 }
 
 interface CaseStudyItem {
-  title: string;
-  icon: React.ElementType; // CaseStudy still expects a component for icon
-  description: string;
-  metrics: Metric[];
+  titleKey: string; // Use translation key for title
+  icon: React.ElementType;
+  descriptionKey: string; // Use translation key for description
+  metricsKeys: { valueKey: string; labelKey: string }[]; // Use translation keys for metrics
 }
 
 const Updates: React.FC<UpdatesProps> = () => {
   const { theme } = useTheme();
+  const { t } = useLanguage(); // Use the translation hook
   const [selectedUpdate, setSelectedUpdate] = useState<UpdateItem | null>(null);
 
   const caseStudies: CaseStudyItem[] = [
     {
-      title: "It's coming soon...",
-      icon: PerformanceIcon, // CaseStudy uses PerformanceIcon component
-      description: "At this juncture, the project is only about to commence its launch. Participants will receive updates via notifications and look forward to advancements and project initiation.",
-      metrics: [
-        { value: ".....", label: "....." },
-        { value: "....", label: "......." }
+      titleKey: 'updates.caseStudy.title',
+      icon: PerformanceIcon,
+      descriptionKey: 'updates.caseStudy.description',
+      metricsKeys: [
+        { valueKey: 'updates.caseStudy.metricPlaceholder', labelKey: 'updates.caseStudy.metricPlaceholder' },
+        { valueKey: 'updates.caseStudy.metricPlaceholder', labelKey: 'updates.caseStudy.metricPlaceholder' }
       ]
     },
   ];
@@ -203,23 +205,22 @@ const Updates: React.FC<UpdatesProps> = () => {
           className="inline-flex items-center mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors mb-8"
         >
           <CloudinaryArrowIcon className="mr-2 rotate-180"/>
-          Back to Home
+          {t('backToHome')} {/* Use translation key */}
         </Link>
-        <h1 className="text-4xl font-bold mb-4">Latest Updates</h1>
+        <h1 className="text-4xl font-bold mb-4">{t('updates.pageTitle')}</h1> {/* Use translation key */}
         <p className="text-[var(--text-secondary)]">
-          Stay informed about our latest features and improvements
+          {t('updates.pageSubtitle')} {/* Use translation key */}
         </p>
       </div>
 
-      {/* Feature Slider */}
+      {/* Feature Slider - updatesData will be translated in data/updates.ts */}
       <div className="max-w-7xl mx-auto mb-16">
-        {/* UpdateSlider expects UpdateItem[], which now has iconUrl */}
         <UpdateSlider updates={updatesData} />
       </div>
 
       {/* Case Studies */}
       <div className="max-w-7xl mx-auto mb-16">
-        <h2 className="text-3xl font-bold mb-8">Impact & Case Studies</h2>
+        <h2 className="text-3xl font-bold mb-8">{t('updates.impactTitle')}</h2> {/* Use translation key */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {caseStudies.map((study, index) => (
             <CaseStudy key={index} {...study} />
@@ -227,12 +228,11 @@ const Updates: React.FC<UpdatesProps> = () => {
         </div>
       </div>
 
-      {/* Updates Grid */}
+      {/* Updates Grid - updatesData will be translated in data/updates.ts */}
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">All Updates</h2>
+        <h2 className="text-3xl font-bold mb-8">{t('updates.allUpdatesTitle')}</h2> {/* Use translation key */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {updatesData.map((update, index) => {
-            // const Icon = update.icon; // No longer a component
             return (
               <motion.div
                 key={index}
@@ -262,9 +262,9 @@ const Updates: React.FC<UpdatesProps> = () => {
                     {/* Render icon using img tag and iconUrl */}
                     {update.iconUrl && <img src={update.iconUrl} alt={update.title} className="w-8 h-8" />}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{update.title}</h3>
-                  <p className="text-[var(--text-secondary)] mb-4">{update.description}</p>
-                  <p className="text-sm text-[var(--text-secondary)]">{update.date}</p>
+                  <h3 className="text-xl font-semibold mb-2">{update.title}</h3> {/* This title comes from updatesData, which will be translated later */}
+                  <p className="text-[var(--text-secondary)] mb-4">{update.description}</p> {/* This description comes from updatesData, which will be translated later */}
+                  <p className="text-sm text-[var(--text-secondary)]">{update.date}</p> {/* This date comes from updatesData, which will be translated later */}
                 </div>
               </motion.div>
             );

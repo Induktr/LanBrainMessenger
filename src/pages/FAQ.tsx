@@ -5,6 +5,7 @@ import { FiArrowLeft, FiChevronDown } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
 import { faqData } from '../data/faq';
 import { CloudinaryPlayIcon, CloudinaryArrowIcon, CloudinaryLinkIcon } from '../components/Icons/CloudinaryIcons';
+import { useLanguage } from '../context/LanguageContext';
 
 const FAQ_ICONS = {
   magnifier: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734731094/the-magnifier-icon-can-be-designed-in-a-minimalist_bvzrsy.svg'
@@ -65,6 +66,7 @@ interface FilteredFAQQuestion extends FAQQuestion {
 
 const FAQComponent: React.FC<FAQComponentProps> = () => {
   const { theme } = useTheme();
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState<string>(''); // Explicitly type string
   const [activeCategory, setActiveCategory] = useState<string>('all'); // Explicitly type string
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set()); // Explicitly type Set of strings
@@ -104,11 +106,11 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
             className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
           >
             <CloudinaryArrowIcon className="rotate-180" />
-            Back to Home
+            {t('backToHome')}
           </Link>
-          <h1 className="text-4xl font-bold mt-6 mb-4">Frequently Asked Questions</h1>
+          <h1 className="text-4xl font-bold mt-6 mb-4">{t('faq.title')}</h1>
           <p className="text-[var(--text-secondary)]">
-            Find answers to common questions about BrainMessenger
+            {t('faq.subtitle')}
           </p>
         </div>
 
@@ -117,13 +119,13 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
           <div className="relative">
             <img 
               src={FAQ_ICONS.magnifier}
-              alt="Search"
+              alt={t('faq.searchAlt')}
               className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
               style={{ filter: 'invert(42%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(92%) contrast(82%)' }}
             />
             <input
               type="text"
-              placeholder="Search questions..."
+              placeholder={t('faq.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3 rounded-xl bg-[var(--secondary)] border border-[var(--border)]
@@ -141,7 +143,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
                   : 'bg-[var(--secondary)] text-[var(--text-primary)] hover:bg-[var(--tertiary)]'
                 }`}
             >
-              All Questions
+              {t('faq.allQuestions')}
             </button>
             {faqData.map(category => (
               <button
@@ -212,7 +214,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
               animate={{ opacity: 1 }}
               className="text-center py-12 text-[var(--text-secondary)]"
             >
-              No questions found matching your search.
+              {t('faq.noResults')}
             </motion.div>
           )}
         </div>

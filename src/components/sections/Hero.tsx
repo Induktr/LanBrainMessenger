@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { heroVariants, calculateParallax } from '../Hero/animations';
 import styles from '../../styles/Hero.module.css';
+import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
 
 interface HeroProps {} // Define an empty interface for component props
 
@@ -9,6 +10,8 @@ const Hero: React.FC<HeroProps> = () => {
   const [showDownloadMenu, setShowDownloadMenu] = useState<boolean>(false); // Explicitly type boolean
   const [hoveredButton, setHoveredButton] = useState<string | null>(null); // Explicitly type string or null
   const downloadButtonRef = useRef<HTMLDivElement>(null); // Explicitly type the ref element
+
+  const { t } = useLanguage(); // Use the translation hook
 
   // Motion values for parallax effect
   const rotateX = useMotionValue<number>(0); // Explicitly type number
@@ -39,19 +42,18 @@ const Hero: React.FC<HeroProps> = () => {
             className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
           >
             <motion.h1
-              data-text="Connect Smarter with BrainMessenger"
+              data-text={t('hero.title')} // Use translation key
               className={`${styles.glitchText} text-[#F0F0F0] text-[var(--text-primary)] text-[20px] md:text-[24px] font-bold mb-4 md:mb-6`}
               variants={heroVariants.title}
             >
-              Connect Smarter with BrainMessenger
+              {t('hero.title')} {/* Use translation key */}
             </motion.h1>
 
             <motion.p
               variants={heroVariants.paragraph}
               className="text-[#a6a6a6] text-[var(--text-secondary)] text-[14px] md:text-[16px] mb-6 md:mb-8 max-w-[90%] mx-auto lg:mx-0"
             >
-              Experience the next generation of messaging with advanced features,
-              unparalleled security, and seamless communication across all your devices.
+              {t('hero.subtitle')} {/* Use translation key */}
             </motion.p>
 
             <motion.div
@@ -80,7 +82,7 @@ const Hero: React.FC<HeroProps> = () => {
                       }}
                     />
                   </div>
-                  Download
+                  {t('hero.downloadButton')} {/* Use translation key */}
                 </motion.button>
 
                 <AnimatePresence>
@@ -119,7 +121,7 @@ const Hero: React.FC<HeroProps> = () => {
                               }}
                             />
                           </div>
-                          Download for Windows
+                          {t('hero.downloadWindows')} {/* Use translation key */}
                         </a>
                         <a
                           href="public/files/android-app.apk"
@@ -141,7 +143,7 @@ const Hero: React.FC<HeroProps> = () => {
                               }}
                             />
                           </div>
-                          Download for Android
+                          {t('hero.downloadAndroid')} {/* Use translation key */}
                         </a>
                       </div>
                     </motion.div>

@@ -1,8 +1,9 @@
+// filepath: /home/induktr/WebProject/LanBrainMessenger/src/sections/Features.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import FeatureCard from './FeatureCard';
-import { FiLock, FiZap, FiUsers, FiGlobe, FiShield } from 'react-icons/fi';
+import FeaturesComponent from '../components/Features/Features'; // Renamed to avoid conflict
+import { useTranslation } from '../hooks/useTranslation';
 
 const FEATURES_ICONS = {
   lock: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734645760/use-a-more-geometric-lock-with-slanted-lines-or-ov_aynv46.svg',
@@ -21,15 +22,47 @@ interface FeatureItem {
   delay: number;
 }
 
-interface FeaturesProps {
-  features: FeatureItem[]; // Add features prop
-}
-
-const Features: React.FC<FeaturesProps> = ({ features }) => { // Destructure features prop
+const FeaturesSection: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    // Removed threshold due to potential typing issue with react-intersection-observer version
   });
+
+  const featuresTranslations = useTranslation([
+    'features.featuresTitle',
+    'features.featuresSubtitle',
+    'features.secureMessaging',
+    'features.secureMessagingDesc',
+    'features.smartAssistant',
+    'features.smartAssistantDesc',
+    'features.crossPlatform',
+    'features.crossPlatformDesc',
+    // Add other feature keys as needed
+  ]);
+
+  const translatedFeatures = featuresTranslations as { [key: string]: string };
+
+  // Construct the featuresData array with all required properties
+  const featuresData: FeatureItem[] = [
+    {
+      icon: <img src={FEATURES_ICONS.lock} alt="Lock" className="w-8 h-8" />,
+      title: translatedFeatures.secureMessaging,
+      description: translatedFeatures.secureMessagingDesc,
+      delay: 0.1,
+    },
+    {
+      icon: <img src={FEATURES_ICONS.energy} alt="Energy" className="w-8 h-8" />,
+      title: translatedFeatures.smartAssistant,
+      description: translatedFeatures.smartAssistantDesc,
+      delay: 0.2,
+    },
+    {
+      icon: <img src={FEATURES_ICONS.group} alt="Group" className="w-8 h-8" />,
+      title: translatedFeatures.crossPlatform,
+      description: translatedFeatures.crossPlatformDesc,
+      delay: 0.3,
+    },
+    // Add other features with their icons, delays, and translated text
+  ];
 
   return (
     <section id="features" className="py-20">
@@ -41,30 +74,21 @@ const Features: React.FC<FeaturesProps> = ({ features }) => { // Destructure fea
           transition={{ duration: 0.6 }}
           className="text-center text-[16px] mb-16"
         >
-          {/* These titles will now be passed from the parent component */}
           <h2 className="text-[24px] text-[var(--text-primary)]  font-bold text-[#f0f0f0] mb-4">
-            {/* Placeholder - title will come from props or parent */}
+            {translatedFeatures.featuresTitle}
           </h2>
           <p className="text-[16px] text-[#a6a6a6] text-[var(--text-secondary)] max-w-2xl mx-auto">
-            {/* Placeholder - subtitle will come from props or parent */}
+            {translatedFeatures.featuresSubtitle}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Use the features prop */}
-          {features.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              delay={feature.delay}
-            />
-          ))}
+          {/* Pass the translated data to the FeaturesComponent */}
+          <FeaturesComponent features={featuresData} />
         </div>
       </div>
     </section>
   );
 };
 
-export default Features;
+export default FeaturesSection;

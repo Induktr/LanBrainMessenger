@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import FeatureCard from './FeatureCard';
+import FeatureCard from '../Features/FeatureCard';
 import { FiLock, FiZap, FiUsers, FiGlobe, FiShield } from 'react-icons/fi';
 
 const FEATURES_ICONS = {

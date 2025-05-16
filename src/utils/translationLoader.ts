@@ -1,8 +1,9 @@
+import React from 'react';
 import { languages } from '../context/LanguageContext';
 
 const translationCache = new Map();
 
-export const loadTranslations = async (language) => {
+export const loadTranslations = async (language: string) => {
   // Check cache first
   if (translationCache.has(language)) {
     return translationCache.get(language);
@@ -14,12 +15,19 @@ export const loadTranslations = async (language) => {
     return translations.default;
   } catch (error) {
     console.error(`Failed to load translations for ${language}`, error);
-    // Fall back to English if it's not already English
+    // Fall back to English if the requested language is not English
     if (language !== 'en') {
-      const fallback = await import(`../translations/en.json`);
-      return fallback.default;
+      try {
+        const englishTranslations = await import('../translations/en.json');
+        console.warn(`Falling back to English translations for ${language}`);
+        return englishTranslations.default;
+      } catch (englishError) {
+        console.error('Failed to load English fallback translations', englishError);
+        return {}; // Return empty object if English also fails
+      }
     }
-    throw error;
+    // If the requested language was English and it failed, return empty object
+    return {};
   }
 };
 
