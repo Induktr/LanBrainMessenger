@@ -22,10 +22,13 @@
     "signIn": "Войти"
  },
   "hero": {
-    "heroTitle": "Добро пожаловать в BrainMessenger",
-    "heroSubtitle": "Ваша умная платформа для общения",
+    "title": "Добро пожаловать в BrainMessenger",
+    "subtitle": "Ваша умная платформа для общения",
     "getStarted": "Начать",
-    "learnMore": "Узнать больше"
+    "learnMore": "Узнать больше",
+    "downloadButton": "Скачать",
+    "downloadWindows": "Скачать для Windows",
+    "downloadAndroid": "Скачать для Android"
   },
   "features": {
     "featuresTitle": "Ключевые функции",

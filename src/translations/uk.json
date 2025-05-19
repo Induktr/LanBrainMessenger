@@ -22,10 +22,13 @@
     "docs": "Документація"
   },
   "hero": {
-    "heroTitle": "Ласкаво просимо до BrainMessenger",
-    "heroSubtitle": "Ваша розумна платформа для спілкування",
+    "title": "Ласкаво просимо до BrainMessenger",
+    "subtitle": "Ваша розумна платформа для спілкування",
     "getStarted": "Почати",
-    "learnMore": "Дізнатись більше"
+    "learnMore": "Дізнатись більше",
+    "downloadButton": "Завантажити",
+    "downloadWindows": "Завантажити для Windows",
+    "downloadAndroid": "Завантажити для Android"
   },
   "features": {
     "featuresTitle": "Ключові функції",
@@ -235,5 +238,114 @@
         ]
       }
     }
+  },
+  "roadmap": {
+    "title": {
+      "section": "Дорожня карта розробки",
+      "projectLaunch": "Запуск проєкту",
+      "enhancedSecurity": "Покращена безпека та функції",
+      "advancedCollaboration": "Розширені інструменти для співпраці",
+      "mobileEnhancement": "Покращення мобільної версії",
+      "aiIntegration": "Інтеграція ШІ",
+      "globalExpansion": "Глобальне розширення",
+      "enterpriseSolutions": "Корпоративні рішення",
+      "futureInnovation": "Майбутні інновації"
+    },
+    "subtitle": {
+      "section": "Наш шлях до революції в безпечному обміні повідомленнями"
+    },
+    "date": {
+      "jan2024": "Січень 2024",
+      "mar2024": "Березень 2024",
+      "jun2024": "Червень 2024",
+      "sep2024": "Вересень 2024",
+      "nov2024": "Листопад 2024",
+      "jan2025": "Січень 2025",
+      "mar2025": "Березень 2025",
+      "jun2025": "Червень 2025",
+      "beyond2025": "За межами 2025"
+    },
+    "description": {
+      "projectLaunch": "Початковий випуск BrainMessenger з базовою функціональністю обміну повідомленнями",
+      "enhancedSecurity": "Значні оновлення безпеки та впровадження нових функцій",
+      "advancedCollaboration": "Впровадження функцій для командної співпраці",
+      "mobileEnhancement": "Фокус на мобільному досвіді та продуктивності",
+      "aiIntegration": "Впровадження функцій на основі ШІ",
+      "globalExpansion": "Фокус на міжнародних ринках та локалізації",
+      "enterpriseSolutions": "Спеціалізовані функції для корпоративних клієнтів",
+      "futureInnovation": "Безперервні інновації та розширення функціональності"
+    },
+    "features": {
+      "secureMessagingInfrastructure": "Інфраструктура безпечного обміну повідомленнями",
+      "crossPlatformCompatibility": "Кросплатформність",
+      "basicUserInterface": "Базовий користувацький інтерфейс",
+      "endToEndEncryption": "Наскрізне шифрування",
+      "twoFactorAuthentication": "Двофакторна автентифікація",
+      "fileSharingCapabilities": "Можливості обміну файлами",
+      "teamWorkspaces": "Робочі простори для команд",
+      "realTimeCollaboration": "Співпраця в реальному часі",
+      "advancedFileSharing": "Розширений обмін файлами",
+      "nativeMobileApps": "Нативні мобільні додатки",
+      "offlineFunctionality": "Функціональність в офлайн-режимі",
+      "pushNotifications": "Push-сповіщення",
+      "smartMessageCategorization": "Розумна категоризація повідомлень",
+      "automatedResponses": "Автоматичні відповіді",
+      "contentAnalysis": "Аналіз контенту",
+      "multiLanguageSupport": "Підтримка багатьох мов",
+      "regionalDataCenters": "Регіональні центри обробки даних",
+      "culturalAdaptations": "Культурні адаптації",
+      "advancedAdminControls": "Розширені засоби адміністрування",
+      "customIntegrations": "Користувацькі інтеграції",
+      "enterpriseSupport": "Підтримка корпоративних клієнтів",
+      "emergingTechnologies": "Новітні технології",
+      "communityDrivenFeatures": "Функції, керовані спільнотою",
+      "platformExpansion": "Розширення платформи"
+    },
+    "status": {
+      "completed": "завершено",
+      "inProgress": "в процесі",
+      "upcoming": "заплановано"
+    },
+    "iconAlt": {
+      "projectLaunch": "Іконка запуску проєкту",
+      "enhancedSecurity": "Іконка покращеної безпеки",
+      "advancedCollaboration": "Іконка розширеної співпраці",
+      "mobileEnhancement": "Іконка покращення мобільної версії",
+      "aiIntegration": "Іконка інтеграції ШІ",
+      "globalExpansion": "Іконка глобального розширення",
+      "enterpriseSolutions": "Іконка корпоративних рішень",
+      "futureInnovation": "Іконка майбутніх інновацій"
+    }
+  },
+  "common": {
+    "backToHome": "Назад на головну"
+  },
+  "footer": {
+    "sectionTitle": {
+      "brand": "Brain Messenger",
+      "quickLinks": "Швидкі посилання",
+      "contact": "Зв'яжіться з нами",
+      "social": "Слідкуйте за нами"
+    },
+    "brandContent": "Поєднуючи розуми, розширюючи можливості спілкування за допомогою інноваційних рішень для обміну повідомленнями",
+    "quickLinks": {
+      "home": "Головна",
+      "features": "Функції",
+      "news": "Новини",
+      "roadmap": "Карта розвитку",
+      "faq": "Поширені запитання",
+      "doc": "Документація"
+    },
+    "iconAlt": {
+      "quickLinks": "Іконка швидких посилань",
+      "email": "Іконка електронної пошти"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn"
+    },
+    "previousSection": "Попередня секція",
+    "nextSection": "Наступна секція",
+    "copyright": "2024 Brain Messenger. Всі права захищено."
   }
 }

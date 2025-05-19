@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import FeatureCard from '../Features/FeatureCard';
-import { FiLock, FiZap, FiUsers, FiGlobe, FiShield } from 'react-icons/fi';
+import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
 
 const FEATURES_ICONS = {
   lock: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734645760/use-a-more-geometric-lock-with-slanted-lines-or-ov_aynv46.svg',
@@ -10,90 +10,71 @@ const FEATURES_ICONS = {
   energy: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734708159/boldly-change-the-proportions--for-example--increa_r2v11j.svg',
   privacy: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734708432/boldly-change-the-proportions--for-example--enlarg_ndehsg.svg',
   crossplatform: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734711471/the-computer-and-telephone-are-depicted-as-minimal_ky36y3.svg',
-  roadmap: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644803/arrow-pointing-to-the-path----abstract-path-in-the_jbuw0m.svg',
-  quickLinks: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734644807/an-abstract-node-of-connected-lines-or-circles-rep_mnvo88.svg'
+  // roadmap and quickLinks are not used in this component directly for feature cards
 };
 
 interface FeaturesIconProps {
   src: string;
-  alt: string;
+  alt: string; // Alt text will be translated
   className?: string;
 }
 
 const FeaturesIcon: React.FC<FeaturesIconProps> = ({ src, alt, className }) => (
   <img
     src={src}
-    alt={alt}
+    alt={alt} // Alt text is passed directly
     className={`w-7 h-7 ${className}`}
   />
 );
 
 interface FeatureItem {
-  icon: React.ReactNode; // icon can be any renderable React content
-  title: string;
-  description: string;
+  iconKey: keyof typeof FEATURES_ICONS; // Use a key to look up the icon source
+  altKey: string; // Translation key for alt text
+  titleKey: string;
+  descriptionKey: string;
 }
 
-const features: FeatureItem[] = [
-  {
-    icon: (
-        <FeaturesIcon
-          src={FEATURES_ICONS.lock}
-          alt="Lock"
-        />
-      ),
-    title: 'End-to-End Encryption',
-    description: 'Your messages are secured with state-of-the-art encryption technology.'
-  },
-  {
-     icon: (
-        <FeaturesIcon
-          src={FEATURES_ICONS.energy}
-          alt="Energy"
-        />
-      ),
-    title: 'Lightning Fast',
-    description: 'Experience instant messaging with minimal latency across all devices.'
-  },
-  {
-     icon: (
-        <FeaturesIcon
-          src={FEATURES_ICONS.group}
-          alt="Lock" // Note: Alt text is "Lock" but icon is "group". This might need correction.
-        />
-      ),
-    title: 'Group Chats',
-    description: 'Create and manage large group conversations with advanced admin tools.'
-  },
-  {
-     icon: (
-        <FeaturesIcon
-          src={FEATURES_ICONS.crossplatform}
-          alt="Crossplatform"
-        />
-      ),
-    title: 'Cross-Platform',
-    description: 'Seamlessly sync your chats across all your devices.'
-  },
-  {
-     icon: (
-        <FeaturesIcon
-          src={FEATURES_ICONS.privacy}
-          alt="Privacy"
-        />
-      ),
-    title: 'Privacy First',
-    description: 'Your privacy is our priority with customizable security settings.'
-  }
-];
-
-interface FeaturesProps {} // Define an empty interface for component props
+interface FeaturesProps {}
 
 const Features: React.FC<FeaturesProps> = () => {
+  const { t } = useLanguage(); // Use the translation hook
   const [ref, inView] = useInView({
     triggerOnce: true,
-    // Removed threshold due to potential typing issue with react-intersection-observer version
   });
+
+  const featuresData: FeatureItem[] = [
+    {
+      iconKey: 'lock',
+      altKey: 'features.secureMessaging', // Assuming alt text can be same as title for simplicity
+      titleKey: 'features.secureMessaging',
+      descriptionKey: 'features.secureMessagingDesc'
+    },
+    {
+      iconKey: 'energy',
+      altKey: 'features.smartAssistant',
+      titleKey: 'features.smartAssistant',
+      descriptionKey: 'features.smartAssistantDesc'
+    },
+    {
+      iconKey: 'group',
+      altKey: 'features.groupChats', // Corrected alt key if it's for group chats
+      titleKey: 'features.groupChats',
+      descriptionKey: 'features.groupChatsDesc'
+    },
+    {
+      iconKey: 'crossplatform',
+      altKey: 'features.crossPlatform',
+      titleKey: 'features.crossPlatform',
+      descriptionKey: 'features.crossPlatformDesc'
+    },
+    {
+      iconKey: 'privacy',
+      altKey: 'features.privacyFirst',
+      titleKey: 'features.privacyFirst',
+      descriptionKey: 'features.privacyFirstDesc'
+    }
+  ];
+
 
   return (
     <section id="features" className="py-20">
@@ -106,20 +87,20 @@ const Features: React.FC<FeaturesProps> = () => {
           className="text-center text-[16px] mb-16"
         >
           <h2 className="text-[24px] text-[var(--text-primary)]  font-bold text-[#f0f0f0] mb-4">
-            Why Choose BrainMessenger?
+            {t('features.featuresTitle')}
           </h2>
           <p className="text-[16px] text-[#a6a6a6] text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Discover the features that make BrainMessenger the smartest choice for your communication needs.
+            {t('features.featuresSubtitle')}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {featuresData.map((feature, index) => (
             <FeatureCard
               key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
+              icon={<FeaturesIcon src={FEATURES_ICONS[feature.iconKey]} alt={t(feature.altKey)} />}
+              title={t(feature.titleKey)}
+              description={t(feature.descriptionKey)}
               delay={index * 0.1}
             />
           ))}

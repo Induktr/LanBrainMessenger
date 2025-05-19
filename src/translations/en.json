@@ -22,8 +22,8 @@
     "signIn": "Sign In"
  },
   "hero": {
-    "heroTitle": "Welcome to BrainMessenger",
-    "heroSubtitle": "Your Smart Communication Platform",
+    "title": "Welcome to BrainMessenger",
+    "subtitle": "Your Smart Communication Platform",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
     "connectSmarterTitle": "Connect Smarter with BrainMessenger",
