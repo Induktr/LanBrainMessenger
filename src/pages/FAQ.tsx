@@ -1,11 +1,11 @@
 import React, { useState, Component } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft, FiChevronDown } from 'react-icons/fi';
+import { FiChevronDown } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
-import { faqData } from '../data/faq';
-import { CloudinaryPlayIcon, CloudinaryArrowIcon, CloudinaryLinkIcon } from '../components/Icons/CloudinaryIcons';
+import { CloudinaryArrowIcon } from '../components/Icons/CloudinaryIcons';
 import { useLanguage } from '../context/LanguageContext';
+import { faqDataStructure } from '../data/faq'; // Import the new data structure
 
 const FAQ_ICONS = {
   magnifier: 'https://res.cloudinary.com/dsjalneil/image/upload/v1734731094/the-magnifier-icon-can-be-designed-in-a-minimalist_bvzrsy.svg'
@@ -19,17 +19,17 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> { // Add type annotations for props and state
-  constructor(props: ErrorBoundaryProps) { // Add type annotation for props
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error: any): ErrorBoundaryState { // Add type annotation for error and return type
+  static getDerivedStateFromError(_: any): ErrorBoundaryState {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void { // Add type annotations
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('FAQ Error:', error, errorInfo);
   }
 
@@ -41,37 +41,28 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> { 
         </div>
       );
     }
-
     return this.props.children;
   }
 }
 
-interface FAQComponentProps {} // Define an empty interface for component props
+interface FAQComponentProps {}
 
-interface FAQQuestion {
-  question: string;
-  answer: string;
-  // Add other properties if they exist in the original faqData question objects
-}
-
-interface FAQCategory {
-  category: string;
-  questions: FAQQuestion[];
-}
-
-interface FilteredFAQQuestion extends FAQQuestion {
-  id: string;
-  category: string;
+// Updated interface to reflect new data structure from faq.ts
+interface DisplayableFAQQuestion {
+  id: string; // Unique ID for React key, e.g., "generalProject-q1"
+  categoryKey: string; // e.g., "generalProject"
+  questionKey: string; // Translation key for the question, e.g., "faq.questionsData.generalProject.q1.question"
+  answerKey: string; // Translation key for the answer, e.g., "faq.questionsData.generalProject.q1.answer"
 }
 
 const FAQComponent: React.FC<FAQComponentProps> = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
-  const [searchQuery, setSearchQuery] = useState<string>(''); // Explicitly type string
-  const [activeCategory, setActiveCategory] = useState<string>('all'); // Explicitly type string
-  const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set()); // Explicitly type Set of strings
+  const { t, language, isLoading: languageIsLoading } = useLanguage(); // Renamed isLoading to avoid conflict
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [activeCategoryKey, setActiveCategoryKey] = useState<string>('all');
+  const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
 
-  const toggleQuestion = (id: string): void => { // Add type annotation for id and return type
+  const toggleQuestion = (id: string) => {
     const newExpanded = new Set(expandedQuestions);
     if (newExpanded.has(id)) {
       newExpanded.delete(id);
@@ -81,19 +72,53 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
     setExpandedQuestions(newExpanded);
   };
 
-  const filteredQuestions: FilteredFAQQuestion[] = (faqData as FAQCategory[]).flatMap((category, categoryIndex) => // Apply FAQCategory and FilteredFAQQuestion interfaces
-    category.questions.map((q, questionIndex) => ({
-      ...q,
-      id: `${category.category}-${questionIndex}`,
-      category: category.category
-    }))
-  ).filter((q: FilteredFAQQuestion) => { // Add type annotation for q
+  const { allQuestions, displayableCategoryKeys } = React.useMemo(() => {
+    if (languageIsLoading) {
+      return { allQuestions: [], displayableCategoryKeys: [] };
+    }
+
+    // Get the list of category keys from our faqDataStructure
+    const categoryKeysFromData = faqDataStructure.map(cat => cat.categoryKey);
+    
+    // Filter displayableCategoryKeys: only show categories that have actual translations
+    // and are present in faqDataStructure
+    const currentFaqCategoriesRaw = t('faq.categories');
+    const currentFaqCategories = (typeof currentFaqCategoriesRaw === 'object' && currentFaqCategoriesRaw !== null)
+      ? currentFaqCategoriesRaw as Record<string, string>
+      : {};
+
+    const computedDisplayableCategoryKeys = categoryKeysFromData.filter(catKey =>
+      typeof currentFaqCategories[catKey] === 'string' && currentFaqCategories[catKey].trim() !== ''
+    );
+
+    const computedAllQuestions: DisplayableFAQQuestion[] = faqDataStructure.flatMap(category => {
+      // Only process categories that are displayable (have a translated name)
+      if (!computedDisplayableCategoryKeys.includes(category.categoryKey)) {
+        return [];
+      }
+      return category.questions.map(question => {
+        const questionId = question.id; // e.g., "q1"
+        return {
+          id: `${category.categoryKey}-${questionId}`, // e.g., "generalProject-q1"
+          categoryKey: category.categoryKey,
+          questionKey: `faq.questionsData.${category.categoryKey}.${questionId}.question`,
+          answerKey: `faq.questionsData.${category.categoryKey}.${questionId}.answer`,
+        };
+      });
+    });
+    
+    return {
+      allQuestions: computedAllQuestions,
+      displayableCategoryKeys: computedDisplayableCategoryKeys,
+    };
+  }, [language, t, languageIsLoading]);
+
+  const filteredQuestions = allQuestions.filter(q => {
+    const translatedQuestion = t(q.questionKey) || '';
     const matchesSearch = searchQuery.trim() === '' ||
-      q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.answer.toLowerCase().includes(searchQuery.toLowerCase());
+      translatedQuestion.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesCategory = activeCategory === 'all' || q.category === activeCategory;
-
+    const matchesCategory = activeCategoryKey === 'all' || q.categoryKey === activeCategoryKey;
     return matchesSearch && matchesCategory;
   });
 
@@ -101,12 +126,12 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
     <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)]">
       <div className="max-w-4xl mx-auto px-4 py-20">
         <div className="mb-12">
-          <Link 
+          <Link
             to="/"
             className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
           >
             <CloudinaryArrowIcon className="rotate-180" />
-            {t('backToHome')}
+            {t('common.backToHome')}
           </Link>
           <h1 className="text-4xl font-bold mt-6 mb-4">{t('faq.title')}</h1>
           <p className="text-[var(--text-secondary)]">
@@ -117,7 +142,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
           <div className="relative">
-            <img 
+            <img
               src={FAQ_ICONS.magnifier}
               alt={t('faq.searchAlt')}
               className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5"
@@ -136,26 +161,26 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
 
           <div className="flex gap-2 overflow-x-auto pb-2">
             <button
-              onClick={() => setActiveCategory('all')}
+              onClick={() => setActiveCategoryKey('all')}
               className={`px-4 py-2 rounded-lg transition-colors whitespace-nowrap
-                ${activeCategory === 'all'
+                ${activeCategoryKey === 'all'
                   ? 'bg-[var(--accent-primary)] text-[var(--primary)]'
                   : 'bg-[var(--secondary)] text-[var(--text-primary)] hover:bg-[var(--tertiary)]'
                 }`}
             >
               {t('faq.allQuestions')}
             </button>
-            {faqData.map(category => (
+            {displayableCategoryKeys.map(catKey => (
               <button
-                key={category.category}
-                onClick={() => setActiveCategory(category.category)}
+                key={catKey}
+                onClick={() => setActiveCategoryKey(catKey)}
                 className={`px-4 py-2 rounded-lg transition-colors whitespace-nowrap
-                  ${activeCategory === category.category
+                  ${activeCategoryKey === catKey
                     ? 'bg-[var(--accent-primary)] text-[var(--primary)]'
                     : 'bg-[var(--secondary)] text-[var(--text-primary)] hover:bg-[var(--tertiary)]'
                   }`}
               >
-                {category.category}
+                {t(`faq.categories.${catKey}`)}
               </button>
             ))}
           </div>
@@ -177,7 +202,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
                     className="w-full p-6 flex items-start justify-between gap-4 text-left"
                   >
                     <span className="text-[var(--text-primary)] font-medium">
-                      {item.question}
+                      {t(item.questionKey)}
                     </span>
                     <motion.div
                       animate={{ rotate: expandedQuestions.has(item.id) ? 180 : 0 }}
@@ -187,7 +212,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
                       <FiChevronDown />
                     </motion.div>
                   </button>
-                  
+
                   <AnimatePresence>
                     {expandedQuestions.has(item.id) && (
                       <motion.div
@@ -198,7 +223,9 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
                         className="px-6 pb-6"
                       >
                         <div className="pt-4 border-t border-[var(--border)]">
-                          <p className="text-[var(--text-secondary)]">{item.answer}</p>
+                          <p className="text-[var(--text-secondary)]">
+                            {t(item.answerKey, { defaultValue: t('faq.answerComingSoon') })}
+                          </p>
                         </div>
                       </motion.div>
                     )}
@@ -208,7 +235,7 @@ const FAQComponent: React.FC<FAQComponentProps> = () => {
             ))}
           </AnimatePresence>
 
-          {filteredQuestions.length === 0 && (
+          {filteredQuestions.length === 0 && searchQuery.trim() !== '' && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
