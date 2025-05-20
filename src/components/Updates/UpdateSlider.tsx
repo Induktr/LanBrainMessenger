@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UpdateItem } from '../../data/updates'; // Import the shared UpdateItem interface
+import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
 
 interface UpdateSliderProps {
   updates: UpdateItem[]; // updates is an array of UpdateItem
 }
 
 const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
+  const { t } = useLanguage(); // Use the translation hook
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const slideVariants = {
@@ -69,16 +71,16 @@ const UpdateSlider: React.FC<UpdateSliderProps> = ({ updates }) => {
                 {updates[currentIndex].iconUrl && (
                   <img
                     src={updates[currentIndex].iconUrl}
-                    alt={updates[currentIndex].title}
+                    alt={t(updates[currentIndex].titleKey) || updates[currentIndex].originalTitle}
                     className="w-20 h-20 object-contain text-[var(--accent-primary)]" // Adjust size and add class
                   />
                 )}
               </div>
               <div className="w-2/3">
-                <h2 className="text-3xl font-bold mb-4">{updates[currentIndex].title}</h2>
-                <p className="text-lg text-[var(--text-secondary)] mb-6">{updates[currentIndex].description}</p>
+                <h2 className="text-3xl font-bold mb-4">{t(updates[currentIndex].titleKey)}</h2>
+                <p className="text-lg text-[var(--text-secondary)] mb-6">{t(updates[currentIndex].descriptionKey)}</p>
                 <div className="flex items-center text-sm text-[var(--text-secondary)]">
-                  <span>{updates[currentIndex].date}</span>
+                  <span>{t(updates[currentIndex].dateKey)}</span>
                 </div>
               </div>
             </div>

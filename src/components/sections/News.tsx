@@ -9,11 +9,11 @@ import { useLanguage } from '../../context/LanguageContext'; // Import useLangua
 interface NewsProps {} // Define an empty interface for component props
 
 interface UpdateItem {
-  // Define the structure of an update item based on its usage in NewsCard
-  title: string;
-  description: string;
-  iconUrl?: string;
-  // Add other properties if they exist in the actual updates data
+  iconUrl: string;
+  titleKey: string;
+  descriptionKey: string;
+  dateKey: string;
+  originalTitle?: string;
 }
 
 const News: React.FC<NewsProps> = () => {

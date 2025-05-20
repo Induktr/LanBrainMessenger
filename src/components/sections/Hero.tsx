@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = () => {
       variants={heroVariants.container}
       initial="hidden"
       animate="show"
-      className={`pt-12 md:pt-24 pb-8 md:pb-16 ${styles.neuralConnection}`}
+      className={`pt-10 sm:pt-12 md:pt-20 lg:pt-24 pb-6 sm:pb-8 md:pb-12 lg:pb-16 ${styles.neuralConnection}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = () => {
           >
             <motion.h1
               data-text={t('hero.title')} // Use translation key
-              className={`${styles.glitchText} text-[#F0F0F0] text-[var(--text-primary)] text-[20px] md:text-[24px] font-bold mb-4 md:mb-6`}
+              className={`${styles.glitchText} text-[#F0F0F0] text-[var(--text-primary)] text-[18px] sm:text-[20px] md:text-[24px] font-bold mb-3 sm:mb-4 md:mb-6`}
               variants={heroVariants.title}
             >
               {t('hero.title')} {/* Use translation key */}
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = () => {
 
             <motion.p
               variants={heroVariants.paragraph}
-              className="text-[#a6a6a6] text-[var(--text-secondary)] text-[14px] md:text-[16px] mb-6 md:mb-8 max-w-[90%] mx-auto lg:mx-0"
+              className="text-[#a6a6a6] text-[var(--text-secondary)] text-[13px] sm:text-[14px] md:text-[16px] mb-5 sm:mb-6 md:mb-8 max-w-[90%] mx-auto lg:mx-0"
             >
               {t('hero.subtitle')} {/* Use translation key */}
             </motion.p>
@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = () => {
               <div className="relative" ref={downloadButtonRef}>
                 <motion.button
                   onClick={() => setShowDownloadMenu(!showDownloadMenu)}
-                  className={`${styles.circularDistort} group inline-flex items-center gap-2 w-full bg-[var(--secondary)] sm:w-auto bg-[#2e2e2e] text-[var(--text-primary)] text-[#F0F0F0] px-6 md:px-8 py-3 rounded-full hover:bg-[#96c93d] hover:text-[#1a1a1a] transition-colors text-[14px] md:text-[16px]`}
+                  className={`${styles.circularDistort} group inline-flex items-center gap-2 w-full bg-[var(--secondary)] sm:w-auto bg-[#2e2e2e] text-[var(--text-primary)] text-[#F0F0F0] px-6 md:px-8 py-3 rounded-full hover:bg-[#96c93d] hover:text-[#1a1a1a] transition-colors text-[13px] sm:text-[14px] md:text-[16px]`}
                   whileTap={{ scale: 0.95 }}
                 >
                   <div className="relative w-5 h-5">

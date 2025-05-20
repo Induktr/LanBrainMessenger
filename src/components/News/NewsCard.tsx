@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
+import { useLanguage } from '../../context/LanguageContext'; // Import useLanguage
 
 interface NewsCardProps {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
+  originalTitle?: string;
   iconUrl?: string; // iconUrl is optional based on usage
   isMore?: boolean; // isMore has a default value
   isActive?: boolean; // isActive has a default value
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ title, description, iconUrl, isMore = false, isActive = false }) => {
+const NewsCard: React.FC<NewsCardProps> = ({ titleKey, descriptionKey, originalTitle, iconUrl, isMore = false, isActive = false }) => {
   const { theme } = useTheme();
+  const { t } = useLanguage(); // Use the translation hook
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 }); // Explicitly type state
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>): void => { // Add type annotations
@@ -68,11 +71,11 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, iconUrl, isMore
           <div className={`text-2xl ${isMore ? 'text-[var(--primary)]' : 'text-[var(--accent-primary)]'}`}>
             {iconUrl && (
               <img 
-                src={iconUrl} 
-                alt=""
+                src={iconUrl}
+                alt={t(titleKey) || originalTitle}
                 className="w-8 h-8 object-contain"
-                style={{ 
-                  filter: title === 'Performance Boost' 
+                style={{
+                  filter: titleKey === 'updates.items.performanceBoost.title'
                     ? 'brightness(0) saturate(100%) invert(7%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(103%) contrast(96%)'
                     : 'invert(var(--is-dark))'
                 }}
@@ -81,10 +84,10 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, iconUrl, isMore
           </div>
           <div className="flex-1">
             <h3 className={`font-semibold mb-2 ${isMore ? 'text-[var(--primary)]' : 'text-[var(--text-primary)]'}`}>
-              {title}
+              {t(titleKey)}
             </h3>
             <p className={isMore ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'}>
-              {description}
+              {t(descriptionKey)}
             </p>
           </div>
           {isMore && (
