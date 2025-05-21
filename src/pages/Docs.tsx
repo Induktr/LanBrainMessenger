@@ -18,322 +18,130 @@ const Docs: React.FC = () => {
             <CloudinaryArrowIcon className="rotate-180" />
             {t('backToHome')}
           </Link>
-          <h1 className="text-4xl font-bold mt-6 mb-4">{t('docs.design.title')}</h1>
+          <h1 className="text-4xl font-bold mt-6 mb-4">{t('docs.general.title')}</h1>
           <p className="text-[var(--text-secondary)]">
-            {t('docs.design.subtitle')}
+            {t('docs.general.subtitle')}
           </p>
         </div>
 
-        <Section id="intro">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section1.title')}</h2>
-          <p className="mb-4">
-            {t('docs.design.section1.name')}
-          </p>
-          <p className="mb-4">
-            {t('docs.design.section1.description')}
-          </p>
-          <p className="mb-4">
-            {t('docs.design.section1.goal')}
-          </p>
-          <p className="mb-2 font-semibold">{t('docs.design.section1.principles_title')}</p>
+        <Section id="introduction">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.introduction.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.introduction.content') }} />
+        </Section>
+
+        <Section id="vision-mission" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.visionAndMission.title')}</h2>
+          <h3 className="text-2xl font-bold mb-4">{t('docs.general.visionAndMission.visionTitle')}</h3>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.visionAndMission.visionContent') }} />
+          <h3 className="text-2xl font-bold mb-4">{t('docs.general.visionAndMission.missionTitle')}</h3>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.visionAndMission.missionContent') }} />
+        </Section>
+
+        <Section id="key-principles" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.keyPrinciples.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.keyPrinciples.intro') }} />
           <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section1.principles')) ? (
-              (t('docs.design.section1.principles') as string[]).map((principle, index) => (
+            {Array.isArray(t('docs.general.keyPrinciples.principles')) ? (
+              (t('docs.general.keyPrinciples.principles') as string[]).map((principle, index) => (
                 <li key={index} dangerouslySetInnerHTML={{ __html: principle }} />
               ))
             ) : (
-              <li>{t('docs.design.section1.principles')}</li> // Fallback if not an array
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.keyPrinciples.principles') }} /> // Fallback
+            )}
+          </ul>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.keyPrinciples.outro') }} />
+        </Section>
+
+        <Section id="about-mvp" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.aboutMVP.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.aboutMVP.intro') }} />
+          <h3 className="text-2xl font-bold mb-4">{t('docs.general.aboutMVP.featuresTitle')}</h3>
+          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
+            {Array.isArray(t('docs.general.aboutMVP.features')) ? (
+              (t('docs.general.aboutMVP.features') as string[]).map((feature, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: feature }} />
+              ))
+            ) : (
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.aboutMVP.features') }} /> // Fallback
+            )}
+          </ul>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.aboutMVP.outro') }} />
+        </Section>
+
+        <Section id="how-we-build" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.howWeBuild.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.howWeBuild.intro') }} />
+          <ul className="list-decimal list-inside mb-4 text-[var(--text-secondary)]">
+            {Array.isArray(t('docs.general.howWeBuild.steps')) ? (
+              (t('docs.general.howWeBuild.steps') as string[]).map((step, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: step }} />
+              ))
+            ) : (
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.howWeBuild.steps') }} /> // Fallback
+            )}
+          </ul>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.howWeBuild.outro') }} />
+        </Section>
+
+        <Section id="technology-stack" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.technologyStack.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.technologyStack.intro') }} />
+          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
+            {Array.isArray(t('docs.general.technologyStack.stack')) ? (
+              (t('docs.general.technologyStack.stack') as string[]).map((item, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+              ))
+            ) : (
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.technologyStack.stack') }} /> // Fallback
             )}
           </ul>
         </Section>
 
-        <Section id="color-palette" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section2.title')}</h2>
-          <p className="mb-4 text-[var(--text-secondary)]">
-            {t('docs.design.section2.intro')}
-          </p>
+        <Section id="architecture" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.architecture.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.architecture.intro') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.architecture.future') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.architecture.interaction') }} />
+        </Section>
 
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section2.light_mode_title')}</h3>
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full bg-[var(--surface)] rounded-lg overflow-hidden text-[var(--text-secondary)]">
-              <thead>
-                <tr className="bg-[var(--secondary)] text-[var(--text-primary)]">
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.light_mode_table')) ? (t('docs.design.section2.light_mode_table') as string[][])[0][0] : 'Category'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.light_mode_table')) ? (t('docs.design.section2.light_mode_table') as string[][])[0][1] : 'Color (HEX)'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.light_mode_table')) ? (t('docs.design.section2.light_mode_table') as string[][])[0][2] : 'Purpose'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.isArray(t('docs.design.section2.light_mode_table')) && (t('docs.design.section2.light_mode_table') as string[][]).slice(1).map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="border px-4 py-2" dangerouslySetInnerHTML={{ __html: cell }} />
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <Section id="project-status" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.projectStatus.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.projectStatus.content') }} />
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.projectStatus.progress') }} />
+        </Section>
 
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section2.dark_mode_title')}</h3>
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full bg-[var(--surface)] rounded-lg overflow-hidden text-[var(--text-secondary)]">
-              <thead>
-                <tr className="bg-[var(--secondary)] text-[var(--text-primary)]">
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.dark_mode_table')) ? (t('docs.design.section2.dark_mode_table') as string[][])[0][0] : 'Category'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.dark_mode_table')) ? (t('docs.design.section2.dark_mode_table') as string[][])[0][1] : 'Color (HEX)'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section2.dark_mode_table')) ? (t('docs.design.section2.dark_mode_table') as string[][])[0][2] : 'Purpose'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.isArray(t('docs.design.section2.dark_mode_table')) && (t('docs.design.section2.dark_mode_table') as string[][]).slice(1).map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="border px-4 py-2" dangerouslySetInnerHTML={{ __html: cell }} />
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section2.premium_colors_title')}</h3>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section2.premium_colors')) ? (
-              (t('docs.design.section2.premium_colors') as string[]).map((color, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: color }} />
+        <Section id="getting-started" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.gettingStarted.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.gettingStarted.intro') }} />
+          <ul className="list-decimal list-inside mb-4 text-[var(--text-secondary)]">
+            {Array.isArray(t('docs.general.gettingStarted.steps')) ? (
+              (t('docs.general.gettingStarted.steps') as string[]).map((step, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: step }} />
               ))
             ) : (
-              <li>{t('docs.design.section2.premium_colors')}</li> // Fallback
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.gettingStarted.steps') }} /> // Fallback
             )}
           </ul>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.gettingStarted.outro') }} />
+        </Section>
 
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section2.color_application_title')}</h3>
+        <Section id="documentation-system" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.documentationSystem.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.documentationSystem.intro') }} />
           <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section2.color_application')) ? (
-              (t('docs.design.section2.color_application') as { title: string; items: string[] }[]).map((example, index) => (
-                <li key={index}>
-                  <strong dangerouslySetInnerHTML={{ __html: example.title }} />
-                  {Array.isArray(example.items) && (
-                    <ul className="list-circle list-inside ml-4">
-                      {example.items.map((item, itemIndex) => (
-                        <li key={itemIndex} dangerouslySetInnerHTML={{ __html: item }} />
-                      ))}
-                    </ul>
-                  )}
-                </li>
+            {Array.isArray(t('docs.general.documentationSystem.links')) ? (
+              (t('docs.general.documentationSystem.links') as string[]).map((link, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: link }} />
               ))
             ) : (
-              <li>{t('docs.design.section2.color_application')}</li> // Fallback
-            )}
-          </ul>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section2.usage_recommendations_title')}</h3>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section2.usage_recommendations')) ? (
-              (t('docs.design.section2.usage_recommendations') as string[]).map((rec, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: rec }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section2.usage_recommendations')}</li> // Fallback
+              <li dangerouslySetInnerHTML={{ __html: t('docs.general.documentationSystem.links') }} /> // Fallback
             )}
           </ul>
         </Section>
 
-        <Section id="typography" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section3.title')}</h2>
-          <p className="mb-4 text-[var(--text-secondary)]">
-            {t('docs.design.section3.intro')}
-          </p>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section3.primary_font_title')}</h3>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section3.primary_font')) ? (
-              (t('docs.design.section3.primary_font') as string[]).map((font, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: font }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section3.primary_font')}</li> // Fallback
-            )}
-          </ul>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section3.sizes_styles_title')}</h3>
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full bg-[var(--surface)] rounded-lg overflow-hidden text-[var(--text-secondary)]">
-              <thead>
-                <tr className="bg-[var(--secondary)] text-[var(--text-primary)]">
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section3.sizes_styles_table')) ? (t('docs.design.section3.sizes_styles_table') as string[][])[0][0] : 'Level'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section3.sizes_styles_table')) ? (t('docs.design.section3.sizes_styles_table') as string[][])[0][1] : 'Size'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section3.sizes_styles_table')) ? (t('docs.design.section3.sizes_styles_table') as string[][])[0][2] : 'Weight'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section3.sizes_styles_table')) ? (t('docs.design.section3.sizes_styles_table') as string[][])[0][3] : 'Usage'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.isArray(t('docs.design.section3.sizes_styles_table')) && (t('docs.design.section3.sizes_styles_table') as string[][]).slice(1).map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="border px-4 py-2" dangerouslySetInnerHTML={{ __html: cell }} />
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="mb-2 font-semibold">{t('docs.design.section3.notes_title')}</p>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section3.notes')) ? (
-              (t('docs.design.section3.notes') as string[]).map((note, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: note }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section3.notes')}</li> // Fallback
-            )}
-          </ul>
-        </Section>
-
-        <Section id="animations" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section4.title')}</h2>
-          <p className="mb-4 text-[var(--text-secondary)]">
-            {t('docs.design.section4.intro')}
-          </p>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section4.principles_title')}</h3>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section4.principles')) ? (
-              (t('docs.design.section4.principles') as string[]).map((principle, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: principle }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section4.principles')}</li> // Fallback
-            )}
-          </ul>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section4.list_title')}</h3>
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full bg-[var(--surface)] rounded-lg overflow-hidden text-[var(--text-secondary)]">
-              <thead>
-                <tr className="bg-[var(--secondary)] text-[var(--text-primary)]">
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][0] : 'Name'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][1] : 'Description'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][2] : 'Trigger'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][3] : 'Parameters'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][4] : 'Related Principles'}</th>
-                  <th className="px-4 py-2 text-left">{Array.isArray(t('docs.design.section4.list_table')) ? (t('docs.design.section4.list_table') as string[][])[0][5] : 'Colors (Light/Dark)'}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.isArray(t('docs.design.section4.list_table')) && (t('docs.design.section4.list_table') as string[][]).slice(1).map((row, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {row.map((cell, cellIndex) => (
-                      <td key={cellIndex} className="border px-4 py-2" dangerouslySetInnerHTML={{ __html: cell }} />
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <h3 className="text-2xl font-bold mb-4">{t('docs.design.section4.implementation_examples_title')}</h3>
-           <p className="mb-2 font-semibold">{t('docs.design.section4.css_ripple_title')}</p>
-           <pre className="bg-[var(--surface)] p-2 rounded-md text-sm overflow-x-auto mb-4">
-            <code className="text-[var(--text-primary)]">
-              {`.ripple {
-  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Or other colors/gradient */
-  border-radius: 50%;
-  animation: ripple 0.3s ease-out;
-}
-@keyframes ripple {
-  to { transform: scale(2); opacity: 0; }
-}`}
-            </code>
-          </pre>
-
-           <p className="mb-2 font-semibold">{t('docs.design.section4.rn_icon_title')}</p>
-           <pre className="bg-[var(--surface)] p-2 rounded-md text-sm overflow-x-auto mb-4">
-            <code className="text-[var(--text-primary)]">
-              {`import Animated from 'react-native-reanimated'; // Example library
-import Icon from 'react-native-vector-icons/MaterialIcons'; // Example library
-
-const color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';
-// Creating an animated Icon component
-const AnimatedIcon = Animated.createAnimatedComponent(Icon);
-
-// Example usage with scale animation (assuming 'scale' is an Animated.Value)
-<AnimatedIcon name="volume-up" color={color} style={{ transform: [{ scale: scale }] }} />`}
-            </code>
-          </pre>
-        </Section>
-
-        <Section id="alignment-grid" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section5.title')}</h2>
-          <p className="mb-4 text-[var(--text-secondary)]">
-            {t('docs.design.section5.intro')}
-          </p>
-
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section5.base_grid')) ? (
-              (t('docs.design.section5.section5.base_grid') as string[]).map((item, index) => (
-                <li key={`base-grid-${index}`} dangerouslySetInnerHTML={{ __html: item }} />
-              ))
-            ) : (
-              <li dangerouslySetInnerHTML={{ __html: t('docs.design.section5.base_grid') }} /> // Fallback
-            )}
-            {Array.isArray(t('docs.design.section5.alignment')) ? (
-              <li>
-                <strong dangerouslySetInnerHTML={{ __html: t('docs.design.section5.alignment_title') }} />
-                <ul className="list-circle list-inside ml-4">
-                  {(t('docs.design.section5.alignment') as string[]).map((item, index) => (
-                    <li key={`alignment-${index}`} dangerouslySetInnerHTML={{ __html: item }} />
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li dangerouslySetInnerHTML={{ __html: t('docs.design.section5.alignment') }} /> // Fallback
-            )}
-             {Array.isArray(t('docs.design.section5.adaptability')) ? (
-              <li>
-                <strong dangerouslySetInnerHTML={{ __html: t('docs.design.section5.adaptability_title') }} />
-                <ul className="list-circle list-inside ml-4">
-                  {(t('docs.design.section5.adaptability') as string[]).map((item, index) => (
-                    <li key={`adaptability-${index}`} dangerouslySetInnerHTML={{ __html: item }} />
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li dangerouslySetInnerHTML={{ __html: t('docs.design.section5.adaptability') }} /> // Fallback
-            )}
-          </ul>
-        </Section>
-
-        <Section id="accessibility" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section6.title')}</h2>
-          <p className="mb-4 text-[var(--text-secondary)]">
-            {t('docs.design.section6.intro')}
-          </p>
-
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section6.principles')) ? (
-              (t('docs.design.section6.principles') as string[]).map((principle, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: principle }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section6.principles')}</li> // Fallback
-            )}
-          </ul>
-        </Section>
-
-        <Section id="notes-recommendations" className="mt-8">
-          <h2 className="text-3xl font-bold mb-4">{t('docs.design.section7.title')}</h2>
-          <ul className="list-disc list-inside mb-4 text-[var(--text-secondary)]">
-            {Array.isArray(t('docs.design.section7.notes')) ? (
-              (t('docs.design.section7.notes') as string[]).map((note, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: note }} />
-              ))
-            ) : (
-              <li>{t('docs.design.section7.notes')}</li> // Fallback
-            )}
-          </ul>
+        <Section id="contribution" className="mt-8">
+          <h2 className="text-3xl font-bold mb-4">{t('docs.general.contribution.title')}</h2>
+          <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.contribution.content') }} />
         </Section>
 
       </Container>
