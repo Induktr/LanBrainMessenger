@@ -7,16 +7,51 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Docs: React.FC = () => {
   const { t } = useLanguage();
+
+  const sections = [
+    { id: 'introduction', titleKey: 'docs.general.introduction.title' },
+    { id: 'vision-mission', titleKey: 'docs.general.visionAndMission.title' },
+    { id: 'key-principles', titleKey: 'docs.general.keyPrinciples.title' },
+    { id: 'about-mvp', titleKey: 'docs.general.aboutMVP.title' },
+    { id: 'how-we-build', titleKey: 'docs.general.howWeBuild.title' },
+    { id: 'technology-stack', titleKey: 'docs.general.technologyStack.title' },
+    { id: 'architecture', titleKey: 'docs.general.architecture.title' },
+    { id: 'project-status', titleKey: 'docs.general.projectStatus.title' },
+    { id: 'getting-started', titleKey: 'docs.general.gettingStarted.title' },
+    { id: 'documentation-system', titleKey: 'docs.general.documentationSystem.title' },
+    { id: 'contribution', titleKey: 'docs.general.contribution.title' },
+  ];
+
   return (
-    <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)]">
-      <Container className="py-16">
+    <div className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)] flex">
+      {/* Sidebar Navigation */}
+      <aside className="w-64 p-8 border-r border-[var(--border)] sticky top-0 h-screen overflow-y-auto hidden lg:block">
+        <h2 className="text-2xl font-bold mb-6">{t('docs.general.title')}</h2>
+        <nav>
+          <ul>
+            {sections.map((section) => (
+              <li key={section.id} className="mb-2">
+                <a
+                  href={`#${section.id}`}
+                  className="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+                >
+                  {t(section.titleKey)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <Container className="flex-1 py-16 px-8 lg:px-16">
         <div className="mb-12">
           <Link
             to="/"
             className="inline-flex items-center gap-2 mt-8 text-[var(--accent-primary)] hover:text-[var(--accent-hover)] transition-colors"
           >
             <CloudinaryArrowIcon className="rotate-180" />
-            {t('backToHome')}
+            {t('common.backToHome')}
           </Link>
           <h1 className="text-4xl font-bold mt-6 mb-4">{t('docs.general.title')}</h1>
           <p className="text-[var(--text-secondary)]">
@@ -143,7 +178,6 @@ const Docs: React.FC = () => {
           <h2 className="text-3xl font-bold mb-4">{t('docs.general.contribution.title')}</h2>
           <p className="mb-4" dangerouslySetInnerHTML={{ __html: t('docs.general.contribution.content') }} />
         </Section>
-
       </Container>
     </div>
   );

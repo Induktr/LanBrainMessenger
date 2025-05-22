@@ -60,6 +60,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       try {
         const loadedTranslations = await loadTranslations(language);
         setCurrentTranslations(loadedTranslations);
+        console.log('Loaded translations:', loadedTranslations);
       } catch (error) {
         console.error("Failed to load translations in context:", error);
         // Optionally set a default or show an error
