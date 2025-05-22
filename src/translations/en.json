@@ -163,20 +163,6 @@
           "question": "What are the project's limitations at the current stage (MVP)?",
           "answer": "*   Limited set of features compared to the vision (no calls, Premium, enhanced security).\n*   Limited multilingualism and accessibility options (expansion planned).\n*   The architecture is currently monolithic, which imposes limitations on independent scaling of individual parts.\n*   There may be performance limitations under load significantly exceeding the target for MVP (~1000 simultaneous users) before implementing deep optimizations and microservices."
         }
-      },
-      "learnMoreContribute": {
-        "q1": {
-          "question": "Where can I get more detailed information about the project?",
-          "answer": "All detailed documentation is available in the repository. We strive to make it as complete and up-to-date as possible:\n\n*   [Requirements Documentation](link): What we are building.\n*   [Development Guide](link): How we write code.\n*   [Technical Documentation](link): Architecture and stack.\n*   [API Specification](link): Component interaction.\n*   [Integrations Documentation](link): External services.\n*   [Security Guide](link): Protecting the ASSET.\n*   [Performance Guide](link): How to make the system fast.\n*   [Monitoring and Logging Guide](link): State visibility.\n*   [UI Documentation](link): Visual design.\n*   [Sound Documentation](link): Audio system.\n*   [Support and Maintenance Guide](link): Life after release.\n*   [Error Specification](link): Handling failures.\n*   [Testing Guide](link): Quality assurance.\n*   [Microservice Migration Plan](link): Evolution strategy.\n*   [MVP Requirements Instruction](link): MVP details.\n\n(Ensure all [link] point to the corresponding files in your repository)"
-        },
-        "q2": {
-          "question": "How can I join the project development or contribute?",
-          "answer": "We welcome contributions to building this digital ASSET (Principle 10)! You can contribute in various ways: code, design/UX suggestions, documentation improvements, testing assistance. Please refer to the <a href=\"CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">Contribution Guide</a> (if available). Your participation is part of the Power of Assistance (Margulan's principle) that makes the project stronger."
-        },
-        "q3": {
-          "question": "Where can I ask additional questions?",
-          "answer": "If you have questions not covered by this documentation, please use the Issues section in the GitHub repository."
-        }
       }
     }
   },
@@ -434,7 +420,7 @@
         ],
         "list_title": "4.2. Список Анимаций (Примеры)",
         "list_table": [
-          ["Название", "Описание", "Триггер", "Параметры", "Связь с Принципами", "Кольоры (Light/Dark)"],
+          ["Название", "Описание", "Триггер", "Параметры", "Связь с Принципами", "Цвета (Light/Dark)"],
           ["Переключение слайдов", "Сдвиг слайдов (Welcome Screen)", "Свайп/клик по стрелке", "0.3 сек, slide left/right", "P2 (Онбординг)", "#96C93D / #96C93D"],
           ["Открытие чата", "Чат появляется снизу вверх", "Клик по чату в списке", "0.3 сек, ease-in-out", "P2 (Навигация)", "#00BFFF / #00BFFF"],
           ["Нажатие кнопки", "Визуальный фидбек при клике (уменьшение)", "Клик по кнопке", "0.2 сек, scale", "P2 (Фидбек)", "Градиент #F2F047→#1ED94F"],
@@ -447,9 +433,9 @@
         ],
         "implementation_examples_title": "4.3. Примеры Реализации (Фрагменты кода)",
         "css_ripple_title": "CSS для Ripple-эффекта:",
-        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Або інші кольори/градієнт */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
+        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Или другие цвета/градиент */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
         "rn_icon_title": "React Native для анімованої іконки:",
-        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Приклад бібліотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Приклад бібліотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Створення анімованого компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Приклад використання з анімацією scale (припускаючи, що 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Создание анімованого компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Пример использования с анимацией scale (припускаючи, что 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
       },
       "section5": {
         "title": "5. Выравнивание и Сетка: Структура и Порядок (Принцип 9: Система)",
@@ -491,120 +477,180 @@
           "<strong>Дизайн как часть Процесса Кайдзен:</strong> Дизайн-решения анализируются и улучшаются на основе обратной связи и реального использования, интегрируясь в общий процесс Кайдзен (Принцип 9, 14)."
         ]
       }
+    },
+    "localizationGuide": {
+      "title": "Руководство по Локализации BrainMessenger",
+      "subtitle": "Доступность и Масштабирование",
+      "section1": {
+        "title": "1. Введение: Расширение Ценности через Доступность",
+        "name": "BrainMessenger Design System",
+        "description": "Это руководство описывает процесс локализации BrainMessenger — ключевой шаг для обеспечения доступности и ценности (Принцип 2) продукта для широкой аудитории по всему миру. Мы рассматриваем локализацию не просто как перевод строк, а как систематический процесс (Принцип 9) адаптации интерфейса и контента, который позволит нам масштабировать наше влияние (Принцип 2, 8).",
+        "goal": "Сделать BrainMessenger понятным и удобным для пользователей из разных культур, начиная с базового набора языков и создавая надежную систему (Принцип 9) для легкого добавления новых в будущем.",
+        "current_status": "Базовая поддержка английского языка (MVP). Идет планирование и подготовка к добавлению новых языков в рамках текущих этапов разработки (см. Дорожную карту).",
+        "principles_title": "Принципы, которыми руководствуется локализация:",
+        "principles": [
+          "Создание Ценности (Принцип 2): Локализация напрямую повышает ценность продукта для неанглоязычных пользователей.",
+          "Система и Оптимизация (Принцип 9): Процесс локализации строится как четкая, повторяемая система для эффективности.",
+          "Прагматизм и Реализм (Принцип 12): Выбор начального набора языков основывается на потенциальном охвате и ресурсах.",
+          "Внешняя Экспертиза и Обратная Связь (Принцип 14): Привлечение профессиональных переводчиков и сбор обратной связи от пользователей на разных языках."
+        ]
+      },
+      "section2": {
+        "title": "2. Цели Локализации",
+        "goals": [
+          "Обеспечить поддержку минимум 5 ключевых языков (Английский, Испанский, Французский, Русский, Арабский) для старта MVP — (Требование NFR-11, соответствующее Принципу 12: Прагматизм).",
+          "Реализовать адаптацию пользовательского интерфейса для языков с направлением письма справа налево (RTL), таких как арабский (Принцип 2: Доступность).",
+          "Поддерживать единообразие терминологии и стиля во всех переводах, используя централизованные инструменты (Принцип 9: Система).",
+          "Создать эффективный и простой процесс добавления новых языков по мере роста базы пользователей и поступления запросов (Принцип 9: Масштабирование, Принцип 12: Прагматизм, Принцип 14: Обратная связь)."
+        ]
+      },
+      "section3": {
+        "title": "3. Инструменты и Технологии: Надежный Фундамент (Принцип 8, 9)",
+        "intro": "Выбор инструментов основан на прагматизме (Принцип 12), надежности и поддержке системного подхода (Принцип 9).",
+        "tools_table": [
+          ["Инструмент", "Назначение", "Установка/Конфигурация"],
+          ["i18next", "Основная библиотека для управления переводами в Frontend (React Native). Поддерживает интерполяцию, контексты.", "npm install i18next react-i18next"],
+          ["react-intl", "Библиотека для локализованного форматирования дат, чисел, валют в Frontend.", "npm install react-intl"],
+          ["Transifex", "Профессиональная платформа для управления переводами, привлечения переводчиков и обеспечения качества перевода.", "Регистрация на transifex.com"],
+          ["rtlcss", "Утилита для автоматической трансформации CSS-стилей для поддержки RTL-языков.", "npm install -g rtlcss (глобально) или npm install rtlcss --save-dev"],
+          ["JSON файлы", "Формат хранения переводов.", "Стандартный."]
+        ]
+      },
+      "section4": {
+        "title": "4. Структура Файлов Переводов: Порядок в Системе (Принцип 9)",
+        "intro": "Переводы организованы в четкой файловой структуре для удобства управления (Принцип 9: Система).",
+        "location_title": "4.1. Расположение",
+        "location_content": "Файлы переводов хранятся в директории locales внутри frontend/src:\n\nfrontend/\n├── src/\n│ ├── locales/\n│ │ ├── en.json # Английский (базовый)\n│ │ ├── es.json # Испанский\n│ │ ├── fr.json # Французский\n│ │ ├── ru.json # Русский\n│ │ ├── ar.json # Арабский (пример RTL)\n│ └── index.ts # Конфигурация i18next",
+        "format_title": "4.2. Формат JSON: Контекст и Гибкость",
+        "format_content": "Ключи: Используется camelCase. Ключи должны быть описательными и отражать контекст использования строки (например, sendButton вместо просто send).\n\nЗначения: Содержат переводимый текст. Поддерживается интерполяция для вставки динамических данных (например, имена пользователей).",
+        "format_example": "Пример en.json:\n\n```json\n{\n  \"welcomeTitle\": \"Welcome to BrainMessenger!\",\n  \"sendButton\": \"Send\",\n  \"errors\": {\n    \"unauthorized\": \"Please log in again to continue.\",\n    \"notFound\": \"The requested item could not be found.\"\n  },\n  \"chat\": {\n    \"newMessageNotification\": \"New message from {{name}}\",\n    \"unreadCount\": \"{{count}} unread messages\"\n  },\n  \"settings\": {\n    \"language\": \"Language\",\n    \"theme\": \"Theme\"\n  }\n}\n```",
+        "rtl_flag_title": "4.3. RTL-флаг: Адаптация Интерфейса",
+        "rtl_flag_content": "Для языков с направлением справа налево в начало соответствующего JSON-файла добавляется метаданные для индикации:",
+        "rtl_flag_example": "```json\n{\n  \"rtl\": true,\n  \"welcomeTitle\": \"مرحبًا بك في BrainMessenger!\"\n  // ... остальные переводы\n}\n```\n\nЭтот флаг используется Frontend-приложением для соответствующей адаптации стилей и макета."
+      },
+      "section5": {
+        "title": "5. Настройка Локализации: Интеграция в Систему (Принцип 9)",
+        "intro": "Локализация интегрируется как в Frontend (для отображения переведенного UI), так и в Backend (для возврата локализованных ошибок или уведомлений).",
+        "frontend_title": "5.1. Frontend (React Native): Использование i18next",
+        "frontend_init_title": "Инициализация i18next:",
+        "frontend_init_code": "В главном файле приложения или файла конфигурации (frontend/src/index.ts или подобном):\n\n```jsx\nimport i18n from 'i18next'\nimport { initReactI18next } from 'react-i18next'\n\n// Импорт всех файлов локалей\nimport en from './locales/en.json'\nimport es from './locales/es.json'\nimport fr from './locales/fr.json'\nimport ru from './locales/ru.json'\nimport ar from './locales/ar.json'\n\n// Определение ресурсов\nconst resources = {\n  en: { translation: en },\n  es: { translation: es },\n  fr: { translation: fr },\n  ru: { translation: ru },\n  ar: { translation: ar },\n};\n\ni18n\n  .use(initReactI18next) // Подключение react-i18next\n  .init({\n    resources,\n    lng: 'en', // Язык по умолчанию при первом запуске (может определяться по системным настройкам или выбору пользователя)\n    fallbackLng: 'en', // Резервный язык, если текущий перевод отсутствует\n    interpolation: {\n      escapeValue: false // Позволяет использовать HTML теги в переводах (осторожно!)\n    }\n  });\n\nexport default i18n;\n```",
+        "frontend_usage_title": "Использование перевода в компонентах:",
+        "frontend_usage_code": "Используйте хук useTranslation для доступа к функции t и объекту i18n.\n\n```jsx\nimport { useTranslation } from 'react-i18next';\nimport { Text, Button, View } from 'react-native';\n\nconst WelcomeScreen = () => {\n  const { t, i18n } = useTranslation(); // Получаем функцию t и объект i18n\n\n  return (\n    <View>\n      {/* Использование простого перевода */}\n      <Text>{t('welcomeTitle')}</Text>\n      \n      {/* Использование перевода с интерполяцией */}\n      {/* Предполагается, что где-то есть состояние unreadCount */}\n      <Text>{t('chat.unreadCount', { count: 5 })}</Text> \n\n      {/* Использование перевода для текста кнопки */}\n      <Button title={t('sendButton')} onPress={sendMessage} />\n      \n      {/* Пример смены языка */}\n      <Button title={t('settings.language')} onPress={() => i18n.changeLanguage('ar')} />\n    </View>\n  );\n};\n```",
+        "frontend_change_title": "Смена языка:",
+        "frontend_change_content": "Язык меняется вызовом i18n.changeLanguage('код_языка'). Обычно это делается в настройках пользователя.",
+        "backend_title": "5.2. Backend (NestJS): Локализация Ошибок и Уведомлений",
+        "backend_intro": "Backend может возвращать локализованные сообщения об ошибках или уведомления, опираясь на язык, переданный Frontend (например, в заголовке Accept-Language или настройках пользователя).",
+        "backend_code": "Использование локализованных сообщений при выбрасывании ошибок:\n\n```typescript\nimport { HttpException, HttpStatus } from '@nestjs/common';\nimport { t } from 'i18next'; // Предполагается, что i18next инициализирован и в Backend\n\n// В сервисе или контроллере\nif (!user) {\n  // Определяем язык пользователя (например, из request.headers['accept-language'])\n  const userLang = determineUserLanguage(request); \n  throw new HttpException(t('errors.unauthorized', { lng: userLang }), HttpStatus.UNAUTHORIZED);\n}\n```",
+        "backend_note": "Локаль пользователя определяется из заголовка Accept-Language (стандартный подход) или сохраняется в профиле пользователя в базе данных после его выбора в настройках приложения.",
+        "rtl_adaptation_title": "5.3. RTL-адаптация (Справа Налево): Зеркальное Отображение Системы",
+        "rtl_adaptation_intro": "Для языков с RTL (арабский, иврит и др.) необходимо зеркально отобразить макет и некоторые элементы интерфейса.",
+        "rtl_css_title": "Стили (CSS/CSS-in-JS):",
+        "rtl_css_code": "Используйте rtlcss в процессе сборки или условные стили в коде. rtlcss автоматически преобразует свойства вроде margin-left, padding-right, text-align: left и т.п. в их RTL-эквиваленты (margin-right, padding-left, text-align: right).\n\n```css\n/* Исходный CSS для LTR */\n.message-bubble {\n  margin-left: 10px;\n  text-align: left;\n}\n/* После обработки rtlcss для RTL */\n.message-bubble {\n  margin-right: 10px;\n  text-align: right;\n}\n```",
+        "rtl_rn_title": "React Native:",
+        "rtl_rn_code": "React-Native имеет встроенную поддержку RTL через I18nManager.\n\n```jsx\nimport { I18nManager } from 'react-native';\nimport i18n from './index'; // Ваш файл инициализации i18next\n\n// В главном файле приложения, перед рендером\nconst isRTL = i18n.language === 'ar' || i18n.language === 'he'; // Проверяем, является ли текущий язык RTL\n\n// ForceRTL может потребовать перезагрузки приложения для полной силы\nif (isRTL !== I18nManager.isRTL) {\n  I18nManager.forceRTL(isRTL);\n  // Optional: Restart the app to apply RTL layout fully\n  // RNRestart.Restart(); \n}\n\n// Некоторые стили могут требовать ручной адаптации, если auto-conversion недостаточно\nconst containerStyle = {\n  flexDirection: isRTL ? 'row-reverse' : 'row',\n  textAlign: isRTL ? 'right' : 'left',\n};\n```",
+        "rtl_icons_title": "Иконки:",
+        "rtl_icons_content": "Некоторые иконки (например, стрелки \"назад\", \"далее\") должны быть зеркально отображены для RTL. Это можно делать условно в коде или использовать RTL-ready наборы иконок."
+      },
+      "section6": {
+        "title": "6. Процесс Добавления Нового Языка: Масштабируемая Система (Принцип 9)",
+        "intro": "Процесс добавления нового языка построен как четкая, повторяемая последовательность действий для обеспечения эффективности (Принцип 9).",
+        "file_title": "Создание базового файла перевода:",
+        "file_content": "Скопируйте актуальный en.json (или другой наиболее полный файл) в frontend/src/locales/<code>.json, где <code> — двухбуквенный код нового языка (например, de.json для немецкого).\nДобавьте rtl: true в начало файла, если новый язык RTL.",
+        "transifex_title": "Загрузка на платформу переводов (Transifex):",
+        "transifex_content": "Загрузите новый файл <code>.json в проект BrainMessenger на Transifex. Система автоматически определит, какие строки нуждаются в переводе.",
+        "process_title": "Организация процесса перевода:",
+        "process_content": "Назначьте переводчиков (профессионалов или проверенных участников сообщества, Принцип 14) для нового языка в Transifex.\nОтвечайте на их вопросы по контексту строк.\nКонтролируйте прогресс перевода в Transifex.",
+        "export_title": "Экспорт и Интеграция перевода:",
+        "export_content": "После завершения перевода экспортируйте готовый файл <code>.json из Transifex.\nПоместите его обратно в директорию frontend/src/locales/.\nИмпортируйте новый ресурс в файле инициализации i18next (frontend/src/index.ts) и добавьте его в объект resources.",
+        "ui_title": "Добавление опции выбора языка в UI:",
+        "ui_content": "Добавьте новый язык в список доступных языков в разделе \"Настройки\" > \"Язык\".",
+        "testing_title": "Тестирование:",
+        "testing_intro": "Критически важный шаг (Принцип 3: Качество). Переключите язык в настройках приложения.",
+        "testing_scenarios": [
+          "Корректность перевода всех строк в UI.",
+          "Отсутствие обрезки текста (некоторые языки длиннее английского).",
+          "Корректное отображение UI для RTL-языков (зеркальность, выравнивание).",
+          "Интерполяция и Форматирование: Проверьте экраны, где используются динамические данные (имена, счетчики, даты, числа), убедитесь, что они форматируются правильно для текущей локали.",
+          "Локализованные ошибки: Инициируйте различные ошибки (неправильный логин, отсутствие элемента), проверьте, что сообщения об ошибках приходят на выбранном языке."
+        ]
+      },
+      "section7": {
+        "title": "7. Поддерживаемые Языки (Начальный Список и План)",
+        "intro": "Начальный список языков, выбранный по прагматическим соображениям (Принцип 12) и потенциальному охвату.",
+        "languages_table": [
+          ["Код", "Язык", "Направление", "Статус", "План (Q 2025)"],
+          ["en", "Английский", "LTR", "Реализован (Базовый)", "-"],
+          ["es", "Испанский", "LTR", "В плане (Q3)", "Q3"],
+          ["fr", "Французский", "LTR", "В плане (Q3)", "Q3"],
+          ["ru", "Русский", "LTR", "В плане (Q3)", "Q3"],
+          ["ar", "Арабский", "RTL", "В плане (Q3, требуется RTL)", "Q3"]
+        ],
+        "expansion_note": "Расширение списка: Новые языки будут добавляться на основе обратной связи (Принцип 14) и анализа потенциальной ценности (Принцип 2) для роста аудитории (например, если >10% запросов о поддержке нового языка)."
+      },
+      "section8": {
+        "title": "8. Рекомендации: Лучшие Практики Локализации",
+        "dev_title": "8.1. Для Разработчиков (Пишем Код, Готовый к Миру)",
+        "dev_points": [
+          "Не хардкодьте строки! Все строки, которые видит пользователь, должны быть вынесены в файлы локализации и использоваться через функцию t('ключ') (Принцип 9: Система).",
+          "Используйте интерполяцию для строк с переменными данными (t('chat.newMessageNotification', { name: user.name })), а не конкатенацию строк в коде.",
+          "Учитывайте плюрализацию (формы единственного/множественного числа) при работе со счетчиками ({{count}} unread messages). i18next и react-intl поддерживают это.",
+          "Используйте react-intl для всех операций с датами, числами, валютами, чтобы их формат был корректным для каждой локали (Принцип 3: Качество, Принцип 2: Ценность).",
+          "Тестируйте UI с длинными переводами (например, немецкий, который часто длиннее английского) и RTL-языками, чтобы убедиться, что макет не ломается и текст не обрезается (Принцип 3: Качество)."
+        ],
+        "design_title": "8.2. Для Дизайнеров (Рисуем Макеты, Гибкие к Языкам)",
+        "design_points": [
+          "Учитывайте, что текст на других языках может быть на 30% (и более) длиннее английского. Оставляйте достаточно пространства в компонентах.",
+          "Проектируйте макеты с учетом зеркального отображения для RTL. Иконки направлений, расположение текста и элементов должны меняться (Принцип 2: Доступность)."
+        ],
+        "translator_title": "8.3. Для Переводчиков (Создаем Понятный Контент)",
+        "translator_points": [
+          "Сохраняйте контекст. Одно и то же английское слово может переводиться по-разному в зависимости от того, где оно используется (например, \"Send\" для сообщения или для заявки). Платформы вроде Transifex помогают добавлять контекстные комментарии.",
+          "Придерживайтесь последовательной терминологии, используйте глоссарий, если он есть.",
+          "Сохраняйте тон приложения (дружелюбный, но профессиональный, особенно в системных сообщениях и ошибках).",
+          "Используйте возможности интерполяции и плюрализации в файлах перевода."
+        ]
+      },
+      "section9": {
+        "title": "9. Форматирование (Даты, Числа, Валюты): Детали, Создающие Качество (Принцип 3)",
+        "intro": "Корректное отображение локализованных данных критически важно для качества (Принцип 3) и удобства (Принцип 2).",
+        "dates_title": "Даты и Время:",
+        "dates_code": "```jsx\nimport { FormattedDate, FormattedTime } from 'react-intl';\n\n// Отобразит дату в формате, соответствующем текущей локали\n<FormattedDate value={new Date()} /> // Например, \"3/14/2025\" (en-US) или \"14.3.2025\" (de-DE)\n<FormattedDate value={new Date()} weekday=\"long\" year=\"numeric\" month=\"long\" day=\"numeric\" /> // \"Friday, March 14, 2025\"\n\n// Отобразит время\n<FormattedTime value={new Date()} /> // Например, \"3:00:00 PM\" (en-US) или \"15:00:00\" (de-DE)\n```",
+        "numbers_title": "Числа и Валюты:",
+        "numbers_code": "```jsx\nimport { FormattedNumber, FormattedCurrency } from 'react-intl';\n\n// Отобразит число с локальным разделителем тысяч и десятичным знаком\n<FormattedNumber value={1234.56} /> // \"1,234.56\" (en-US) или \"1.234,56\" (de-DE)\n\n// Отобразит число как процент\n<FormattedNumber value={0.75} style=\"percent\" /> // \"75%\"\n\n// Отобразит число как валюту (требует кода валюты)\n<FormattedCurrency value={123.45} currency=\"USD\" /> // \"$123.45\" (en-US)\n```\n\nДля работы с react-intl необходимо обернуть ваше приложение в IntlProvider и загрузить соответствующие данные локали (react-intl/locale-data)."
+      },
+      "section10": {
+        "title": "10. Тестирование Локализации: Гарантия Качества (Принцип 3, 9)",
+        "intro": "Тестирование — неотъемлемая часть системы обеспечения качества (Принцип 3, 9).",
+        "scenarios_title": "Сценарии Тестирования:",
+        "scenarios_points": [
+          "Переключение языка: Убедитесь, что смена языка в настройках мгновенно (или после перезапуска, если требуется I18nManager) применяет новый перевод и RTL-макет.",
+          "Отображение всех строк: Проверьте основные экраны и диалоги, чтобы убедиться, что все видимые пользователю строки переведены.",
+          "Длинный текст: Проверьте UI с языками, известными своей длиной (например, немецкий, русский), чтобы убедиться, что текст не обрезается, элементы не накладываются друг на друга.",
+          "RTL-интерфейс: Тщательно проверьте UI на арабском (или другом RTL-языке): направление текста, выравнивание элементов, отображение иконок направлений, положение скроллбаров.",
+          "Интерполяция и Форматирование: Проверьте экраны, где используются динамические данные (имена, счетчики, даты, числа), убедитесь, что они форматируются правильно для текущей локали.",
+          "Локализованные ошибки: Инициируйте различные ошибки (неправильный логин, отсутствие элемента), проверьте, что сообщения об ошибках приходят на выбранном языке."
+        ],
+        "tools_title": "Инструменты:",
+        "tools_points": [
+          "Ручное тестирование: Основной метод. Тестирование на реальных устройствах с разными локалями.",
+          "Автоматизированные тесты (Cypress/detox): Можно написать тесты, которые проверяют наличие определенных ключей перевода на странице или даже делают скриншоты UI для сравнения LTR/RTL макетов (Принцип 9: Система)."
+        ],
+        "criteria_title": "Критерии Успеха Тестирования:",
+        "criteria_points": [
+          "100% пользовательских строк переведены.",
+          "Отсутствие обрезки или наложения текста в UI.",
+          "Корректное и полное RTL-отображение для соответствующих языков.",
+          "Правильное локализованное форматирование дат, чисел, валют."
+        ]
+      },
+      "section11": {
+        "title": "11. Примечания",
+        "notes": [
+          "План: Полная реализация поддержки 5 ключевых языков запланирована на Q3 2025 (см. Дорожную карту), после завершения этапа построения технологического фундамента и начала разработки MVP.",
+          "Масштабирование: Система разработана так, чтобы добавление новых языков в будущем было эффективным (Принцип 9). Основные затраты — это сам перевод.",
+          "Ограничения: Технические логи, сообщения сервера для отладки не переводятся. Локализация касается только пользовательского интерфейса и сообщений, предназначенных для конечного пользователя."
+        ]
+      }
     }
-  },
-  "common": {
-    "loading": "Loading...",
-    "error": "An error occurred. Please try again.",
-    "noData": "No data available.",
-    "retry": "Retry",
-    "seeAll": "See All",
-    "backToHome": "Back to Home"
-  },
-  "roadmap": {
-    "title": {
-      "section": "Development Roadmap",
-      "projectLaunch": "Project Launch",
-      "enhancedSecurity": "Enhanced Security & Features",
-      "advancedCollaboration": "Advanced Collaboration Tools",
-      "mobileEnhancement": "Mobile Enhancement",
-      "aiIntegration": "AI Integration",
-      "globalExpansion": "Global Expansion",
-      "enterpriseSolutions": "Enterprise Solutions",
-      "futureInnovation": "Future Innovation"
-    },
-    "subtitle": {
-      "section": "Our journey to revolutionize secure messaging"
-    },
-    "date": {
-      "jan2024": "January 2024",
-      "mar2024": "March 2024",
-      "jun2024": "June 2024",
-      "sep2024": "September 2024",
-      "nov2024": "November 2024",
-      "jan2025": "January 2025",
-      "mar2025": "March 2025",
-      "jun2025": "June 2025",
-      "beyond2025": "Beyond 2025"
-    },
-    "description": {
-      "projectLaunch": "Initial release of BrainMessenger with core messaging functionality",
-      "enhancedSecurity": "Major security upgrades and new feature implementations",
-      "advancedCollaboration": "Introduction of team collaboration features",
-      "mobileEnhancement": "Focus on mobile experience and performance",
-      "aiIntegration": "Implementation of AI-powered features",
-      "globalExpansion": "Focus on international markets and localization",
-      "enterpriseSolutions": "Dedicated features for enterprise clients",
-      "futureInnovation": "Continuous innovation and feature expansion"
-    },
-    "features": {
-      "secureMessagingInfrastructure": "Secure messaging infrastructure",
-      "crossPlatformCompatibility": "Cross-platform compatibility",
-      "basicUserInterface": "Basic user interface",
-      "endToEndEncryption": "End-to-end encryption",
-      "twoFactorAuthentication": "Two-factor authentication",
-      "fileSharingCapabilities": "File sharing capabilities",
-      "teamWorkspaces": "Team workspaces",
-      "realTimeCollaboration": "Real-time collaboration",
-      "advancedFileSharing": "Advanced file sharing",
-      "nativeMobileApps": "Native mobile apps",
-      "offlineFunctionality": "Offline functionality",
-      "pushNotifications": "Push notifications",
-      "smartMessageCategorization": "Smart message categorization",
-      "automatedResponses": "Automated responses",
-      "contentAnalysis": "Content analysis",
-      "multiLanguageSupport": "Multi-language support",
-      "regionalDataCenters": "Regional data centers",
-      "culturalAdaptations": "Cultural adaptations",
-      "advancedAdminControls": "Advanced admin controls",
-      "customIntegrations": "Custom integrations",
-      "enterpriseSupport": "Enterprise support",
-      "emergingTechnologies": "Emerging technologies",
-      "communityDrivenFeatures": "Community-driven features",
-      "platformExpansion": "Platform expansion"
-    },
-    "status": {
-      "completed": "completed",
-      "inProgress": "in-progress",
-      "upcoming": "upcoming"
-    },
-    "iconAlt": {
-      "projectLaunch": "Project Launch icon",
-      "enhancedSecurity": "Enhanced Security icon",
-      "advancedCollaboration": "Advanced Collaboration icon",
-      "mobileEnhancement": "Mobile Enhancement icon",
-      "aiIntegration": "AI Integration icon",
-      "globalExpansion": "Global Expansion icon",
-      "enterpriseSolutions": "Enterprise Solutions icon",
-      "futureInnovation": "Future Innovation icon"
-    }
-  },
-  "footer": {
-    "sectionTitle": {
-      "brand": "Brain Messenger",
-      "quickLinks": "Quick Links",
-      "contact": "Contact Us",
-      "social": "Follow Us"
-    },
-    "brandContent": "Connecting minds by empowering communication through innovative messaging solutions",
-    "quickLinks": {
-      "home": "Home",
-      "features": "Features",
-      "news": "News",
-      "roadmap": "Roadmap",
-      "faq": "FAQ",
-      "doc": "Doc"
-    },
-    "iconAlt": {
-      "quickLinks": "Quick Links icon",
-      "email": "Email icon"
-    },
-    "social": {
-      "twitter": "Twitter",
-      "linkedin": "LinkedIn"
-    },
-    "previousSection": "Previous section",
-    "nextSection": "Next section",
-    "copyright": "2024 Brain Messenger. All rights reserved."
   }
 }
