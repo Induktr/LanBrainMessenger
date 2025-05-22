@@ -85,7 +85,7 @@
       "technicalQuestions": {
         "q1": {
           "question": "Почему был выбран именно такой стек технологий (TypeScript, NestJS, React/RN, PostgreSQL/Neon, GraphQL, Kafka, Redis, Cloudflare R2 и т.д.)?",
-          "answer": "Выбор стека обусловлен стремлением к надежности, масштабируемости, скорости разработки и использованию современных подходов. TypeScript обеспечивает типизацию, NestJS – структуру бэкенда, React/RN – гибкость UI, а другие технологии – эффективную работу с данными, сообщениями и файлами."
+          "answer": "Выбор стека обусловлен стремлением к надежности, масштабируемости, скорости разработки и использованию современных подходов. TypeScript обеспечивает типізацію, NestJS – структуру бэкенда, React/RN – гибкость UI, а другие технологии – эффективную работу с данными, сообщениями и файлами."
         },
         "q2": {
           "question": "Почему на старте используется монолитная архитектура, а не сразу микросервисы?",
@@ -97,7 +97,7 @@
         },
         "q4": {
           "question": "Как реализована функциональность реального времени (обмен сообщениями)?",
-          "answer": "Для обмена сообщениями в реальном времени используются WebSockets и, возможно, Kafka для обработки потоков сообщений, что обеспечивает быструю и надежную доставку."
+          "answer": "Для обмена сообщениями в реальном времени используются WebSockets и, возможно, Kafka для обробки потоков сообщений, что обеспечивает быструю и надежную доставку."
         },
         "q5": {
           "question": "Почему используется GraphQL вместо REST API?",
@@ -119,10 +119,10 @@
         },
         "q3": {
           "question": "Какая стратегия тестирования используется?",
-          "answer": "Наша стратегия включает юнит-тесты, интеграционные тесты и E2E-тесты для обеспечения надежности всех компонентов системы."
+          "answer": "Наша стратегия включает юнит-тесты, интеграционные тесты и E2E-тесты для обеспечения надежности всех компонентів системы."
         },
         "q4": {
-          "question": "Как обрабатываются ошибки?",
+          "question": "Как обробляются ошибки?",
           "answer": "Ошибки отслеживаются с помощью систем моніторингу, логуються и анализируются для быстрого исправления. На клиенте предусмотрены механизмы обробки ошибок для улучшения UX."
         },
         "q5": {
@@ -159,7 +159,7 @@
         },
         "q3": {
           "question": "Каковы ограничения проекта на текущем этапе (MVP)?",
-          "answer": "На этапе MVP функционал будет ограничен основными возможностями для быстрого запуска и сбора обратной связи. Некоторые расширенные функции будут добавлены позже."
+          "answer": "На этапе MVP функционал будет ограничен основными возможностями для быстрого запуска и сбора обратного связи. Некоторые расширенные функции будут добавлены позже."
         }
       },
       "learnMoreContribute": {
@@ -248,21 +248,21 @@
         "title": "Стек Технологий: Наши Инструменты для Создания Актива",
         "intro": "Мы выбрали стек, который является <strong>прагматичным</strong> (Принцип 12), <strong>надежным</strong> (Принцип 3) и <strong>масштабируемым</strong> (Принцип 8) для создания нашего <strong>цифрового АКТИВА</strong>.",
         "stack": [
-          "<strong>Язык:</strong> <a href=\"https://www.typescriptlang.org/\" target=\"_blank\" rel=\"noopener noreferrer\">TypeScript</a> - Статическая типизация для повышения качества и надежности кода.",
+          "<strong>Язык:</strong> <a href=\"https://www.typescriptlang.org/\" target=\"_blank\" rel=\"noopener noreferrer\">TypeScript</a> - Статическая типізація для повышения качества и надежности кода.",
           "<strong>Бэкенд:</strong> <a href=\"https://nodejs.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Node.js</a>, <a href=\"https://nestjs.com/\" target=\"_blank\" rel=\"noopener noreferrer\">NestJS</a> - Эффективный и структурированный фреймворк для серверной логики и GraphQL API.",
           "<strong>Фронтенд:</strong> <a href=\"https://react.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">React</a>, <a href=\"https://nextjs.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Next.js</a> (Веб), <a href=\"https://reactnative.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">React Native</a> (Мобильный/Десктоп) - Кросс-платформенная разработка UI с фокусом на производительности.",
           "<strong>API:</strong> <a href=\"https://graphql.org/\" target=\"_blank\" rel=\"noopener noreferrer\">GraphQL</a> - Гибкое взаимодействие между клиентом и сервером.",
           "<strong>Реальное время:</strong> WebSockets - Мгновенная доставка сообщений.",
           "<strong>База данных:</strong> <a href=\"https://www.postgresql.org/\" target=\"_blank\" rel=\"noopener noreferrer\">PostgreSQL</a> (через <a href=\"https://neon.tech/\" target=\"_blank\" rel=\"noopener noreferrer\">Neon</a>) - Надежная и масштабируемая база данных. Neon как управляемый сервис уменьшает операционные расходы (Прагматизм).",
           "<strong>ORM:</strong> <a href=\"https://www.prisma.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Prisma</a> - Типобезопасное и надежное взаимодействие с базой данных, защита от SQL-инъекций (Качество, Безопасность).",
-          "<strong>Кэширование:</strong> <a href=\"https://redis.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Redis</a> - Высокопроизводительное кеширование и управление состоянием.",
-          "<strong>Очереди:</strong> <a href=\"https://kafka.apache.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Kafka</a> - Надежная асинхронная обработка задач.",
+          "<strong>Кэшування:</strong> <a href=\"https://redis.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Redis</a> - Высокопроизводительное кеширование и управление состоянием.",
+          "<strong>Черги:</strong> <a href=\"https://kafka.apache.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Kafka</a> - Надежная асинхронная обробка задач.",
           "<strong>Хранилище файлов:</strong> <a href=\"https://www.cloudflare.com/developer/r2/\" target=\"_blank\" rel=\"noopener noreferrer\">Cloudflare R2</a> - Объектное хранилище с выгодными тарифами и без платы за исходящий трафик (Прагматизм, АКТИВ).",
           "<strong>Уведомления:</strong> <a href=\"https://firebase.google.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Firebase</a> - Управляемый сервис для push-уведомлений.",
           "<strong>Электронная почта/2FA:</strong> <a href=\"https://developers.google.com/gmail/api\" target=\"_blank\" rel=\"noopener noreferrer\">Gmail API</a> - Надежная доставка транзакционных писем (коды подтверждения, 2FA).",
-          "<strong>Платежи:</strong> <a href=\"https://stripe.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Stripe</a>, Cryptomus (За пределами MVP) - Монетизация АКТИВА, Прагматизм.",
+          "<strong>Платежи:</strong> <a href=\"https://stripe.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Stripe</a>, Cryptomus (За пределами MVP) - Монетизация АКТИВУ, Прагматизм.",
           "<strong>Тестирование:</strong> Jest, Cypress, Detox, k6, OWASP ZAP/Burp Suite (план) - Комплексный подход к обеспечению качества.",
-          "<strong>Развертывание:</strong> <a href=\"https://vercel.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Vercel</a> (Веб), Docker, <a href=\"https://kubernetes.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Kubernetes</a> - Автоматизированное и масштабируемое развертывание.",
+          "<strong>Развертывание:</strong> <a href=\"https://vercel.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Vercel</a> (Веб), Docker, <a href=\"https://kubernetes.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Kubernetes</a> - Автоматизованное и масштабированное развертывание.",
           "<strong>Мониторинг:</strong> Prometheus, Grafana, Sentry (план) - Видимость системы и анализ Кайдзен."
         ]
       },
@@ -360,7 +360,7 @@
           ["<strong>Surface</strong>", "`#333333`", "Карточки, панели, фоны сообщений"],
           ["<strong>Text Primary</strong>", "`#FFFFFF`", "Основной текст"],
           ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Вторичный текст, подсказки"],
-          ["<strong>Disabled</strong>", "`#4D4D4D`", "Неактивные элементы"],
+          ["<strong>Disabled", "`#4D4D4D`", "Неактивные элементы"],
           ["<strong>Border</strong>", "`#B0B0B0`", "Границы, разделители"]
         ],
         "premium_colors_title": "2.3. Цвета Премиум-Функций (Визуальное выделение Ценности)",
@@ -446,8 +446,8 @@
         "implementation_examples_title": "4.3. Примеры Реализации (Фрагменты кода)",
         "css_ripple_title": "CSS для Ripple-эффекта:",
         "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Или другие цвета/градиент */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
-        "rn_icon_title": "React Native для анимированной иконки:",
-        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Создание анимированного компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Пример использования с анимацией scale (предполагая, что 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+        "rn_icon_title": "React Native для анімованої іконки:",
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Создание анімованого компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Пример использования с анимацией scale (припускаючи, что 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
       },
       "section5": {
         "title": "5. Выравнивание и Сетка: Структура и Порядок (Принцип 9: Система)",
@@ -490,119 +490,5 @@
         ]
       }
     }
-  },
-  "common": {
-    "loading": "Загрузка...",
-    "error": "Произошла ошибка. Пожалуйста, попробуйте еще раз.",
-    "noData": "Нет данных.",
-    "retry": "Повторить",
-    "seeAll": "Посмотреть все",
-    "backToHome": "Назад на главную"
-  },
-  "roadmap": {
-    "title": {
-      "section": "Дорожная карта разработки",
-      "projectLaunch": "Запуск проекта",
-      "enhancedSecurity": "Улучшенная безопасность и функции",
-      "advancedCollaboration": "Расширенные инструменты для совместной работы",
-      "mobileEnhancement": "Улучшение мобильной версии",
-      "aiIntegration": "Интеграция ИИ",
-      "globalExpansion": "Глобальное расширение",
-      "enterpriseSolutions": "Корпоративные решения",
-      "futureInnovation": "Будущие инновации"
-    },
-    "subtitle": {
-      "section": "Наш путь к революции в безопасном обмене сообщениями"
-    },
-    "date": {
-      "jan2024": "Январь 2024",
-      "mar2024": "Март 2024",
-      "jun2024": "Июнь 2024",
-      "sep2024": "Сентябрь 2024",
-      "nov2024": "Ноябрь 2024",
-      "jan2025": "Январь 2025",
-      "mar2025": "Март 2025",
-      "jun2025": "Июнь 2025",
-      "beyond2025": "За пределами 2025"
-    },
-    "description": {
-      "projectLaunch": "Первоначальный выпуск BrainMessenger с базовой функциональностью обмена сообщениями",
-      "enhancedSecurity": "Крупные обновления безопасности и внедрение новых функций",
-      "advancedCollaboration": "Внедрение функций для командной работы",
-      "mobileEnhancement": "Фокус на мобильном опыте и производительности",
-      "aiIntegration": "Внедрение функций на основе ИИ",
-      "globalExpansion": "Фокус на международных рынках и локализации",
-      "enterpriseSolutions": "Специализированные функции для корпоративных клиентов",
-      "futureInnovation": "Непрерывные инновации и расширение функциональности"
-    },
-    "features": {
-      "secureMessagingInfrastructure": "Инфраструктура безопасного обмена сообщениями",
-      "crossPlatformCompatibility": "Кроссплатформенность",
-      "basicUserInterface": "Базовый пользовательский интерфейс",
-      "endToEndEncryption": "Сквозное шифрование",
-      "twoFactorAuthentication": "Двухфакторная аутентификация",
-      "fileSharingCapabilities": "Возможности обмена файлами",
-      "teamWorkspaces": "Рабочие пространства для команд",
-      "realTimeCollaboration": "Совместная работа в реальном времени",
-      "advancedFileSharing": "Расширенный обмен файлами",
-      "nativeMobileApps": "Нативные мобильные приложения",
-      "offlineFunctionality": "Функциональность в офлайн-режиме",
-      "pushNotifications": "Push-уведомления",
-      "smartMessageCategorization": "Умная категоризация сообщений",
-      "automatedResponses": "Автоматические ответы",
-      "contentAnalysis": "Анализ контента",
-      "multiLanguageSupport": "Поддержка нескольких языков",
-      "regionalDataCenters": "Региональные центры обработки данных",
-      "culturalAdaptations": "Культурные адаптации",
-      "advancedAdminControls": "Расширенные средства администрирования",
-      "customIntegrations": "Пользовательские интеграции",
-      "enterpriseSupport": "Поддержка корпоративных клиентов",
-      "emergingTechnologies": "Новейшие технологии",
-      "communityDrivenFeatures": "Функции, управляемые сообществом",
-      "platformExpansion": "Расширение платформы"
-    },
-    "status": {
-      "completed": "завершено",
-      "inProgress": "в процессе",
-      "upcoming": "запланировано"
-    },
-    "iconAlt": {
-      "projectLaunch": "Иконка запуска проекта",
-      "enhancedSecurity": "Иконка улучшенной безопасности",
-      "advancedCollaboration": "Иконка расширенной совместной работы",
-      "mobileEnhancement": "Иконка улучшения мобильной версии",
-      "aiIntegration": "Иконка интеграции ИИ",
-      "globalExpansion": "Иконка глобального расширения",
-      "enterpriseSolutions": "Иконка корпоративных решений",
-      "futureInnovation": "Иконка будущих инноваций"
-    }
-  },
-  "footer": {
-    "sectionTitle": {
-      "brand": "Brain Messenger",
-      "quickLinks": "Быстрые ссылки",
-      "contact": "Свяжитесь с нами",
-      "social": "Следите за нами"
-    },
-    "brandContent": "Соединяя умы, расширяя возможности общения с помощью инновационных решений для обмена сообщениями",
-    "quickLinks": {
-      "home": "Главная",
-      "features": "Функции",
-      "news": "Новости",
-      "roadmap": "Дорожная карта",
-      "faq": "Вопросы",
-      "doc": "Документация"
-    },
-    "iconAlt": {
-      "quickLinks": "Иконка быстрых ссылок",
-      "email": "Иконка электронной почты"
-    },
-    "social": {
-      "twitter": "Twitter",
-      "linkedin": "LinkedIn"
-    },
-    "previousSection": "Предыдущая секция",
-    "nextSection": "Следующая секция",
-    "copyright": "2024 Brain Messenger. Все права защищены."
   }
 }
