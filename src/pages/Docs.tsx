@@ -467,6 +467,161 @@ const Docs: React.FC = () => {
     ]},
   ];
 
+  const technicalDocsSections = [
+    {
+      id: 'general-info',
+      titleKey: 'docs.technicalDocs.generalInfo.title',
+      contentKey: 'docs.technicalDocs.generalInfo.description',
+      subSections: [
+        { id: 'project-name', titleKey: 'docs.technicalDocs.generalInfo.projectNameTitle', contentKey: 'docs.technicalDocs.generalInfo.projectNameContent' },
+        { id: 'purpose', titleKey: 'docs.technicalDocs.generalInfo.purposeTitle', contentKey: 'docs.technicalDocs.generalInfo.purposeContent' },
+        { id: 'principles', titleKey: 'docs.technicalDocs.generalInfo.principlesTitle', listKey: 'docs.technicalDocs.generalInfo.principlesList' },
+      ],
+    },
+    {
+      id: 'tech-stack',
+      titleKey: 'docs.technicalDocs.techStack.title',
+      contentKey: 'docs.technicalDocs.techStack.description',
+      subSections: [
+        { id: 'frontend', titleKey: 'docs.technicalDocs.techStack.frontend.title', listKey: 'docs.technicalDocs.techStack.frontend.list' },
+        { id: 'backend', titleKey: 'docs.technicalDocs.techStack.backend.title', listKey: 'docs.technicalDocs.techStack.backend.list' },
+        { id: 'database-caching', titleKey: 'docs.technicalDocs.techStack.databaseCaching.title', listKey: 'docs.technicalDocs.techStack.databaseCaching.list' },
+        { id: 'file-storage', titleKey: 'docs.technicalDocs.techStack.fileStorage.title', listKey: 'docs.technicalDocs.techStack.fileStorage.list' },
+        { id: 'async-processing', titleKey: 'docs.technicalDocs.techStack.asyncProcessing.title', listKey: 'docs.technicalDocs.techStack.asyncProcessing.list' },
+        { id: 'infrastructure-deployment', titleKey: 'docs.technicalDocs.techStack.infrastructureDeployment.title', listKey: 'docs.technicalDocs.techStack.infrastructureDeployment.list' },
+        { id: 'testing-monitoring-logging', titleKey: 'docs.technicalDocs.techStack.testingMonitoringLogging.title', listKey: 'docs.technicalDocs.techStack.testingMonitoringLogging.list' },
+      ],
+    },
+    {
+      id: 'architecture',
+      titleKey: 'docs.technicalDocs.architecture.title',
+      contentKey: 'docs.technicalDocs.architecture.description',
+      subSections: [
+        { id: 'client-applications', titleKey: 'docs.technicalDocs.architecture.clientApplications.title', listKey: 'docs.technicalDocs.architecture.clientApplications.list' },
+        { id: 'api-gateway', titleKey: 'docs.technicalDocs.architecture.apiGateway.title', contentKey: 'docs.technicalDocs.architecture.apiGateway.content' },
+        { id: 'backend-service', titleKey: 'docs.technicalDocs.architecture.backendService.title', listKey: 'docs.technicalDocs.architecture.backendService.list' },
+        { id: 'database', titleKey: 'docs.technicalDocs.architecture.database.title', contentKey: 'docs.technicalDocs.architecture.database.content' },
+        { id: 'file-storage-arch', titleKey: 'docs.technicalDocs.architecture.fileStorage.title', contentKey: 'docs.technicalDocs.architecture.fileStorage.content' },
+        { id: 'caching-arch', titleKey: 'docs.technicalDocs.architecture.caching.title', contentKey: 'docs.technicalDocs.architecture.caching.content' },
+        { id: 'message-queue', titleKey: 'docs.technicalDocs.architecture.messageQueue.title', contentKey: 'docs.technicalDocs.architecture.messageQueue.content' },
+        { id: 'workers', titleKey: 'docs.technicalDocs.architecture.workers.title', listKey: 'docs.technicalDocs.architecture.workers.list' },
+        { id: 'external-services', titleKey: 'docs.technicalDocs.architecture.externalServices.title', listKey: 'docs.technicalDocs.architecture.externalServices.list' },
+        { id: 'mermaid-diagram', titleKey: 'docs.technicalDocs.architecture.mermaidDiagram.title', codeExampleKey: 'docs.technicalDocs.architecture.mermaidDiagram.code' },
+      ],
+    },
+    {
+      id: 'api',
+      titleKey: 'docs.technicalDocs.api.title',
+      contentKey: 'docs.technicalDocs.api.description',
+      subSections: [
+        { id: 'endpoint', titleKey: 'docs.technicalDocs.api.endpointTitle', contentKey: 'docs.technicalDocs.api.endpointContent' },
+        { id: 'structure', titleKey: 'docs.technicalDocs.api.structureTitle', contentKey: 'docs.technicalDocs.api.structureContent' },
+        { id: 'authentication', titleKey: 'docs.technicalDocs.api.authenticationTitle', contentKey: 'docs.technicalDocs.api.authenticationContent' },
+        { id: 'external-api-integrations', titleKey: 'docs.technicalDocs.api.externalApiIntegrationsTitle', contentKey: 'docs.technicalDocs.api.externalApiIntegrationsContent' },
+        { id: 'key-functional-areas', titleKey: 'docs.technicalDocs.api.keyFunctionalAreas.title', listKey: 'docs.technicalDocs.api.keyFunctionalAreas.list' },
+        { id: 'detailed-spec', titleKey: 'docs.technicalDocs.api.detailedSpecTitle', contentKey: 'docs.technicalDocs.api.detailedSpecContent' },
+      ],
+    },
+    {
+      id: 'database',
+      titleKey: 'docs.technicalDocs.database.title',
+      contentKey: 'docs.technicalDocs.database.description',
+      subSections: [
+        { id: 'technology', titleKey: 'docs.technicalDocs.database.technologyTitle', contentKey: 'docs.technicalDocs.database.technologyContent' },
+        { id: 'hosting', titleKey: 'docs.technicalDocs.database.hostingTitle', contentKey: 'docs.technicalDocs.database.hostingContent' },
+        { id: 'role', titleKey: 'docs.technicalDocs.database.roleTitle', contentKey: 'docs.technicalDocs.database.roleContent' },
+        { id: 'key-tables', titleKey: 'docs.technicalDocs.database.keyTables.title', listKey: 'docs.technicalDocs.database.keyTables.list' },
+        { id: 'interaction', titleKey: 'docs.technicalDocs.database.interactionTitle', contentKey: 'docs.technicalDocs.database.interactionContent' },
+        { id: 'optimization-scaling', titleKey: 'docs.technicalDocs.database.optimizationScalingTitle', contentKey: 'docs.technicalDocs.database.optimizationScalingContent' },
+      ],
+    },
+    {
+      id: 'file-storage',
+      titleKey: 'docs.technicalDocs.fileStorage.title',
+      contentKey: 'docs.technicalDocs.fileStorage.description',
+      subSections: [
+        { id: 'technology-fs', titleKey: 'docs.technicalDocs.fileStorage.technologyTitle', contentKey: 'docs.technicalDocs.fileStorage.technologyContent' },
+        { id: 'hosting-fs', titleKey: 'docs.technicalDocs.fileStorage.hostingTitle', contentKey: 'docs.technicalDocs.fileStorage.hostingContent' },
+        { id: 'role-fs', titleKey: 'docs.technicalDocs.fileStorage.roleTitle', contentKey: 'docs.technicalDocs.fileStorage.roleContent' },
+        { id: 'interaction-fs', titleKey: 'docs.technicalDocs.fileStorage.interactionTitle', contentKey: 'docs.technicalDocs.fileStorage.interactionContent' },
+        { id: 'structure-fs', titleKey: 'docs.technicalDocs.fileStorage.structureTitle', contentKey: 'docs.technicalDocs.fileStorage.structureContent' },
+        { id: 'security-fs', titleKey: 'docs.technicalDocs.fileStorage.securityTitle', contentKey: 'docs.technicalDocs.fileStorage.securityContent' },
+      ],
+    },
+    {
+      id: 'project-structure',
+      titleKey: 'docs.technicalDocs.projectStructure.title',
+      contentKey: 'docs.technicalDocs.projectStructure.description',
+      subSections: [
+        { id: 'purpose', titleKey: 'docs.technicalDocs.projectStructure.purposeTitle', contentKey: 'docs.technicalDocs.projectStructure.purposeContent' },
+        { id: 'packages', titleKey: 'docs.technicalDocs.projectStructure.packages.title', listKey: 'docs.technicalDocs.projectStructure.packages.list' },
+        { id: 'detailed-description', titleKey: 'docs.technicalDocs.projectStructure.detailedDescriptionTitle', contentKey: 'docs.technicalDocs.projectStructure.detailedDescriptionContent' },
+      ],
+    },
+    {
+      id: 'security',
+      titleKey: 'docs.technicalDocs.security.title',
+      contentKey: 'docs.technicalDocs.security.description',
+      subSections: [
+        { id: 'authentication-sec', titleKey: 'docs.technicalDocs.security.authenticationTitle', contentKey: 'docs.technicalDocs.security.authenticationContent' },
+        { id: 'authorization-sec', titleKey: 'docs.technicalDocs.security.authorizationTitle', contentKey: 'docs.technicalDocs.security.authorizationContent' },
+        { id: 'encryption-sec', titleKey: 'docs.technicalDocs.security.encryptionTitle', contentKey: 'docs.technicalDocs.security.encryptionContent' },
+        { id: 'validation-sec', titleKey: 'docs.technicalDocs.security.validationTitle', contentKey: 'docs.technicalDocs.security.validationContent' },
+        { id: 'attack-protection', titleKey: 'docs.technicalDocs.security.attackProtectionTitle', contentKey: 'docs.technicalDocs.security.attackProtectionContent' },
+        { id: 'principle-sec', titleKey: 'docs.technicalDocs.security.principleTitle', contentKey: 'docs.technicalDocs.security.principleContent' },
+      ],
+    },
+    {
+      id: 'deployment',
+      titleKey: 'docs.technicalDocs.deployment.title',
+      contentKey: 'docs.technicalDocs.deployment.description',
+      subSections: [
+        { id: 'containerization', titleKey: 'docs.technicalDocs.deployment.containerizationTitle', contentKey: 'docs.technicalDocs.deployment.containerizationContent' },
+        { id: 'orchestration', titleKey: 'docs.technicalDocs.deployment.orchestrationTitle', contentKey: 'docs.technicalDocs.deployment.orchestrationContent' },
+        { id: 'iac', titleKey: 'docs.technicalDocs.deployment.iacTitle', contentKey: 'docs.technicalDocs.deployment.iacContent' },
+        { id: 'ci-cd', titleKey: 'docs.technicalDocs.deployment.ciCdTitle', contentKey: 'docs.technicalDocs.deployment.ciCdContent' },
+        { id: 'web-app-deployment', titleKey: 'docs.technicalDocs.deployment.webAppDeploymentTitle', contentKey: 'docs.technicalDocs.deployment.webAppDeploymentContent' },
+        { id: 'detailed-description-deploy', titleKey: 'docs.technicalDocs.deployment.detailedDescriptionTitle', listKey: 'docs.technicalDocs.deployment.detailedDescriptionList' },
+      ],
+    },
+    {
+      id: 'monitoring-logging',
+      titleKey: 'docs.technicalDocs.monitoringLogging.title',
+      contentKey: 'docs.technicalDocs.monitoringLogging.description',
+      subSections: [
+        { id: 'monitoring-ml', titleKey: 'docs.technicalDocs.monitoringLogging.monitoringTitle', listKey: 'docs.technicalDocs.monitoringLogging.monitoringList' },
+        { id: 'logging-ml', titleKey: 'docs.technicalDocs.monitoringLogging.loggingTitle', listKey: 'docs.technicalDocs.monitoringLogging.loggingList' },
+        { id: 'detailed-description-ml', titleKey: 'docs.technicalDocs.monitoringLogging.detailedDescriptionTitle', listKey: 'docs.technicalDocs.monitoringLogging.detailedDescriptionList' },
+      ],
+    },
+    {
+      id: 'external-api-integrations',
+      titleKey: 'docs.technicalDocs.externalApiIntegrations.title',
+      contentKey: 'docs.technicalDocs.externalApiIntegrations.description',
+      subSections: [
+        { id: 'gmail-api', titleKey: 'docs.technicalDocs.externalApiIntegrations.gmailApiTitle', contentKey: 'docs.technicalDocs.externalApiIntegrations.gmailApiContent' },
+        { id: 'stripe', titleKey: 'docs.technicalDocs.externalApiIntegrations.stripeTitle', contentKey: 'docs.technicalDocs.externalApiIntegrations.stripeContent' },
+        { id: 'firebase-fcm', titleKey: 'docs.technicalDocs.externalApiIntegrations.firebaseFCMTitle', contentKey: 'docs.technicalDocs.externalApiIntegrations.firebaseFCMContent' },
+        { id: 'principle-eai', titleKey: 'docs.technicalDocs.externalApiIntegrations.principleTitle', contentKey: 'docs.technicalDocs.externalApiIntegrations.principleContent' },
+        { id: 'detailed-description-eai', titleKey: 'docs.technicalDocs.externalApiIntegrations.detailedDescriptionTitle', contentKey: 'docs.technicalDocs.externalApiIntegrations.detailedDescriptionContent' },
+      ],
+    },
+    {
+      id: 'notes',
+      titleKey: 'docs.technicalDocs.notes.title',
+      contentKey: 'docs.technicalDocs.notes.description',
+      subSections: [
+        { id: 'api-spec-link', titleKey: 'docs.technicalDocs.notes.apiSpecLinkTitle', contentKey: 'docs.technicalDocs.notes.apiSpecLinkContent' },
+        { id: 'dev-guide-link', titleKey: 'docs.technicalDocs.notes.devGuideLinkTitle', contentKey: 'docs.technicalDocs.notes.devGuideLinkContent' },
+        { id: 'optimization-guide-link', titleKey: 'docs.technicalDocs.notes.optimizationGuideLinkTitle', contentKey: 'docs.technicalDocs.notes.optimizationGuideLinkContent' },
+        { id: 'integrations-docs-link', titleKey: 'docs.technicalDocs.notes.integrationsDocsLinkTitle', contentKey: 'docs.technicalDocs.notes.integrationsDocsLinkContent' },
+        { id: 'design-docs-link', titleKey: 'docs.technicalDocs.notes.designDocsLinkTitle', contentKey: 'docs.technicalDocs.notes.designDocsLinkContent' },
+        { id: 'user-guide-link', titleKey: 'docs.technicalDocs.notes.userGuideLinkTitle', contentKey: 'docs.technicalDocs.notes.userGuideLinkContent' },
+        { id: 'long-term-investment', titleKey: 'docs.technicalDocs.notes.longTermInvestmentTitle', contentKey: 'docs.technicalDocs.notes.longTermInvestmentContent' },
+      ],
+    },
+  ];
+
   const apiSpecSections = [
     {
       id: 'general-info',
@@ -620,6 +775,12 @@ const Docs: React.FC = () => {
       titleKey: 'docs.apiSpec.title',
       subtitleKey: 'docs.apiSpec.subtitle',
       sections: apiSpecSections,
+    },
+    {
+      id: 'technical_docs',
+      titleKey: 'docs.technicalDocs.title',
+      subtitleKey: 'docs.technicalDocs.subtitle',
+      sections: technicalDocsSections,
     },
   ];
 

@@ -1,38 +1,33 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { useInView, useAnimation, AnimationControls } from 'framer-motion';
 
-export const useScrollAnimation = (threshold: number = 0.1): number => { // Add type annotations
-  const [elements, setElements] = useState<Element[]>([]); // Explicitly type array of Elements
-  const [scrollPosition, setScrollPosition] = useState<number>(0); // Explicitly type number
+interface UseScrollAnimationOptions {
+  once?: boolean;
+  amount?: number;
+  delay?: number;
+}
+
+interface UseScrollAnimationResult {
+  ref: React.RefObject<HTMLDivElement>;
+  controls: AnimationControls;
+  isInView: boolean;
+}
+
+export const useScrollAnimation = (options?: UseScrollAnimationOptions): UseScrollAnimationResult => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, {
+    once: options?.once ?? true,
+    amount: options?.amount ?? 0.2, // Trigger when 20% of the element is in view
+  });
+  const controls = useAnimation();
 
   useEffect(() => {
-    // Get all elements with data-scroll attribute
-    const scrollElements = document.querySelectorAll('[data-scroll]');
-    setElements(Array.from(scrollElements));
+    if (isInView) {
+      controls.start("visible");
+    } else if (!(options?.once ?? true)) { // If not 'once', reset animation when out of view
+      controls.start("hidden");
+    }
+  }, [isInView, controls, options?.once]);
 
-    const handleScroll = (): void => { // Add type annotation
-      setScrollPosition(window.scrollY);
-
-      elements.forEach((element: Element) => { // Add type annotation for element
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        const windowHeight = window.innerHeight;
-
-        // Check if element is in viewport
-        if (elementTop < windowHeight * (1 - threshold) && elementBottom > 0) {
-          element.classList.add('scroll-animate-in');
-        } else {
-          element.classList.remove('scroll-animate-in');
-        }
-      });
-    };
-
-    // Initial check
-    handleScroll();
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [elements, threshold]);
-
-  return scrollPosition;
+  return { ref, controls, isInView };
 };

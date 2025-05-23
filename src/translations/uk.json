@@ -175,9 +175,323 @@
         "q3": {
           "question": "Де я можу поставити додаткові запитання?",
           "answer": "Додаткові запитання можна поставити через контактну форму на сайті, в нашому ком'юніті (посилання буде додано) або створивши issue на GitHub (якщо проект відкритий)."
+    },
+    "technicalDocs": {
+      "title": "Технічна Документація BrainMessenger (Система та Фундамент)",
+      "subtitle": "Загальна Інформація: Архітектура Цифрового Активу",
+      "generalInfo": {
+        "title": "1. Загальна Інформація: Архітектура Цифрового Активу",
+        "description": "BrainMessenger — це сучасний месенджер, побудований як <strong>надійна, масштабована та безпечна система</strong> (Принцип 9), яка служить <strong>ключовим цифровим АКТИВОМ</strong> (Принцип 10). Цей документ надає високорівневий огляд <strong>технічного фундаменту</strong> (Принцип 8) проекту, описуючи основні компоненти, технології та їх взаємодію.",
+        "projectNameTitle": "Назва проекту:",
+        "projectNameContent": "BrainMessenger",
+        "purposeTitle": "Мета:",
+        "purposeContent": "Дати загальне розуміння структури BrainMessenger, використовуваного стеку технологій та принципів, що лежать в основі його побудови, для всіх членів команди та зацікавлених осіб.",
+        "principlesTitle": "Принципи, відображені в технічній структурі:",
+        "principlesList": [
+          "<strong>Система та Оптимізація (Принцип 9):</strong> Проект спроектований як набір взаємопов'язаних, оптимізованих компонентів.",
+          "<strong>Довгострокове Мислення (Принцип 8):</strong> Вибір технологій та архітектури з урахуванням майбутніх потреб масштабування та розвитку.",
+          "<strong>Якість > Кількість (Принцип 3):</strong> Використання перевірених, надійних рішень та фокус на якості коду та інфраструктури.",
+          "<strong>Прагматизм та Реалізм (Принцип 12):</strong> Використання готових сервісів (Neon, R2, Firebase) там, де це виправдано, замість створення всього з нуля.",
+          "<strong>Створення Цінності (Принцип 2):</strong> Технічна структура спрямована на забезпечення ключових функцій месенджера (спілкування, файли, дзвінки) на високому рівні."
+        ]
+      },
+      "techStack": {
+        "title": "2. Технологічний Стек: Інструментарій для Побудови Системи",
+        "description": "Ми використовуємо сучасний та гнучкий набір технологій, що дозволяє ефективно будувати та масштабувати BrainMessenger.",
+        "frontend": {
+          "title": "Фронтенд (Клієнтські Додатки):",
+          "list": [
+            "<strong>React Native (Android, Windows Desktop):</strong> Єдина кодова база для мобільного та десктопного додатку. Обраний за кросплатформність та великий набір готових бібліотек.",
+            "<strong>Next.js (Web):</strong> React-фреймворк для веб-додатку з підтримкою SSR/SSG для продуктивності та SEO.",
+            "<strong>TypeScript:</strong> Сувора типізація для всього Frontend-коду. Підвищує надійність та спрощує рефакторинг."
+          ]
+        },
+        "backend": {
+          "title": "Бекенд (Серверна Логіка):",
+          "list": [
+            "<strong>Node.js:</strong> Високопродуктивне середовище виконання JavaScript/TypeScript.",
+            "<strong>NestJS:</strong> Модульний фреймворк для Node.js. Забезпечує структуровану архітектуру (модулі, сервіси, контролери/резолвери) та підтримку TypeScript.",
+            "<strong>GraphQL:</strong> Протокол API. Дозволяє клієнтам запитувати точно ті дані, які потрібні, знижуючи надмірність."
+          ]
+        },
+        "databaseCaching": {
+          "title": "База Даних та Кешування:",
+          "list": [
+            "<strong>PostgreSQL (через Neon):</strong> Надійна реляційна СУБД. Використовується як основне сховище структурованих даних (користувачі, чати, повідомлення, метадані). Neon надає керований сервіс з функціями масштабування та реплікації.",
+            "<strong>Prisma ORM:</strong> Інструмент для взаємодії з PostgreSQL з NestJS. Забезпечує типізацію та безпеку запитів.",
+            "<strong>Redis:</strong> In-memory сховище даних. Використовується для кешування, Rate Limiting, управління станом WebSocket-з'єднань (присутність користувачів)."
+          ]
+        },
+        "fileStorage": {
+          "title": "Сховище Файлів:",
+          "list": [
+            "<strong>Cloudflare R2:</strong> Об'єктне сховище, сумісне з S3 API. Використовується для зберігання файлів користувачів (фото, відео, документи, аватари, записи дзвінків), зашифрованих даних. Обраний за низьку вартість та відсутність плати за вихідний трафік."
+          ]
+        },
+        "asyncProcessing": {
+          "title": "Асинхронна Обробка:",
+          "list": [
+            "<strong>Kafka:</strong> Розподілена система черг повідомлень. Використовується для надійної асинхронної обробки завдань (наприклад, обробка зображень, надсилання сповіщень) поза основним потоком API."
+          ]
+        },
+        "infrastructureDeployment": {
+          "title": "Інфраструктура та Розгортання:",
+          "list": [
+            "<strong>Docker:</strong> Контейнеризація додатків. Забезпечує ізоляцію та переносимість.",
+            "<strong>Kubernetes:</strong> Оркестрація контейнерів. Керує розгортанням, масштабуванням та самовідновленням сервісів у кластері.",
+            "<strong>Terraform:</strong> Інфраструктура як код (IaC). Автоматизує створення та управління хмарними ресурсами."
+          ]
+        },
+        "testingMonitoringLogging": {
+          "title": "Тестування, Моніторинг, Логування:",
+          "list": [
+            "<strong>Jest, Cypress, Detox:</strong> Інструменти для модульного, інтеграційного та E2E-тестування.",
+            "<strong>Prometheus, Grafana:</strong> Система моніторингу. Збір та візуалізація метрик продуктивності та стану системи.",
+            "<strong>Winston, Sentry:</strong> Система логування та відстеження помилок."
+          ]
         }
+      },
+      "architecture": {
+        "title": "3. Архітектура Проекту: Взаємозв'язок Компонентів Системи",
+        "description": "Архітектура BrainMessenger дотримується принципів <strong>модульності та розділення відповідальності</strong> (Принцип 9).",
+        "clientApplications": {
+          "title": "Клієнтські Додатки (Фронтенд):",
+          "list": [
+            "Web (Next.js), Mobile & Desktop (React Native).",
+            "Містять користувацький інтерфейс та логіку взаємодії з користувачем.",
+            "Взаємодіють з Бекендом виключно через <strong>GraphQL API</strong>.",
+            "Можуть безпосередньо завантажувати файли з Cloudflare R2 (якщо доступ публічний) або через Бекенд (якщо потрібна автентифікація або підпис URL)."
+          ]
+        },
+        "apiGateway": {
+          "title": "API Gateway (У майбутньому):",
+          "content": "Єдина точка входу для всіх клієнтських запитів. Може виконувати автентифікацію, Rate Limiting, маршрутизацію на потрібні Backend-сервіси. На старті роль Gateway виконує сам Backend."
+        },
+        "backendService": {
+          "title": "Backend Service (NestJS):",
+          "list": [
+            "Основний серверний компонент.",
+            "Містить <strong>бізнес-логіку</strong> BrainMessenger (управління користувачами, чатами, повідомленнями, дзвінками, платежами).",
+            "Надає <strong>GraphQL API</strong> для клієнтських додатків.",
+            "Взаємодіє з <strong>Базою Даних (Neon/PostgreSQL через Prisma)</strong> для читання/запису структурованих даних.",
+            "Взаємодіє з <strong>Сховищем Файлів (Cloudflare R2)</strong> для завантаження/отримання файлів (через AWS SDK).",
+            "Взаємодіє з <strong>Кешем (Redis)</strong> для швидких операцій.",
+            "Ставить завдання в <strong>Чергу (Kafka)</strong> для асинхронної обробки.",
+            "Використовує зовнішні сервіси (Firebase, Stripe, Gmail API)."
+          ]
+        },
+        "database": {
+          "title": "База Даних (Neon/PostgreSQL):",
+          "content": "Зберігає структуровані дані. Масштабується незалежно."
+        },
+        "fileStorage": {
+          "title": "Сховище Файлів (Cloudflare R2):",
+          "content": "Зберігає неструктуровані бінарні дані. Масштабується за обсягом."
+        },
+        "caching": {
+          "title": "Кешування (Redis):",
+          "content": "Швидкий доступ до тимчасових даних."
+        },
+        "messageQueue": {
+          "title": "Черга Повідомлень (Kafka):",
+          "content": "Буферизація та надійна доставка повідомлень між сервісами для асинхронної обробки."
+        },
+        "workers": {
+          "title": "Воркери (Kafka Consumers):",
+          "list": [
+            "Окремі сервіси, що читають завдання з Kafka та виконують важкі або довгі операції (обробка зображень, надсилання великих розсилок).",
+            "Масштабуються незалежно."
+          ]
+        },
+        "externalServices": {
+          "title": "Зовнішні Сервіси (Firebase, Stripe, Gmail API):",
+          "list": [
+            "Надають спеціалізований функціонал (сповіщення, платежі, email).",
+            "Використовуються Backend-сервісом."
+          ]
+        },
+        "mermaidDiagram": {
+          "title": "Діаграма Архітектури:",
+          "code": "graph TD\n    A[Frontend Web (Next.js)] -->|GraphQL API| B(API Gateway / Backend);\n    A -->|Direct File Access (Opt.)| E(Cloudflare R2);\n    F[Frontend Mobile/Desktop (React Native)] -->|GraphQL API| B;\n    F -->|Direct File Access (Opt.)| E;\n    B -->|Prisma Queries/Mutations| C(Neon/PostgreSQL);\n    B -->|AWS SDK (S3 API)| E;\n    B -->|ioredis| D(Redis Cache);\n    B -->|kafkajs Producer| G(Kafka Queue);\n    B -->|Firebase Admin SDK| H(Firebase FCM);\n    B -->|Stripe SDK| I(Stripe);\n    B -->|Google APIs Client| J(Gmail API);\n    G -->|kafkajs Consumer| K(Kafka Workers);\n    K -->|sharp| K; % Image processing\n    K -->|AWS SDK (S3 API)| E;\n    K -->|GraphQL API / Other Service Calls| B; % Report completion, send chat message\n    C -->|Replication (for scaling)| C;\n    C -->|Partitioning/Sharding (for scaling)| C;\n    E -->|CDN| A; % File delivery to Frontend\n    Prometheus(Prometheus) -->|Scrape Metrics| B;\n    Prometheus -->|Scrape Metrics| C;\n    Prometheus -->|Scrape Metrics| D;\n    Prometheus -->|Scrape Metrics| G;\n    Grafana(Grafana) -->|Visualize Metrics| Prometheus;\n    Sentry(Sentry) -->|Error Reports| B;\n    Sentry -->|Error Reports| A;"
+        }
+      },
+      "api": {
+        "title": "4. API: Інтерфейс Взаємодії",
+        "description": "API BrainMessenger реалізовано на GraphQL з використанням NestJS.",
+        "endpointTitle": "Endpoint:",
+        "endpointContent": "`/graphql`",
+        "structureTitle": "Структура:",
+        "structureContent": "Визначається GraphQL Схемою (типи User, Chat, Message тощо) та набором Queries (для отримання даних) і Mutations (для зміни даних).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT-токени в заголовку `Authorization: Bearer <token>`.",
+        "externalApiIntegrationsTitle": "Зовнішні API Інтеграції:",
+        "externalApiIntegrationsContent": "Взаємодія із зовнішніми сервісами (Gmail, Stripe) здійснюється через Backend, який надає відповідні Mutations в GraphQL API (див. Специфікацію API).",
+        "keyFunctionalAreas": {
+          "title": "Ключові функціональні області API:",
+          "list": [
+            "Автентифікація (реєстрація, логін, логаут, 2FA).",
+            "Управління користувачами (отримання/оновлення/видалення профілю).",
+            "Управління чатами (створення, отримання списку, отримання даних чату).",
+            "Робота з повідомленнями (надсилання текстових повідомлень, надсилання файлів, отримання історії).",
+            "Управління контактами.",
+            "Налаштування додатку (тема, сповіщення, мова).",
+            "Управління Premium-підпискою.",
+            "Управління файлами (завантаження в R2 через Backend).",
+            "(У майбутньому) Дзвінки та відеодзвінки (управління сесіями дзвінків)."
+          ]
+        },
+        "detailedSpecTitle": "Детальна специфікація API описана в:",
+        "detailedSpecContent": "DocSpec.md"
+      },
+      "database": {
+        "title": "5. База Даних (Neon/PostgreSQL): Сховище Основних Даних",
+        "description": "",
+        "technologyTitle": "Технологія:",
+        "technologyContent": "PostgreSQL 15.x.",
+        "hostingTitle": "Хостинг:",
+        "hostingContent": "Neon.",
+        "roleTitle": "Роль:",
+        "roleContent": "Реляційна база даних для всіх структурованих даних.",
+        "keyTables": {
+          "title": "Ключові таблиці (визначені в backend/prisma/schema.prisma):",
+          "list": [
+            "User: Інформація про користувачів (id, email, password_hash, name, avatarUrl, createdAt, updatedAt, is2FaEnabled).",
+            "Chat: Інформація про чати (id, type, name, createdAt, updatedAt, lastMessageAt).",
+            "UserChat: Зв'язуюча таблиця для Many-to-Many зв'язку між User та Chat (userId, chatId, joinedAt, lastReadMessageId).",
+            "Message: Повідомлення в чатах (id, chatId, senderId, content, fileUrl, fileMetadata (JSON), createdAt, updatedAt).",
+            "Contact: Список контактів користувача (id, userId, contactId).",
+            "Transaction: Історія платежів (для Premium) (id, userId, amount, currency, status, provider, createdAt).",
+            "Code: Тимчасові коди (для email верифікації, 2FA) (id, userId/email, code, type, expiresAt)."
+          ]
+        },
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Тільки Backend через Prisma ORM.",
+        "optimizationScalingTitle": "Оптимізація та Масштабування:",
+        "optimizationScalingContent": "Використовуються індекси, оптимізація запитів Prisma, матеріалізовані представлення, партиціонування, реплікація (див. DocOptimizationIn)."
+      },
+      "fileStorage": {
+        "title": "6. Сховище Файлів (Cloudflare R2): Сховище Медіа та Бінарних Активів",
+        "description": "",
+        "technologyTitle": "Технологія:",
+        "technologyContent": "Об'єктне сховище, S3-сумісний API.",
+        "hostingTitle": "Хостинг:",
+        "hostingContent": "Cloudflare R2.",
+        "roleTitle": "Роль:",
+        "roleContent": "Зберігання всіх неструктурованих даних (файли користувачів, аватарки, записи дзвінків).",
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Backend завантажує файли, Backend або Frontend отримує файли (безпосередньо або через підписані URL).",
+        "structureTitle": "Структура:",
+        "structureContent": "Файли організовані за папками/ключами (наприклад, `avatars/`, `chat-images/`, `sensitive-data/`).",
+        "securityTitle": "Безпека:",
+        "securityContent": "Шифрування в спокої, обмежений доступ, шифрування чутливих даних на рівні додатку перед завантаженням (див. DocInt, DocSecurity)."
+      },
+      "projectStructure": {
+        "title": "7. Проектна Структура (Монорепозиторій): Організація Коду",
+        "description": "Проект організований як монорепозиторій з використанням Turborepo.",
+        "purposeTitle": "Мета:",
+        "purposeContent": "Спростити управління кількома додатками/пакетами (backend, web, mobile-desktop, core) та перевикористання коду.",
+        "packages": {
+          "title": "Пакети:",
+          "list": [
+            "core: Спільний код.",
+            "backend: Серверна логіка.",
+            "web: Веб-додаток.",
+            "mobile-desktop: Мобільний/десктопний додаток (React Native).",
+            "Інфраструктура: Файли конфігурації для розгортання (infrastructure/).",
+            "Документація: Проектна документація (docs/)."
+          ]
+        },
+        "detailedDescriptionTitle": "Детальний опис структури монорепозиторію див. у:",
+        "detailedDescriptionContent": "DocDevIn.md (розділ 2)."
+      },
+      "security": {
+        "title": "8. Безпека: Фундаментальний Аспект Системи",
+        "description": "Безпека вбудована на всіх рівнях (див. докладніше в Посібнику з безпеки BrainMessenger).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT, 2FA через email.",
+        "authorizationTitle": "Авторизація:",
+        "authorizationContent": "Перевірка прав доступу до ресурсів на Backend.",
+        "encryptionTitle": "Шифрування:",
+        "encryptionContent": "TLS/SSL для передачі даних, шифрування паролів (bcrypt/argon2), шифрування чутливих даних на рівні додатку перед зберіганням в R2.",
+        "validationTitle": "Валідація:",
+        "validationContent": "Сувора валідація вхідних даних на Backend.",
+        "attackProtectionTitle": "Захист від Атак:",
+        "attackProtectionContent": "Rate Limiting, безпечні HTTP-заголовки.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Безпека — це постійний процес навчання (Принцип 1) та вдосконалення (Принцип 9), заснований на відповідальності (Принцип 6)."
+      },
+      "deployment": {
+        "title": "9. Розгортання: Доставка Системи Користувачам",
+        "description": "Процес розгортання автоматизований.",
+        "containerizationTitle": "Контейнеризація:",
+        "containerizationContent": "Docker-образи для Backend, Kafka Consumers.",
+        "orchestrationTitle": "Оркестрація:",
+        "orchestrationContent": "Kubernetes керує контейнерами в хмарі.",
+        "iacTitle": "Інфраструктура як Код:",
+        "iacContent": "Terraform (IaC). Автоматизує створення та управління хмарними ресурсами.",
+        "ciCdTitle": "CI/CD:",
+        "ciCdContent": "GitHub Actions автоматизує збірку, тестування та деплой.",
+        "webAppDeploymentTitle": "Веб-додаток може деплоїтися окремо (наприклад, на Vercel або Cloudflare Pages).",
+        "webAppDeploymentContent": "",
+        "detailedDescriptionTitle": "Детальний опис процесу деплою див. у:",
+        "detailedDescriptionList": [
+          "DocDevIn.md (розділ 9)",
+          "Посібнику з розгортання"
+        ]
+      },
+      "monitoringLogging": {
+        "title": "10. Моніторинг та Логування: Видимість Стану Системи",
+        "description": "",
+        "monitoringTitle": "Моніторинг:",
+        "monitoringList": [
+          "Збір та візуалізація метрик продуктивності та здоров'я системи (CPU, RAM, затримки API/БД, помилки).",
+          "Інструменти: Prometheus, Grafana. Дозволяє виявляти проблеми на ранній стадії (Принцип 9: Кайдзен)."
+        ],
+        "loggingTitle": "Логування:",
+        "loggingList": [
+          "Збір структурованих логів від усіх компонентів (Backend, воркери).",
+          "Інструменти: Winston (для Node.js), Sentry (для відстеження помилок)."
+        ],
+        "detailedDescriptionTitle": "Детальний опис див. у:",
+        "detailedDescriptionList": [
+          "Посібнику з оптимізації BrainMessenger (розділ 14)",
+          "Посібнику з моніторингу"
+        ]
+      },
+      "externalApiIntegrations": {
+        "title": "11. Зовнішні API Інтеграції: Використання Зовнішніх Важелів",
+        "description": "Backend взаємодіє з кількома зовнішніми сервісами через їх API.",
+        "gmailApiTitle": "Gmail API:",
+        "gmailApiContent": "Надсилання транзакційних email (підтвердження, 2FA).",
+        "stripeTitle": "Stripe:",
+        "stripeContent": "Обробка платежів та підписок.",
+        "firebaseFCMTitle": "Firebase FCM:",
+        "firebaseFCMContent": "Надсилання push-сповіщень на мобільні пристрої.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Використання цих сервісів — прагматичний (Принцип 12) спосіб швидко додати функціонал, використовуючи готові, надійні (Принцип 3) рішення.",
+        "detailedDescriptionTitle": "Детальний опис інтеграцій див. у:",
+        "detailedDescriptionContent": "DocInt.md"
+      },
+      "notes": {
+        "title": "12. Примітки",
+        "description": "Ця документація надає високорівневий огляд технічної системи BrainMessenger. Для більш детального розуміння окремих частин звертайтеся до пов'язаних документів:",
+        "apiSpecLinkTitle": "Специфікація API:",
+        "apiSpecLinkContent": "DocSpec.md",
+        "devGuideLinkTitle": "Посібник з розробки:",
+        "devGuideLinkContent": "DocDevIn.md",
+        "optimizationGuideLinkTitle": "Посібник з оптимізації:",
+        "optimizationGuideLinkContent": "DocOptimizationIn.md",
+        "integrationsDocsLinkTitle": "Документація інтеграцій:",
+        "integrationsDocsLinkContent": "DocInt.md",
+        "designDocsLinkTitle": "Документація дизайну:",
+        "designDocsLinkContent": "DocDesign.md",
+        "userGuideLinkTitle": "Посібник користувача:",
+        "userGuideLinkContent": "DocUser.md",
+        "longTermInvestmentTitle": "Розробка та підтримка цієї технічної системи — це довгострокова інвестиція (Принцип 8) та безперервний процес навчання та вдосконалення (Принцип 1, 9)."
       }
     }
+  }
+}
   },
   "docs": {
     "general": {
