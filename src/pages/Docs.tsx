@@ -229,7 +229,7 @@ const Docs: React.FC = () => {
         { id: 'env-setup', titleKey: 'docs.devGuide.devProcess.envSetup.title', contentKey: 'docs.devGuide.devProcess.envSetup.intro', subSections: [
             { id: 'clone-repo', titleKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.title', contentKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.code' },
             { id: 'install-deps', titleKey: 'docs.devGuide.devProcess.envSetup.installDeps.title', contentKey: 'docs.devGuide.devProcess.envSetup.installDeps.code' },
-            { id: 'env-vars', titleKey: 'docs.devGuide.devProcess.envSetup.envVars.title', contentKey: 'docs.devGuide.devProcess.envSetup.envVars.code', additionalContentKeys: ['docs.devGuide.devProcess.envSetup.envVars.note'] },
+            { id: 'env-vars', titleKey: 'docs.devGuide.devProcess.envSetup.envVars.title', contentKey: 'docs.devGuide.devProcess.envSetup.envVars.code', additionalContentKeys: ['docs.devGuide.devProcess.envVars.note'] },
             { id: 'prisma-client', titleKey: 'docs.devGuide.devProcess.envSetup.prismaClient.title', contentKey: 'docs.devGuide.devProcess.envSetup.prismaClient.code' },
             { id: 'local-db', titleKey: 'docs.devGuide.devProcess.envSetup.localDb.title', contentKey: 'docs.devGuide.devProcess.envSetup.localDb.code' },
         ]},
@@ -267,6 +267,55 @@ const Docs: React.FC = () => {
     { id: 'notes', titleKey: 'docs.devGuide.notes.title', listKey: 'docs.devGuide.notes.points' },
   ];
 
+  const integrationsGuideSections = [
+    { id: 'integrations-intro', titleKey: 'docs.integrationsGuide.introduction.title', contentKey: 'docs.integrationsGuide.introduction.description', subSections: [
+        { id: 'integrations-intro-principles', titleKey: 'docs.integrationsGuide.introduction.principlesTitle', listKey: 'docs.integrationsGuide.introduction.principles' },
+    ]},
+    { id: 'integrations-overview', titleKey: 'docs.integrationsGuide.overview.title', tableKey: 'docs.integrationsGuide.overview.table' },
+    { id: 'neon-integration', titleKey: 'docs.integrationsGuide.neonIntegration.title', subSections: [
+        { id: 'neon-general-info', titleKey: 'docs.integrationsGuide.neonIntegration.generalInfo.title', contentKey: 'docs.integrationsGuide.neonIntegration.generalInfo.description', listKey: 'docs.integrationsGuide.neonIntegration.generalInfo.advantages', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.generalInfo.role'] },
+        { id: 'neon-configuration', titleKey: 'docs.integrationsGuide.neonIntegration.configuration.title', listKey: 'docs.integrationsGuide.neonIntegration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.neonIntegration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.configuration.note1'], codeExampleKey2: 'docs.integrationsGuide.neonIntegration.configuration.backendCode' },
+        { id: 'neon-interaction-scenarios', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.title', subSections: [
+            { id: 'neon-scenario-signup', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.signup.code', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.interactionScenarios.signup.result'] },
+            { id: 'neon-scenario-get-chats', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.getChats.code' },
+            { id: 'neon-scenario-save-message', titleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.title', contentKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.interaction', codeExampleKey: 'docs.integrationsGuide.neonIntegration.interactionScenarios.saveMessage.code' },
+        ]},
+        { id: 'neon-error-handling', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.title', subSections: [
+            { id: 'neon-error-connection', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.connectionError.title', contentKey: 'docs.integrationsGuide.neonIntegration.errorHandling.connectionError.cause', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.errorHandling.connectionError.solution'] },
+            { id: 'neon-error-query', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.queryError.title', contentKey: 'docs.integrationsGuide.neonIntegration.errorHandling.queryError.cause', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.errorHandling.queryError.solution'] },
+            { id: 'neon-error-rate-limit', titleKey: 'docs.integrationsGuide.neonIntegration.errorHandling.rateLimitError.title', contentKey: 'docs.integrationsGuide.neonIntegration.errorHandling.rateLimitError.cause', additionalContentKeys: ['docs.integrationsGuide.neonIntegration.errorHandling.rateLimitError.solution'] },
+        ]},
+    ]},
+    { id: 'r2-integration', titleKey: 'docs.integrationsGuide.r2Integration.title', subSections: [
+        { id: 'r2-general-info', titleKey: 'docs.integrationsGuide.r2Integration.generalInfo.title', contentKey: 'docs.integrationsGuide.r2Integration.generalInfo.description', listKey: 'docs.integrationsGuide.r2Integration.generalInfo.advantages', additionalContentKeys: ['docs.integrationsGuide.r2Integration.generalInfo.role'] },
+        { id: 'r2-configuration', titleKey: 'docs.integrationsGuide.r2Integration.configuration.title', listKey: 'docs.integrationsGuide.r2Integration.configuration.steps', codeExampleKey: 'docs.integrationsGuide.r2Integration.configuration.envExample', additionalContentKeys: ['docs.integrationsGuide.r2Integration.configuration.note'], codeExampleKey2: 'docs.integrationsGuide.r2Integration.configuration.backendCode' },
+        { id: 'r2-interaction-scenarios', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.title', subSections: [
+            { id: 'r2-scenario-upload', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.uploadFile.result'] },
+            { id: 'r2-scenario-sensitive-data', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.code', additionalContentKeys: ['docs.integrationsGuide.r2Integration.interactionScenarios.sensitiveData.result'] },
+            { id: 'r2-scenario-get-file', titleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.title', contentKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.interaction', codeExampleKey: 'docs.integrationsGuide.r2Integration.interactionScenarios.getFile.code' },
+        ]},
+        { id: 'r2-error-handling', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.title', subSections: [
+            { id: 'r2-error-forbidden', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.forbidden.title', contentKey: 'docs.integrationsGuide.r2Integration.errorHandling.forbidden.cause', additionalContentKeys: ['docs.integrationsGuide.r2Integration.errorHandling.forbidden.solution'] },
+            { id: 'r2-error-not-found', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.notFound.title', contentKey: 'docs.integrationsGuide.r2Integration.errorHandling.notFound.cause', additionalContentKeys: ['docs.integrationsGuide.r2Integration.errorHandling.notFound.solution'] },
+            { id: 'r2-error-too-many-requests', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.tooManyRequests.title', contentKey: 'docs.integrationsGuide.r2Integration.errorHandling.tooManyRequests.cause', additionalContentKeys: ['docs.integrationsGuide.r2Integration.errorHandling.tooManyRequests.solution'] },
+            { id: 'r2-error-encryption', titleKey: 'docs.integrationsGuide.r2Integration.errorHandling.encryptionError.title', contentKey: 'docs.integrationsGuide.r2Integration.errorHandling.encryptionError.cause', additionalContentKeys: ['docs.integrationsGuide.r2Integration.errorHandling.encryptionError.solution'] },
+        ]},
+    ]},
+    { id: 'neon-r2-interaction', titleKey: 'docs.integrationsGuide.neonR2Interaction.title', contentKey: 'docs.integrationsGuide.neonR2Interaction.description', listKey: 'docs.integrationsGuide.neonR2Interaction.scenario', additionalContentKeys: ['docs.integrationsGuide.neonR2Interaction.advantagesTitle', 'docs.integrationsGuide.neonR2Interaction.advantages'] },
+    { id: 'other-integrations', titleKey: 'docs.integrationsGuide.otherIntegrations.title', contentKey: 'docs.integrationsGuide.otherIntegrations.description', subSections: [
+        { id: 'firebase-integration', titleKey: 'docs.integrationsGuide.otherIntegrations.firebase.title', contentKey: 'docs.integrationsGuide.otherIntegrations.firebase.purpose', additionalContentKeys: ['docs.integrationsGuide.otherIntegrations.firebase.role', 'docs.integrationsGuide.otherIntegrations.firebase.configuration', 'docs.integrationsGuide.otherIntegrations.firebase.example'] },
+        { id: 'stripe-integration', titleKey: 'docs.integrationsGuide.otherIntegrations.stripe.title', contentKey: 'docs.integrationsGuide.otherIntegrations.stripe.purpose', additionalContentKeys: ['docs.integrationsGuide.otherIntegrations.stripe.role', 'docs.integrationsGuide.otherIntegrations.stripe.configuration', 'docs.integrationsGuide.otherIntegrations.stripe.example'] },
+        { id: 'gmail-api-integration', titleKey: 'docs.integrationsGuide.otherIntegrations.gmailApi.title', contentKey: 'docs.integrationsGuide.otherIntegrations.gmailApi.purpose', additionalContentKeys: ['docs.integrationsGuide.otherIntegrations.gmailApi.role', 'docs.integrationsGuide.otherIntegrations.gmailApi.configuration', 'docs.integrationsGuide.otherIntegrations.gmailApi.example'] },
+    ]},
+    { id: 'integrations-recommendations', titleKey: 'docs.integrationsGuide.recommendations.title', contentKey: 'docs.integrationsGuide.recommendations.intro', subSections: [
+        { id: 'integrations-recommendations-security', titleKey: 'docs.integrationsGuide.recommendations.security.title', listKey: 'docs.integrationsGuide.recommendations.security.points' },
+        { id: 'integrations-recommendations-scaling', titleKey: 'docs.integrationsGuide.recommendations.scaling.title', listKey: 'docs.integrationsGuide.recommendations.scaling.points' },
+        { id: 'integrations-recommendations-monitoring', titleKey: 'docs.integrationsGuide.recommendations.monitoring.title', listKey: 'docs.integrationsGuide.recommendations.monitoring.points' },
+        { id: 'integrations-recommendations-error-handling', titleKey: 'docs.integrationsGuide.recommendations.errorHandling.title', listKey: 'docs.integrationsGuide.recommendations.errorHandling.points' },
+        { id: 'integrations-recommendations-documentation', titleKey: 'docs.integrationsGuide.recommendations.documentation.title', contentKey: 'docs.integrationsGuide.recommendations.documentation.content' },
+    ]},
+  ];
+
   const docsConfig = [
     {
       id: 'general_docs',
@@ -297,6 +346,12 @@ const Docs: React.FC = () => {
       titleKey: 'docs.devGuide.title',
       subtitleKey: 'docs.devGuide.subtitle',
       sections: devGuideSections,
+    },
+    {
+      id: 'integrations_guide_docs',
+      titleKey: 'docs.integrationsGuide.title',
+      subtitleKey: 'docs.integrationsGuide.subtitle',
+      sections: integrationsGuideSections,
     },
   ];
 

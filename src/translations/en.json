@@ -1231,6 +1231,261 @@
           "Вопросы и Обратная Связь: Если что-то непонятно, или вы видите возможность улучшить процесс — задавайте вопросы в командном чате (#dev-team в Slack или другом инструменте) и предлагайте изменения. Это часть Силы Взаимодействия и Содействия (Маргулан), которая делает систему сильнее."
         ]
       }
+    },
+    "integrationsGuide": {
+      "title": "Документация Интеграций BrainMessenger",
+      "subtitle": "Построение Надежной Системы с Внешними Рычагами",
+      "introduction": {
+        "title": "1. Введение: Интеграции как Часть Фундамента Системы",
+        "description": "Этот документ описывает, как BrainMessenger интегрируется с ключевыми внешними сервисами. Мы выбираем эти интеграции <strong>прагматично</strong> (Принцип 12), рассматривая их как <strong>рычаги</strong> (принцип Маргулана), которые позволяют нам не изобретать колесо, а использовать <strong>надежные и масштабируемые</strong> (Принцип 8, 9) сторонние решения для ускорения разработки и обеспечения <strong>качества</strong> (Принцип 3) нашего продукта. Эти интеграции являются неотъемлемой частью нашего <strong>технологического фундамента</strong> (Принцип 8).",
+        "principlesTitle": "Принципы, которыми руководствуется выбор и настройка интеграций:",
+        "principles": [
+          "<strong>Система и Оптимизация (Принцип 9):</strong> Интеграции должны быть частью единой, хорошо продуманной системы, где каждый компонент выполняет свою роль эффективно.",
+          "<strong>Прагматизм и Реализм (Принцип 12):</strong> Выбор сервисов с учетом текущих потребностей, бюджета (бесплатные/доступные тарифы на старте) и простоты интеграции.",
+          "<strong>Долгосрочное Мышление (Принцип 8):</strong> Выбор сервисов, способных масштабироваться вместе с ростом проекта.",
+          "<strong>Качество > Количество (Принцип 3):</strong> Фокус на надежности и производительности интеграций, даже если их список на старте небольшой.",
+          "<strong>Создание Ценности (Принцип 2):</strong> Каждая интеграция должна добавлять реальную ценность для конечного пользователя (например, надежное хранение файлов, мгновенные уведомления)."
+        ]
+      },
+      "overview": {
+        "title": "2. Обзор Ключевых Интеграций: Наши Внешние Компоненты Системы",
+        "table": [
+          ["Сервис", "Назначение", "Роль в BrainMessenger", "Основные функции", "Связь с Принципами"],
+          ["<strong>Neon</strong>", "Управляемый PostgreSQL БД", "Хранение всех <strong>структурированных данных</strong> (пользователи, чаты, сообщения, метаданные файлов). Фундамент данных.", "Хостинг PostgreSQL, масштабирование, доступ через строку подключения.", "P8 (Долгосрочное), P9 (Система), P12 (Прагматизм - бесплатный тариф)."],
+          ["<strong>Cloudflare R2</strong>", "Облачное Хранилище (S3-совместимое)", "Хранение всех <strong>неструктурированных данных</strong> (файлы пользователей, аватарки, записи звонков, зашифрованные метаданные). Хранилище Активов.", "Надежное хранение объектов, CDN-доставка, отсутствие платы за исходящий трафик.", "P8 (Долгосрочное), P10 (Активы), P12 (Прагматизм - бесплатный тариф, нет платы за трафик), P3 (Качество - CDN)."],
+          ["<strong>Firebase</strong>", "Push-уведомления", "Мгновенная доставка уведомлений пользователям на мобильные устройства.", "Отправка push-уведомлений (FCM).", "P2 (Ценность - информирование), P9 (Система - надежная доставка), P12 (Прагматизм - готовое решение)."],
+          ["<strong>Stripe</strong>", "Платежная Система", "Обработка платежей за Premium-подписку. Доступ к платежам как к рычагу создания Ценности/Богатства.", "Прием платежей, управление подписками.", "P2 (Ценность - премиум), P10 (Богатство/Активы), P9 (Система - автоматизация платежей)."],
+          ["<strong>Gmail API</strong>", "Сервис отправки email", "Отправка критически важных email (коды подтверждения для регистрации и 2FA).", "Отправка транзакционных email.", "P3 (Качество - надежная доставка email), P9 (Система - часть аутентификации), P5 (Здоровье - безопасность пользователя)."]
+        ]
+      },
+      "neonIntegration": {
+        "title": "3. Интеграция с Neon: Фундамент Структурированных Данных",
+        "generalInfo": {
+          "title": "3.1. Общая Информация",
+          "description": "Neon предоставляет управляемый сервис PostgreSQL. Мы используем его как <strong>основное хранилище структурированных данных</strong>, таких как информация о пользователях, чатах, сообщениях и метаданных файлов.",
+          "advantages": [
+            "<strong>Прагматизм (P12):</strong> Бесплатный тариф на старте (30 ГБ) полностью покрывает начальные потребности.",
+            "<strong>Система и Долгосрочное Мышление (P9, P8):</strong> Управляемый сервис снижает операционную нагрузку, автоматическое масштабирование и репликация доступны на платных планах, обеспечивая готовность к росту.",
+            "<strong>Качество (P3):</strong> Надежность и производительность PostgreSQL как проверенной СУБД."
+          ],
+          "role": "Роль: Ядро, к которому обращается Backend для всех CRUD-операций над метаданными."
+        },
+        "configuration": {
+          "title": "3.2. Конфигурация: Подключение к Системе Данных",
+          "steps": [
+            "1. <strong>Регистрация и Создание Проекта:</strong>",
+            "Создайте аккаунт на `https://neon.tech`.",
+            "Создайте новый проект (например, `brainmessenger-prod`) в консоли Neon.",
+            "2. <strong>Настройка Базы Данных:</strong>",
+            "Neon автоматически предоставляет инстанс PostgreSQL.",
+            "<strong>Примените схему базы данных:</strong> Используйте Prisma Migrate для инициализации структуры таблиц (см. `database/schema.prisma` и Руководство по разработке).",
+            "3. <strong>Переменные Окружения:</strong>",
+            "Получите <strong>строку подключения</strong> (Connection Details) из консоли Neon (Settings → Connection Details).",
+            "Добавьте в ваш `.env` файл:"
+          ],
+          "envExample": "```env\n# Строка подключения к базе данных Neon\nDATABASE_URL=postgresql://<user>:<password>@<neon-host>/<dbname>?sslmode=require\n```",
+          "note1": "*Примечание:* Используйте `sslmode=require` для безопасного соединения.",
+          "backendCode": "4. <strong>Подключение Backend (NestJS + Prisma):</strong>\nPrisma использует `DATABASE_URL` для подключения. Убедитесь, что Prisma Client сгенерирован (`npx prisma generate`).\nИспользуйте `PrismaService` (из `nestjs-prisma`) для всех операций с БД.\n```typescript\n// backend/src/app.module.ts (или db.module.ts)\nimport { Module } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma'; // Убедитесь, что PrismaModule импортирован в app.module\n\n@Module({\n  providers: [PrismaService], // PrismaService доступен для инъекции\n  exports: [PrismaService],\n})\nexport class DbModule {}\n```"
+        },
+        "interactionScenarios": {
+          "title": "3.3. Методы и Сценарии Взаимодействия: API Данных",
+          "description": "Все взаимодействия с Neon происходят через Prisma ORM в Backend, что обеспечивает <strong>типизацию, безопасность и системность</strong> (Принцип 3, 9).",
+          "signup": {
+            "title": "Сценарий: Регистрация пользователя:",
+            "interaction": "<strong>Взаимодействие:</strong> Backend получает данные пользователя → Использует `PrismaService` для создания новой записи в таблице `users`.",
+            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/auth/auth.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client'; // Импорт типов Prisma\n\n@Injectable()\nexport class AuthService {\n  constructor(private prisma: PrismaService) {}\n\n  async signUp(data: Prisma.UserCreateInput) {\n    // Пример: пароль должен быть захэширован ДО сохранения\n    const hashedPassword = await hashPassword(data.password); // Использование утилиты для хэширования\n    return this.prisma.user.create({\n      data: {\n        email: data.email,\n        name: data.name,\n        password: hashedPassword, // Сохраняем захэшированный пароль\n        // ... другие поля по схеме\n      },\n    });\n  }\n}\n```",
+            "result": "<strong>Результат:</strong> Данные пользователя надежно сохранены в Neon."
+          },
+          "getChats": {
+            "title": "Сценарий: Получение списка чатов пользователя:",
+            "interaction": "<strong>Взаимодействие:</strong> Frontend запрашивает чаты через GraphQL API → Backend использует `PrismaService` для выполнения запроса к таблице `chats` (возможно, с фильтрацией по `userId` и `include` для метаданных).",
+            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/chat/chat.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\n\n@Injectable()\nexport class ChatService {\n  constructor(private prisma: PrismaService) {}\n\n  async getUserChats(userId: string) {\n    // Используем индексы @@index([userId]) для оптимизации (Принцип 9, Оптимизация)\n    return this.prisma.chat.findMany({\n      where: {\n        users: { // Предполагается связь Many-to-Many с таблицей UserChat\n          some: {\n            userId: userId,\n          },\n        },\n      },\n      select: { // Выбираем только необходимые поля (Принцип 9, Оптимизация)\n        id: true,\n        name: true,\n        type: true,\n        // ... другие нужные поля\n      },\n      orderBy: { // Сортировка по дате последнего сообщения для актуальности (Принцип 2, Ценность)\n        lastMessageAt: 'desc',\n      },\n    });\n  }\n}\n```"
+          },
+          "saveMessage": {
+            "title": "Сценарий: Сохранение сообщения:",
+            "interaction": "<strong>Взаимодействие:</strong> Пользователь отправляет сообщение → Frontend отправляет его через GraphQL API → Backend использует `PrismaService` для создания новой записи в таблице `messages`, связывая ее с `chatId` и `userId`.",
+            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/message/message.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { PrismaService } from 'nestjs-prisma';\nimport { Prisma } from '@prisma/client';\n\n@Injectable()\nexport class MessageService {\n  constructor(private prisma: PrismaService) {}\n\n  async createMessage(data: Prisma.MessageCreateInput) {\n    // Используем транзакцию, если нужно обновить дату последнего сообщения в чате\n    return this.prisma.$transaction(async (tx) => {\n      const message = await tx.message.create({ data });\n      await tx.chat.update({\n        where: { id: data.chatId },\n        data: { lastMessageAt: message.createdAt }, // Обновляем время последнего сообщения\n      });\n      return message;\n    });\n  }\n}\n```"
+          }
+        },
+        "errorHandling": {
+          "title": "3.4. Обработка Ошибок Интеграции: Поддержание Качества Системы",
+          "description": "Надежная система должна уметь обрабатывать ошибки внешних зависимостей (Принцип 3: Качество).",
+          "connectionError": {
+            "title": "Connection Error:",
+            "cause": "Причина: Невозможно установить соединение с Neon. Неверная строка подключения (`DATABASE_URL`), проблемы с сетью, недоступность сервиса Neon.",
+            "solution": "Решение: Проверить переменную окружения `DATABASE_URL`, статус сервиса Neon. Логировать ошибку на Backend (Sentry/Winston)."
+          },
+          "queryError": {
+            "title": "Database Query Error:",
+            "cause": "Причина: Ошибка выполнения запроса к БД (например, нарушение уникальности, неверный тип данных). Ошибка в логике Backend, несоответствие схемы БД.",
+            "solution": "Решение: Отладить запрос в Backend, проверить логи Prisma. Логировать ошибку."
+          },
+          "rateLimitError": {
+            "title": "Rate Limit Exceeded (на платных тарифах):",
+            "cause": "Причина: Превышены лимиты на количество запросов или вычислительные ресурсы в Neon. Высокая нагрузка, неоптимизированные запросы, недостаточный тарифный план.",
+            "solution": "Решение: Оптимизировать запросы (см. Руководство по оптимизации), рассмотреть переход на более высокий тарифный план Neon."
+          }
+        }
+      },
+      "r2Integration": {
+        "title": "4. Интеграция с Cloudflare R2: Хранилище Цифровых Активов",
+        "generalInfo": {
+          "title": "4.1. Общая Информация",
+          "description": "Cloudflare R2 — это сервис объектного хранилища, совместимый с S3 API. Мы используем его для хранения <strong>всех файлов пользователей</strong>, таких как изображения, видео, документы, а также зашифрованные данные.",
+          "advantages": [
+            "<strong>Прагматизм (P12), Создание Богатства/Активов (P10):</strong> <strong>Отсутствие платы за исходящий трафик</strong> — критически важное преимущество для мессенджера, где пользователи активно обмениваются файлами. Бесплатный тариф 10 ГБ на старте.",
+            "<strong>Качество (P3):</strong> Высокая производительность и надежность благодаря глобальной сети Cloudflare.",
+            "<strong>Долгосрочное Мышление (P8), Система (P9):</strong> S3-совместимый API позволяет легко использовать стандартные библиотеки и инструменты, обеспечивая гибкость в будущем."
+          ],
+          "role": "Роль: Децентрализованное хранилище для крупных бинарных объектов, снижающее нагрузку на основную базу данных."
+        },
+        "configuration": {
+          "title": "4.2. Конфигурация: Подключение к Хранилищу Активов",
+          "steps": [
+            "1. <strong>Создание Бакета:</strong>",
+            "Войдите в Cloudflare Dashboard → R2.",
+            "Нажмите <strong>\"Create Bucket\"</strong>.",
+            "Назовите бакет (например, `brainmessenger-files`). Название должно быть уникальным в рамках всех аккаунтов Cloudflare.",
+            "<strong>Настройки:</strong> Включите шифрование в покое (Encryption at rest) — это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5). Ограничьте публичный доступ к бакету, доступ будет осуществляться через подписанные URL (если требуется) или через Backend.",
+            "2. <strong>Ключи Доступа:</strong>",
+            "В Cloudflare Dashboard перейдите в R2 → Manage R2 API Tokens.",
+            "Создайте новый API-токен. Предоставьте ему минимально необходимые разрешения (например, Read and Write to specific buckets).",
+            "Скопируйте `Access Key ID` и `Secret Access Key`.",
+            "3. <strong>Переменные Окружения:</strong>",
+            "Добавьте в ваш `.env` файл:"
+          ],
+          "envExample": "```env\n# Cloudflare R2 Credentials\nR2_ENDPOINT=<Your R2 Endpoint> # Формат: https://<account-id>.r2.cloudflarestorage.com\nR2_ACCESS_KEY=<Your Access Key ID>\nR2_SECRET_KEY=<Your Secret Access Key>\nR2_BUCKET=brainmessenger-files # Название вашего бакета\n\n# Ключ шифрования для конфиденциальных данных (важно для P3, P5, P10)\nENCRYPTION_KEY=<Your 32-byte (256-bit) hex or base64 encryption key> # Сгенерируйте надежный ключ!\n```",
+          "note": "*Примечание:* <strong>Не коммитьте эти ключи в Git!</strong> (Принцип 3, 5, 6). Используйте `.env.example` без чувствительных данных. <strong>ENCRYPTION_KEY</strong> должен быть сгенерирован надежно и храниться в безопасности.",
+          "backendCode": "4. <strong>Подключение Backend (`@aws-sdk/client-s3`):</strong>\nR2 совместим с S3 API, поэтому можно использовать стандартный AWS SDK для S3.\nУстановите SDK: `npm install @aws-sdk/client-s3`.\nИнициализируйте S3 Client в вашем Backend-сервисе (например, `StorageService`).\n```typescript\n// backend/src/storage/storage.service.ts\nimport { Injectable } from '@nestjs/common';\nimport { S3Client, PutObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';\nimport { getSignedUrl } from '@aws-sdk/s3-request-presigner'; // Для подписанных URL\nimport { createCipheriv, randomBytes, createDecipheriv } from 'crypto'; // Для шифрования\n\n@Injectable()\nexport class StorageService {\n  private r2: S3Client;\n  private encryptionKey: Buffer; // Ключ для шифрования\n\n  constructor() {\n    this.r2 = new S3Client({\n      region: 'auto', // R2 не использует регионы в классическом понимании\n      endpoint: process.env.R2_ENDPOINT,\n      credentials: {\n        accessKeyId: process.env.R2_ACCESS_KEY,\n        secretAccessKey: process.env.R2_SECRET_KEY,\n      },\n    });\n    // Важно: ENCRYPTION_KEY должен быть Buffer 32 байт для aes-256-cbc\n    this.encryptionKey = Buffer.from(process.env.ENCRYPTION_KEY, 'hex'); // Или 'base64'\n    if (this.encryptionKey.length !== 32) {\n         // Логировать ошибку или выбросить исключение - ключ неверной длины\n         console.error(\"Invalid ENCRYPTION_KEY length. Must be 32 bytes for aes-256-cbc.\");\n         // process.exit(1); // Возможно, стоит остановить приложение\n    }\n  }\n\n  // Утилита для шифрования (часть системы безопасности - P3, P5)\n  private encrypt(data: string): { encrypted: string, iv: string } {\n    const iv = randomBytes(16); // Initialization Vector, 16 байт для aes-256-cbc\n    const cipher = createCipheriv('aes-256-cbc', this.encryptionKey, iv);\n    let encrypted = cipher.update(data, 'utf8', 'hex');\n    encrypted += cipher.final('hex');\n    return { encrypted, iv: iv.toString('hex') };\n  }\n\n  // Утилита для дешифрования\n  private decrypt(encrypted: string, iv: string): string {\n      const decipher = createDecipheriv('aes-256-cbc', this.encryptionKey, Buffer.from(iv, 'hex'));\n      let decrypted = decipher.update(encrypted, 'hex', 'utf8');\n      decrypted += decipher.final('utf8');\n      return decrypted;\n  }\n\n  // ... методы для работы с R2 (загрузка, скачивание, удаление)\n}\n```"
+        },
+        "interactionScenarios": {
+          "title": "4.3. Методы и Сценарии Взаимодействия: API Хранилища",
+          "description": "Взаимодействие с R2 осуществляется через Backend, что позволяет контролировать доступ, обрабатывать файлы (например, оптимизация изображений перед загрузкой) и управлять метаданными в БД (Принцип 9: Система).",
+          "uploadFile": {
+            "title": "Сценарий: Загрузка файла пользователем:",
+            "interaction": "<strong>Взаимодействие:</strong> Пользователь прикрепляет файл в чате → Frontend отправляет файл на Backend → Backend (`StorageService`) загружает файл в R2 → Backend сохраняет метаданные файла (URL, тип, размер) в Neon → Backend отправляет сообщение в чат с ссылкой на файл.",
+            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... S3Client и encryptionKey инициализация ...\n\nasync uploadFile(fileBuffer: Buffer, fileName: string, mimeType: string): Promise<string> {\n  const key = `uploads/${Date.now()}-${fileName}`; // Уникальный ключ файла\n  const params = {\n    Bucket: process.env.R2_BUCKET,\n    Key: key,\n    Body: fileBuffer,\n    ContentType: mimeType, // Важно для отдачи файла\n  };\n  const command = new PutObjectCommand(params);\n  await this.r2.send(command); // Асинхронная загрузка\n\n  // Возвращаем URL для сохранения в БД. R2 позволяет прямые ссылки, если настроен публичный домен.\n  // ИЛИ генерируем подписанный URL для ограниченного доступа (более безопасно).\n  // Пример прямой ссылки (требует настройки Public Access URL в CF Dashboard):\n  // const publicUrl = `${process.env.R2_ENDPOINT.replace('.r2.cloudflarestorage.com', '.r2.dev')}/${process.env.R2_BUCKET}/${key}`;\n  // Для своего домена (предпочтительно):\n  const fileUrl = `https://r2.brainmessenger.com/${key}`; // Ваш настроенный домен Cloudflare Workers/Pages\n\n  return fileUrl;\n}\n\n//backend/src/chat/chat.service.ts (интеграция uploadFile)\n// ... constructor с StorageService ...\nasync sendFileMessage(chatId: string, userId: string, file: Express.Multer.File): Promise<Message> {\n   // Опционально: обработка изображения перед загрузкой (см. DocOptimizationIn)\n   // const processedFileBuffer = await this.imageProcessingService.processImage(file.buffer, 800, 600); // Пример\n   const fileUrl = await this.storageService.uploadFile(file.buffer, file.originalname, file.mimetype);\n\n   // Создаем сообщение в БД со ссылкой на файл\n   return this.prisma.message.create({\n     data: {\n       chatId,\n       userId,\n       content: '[File]', // Или другое обозначение файла\n       fileUrl: fileUrl, // Сохраняем ссылку на файл в БД\n       // fileMetadata: { type: file.mimetype, size: file.size }, // Опционально: сохранение метаданных в JSON поле или отдельной таблице\n     },\n   });\n}\n```",
+            "result": "<strong>Результат:</strong> Файл надежно хранится в R2, ссылка на него доступна в БД для отображения в чате."
+          },
+          "sensitiveData": {
+            "title": "Сценарий: Хранение конфиденциальных данных (например, зашифрованные метаданные):",
+            "interaction": "<strong>Взаимодействие:</strong> При регистрации или обновлении профиля Backend шифрует чувствительные данные (например, резервные email, секретные вопросы) и сохраняет их в R2 в отдельном бакете или папке.",
+            "code": "<strong>Пример кода (Backend Service):</strong>\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... методы encrypt/decrypt ...\n\nasync storeSensitiveData(userId: string, sensitiveInfo: any): Promise<string> {\n   const encryptedData = {};\n   for (const key in sensitiveInfo) {\n       if (sensitiveInfo.hasOwnProperty(key)) {\n           const { encrypted, iv } = this.encrypt(JSON.stringify(sensitiveInfo[key])); // Шифруем каждое поле или весь объект\n           encryptedData[key] = { encrypted, iv };\n       }\n   }\n\n   const key = `sensitive/${userId}/metadata.json`;\n   const params = {\n       Bucket: process.env.R2_BUCKET, // Или отдельный бакет для чувствительных данных\n       Key: key,\n       Body: JSON.stringify(encryptedData),\n       ContentType: 'application/json',\n   };\n   const command = new PutObjectCommand(params);\n   await this.r2.send(command);\n   return `https://r2.brainmessenger.com/${key}`; // Ссылка для внутреннего использования\n}\n\n// backend/src/user/user.service.ts (интеграция storeSensitiveData)\n// ... constructor с StorageService ...\nasync createUserWithSensitiveData(userData: any, sensitiveData: any) {\n    // Создаем пользователя в БД\n    const user = await this.prisma.user.create({ data: userData });\n    // Сохраняем зашифрованные данные в R2\n    const sensitiveDataUrl = await this.storageService.storeSensitiveData(user.id, sensitiveData);\n    // Сохраняем ссылку на зашифрованные данные в БД (опционально)\n    await this.prisma.user.update({\n        where: { id: user.id },\n        data: { sensitiveDataUrl: sensitiveDataUrl } // Добавить поле sensitiveDataUrl в схему Prisma\n    });\n    return user;\n}\n```",
+            "result": "<strong>Результат:</strong> Конфиденциальные данные надежно зашифрованы и хранятся отдельно от основной БД в R2. Доступ к ним возможен только через Backend с использованием ключа шифрования."
+          },
+          "getFile": {
+            "title": "Сценарий: Получение файла (для отображения или скачивания):",
+            "interaction": "<strong>Взаимодействие:</strong> Frontend получает URL файла из метаданных сообщения (из Neon) → Frontend (или Backend, если требуется аутентификация/подписанные URL) использует этот URL для скачивания файла напрямую из R2.",
+            "code": "<strong>Реализация:</strong> Если бакет R2 настроен с Public Access URL (через Cloudflare Workers/Pages), Frontend может обращаться напрямую. Если доступ ограничен, Backend может генерировать временные подписанные URL через `@aws-sdk/s3-request-presigner`.\n```typescript\n// backend/src/storage/storage.service.ts (продолжение)\n// ... S3Client инициализация ...\n\n// Метод для генерации подписанного URL (более безопасный подход для приватных файлов)\nasync getSignedFileUrl(fileKey: string): Promise<string> {\n    const command = new GetObjectCommand({\n        Bucket: process.env.R2_BUCKET,\n        Key: fileKey,\n    });\n    // Сгенерировать подписанный URL, действительный, например, 60 секунд\n    const signedUrl = await getSignedUrl(this.r2, command, { expiresIn: 60 });\n    return signedUrl;\n}\n```"
+          }
+        },
+        "errorHandling": {
+          "title": "4.4. Обработка Ошибок Интеграции: Хранилище Активов",
+          "forbidden": {
+            "title": "403 Forbidden:",
+            "cause": "Причина: Ошибка доступа к бакету R2. Неверные ключи доступа (`R2_ACCESS_KEY`, `R2_SECRET_KEY`), неверные разрешения токена, попытка доступа к приватному файлу без аутентификации/подписанного URL.",
+            "solution": "Решение: Проверить переменные окружения, разрешения токена R2. Убедиться, что логика доступа (публичный URL vs подписанный URL) реализована корректно. Логировать ошибку."
+          },
+          "notFound": {
+            "title": "404 Not Found:",
+            "cause": "Причина: Файл отсутствует в R2. Неверный ключ файла (`Key`), файл был удален.",
+            "solution": "Решение: Проверить ключ файла, который был сохранен в Neon. Убедиться, что файл действительно был загружен. Логировать ошибку."
+          },
+          "tooManyRequests": {
+            "title": "429 Too Many Requests:",
+            "cause": "Причина: Превышен лимит запросов к R2 API. Высокая частота запросов загрузки/скачивания.",
+            "solution": "Решение: Внедрить Rate Limiting на Backend (см. Руководство по оптимизации). Оптимизировать логику работы с файлами."
+          },
+          "encryptionError": {
+            "title": "Encryption/Decryption Error:",
+            "cause": "Причина: Ошибка шифрования/дешифрования. Неверный ключ шифрования (`ENCRYPTION_KEY`), поврежденный IV, поврежденные зашифрованные данные.",
+            "solution": "Решение: Убедиться, что используется правильный ключ (`ENCRYPTION_KEY`), который совпадает с ключом, использованным при шифровании. Проверить целостность данных и IV. Логировать критическую ошибку."
+          }
+        }
+      },
+      "neonR2Interaction": {
+        "title": "5. Взаимодействие Neon и Cloudflare R2: Оптимизация Хранения Данных (Принцип 9, 12)",
+        "description": "Мы используем Neon и R2 совместно, чтобы создать оптимизированную систему хранения данных, где каждый сервис выполняет свою лучшую функцию (Принцип 9).",
+        "scenario": [
+          "<strong>Neon (PostgreSQL):</strong> Хранит <strong>структурированные метаданные</strong>, которые часто запрашиваются и по которым выполняются сложные запросы (пользователи, чаты, текстовые сообщения, ссылки на файлы).",
+          "<strong>Cloudflare R2:</strong> Хранит <strong>неструктурированные бинарные данные</strong> большого размера (файлы), которые реже запрашиваются и не требуют сложной логики выборки по содержимому).",
+          "<strong>Сценарий комплексного взаимодействия:</strong>",
+          "1. Пользователь отправляет файл через чат (Frontend -> Backend).",
+          "2. Backend (`StorageService`) <strong>загружает файл в Cloudflare R2</strong> (используя S3 API). Получает URL файла (или ключ).",
+          "3. Backend (`ChatService`) <strong>сохраняет метаданные сообщения в Neon через Prisma</strong>, включая полученный URL/ключ файла.",
+          "4. Когда другой пользователь открывает чат, Backend (`ChatService`) <strong>получает список сообщений из Neon через Prisma</strong>, включая URL/ключи файлов.",
+          "5. Frontend отображает список сообщений и использует URL/ключи для <strong>скачивания файлов напрямую из R2</strong> (или через Backend, если требуется аутентификация)."
+        ],
+        "advantagesTitle": "Преимущества такого разделения:",
+        "advantages": [
+          "<strong>Оптимизация производительности БД:</strong> PostgreSQL не \"засоряется\" большими бинарными данными, что улучшает скорость текстовых запросов (Принцип 9).",
+          "<strong>Снижение стоимости:</strong> R2 предлагает очень выгодные тарифы для хранения больших объемов данных без платы за исходящий трафик, что <strong>прагматично</strong> (Принцип 12) и способствует созданию <strong>актива</strong> (Принцип 10).",
+          "<strong>Масштабируемость:</strong> Каждый сервис масштабируется независимо в соответствии со своим типом нагрузки (Neon для транзакций, R2 для объема/трафика файлов).",
+          "<strong>Надежность:</strong> Разделение ответственности между сервисами повышает общую отказоустойчивость системы."
+        ]
+      },
+      "otherIntegrations": {
+        "title": "6. Другие Интеграции: Расширение Функционала Системы (Принцип 2, 12)",
+        "description": "Эти интеграции добавляют <strong>ценность</strong> (Принцип 2) и используют <strong>прагматичные, готовые решения</strong> (Принцип 12).",
+        "firebase": {
+          "title": "6.1. Firebase (Push-уведомления)",
+          "purpose": "Назначение: Мгновенная доставка уведомлений о новых сообщениях, звонках и системных событиях пользователям мобильных приложений.",
+          "role": "Роль: <strong>Критически важный компонент системы уведомлений</strong> (Принцип 9) для поддержания вовлеченности пользователей и оперативного информирования (Принцип 2).",
+          "configuration": "Конфигурация: Переменная окружения: `FIREBASE_CREDENTIALS_PATH` (путь к JSON-файлу учетных данных сервисного аккаунта Firebase). <strong>Храните этот файл безопасно!</strong>",
+          "example": "Используется библиотека `firebase-admin` в Backend NestJS. Пример использования: Отправка уведомления при получении нового сообщения (см. Руководство по оптимизации для батчинга и тем)."
+        },
+        "stripe": {
+          "title": "6.2. Stripe (Платежи)",
+          "purpose": "Назначение: Обработка подписок на Premium-функционал BrainMessenger.",
+          "role": "Роль: <strong>Финансовый рычаг</strong> для поддержки развития проекта (Принцип 10: Создание Богатства) и предоставления дополнительной <strong>ценности</strong> (Принцип 2) премиум-пользователям.",
+          "configuration": "Конфигурация: Переменная окружения: `STRIPE_SECRET_KEY`.",
+          "example": "Используется библиотека `stripe` в Backend NestJS. Пример использования: Создание сессии оплаты при попытке оформить подписку. Обработка вебхуков для подтверждения успешной оплаты."
+        },
+        "gmailApi": {
+          "title": "6.3. Gmail API (Отправка Email)",
+          "purpose": "Назначение: Отправка транзакционных email, таких как коды подтверждения для регистрации и двухфакторной аутентификации (2FA), уведомления о сбросе пароля.",
+          "role": "Роль: <strong>Критически важный компонент системы аутентификации и безопасности</strong> (Принцип 9, 5).",
+          "configuration": "Конфигурация: Требует настройки сервисного аккаунта Google Cloud и получения учетных данных (см. Техническую документацию, раздел 10.1). Переменные окружения для учетных данных сервисного аккаунта или API-ключей.",
+          "example": "Пример использования: Вызов API для отправки письма с кодом подтверждения после ввода email при регистрации или включении 2FA (см. Спецификацию API, раздел 2.4)."
+        }
+      },
+      "recommendations": {
+        "title": "7. Рекомендации по Интеграциям: Поддержание Здоровья Системы (Принцип 3, 5, 9)",
+        "intro": "Чтобы интеграции оставались <strong>надежными, безопасными и эффективными</strong> (Принцип 3, 9), следуйте этим рекомендациям, связанным с поддержанием \"здоровья\" системы (Принцип 5, применительно к технике):",
+        "security": {
+          "title": "Безопасность:",
+          "points": [
+            "<strong>Никогда не коммитьте ключи и секреты в Git.</strong> Используйте переменные окружения и системы управления секретами в продакшен-окружении (например, Kubernetes Secrets, HashiCorp Vault).",
+            "Регулярно проводите <strong>ротацию API-токенов</strong> (R2, Firebase, Gmail, Stripe) для повышения безопасности.",
+            "Используйте <strong>принцип минимальных привилегий</strong> при создании API-токенов: давайте им только те разрешения, которые действительно необходимы."
+          ]
+        },
+        "scaling": {
+          "title": "Масштабирование:",
+          "points": [
+            "<strong>Мониторьте использование ресурсов</strong> (место в Neon/R2, запросы к API Firebase/Stripe) через консоли соответствующих сервисов. Будьте готовы перейти на платный тариф при росте нагрузки (Принцип 8, 12).",
+            "Используйте <strong>оптимизационные подходы</strong> (например, батчинг запросов к Firebase, индексирование в Neon, см. Руководство по оптимизации), чтобы отложить необходимость перехода на более дорогие тарифы."
+          ]
+        },
+        "monitoring": {
+          "title": "Мониторинг и Логирование:",
+          "points": [
+            "Настройте <strong>логирование ошибок интеграций</strong> в NestJS (Winston, Sentry).",
+            "Используйте <strong>системы мониторинга</strong> (Prometheus/Grafana) для отслеживания метрик запросов к внешним сервисам (задержки, количество ошибок) — это часть <strong>Кайдзен</strong> (Принцип 9), позволяющая выявлять проблемы на ранней стадии."
+          ]
+        },
+        "errorHandling": {
+          "title": "Обработка Ошибок:",
+          "points": [
+            "Реализуйте <strong>грамотную обработку ошибок</strong> от внешних сервисов на Backend. Логируйте их подробно.",
+            "Для критически важных операций (например, регистрация, платежи) предусмотрите механизмы <strong>повторных попыток (retries)</strong> или <strong>компенсирующих действий</strong> (например, отметка платежа как незавершенного) при временных сбоях внешних сервисов."
+          ]
+        },
+        "documentation": {
+          "title": "Документация:",
+          "content": "Поддерживайте эту документацию в актуальном состоянии, отражая изменения в используемых сервисах или добавлении новых интеграций (Принцип 1: Обучение, Принцип 9: Система)."
+        }
+      }
     }
   }
 }
