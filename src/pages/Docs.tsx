@@ -183,6 +183,90 @@ const Docs: React.FC = () => {
     { id: 'support', titleKey: 'docs.userGuide.support.title', contentKey: 'docs.userGuide.support.p1', listKey: 'docs.userGuide.support.sections', additionalContentKeys: ['docs.userGuide.support.p2'] },
   ];
 
+  const devGuideSections = [
+    { id: 'dev-intro', titleKey: 'docs.devGuide.introduction.title', contentKey: 'docs.devGuide.introduction.description', subSections: [
+        { id: 'dev-goal', titleKey: 'docs.devGuide.introduction.goal', contentKey: 'docs.devGuide.introduction.goal' },
+        { id: 'dev-audience', titleKey: 'docs.devGuide.introduction.audience', contentKey: 'docs.devGuide.introduction.audience' },
+        { id: 'dev-principles', titleKey: 'docs.devGuide.introduction.principles_title', listKey: 'docs.devGuide.introduction.principles' },
+    ]},
+    { id: 'repo-structure', titleKey: 'docs.devGuide.repoStructure.title', contentKey: 'docs.devGuide.repoStructure.description', subSections: [
+        { id: 'repo-core', titleKey: 'docs.devGuide.repoStructure.core_title', contentKey: 'docs.devGuide.repoStructure.core_content' },
+        { id: 'repo-mobile-desktop', titleKey: 'docs.devGuide.repoStructure.mobile_desktop_title', contentKey: 'docs.devGuide.repoStructure.mobile_desktop_content' },
+        { id: 'repo-web', titleKey: 'docs.devGuide.repoStructure.web_title', contentKey: 'docs.devGuide.repoStructure.web_content' },
+        { id: 'repo-backend', titleKey: 'docs.devGuide.repoStructure.backend_title', contentKey: 'docs.devGuide.repoStructure.backend_content' },
+        { id: 'repo-infrastructure', titleKey: 'docs.devGuide.repoStructure.infrastructure_title', contentKey: 'docs.devGuide.repoStructure.infrastructure_content' },
+        { id: 'repo-docs', titleKey: 'docs.devGuide.repoStructure.docs_title', contentKey: 'docs.devGuide.repoStructure.docs_content' },
+        { id: 'repo-turbo', titleKey: 'docs.devGuide.repoStructure.turbo_title', contentKey: 'docs.devGuide.repoStructure.turbo_content' },
+    ]},
+    { id: 'tech-stack', titleKey: 'docs.devGuide.techStack.title', contentKey: 'docs.devGuide.techStack.intro', tableKey: 'docs.devGuide.techStack.table' },
+    { id: 'coding-standards', titleKey: 'docs.devGuide.codingStandards.title', contentKey: 'docs.devGuide.codingStandards.intro', subSections: [
+        { id: 'general-principles', titleKey: 'docs.devGuide.codingStandards.generalPrinciples.title', listKey: 'docs.devGuide.codingStandards.generalPrinciples.principles' },
+        { id: 'naming-conventions', titleKey: 'docs.devGuide.codingStandards.namingConventions.title', listKey: 'docs.devGuide.codingStandards.namingConventions.conventions' },
+        { id: 'formatting-linting', titleKey: 'docs.devGuide.codingStandards.formattingLinting.title', contentKey: 'docs.devGuide.codingStandards.formattingLinting.intro', subSections: [
+            { id: 'prettier', titleKey: 'docs.devGuide.codingStandards.formattingLinting.prettier_title', contentKey: 'docs.devGuide.codingStandards.formattingLinting.prettier_content', codeExampleKey: 'docs.devGuide.codingStandards.formattingLinting.prettier_code' },
+            { id: 'eslint', titleKey: 'docs.devGuide.codingStandards.formattingLinting.eslint_title', contentKey: 'docs.devGuide.codingStandards.formattingLinting.eslint_content' },
+        ]},
+        { id: 'code-structure', titleKey: 'docs.devGuide.codingStandards.codeStructure.title', contentKey: 'docs.devGuide.codingStandards.codeStructure.intro', subSections: [
+            { id: 'core-package', titleKey: 'docs.devGuide.codingStandards.codeStructure.corePackage.title', listKey: 'docs.devGuide.codingStandards.codeStructure.corePackage.points' },
+            { id: 'mobile-desktop-package', titleKey: 'docs.devGuide.codingStandards.codeStructure.mobileDesktopPackage.title', listKey: 'docs.devGuide.codingStandards.codeStructure.mobileDesktopPackage.points' },
+            { id: 'web-package', titleKey: 'docs.devGuide.codingStandards.codeStructure.webPackage.title', listKey: 'docs.devGuide.codingStandards.codeStructure.webPackage.points' },
+            { id: 'backend-package', titleKey: 'docs.devGuide.codingStandards.codeStructure.backendPackage.title', listKey: 'docs.devGuide.codingStandards.codeStructure.backendPackage.points' },
+        ]},
+    ]},
+    { id: 'libraries', titleKey: 'docs.devGuide.libraries.title', contentKey: 'docs.devGuide.libraries.intro', subSections: [
+        { id: 'common-libs', titleKey: 'docs.devGuide.libraries.common.title', listKey: 'docs.devGuide.libraries.common.libs' },
+        { id: 'mobile-desktop-libs', titleKey: 'docs.devGuide.libraries.mobileDesktop.title', listKey: 'docs.devGuide.libraries.mobileDesktop.libs' },
+        { id: 'web-libs', titleKey: 'docs.devGuide.libraries.web.title', listKey: 'docs.devGuide.libraries.web.libs' },
+        { id: 'backend-libs', titleKey: 'docs.devGuide.libraries.backend.title', listKey: 'docs.devGuide.libraries.backend.libs' },
+        { id: 'cross-package-libs', titleKey: 'docs.devGuide.libraries.crossPackage.title', listKey: 'docs.devGuide.libraries.crossPackage.libs' },
+        { id: 'set-methods', titleKey: 'docs.devGuide.setMethods.title', contentKey: 'docs.devGuide.setMethods.intro', subSections: [
+            { id: 'set-methods-areas', titleKey: 'docs.devGuide.setMethods.areas.title', listKey: 'docs.devGuide.setMethods.areas.points' },
+            { id: 'set-methods-keys', titleKey: 'docs.devGuide.setMethods.keys.title', listKey: 'docs.devGuide.setMethods.keys.points' },
+            { id: 'set-methods-examples', titleKey: 'docs.devGuide.setMethods.examples.title', contentKey: 'docs.devGuide.setMethods.examples.code', listKey: 'docs.devGuide.setMethods.examples.recommendations' },
+        ]},
+    ]},
+    { id: 'dev-process', titleKey: 'docs.devGuide.devProcess.title', contentKey: 'docs.devGuide.devProcess.intro', subSections: [
+        { id: 'env-setup', titleKey: 'docs.devGuide.devProcess.envSetup.title', contentKey: 'docs.devGuide.devProcess.envSetup.intro', subSections: [
+            { id: 'clone-repo', titleKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.title', contentKey: 'docs.devGuide.devProcess.envSetup.cloneRepo.code' },
+            { id: 'install-deps', titleKey: 'docs.devGuide.devProcess.envSetup.installDeps.title', contentKey: 'docs.devGuide.devProcess.envSetup.installDeps.code' },
+            { id: 'env-vars', titleKey: 'docs.devGuide.devProcess.envSetup.envVars.title', contentKey: 'docs.devGuide.devProcess.envSetup.envVars.code', additionalContentKeys: ['docs.devGuide.devProcess.envSetup.envVars.note'] },
+            { id: 'prisma-client', titleKey: 'docs.devGuide.devProcess.envSetup.prismaClient.title', contentKey: 'docs.devGuide.devProcess.envSetup.prismaClient.code' },
+            { id: 'local-db', titleKey: 'docs.devGuide.devProcess.envSetup.localDb.title', contentKey: 'docs.devGuide.devProcess.envSetup.localDb.code' },
+        ]},
+        { id: 'local-run', titleKey: 'docs.devGuide.devProcess.localRun.title', contentKey: 'docs.devGuide.devProcess.localRun.intro', subSections: [
+            { id: 'run-all', titleKey: 'docs.devGuide.devProcess.localRun.runAll.title', contentKey: 'docs.devGuide.devProcess.localRun.runAll.code' },
+            { id: 'run-backend', titleKey: 'docs.devGuide.devProcess.localRun.runBackend.title', contentKey: 'docs.devGuide.devProcess.localRun.runBackend.code' },
+            { id: 'run-mobile-desktop', titleKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.title', contentKey: 'docs.devGuide.devProcess.localRun.runMobileDesktop.code' },
+            { id: 'run-web', titleKey: 'docs.devGuide.devProcess.localRun.runWeb.title', contentKey: 'docs.devGuide.devProcess.localRun.runWeb.code' },
+        ]},
+        { id: 'commits-branches', titleKey: 'docs.devGuide.devProcess.commitsBranches.title', contentKey: 'docs.devGuide.devProcess.commitsBranches.intro', subSections: [
+            { id: 'main-branches', titleKey: 'docs.devGuide.devProcess.commitsBranches.mainBranches.title', listKey: 'docs.devGuide.devProcess.commitsBranches.mainBranches.points' },
+            { id: 'work-branches', titleKey: 'docs.devGuide.devProcess.commitsBranches.workBranches.title', listKey: 'docs.devGuide.devProcess.commitsBranches.workBranches.points' },
+            { id: 'commit-format', titleKey: 'docs.devGuide.devProcess.commitsBranches.commitFormat.title', contentKey: 'docs.devGuide.devProcess.commitsBranches.commitFormat.example', additionalContentKeys: ['docs.devGuide.devProcess.commitsBranches.commitFormat.structure'] },
+        ]},
+        { id: 'pr-code-review', titleKey: 'docs.devGuide.devProcess.prCodeReview.title', contentKey: 'docs.devGuide.devProcess.prCodeReview.intro', subSections: [
+            { id: 'pr-description', titleKey: 'docs.devGuide.devProcess.prCodeReview.prDescription.title', listKey: 'docs.devGuide.devProcess.prCodeReview.prDescription.points' },
+            { id: 'pr-requirements', titleKey: 'docs.devGuide.devProcess.prCodeReview.prRequirements.title', listKey: 'docs.devGuide.devProcess.prCodeReview.prRequirements.points' },
+        ]},
+        { id: 'testing', titleKey: 'docs.devGuide.devProcess.testing.title', contentKey: 'docs.devGuide.devProcess.testing.intro', subSections: [
+            { id: 'run-all-tests', titleKey: 'docs.devGuide.devProcess.testing.runAllTests.title', contentKey: 'docs.devGuide.devProcess.testing.runAllTests.code' },
+            { id: 'test-types', titleKey: 'docs.devGuide.devProcess.testing.testTypes.title', listKey: 'docs.devGuide.devProcess.testing.testTypes.points' },
+            { id: 'ci-cd-tests', titleKey: 'docs.devGuide.devProcess.testing.ciCdTests.title', contentKey: 'docs.devGuide.devProcess.testing.ciCdTests.content' },
+        ]},
+    ]},
+    { id: 'dev-recommendations', titleKey: 'docs.devGuide.devRecommendations.title', contentKey: 'docs.devGuide.devRecommendations.intro', subSections: [
+        { id: 'core-package-recs', titleKey: 'docs.devGuide.devRecommendations.corePackage.title', listKey: 'docs.devGuide.devRecommendations.corePackage.points' },
+        { id: 'mobile-desktop-recs', titleKey: 'docs.devGuide.devRecommendations.mobileDesktop.title', listKey: 'docs.devGuide.devRecommendations.mobileDesktop.points' },
+        { id: 'web-recs', titleKey: 'docs.devGuide.devRecommendations.web.title', listKey: 'docs.devGuide.devRecommendations.web.points' },
+        { id: 'backend-recs', titleKey: 'docs.devGuide.devRecommendations.backend.title', listKey: 'docs.devGuide.devRecommendations.backend.points' },
+        { id: 'security-recs', titleKey: 'docs.devGuide.devRecommendations.security.title', contentKey: 'docs.devGuide.devRecommendations.security.intro', listKey: 'docs.devGuide.devRecommendations.security.points' },
+    ]},
+    { id: 'optimization', titleKey: 'docs.devGuide.optimization.title', contentKey: 'docs.devGuide.optimization.content' },
+    { id: 'deploy-process', titleKey: 'docs.devGuide.deployProcess.title', contentKey: 'docs.devGuide.deployProcess.intro', listKey: 'docs.devGuide.deployProcess.points', additionalContentKeys: ['docs.devGuide.deployProcess.process'] },
+    { id: 'dev-commands', titleKey: 'docs.devGuide.devCommands.title', tableKey: 'docs.devGuide.devCommands.table' },
+    { id: 'notes', titleKey: 'docs.devGuide.notes.title', listKey: 'docs.devGuide.notes.points' },
+  ];
+
   const docsConfig = [
     {
       id: 'general_docs',
@@ -207,6 +291,12 @@ const Docs: React.FC = () => {
       titleKey: 'docs.userGuide.title',
       subtitleKey: 'docs.userGuide.subtitle',
       sections: userGuideSections,
+    },
+    {
+      id: 'dev_guide_docs',
+      titleKey: 'docs.devGuide.title',
+      subtitleKey: 'docs.devGuide.subtitle',
+      sections: devGuideSections,
     },
   ];
 

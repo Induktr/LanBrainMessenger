@@ -39,7 +39,7 @@
     "smartAssistantDesc": "ИИ-помощник всегда под рукой",
     "crossPlatform": "Кросс-платформенность",
     "crossPlatformDesc": "Используйте на любом устройстве, где угодно",
-    "groupChats": "Групповые чаты",
+    "groupChats": "Груповые чаты",
     "groupChatsDesc": "Общайтесь с несколькими людьми одновременно",
     "privacyFirst": "Конфиденциальность прежде всего",
     "privacyFirstDesc": "Ваши данные - ваши, всегда"
@@ -71,7 +71,7 @@
       "generalProject": {
         "q1": {
           "question": "Какова основная идея BrainMessenger? Что делает его особенным?",
-          "answer": "BrainMessenger - это платформа для общения, которая ставит на первое место безопасность, интеллектуальные функции и удобство пользователя. Его особенность заключается в сочетании сквозного шифрования, ИИ-ассистента и кросс-платформенной доступности."
+          "answer": "BrainMessenger - это платформа для общения, которая ставит на первое место безопасность, интеллектуальные функции и удобство пользователя. Его особенность заключается в поєднанні сквозного шифрования, ИИ-ассистента и кросс-платформенной доступности."
         },
         "q2": {
           "question": "Какие ключевые принципы лежат в основе разработки BrainMessenger?",
@@ -115,7 +115,7 @@
         },
         "q2": {
           "question": "Как обеспечивается качество кода?",
-          "answer": "Качество кода обеспечивается через код-ревью, статический анализ (линтеры, форматеры), соблюдение стандартов кодирования и написание тестов."
+          "answer": "Качество кода обеспечивается через код-рев'ю, статический анализ (линтеры, форматеры), соблюдение стандартов кодирования и написание тестов."
         },
         "q3": {
           "question": "Какая стратегия тестування используется?",
@@ -169,7 +169,7 @@
         },
         "q2": {
           "question": "Как я могу присоединиться к разработке проекта или внести свой вклад?",
-          "answer": "Мы всегда рады новым участникам! Свяжитесь с нами через контактную форму на сайте или через GitHub (если проект открыт), чтобы обсудить возможные варианты сотрудничества."
+          "answer": "Мы всегда рады новым участникам! Свяжитесь с нами через контактную форму на сайте или через GitHub (если проект открыт), чтобы обговорить возможные варианты сотрудничества."
         },
         "q3": {
           "question": "Где я могу задать дополнительные вопросы?",
@@ -184,7 +184,7 @@
       "subtitle": "Введение: Построение Системы Ценности",
       "introduction": {
         "title": "Введение: Построение Системы Ценности",
-        "content": "Добро пожаловать в репозиторий BrainMessenger. Это не просто очередной мессенджер. Это целенаправленный проект, направленный на создание <strong>надежной, масштабируемой и безопасной СИСТЕМЫ</strong> (Принцип 9), которая станет <strong>ключевым цифровым АКТИВОМ</strong> (Принцип 10) для каждого пользователя. Наша главная цель – <strong>спростити складність</strong> (принцип Маргулана Сейсембаева), предоставляя интуитивно понятные и мощные инструменты для эффективной коммуникации и взаимодействия в современном цифровом мире.<br/><br/>BrainMessenger построен на <strong>прочном фундаменте</strong> (Принцип 8) глубоких принципов, осознанного планирования и <strong>непрерывного обучения</strong> (Принцип 1). Каждая строка кода, каждое принятое решение – это <strong>долгосрочная инвестиция</strong> (Принцип 8) в <strong>качество</strong> (Принцип 3) и <strong>ценность</strong> (Принцип 2) нашего продукта."
+        "content": "Добро пожаловать в репозиторий BrainMessenger. Это не просто очередной мессенджер. Это целенаправленный проект, направленный на создание <strong>надежной, масштабируемой и безопасной СИСТЕМЫ</strong> (Принцип 9), которая станет <strong>ключевым цифровым АКТИВОМ</strong> (Принцип 10) для каждого пользователя. Наша главная цель – <strong>упростить сложное</strong> (принцип Маргулана Сейсембаева), предоставляя интуитивно понятные и мощные инструменты для эффективной коммуникации и взаимодействия в современном цифровом мире.<br/><br/>BrainMessenger построен на <strong>прочном фундаменте</strong> (Принцип 8) глубоких принципов, осознанного планирования и <strong>непрерывного обучения</strong> (Принцип 1). Каждая строка кода, каждое принятое решение – это <strong>долгосрочная инвестиция</strong> (Принцип 8) в <strong>качество</strong> (Принцип 3) и <strong>ценность</strong> (Принцип 2) нашего продукта."
       },
       "visionAndMission": {
         "title": "Видение и Миссия: Наш Долгосрочный Взгляд",
@@ -197,7 +197,7 @@
         "title": "Ключевые Принципы: Фундамент Нашей Системы",
         "intro": "Наши действия и решения руководствуются набором ключевых принципов, которые служат <strong>фундаментом</strong> (Принцип 8) всего проекта BrainMessenger. Это не просто слова, а <strong>личные алгоритмы и стандарты (Кайдзен, Принцип 9)</strong>, разработанные через опыт и рефлексию (Принцип 1):",
         "principles": [
-          "<strong>Непрерывное Обучение и Рост (Принцип 1):</strong> Процесс создания BrainMessenger – это полигон для глубокого обучения в технологиях, архитектуре и психологии пользователей. Мы учимся на каждом шагу, превращая ошибки в уроки.",
+          "<strong>Непрерывное Обучение и Рост (Принцип 1):</strong> Процесс создания BrainMessenger – это полигон для глубокого обучения в технологиях, архитектуре и психологии пользователей. Мы учимся на каждом шаге, превращая ошибки в уроки.",
           "<strong>Создание Ценности (Принцип 2):</strong> Польза для пользователя – в основе всего. Мы строим то, что действительно решает проблемы и делает жизнь лучше.",
           "<strong>Качество Превыше Количества (Принцип 3):</strong> Мы стремимся делать вещи хорошо, а не просто быстро. Надежность, продуманность и внимание к деталям – наши приоритеты.",
           "<strong>Осознанность и Присутствие (Принцип 4):</strong> Быть внимательным к процессу, пользователям и команде.",
@@ -225,8 +225,6 @@
           "<strong>Каналы и Групы:</strong> Базовое создание групп/каналов, присоединение к публичным каналам и чтение контента.",
           "<strong>Базовое Управление Учетной Записью:</strong> Регистрация, вход/выход, редактирование профиля (имя, аватар), базовые настройки безопасности.",
           "<strong>Основные Настройки UI:</strong> Выбор темы (Светлая/Темная), базовые настройки уведомлений и языка.",
-          "<strong>Базовая Безпека:</strong> Шифрование данных (TLS, хеширование паролей, базовые меры против SQLi/XSS/DDoS), подтверждение электронной почты при регистрации.",
-          "<strong>Адаптивный UI:</strong> Интерфейс, адаптированный для мобильных (Android, iOS) и веб-платформ.",
           "<strong>Базовая Мультиязычность:</strong> Поддержка нескольких языков интерфейса (английский, русский и другие согласно DocLocIn.md)."
         ],
         "outro": "Функционал за пределами MVP (аудио/видеозвонки, расширенные функции безопасности/конфиденциальности, премиум-подписка, полный набор анимаций, интеграции ИИ) запланирован на последующие этапы Дорожной карты."
@@ -281,42 +279,42 @@
         "title": "Начало Работы (Для Разработчиков)",
         "intro": "Хотите присоединиться к нам в создании этого цифрового АКТИВА? Вот как начать:",
         "steps": [
-          "Клонируйте репозиторий:<br/>```bash<br/>git clone <URL вашего репозитория><br/>cd BrainMessenger<br/>```",
-          "Установите зависимости:<br/>```bash<br/>npm install # Turborepo установит зависимости для всех пакетов<br/>```",
-          "Настройте переменные среды: Скопируйте `.env.example` в `.env` и заполните необходимые данные для интеграций (Neon, R2, Firebase и т.д.). <strong>Не коммитьте ваш файл `.env`!</strong><br/>```bash<br/>cp .env.example .env<br/># Заполните .env<br/>```",
-          "Настройте базу данных: Запустите локальный PostgreSQL или используйте экземпляр Neon, затем примените миграции Prisma.<br/>```bash<br/>cd backend<br/>npx prisma migrate dev --name initial_setup # Или npx prisma migrate deploy для продакшена<br/>cd ..<br/>```",
-          "Запустите сервисы в режиме разработки:<br/>```bash<br/>turbo run dev # Это запустит dev-серверы бэкенда и фронтенда<br/># Или перейдите к конкретным пакетам и запустите их dev-скрипты:<br/># cd backend && npm run start:dev<br/># cd packages/web && npm run dev<br/># cd packages/mobile-desktop && npm run android / npm run windows<br/>```"
+          "Клонуйте репозиторий:<br/>```bash<br/>git clone <https://github.com/xAI/BrainMessenger.git> # Приклад<br/>cd BrainMessenger<br/>```",
+          "Встановіть залежності:<br/>```bash<br/>npm install # Turborepo встановить залежності для всіх пакетів<br/>```",
+          "Настройте змінні середовища: Скопіюйте `.env.example` до `.env` та заповніть необхідні дані для інтеграцій (Neon, R2, Firebase тощо). <strong>Не комітьте ваш файл `.env`!</strong><br/>```bash<br/>cp .env.example .env<br/># Заповніть .env<br/>```",
+          "Настройте базу данных: Запустіть локальний PostgreSQL или используйте екземпляр Neon, затем примените миграции Prisma.<br/>```bash<br/>cd backend<br/>npx prisma migrate dev --name initial_setup # Або npx prisma migrate deploy для продакшену<br/>cd ..<br/>```",
+          "Запустіть сервіси в режимі розробки:<br/>```bash<br/>turbo run dev # Це запустить dev-сервери бекенду та фронтенду<br/># Або перейдіть до конкретних пакетів та запустіть їхні dev-скрипти:<br/># cd backend && npm run start:dev<br/># cd packages/web && npm run dev<br/># cd packages/mobile-desktop && npm run android / npm run windows<br/>```"
         ],
-        "outro": "Более подробные инструкции по локальной настройке и разработке можно найти в <a href=\"link_to_development_guide_doc\" target=\"_blank\" rel=\"noopener noreferrer\">Руководстве по Разработке</a>."
+        "outro": "Більш детальні інструкції щодо локального налаштування та розробки можна знайти в <a href=\"link_to_development_guide_doc\" target=\"_blank\" rel=\"noopener noreferrer\">Посібнику з Розробки</a>."
       },
       "documentationSystem": {
-        "title": "Документация: Наша Система Знаний",
-        "intro": "Этот README предоставляет общий обзор. Вся подробная информация о проекте содержится в нашей <strong>комплексной системе документации</strong>. Изучение этих документов является частью процесса <strong>обучения</strong> (Принцип 1) и понимания <strong>системы</strong> (Принцип 9):",
+        "title": "Документація: Наша Система Знань",
+        "intro": "Цей README надає загальний огляд. Вся детальна інформація про проект міститься в нашій <strong>комплексній системі документації</strong>. Вивчення цих документів є частиною процесу <strong>навчання</strong> (Принцип 1) та розуміння <strong>системи</strong> (Принцип 9):",
         "links": [
-          "<a href=\"docs/AllRequirements/Docs/Planning/DocReq.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документация Требований</strong></a>: Что мы строим (функсиональные и нефункциональные требования).",
-          "<a href=\"docs/AllRequirements/Docs/Dev/DocDevIn.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Разработке</strong></a>: Как мы пишем код (структура, стандарты, инструменты, процесс CI/CD).",
-          "<a href=\"docs/AllRequirements/Docs/Dev/DocTech.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Техническая Документация</strong></a>: Общий обзор архитектуры и стека.",
-          "<a href=\"docs/AllRequirements/Docs/Dev/DocSpec.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Спецификация API</strong></a>: Как взаимодействуют компоненты (описание GraphQL API).",
-          "<a href=\"docs/AllRequirements/Docs/Dev/DocInt.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документация Интеграций</strong></a>: Как мы используем внешние сервіси (Neon, R2, Firebase, Stripe и т.д.) как <strong>рычаги</strong>.",
-          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocSecurity.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Безопасности</strong></a>: Как мы защищаем АКТИВ и данные (принципы, методы, инструменты, процесс).",
-          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocPer.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Производительности</strong></a>: Как мы делаем систему быстрой (метрики, техники, инструменты оптимизации).",
-          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocMonLog.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Мониторингу и Логированию</strong></a>: Как мы видим состояние системы (метрики, логи, оповещения).",
-          "<a href=\"docs/AllRequirements/Docs/Design/Design/DocUI.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документация UI</strong></a>: Как выглядит приложение и почему (макеты, компоненты, принципы дизайна).",
-          "<a href=\"docs/AllRequirements/Docs/Sound/DocSound.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Аудио</strong></a>: Как аудио используется для улучшения UX.",
-          "<a href=\"docs/AllRequirements/Docs/Support/DocSupport.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Поддержке и Обслуживанию</strong></a>: Как мы поддерживаем систему и пользователей после релиза.",
-          "<a href=\"docs/AllRequirements/Docs/Testing/DocSpecError.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Спецификация Ошибок</strong></a>: Как мы обрабатываем и сообщаем об ошибках.",
-          "<a href=\"docs/AllRequirements/Docs/Testing/DocTesting.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Руководство по Тестированию</strong></a>: Как мы проверяем качество и надежность.",
-          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocMigrationMicro.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>План Миграции Микросервисов</strong></a>: Наша долгосрочная стратегия архитектурной эволюции.",
-          "<a href=\"docs/AllRequirements/Docs/Planning/DocReq.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Инструкция по Требованиям к MVP</strong></a>: Детальный анализ требований к MVP и статус реализации)."
+          "<a href=\"docs/AllRequirements/Docs/Planning/DocReq.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документація Вимог</strong></a>: Що ми будуємо (функціональні та нефункціональні вимоги).",
+          "<a href=\"docs/AllRequirements/Docs/Dev/DocDevIn.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Розробки</strong></a>: Як ми пишемо код (структура, стандарти, інструменти, процес CI/CD).",
+          "<a href=\"docs/AllRequirements/Docs/Dev/DocTech.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Технічна Документація</strong></a>: Загальний огляд архітектури та стеку.",
+          "<a href=\"docs/AllRequirements/Docs/Dev/DocSpec.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Специфікація API</strong></a>: Як взаємодіють компоненти (опис GraphQL API).",
+          "<a href=\"docs/AllRequirements/Docs/Dev/DocInt.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документація Інтеграцій</strong></a>: Як ми використовуємо зовнішні сервіси (Neon, R2, Firebase, Stripe тощо) як <strong>важелі</strong>.",
+          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocSecurity.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Безпеки</strong></a>: Як ми захищаємо АКТИВ та дані (принципи, методи, інструменти, процес).",
+          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocPer.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Продуктивності</strong></a>: Як ми робимо систему швидкою (метрики, техніки, інструменти оптимізації).",
+          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocMonLog.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Моніторингу та Логування</strong></a>: Як ми бачимо стан системи (метрики, логи, сповіщення).",
+          "<a href=\"docs/AllRequirements/Docs/Design/Design/DocUI.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Документація UI</strong></a>: Як виглядає додаток і чому (макети, компоненти, принципи дизайну).",
+          "<a href=\"docs/AllRequirements/Docs/Sound/DocSound.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Аудіо</strong></a>: Як аудіо використовується для покращення UX.",
+          "<a href=\"docs/AllRequirements/Docs/Support/DocSupport.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Підтримки та Обслуговування</strong></a>: Як ми підтримуємо систему та користувачів після релізу.",
+          "<a href=\"docs/AllRequirements/Docs/Testing/DocSpecError.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Специфікація Помилок</strong></a>: Як ми обробляємо та повідомляємо про помилки.",
+          "<a href=\"docs/AllRequirements/Docs/Testing/DocTesting.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Посібник з Тестування</strong></a>: Як ми перевіряємо якість та надійність.",
+          "<a href=\"docs/AllRequirements/Docs/Infrastructure/DocMigrationMicro.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>План Міграції Мікросервісів</strong></a>: Наша довгострокова стратегія архітектурної еволюції.",
+          "<a href=\"docs/AllRequirements/Docs/Planning/DocReq.md\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Інструкція з Вимог до MVP</strong></a>: Детальний аналіз вимог до MVP та статус реалізації)."
         ]
       },
       "contribution": {
-        "title": "Вклад",
-        "content": "Мы приветствуем вклад в создание этого цифрового АКТИВА! Если у вас есть идеи, предложения или вы хотите помочь с кодом, пожалуйста, обратитесь к <a href=\"CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">Руководству по Вкладу</a> (если доступно)."
+        "title": "Внесок",
+        "content": "Ми вітаємо внески у створення цього цифрового АКТИВУ! Якщо у вас є ідеї, пропозиції або ви хочете допомогти з кодом, будь ласка, зверніться до <a href=\"CONTRIBUTING.md\" target=\"_blank\" rel=\"noopener noreferrer\">Посібника з Внесків</a> (якщо доступний)."
       }
     },
     "design": {
-      "title": "Документация Дизайна BrainMessenger",
+      "title": "Документація Дизайна BrainMessenger",
       "subtitle": "Система Качества и Ценности",
       "section1": {
         "title": "1. Введение: Дизайн как Фундамент Ценности",
@@ -340,26 +338,12 @@
           ["Категория", "Цвет (HEX)", "Назначение"],
           ["<strong>Primary Gradient</strong>", "`#A7F43A` → `#00C853`", "Основной градиент для акцентных элементов (кнопки \"Get Started\", иконки)"],
           ["<strong>Accent</strong>", "`#FF6347`", "Акцентные элементы (ошибки, важные сообщения)"],
-          ["<strong>Secondary</strong>", "`#00BFFF`", "Второстепенные кнопки, ссылки, интерактивные элементы"],
-          ["<strong>Success</strong>", "`#96C93D`", "Подтверждение, успешные действия"],
-          ["<strong>Background</strong>", "`#FFFFFF`", "Основной фон"],
-          ["<strong>Surface</strong>", "`#F0F0F0`", "Карточки, панели, фоны сообщений"],
-          ["<strong>Text Primary</strong>", "`#333333`", "Основной текст"],
-          ["<strong>Text Secondary</strong>", "`#4D4D4D`", "Вторичный текст, подсказки, метаданные"],
-          ["<strong>Disabled</strong>", "`#B0B0B0`", "Неактивные элементы"],
-          ["<strong>Border</strong>", "`#E8E8D9`", "Границы, разделители"]
-        ],
-        "dark_mode_title": "2.2. Dark Mode",
-        "dark_mode_table": [
-          ["Категория", "Цвет (HEX)", "Назначение"],
-          ["<strong>Primary Gradient</strong>", "`#F2F047` → `#1ED94F`", "Основной градиент для акцентных элементов"],
-          ["<strong>Accent</strong>", "`#FF6347`", "Акцентные элементы (ошибки)"],
-          ["<strong>Secondary</strong>", "`#00BFFF`", "Второстепенные кнопки, ссылки"],
+          ["<strong>Secondary", "`#00BFFF`", "Второстепенные кнопки, ссылки"],
           ["<strong>Success</strong>", "`#96C93D`", "Подтверждение, успешные действия"],
           ["<strong>Background</strong>", "`#1A1A1A`", "Основной фон"],
           ["<strong>Surface</strong>", "`#333333`", "Карточки, панели, фоны сообщений"],
           ["<strong>Text Primary</strong>", "`#FFFFFF`", "Основной текст"],
-          ["<strong>Text Secondary</strong>", "`#D9E8D9`", "Вторичный текст, подсказки"],
+          ["<strong>Text Secondary", "`#D9E8D9`", "Вторичный текст, подсказки"],
           ["<strong>Disabled</strong>", "`#4D4D4D`", "Неактивные элементы"],
           ["<strong>Border</strong>", "`#B0B0B0`", "Границы, разделители"]
         ],
@@ -377,27 +361,27 @@
               "Фон: `#1A1A1A` (Dark Mode).",
               "Кнопка \"Get Started\": Градиент `#F2F047` → `#1ED94F`.",
               "Иконка чата: `#F2F047` (обводка) с белым символом внутри.",
-              "Текст: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (подсказка)."
+            "Текст: `#FFFFFF` (Welcome to Brain Messenger), `#D9E8D9` (подсказка)."
             ]
           },
           {
             "title": "Переключение темы:",
             "items": [
               "Реализовано через глобальный флаг `themeMode` (`Light`/`Dark`).",
-              "Пример в React Native:\n```jsx\nimport { useColorScheme }s from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Пример выбора фона\n```"
+              "Пример в React Native:\n```jsx\nimport { useColorScheme } from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Пример выбора фона\n```"
             ]
           }
         ],
         "usage_recommendations_title": "2.5. Рекомендации по Использованию Цветов",
         "usage_recommendations": [
           "<strong>Градиенты:</strong> Используйте `#A7F43A` → `#00C853` или `#F2F047` → `#1ED94F` (в зависимости от темы) для ключевых действий и акцентных элементов, привлекающих внимание к <strong>ценности</strong> (Принцип 2).",
-          "<strong>Темная тема:</strong> Используйте `#1A1A1A` или `#212121` как основной фон для снижения нагрузки на глаза (связь с Принципом 5: Здоровье).",
+          "<strong>Темная тема:</strong> Используйте `#1A1A1A` или `#212121` как основной фон для снижения нагрузки на глаза (связь с Принципом 5: Здоров'я).",
           "<strong>Контраст:</strong> Всегда проверяйте контрастность текста и элементов для обеспечения <strong>доступности</strong> (WCAG 2.1 AA) и соответствия Принципу 7 (Целостность). Используйте инструменты вроде WebAIM Contrast Checker."
         ]
       },
       "section3": {
         "title": "3. Типографика: Читабельность как Основа Эффективности",
-        "intro": "Выбор шрифта и его применение базируются на обеспечении максимальной читабельности и доступности, что является критически важным для эффективного усвоения информации и снижения когнитивной нагрузки (связь с Принципом 5: Здоровье и Принципом 2: Ценность).",
+        "intro": "Выбор шрифта и его применение базируются на обеспечении максимальной читабельности и доступности, что является критически важным для эффективного усвоения информации и снижения когнитивной нагрузки (связь с Принципом 5: Здоров'я и Принципом 2: Ценность).",
         "primary_font_title": "3.1. Основной шрифт",
         "primary_font": [
           "<strong>Семейство:</strong> Roboto (Google Fonts)",
@@ -445,9 +429,9 @@
         ],
         "implementation_examples_title": "4.3. Примеры Реализации (Фрагменты кода)",
         "css_ripple_title": "CSS для Ripple-эффекта:",
-        "css_ripple_code": ".ripple {\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Або інші кольори/градієнт */\n  border-radius: 50%;\n  animation: ripple 0.3s ease-out;\n}\n@keyframes ripple {\n  to { transform: scale(2); opacity: 0; }\n}",
+        "css_ripple_code": ".ripple {\\n  background: linear-gradient(45deg, #F2F047, #1ED94F); /* Або інші кольори/градієнт */\\n  border-radius: 50%;\\n  animation: ripple 0.3s ease-out;\\n}\\n@keyframes ripple {\\n  to { transform: scale(2); opacity: 0; }\\n}",
         "rn_icon_title": "React Native для анімованої іконки:",
-        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\n\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\n// Створення анімованого компонента Icon\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\n\n// Пример использования с анимацией scale (припускаючи, что 'scale' - это Animated.Value)\n<AnimatedIcon name=\"volume-up\" color={color} style={{ transform: [{ scale: scale }] }} />"
+        "rn_icon_code": "import Animated from 'react-native-reanimated'; // Пример библиотеки\\nimport Icon from 'react-native-vector-icons/MaterialIcons'; // Пример библиотеки\\n\\nconst color = themeMode === 'Dark' ? '#FFFFFF' : '#333333';\\n// Створення анімованого компонента Icon\\nconst AnimatedIcon = Animated.createAnimatedComponent(Icon);\\n\\n// Пример использования с анимацией scale (припускаючи, что 'scale' - это Animated.Value)\\n<AnimatedIcon name=\\\"volume-up\\\" color={color} style={{ transform: [{ scale: scale }] }} />"
       },
       "section5": {
         "title": "5. Вирівнювання та Сітка: Структура та Порядок (Принцип 9: Система)",
@@ -532,34 +516,34 @@
         "title": "4. Структура Файлов Переводов: Порядок в Системе (Принцип 9)",
         "intro": "Переводы организованы в четкой файловой структуре для удобства управления (Принцип 9: Система).",
         "location_title": "4.1. Расположение",
-        "location_content": "Файлы переводов хранятся в директории locales внутри frontend/src:\n\nfrontend/\n├── src/\n│ ├── locales/\n│ │ ├── en.json # Английский (базовый)\n│ │ ├── es.json # Испанский\n│ │ ├── fr.json # Французский\n│ │ ├── ru.json # Русский\n│ │ ├── ar.json # Арабский (пример RTL)\n│ └── index.ts # Конфигурация i18next",
+        "location_content": "Файлы переводов хранятся в директории locales внутри frontend/src:\\n\\nfrontend/\\n├── src/\\n│ ├── locales/\\n│ │ ├── en.json # Английский (базовый)\\n│ │ ├── es.json # Испанский\\n│ │ ├── fr.json # Французский\\n│ │ ├── ru.json # Русский\\n│ │ ├── ar.json # Арабский (пример RTL)\\n│ └── index.ts # Конфигурация i18next",
         "format_title": "4.2. Формат JSON: Контекст и Гибкость",
-        "format_content": "Ключи: Используется camelCase. Ключи должны быть описательными и отражать контекст использования строки (например, sendButton вместо просто send).\n\nЗначения: Содержат переводимый текст. Поддерживается интерполяция для вставки динамических данных (например, имена пользователей).",
-        "format_example": "Пример en.json:\n\n```json\n{\n  \"welcomeTitle\": \"Welcome to BrainMessenger!\",\n  \"sendButton\": \"Send\",\n  \"errors\": {\n    \"unauthorized\": \"Please log in again to continue.\",\n    \"notFound\": \"The requested item could not be found.\"\n  },\n  \"chat\": {\n    \"newMessageNotification\": \"New message from {{name}}\",\n    \"unreadCount\": \"{{count}} unread messages\"\n  },\n  \"settings\": {\n    \"language\": \"Language\",\n    \"theme\": \"Theme\"\n  }\n}\n```",
+        "format_content": "Ключи: Используется camelCase. Ключи должны быть описательными и отражать контекст использования строки (например, sendButton вместо просто send).\\n\\nЗначения: Содержат переводимый текст. Поддерживается интерполяция для вставки динамических данных (например, имена пользователей).",
+        "format_example": "Пример en.json:\\n\\n```json\\n{\\n  \\\"welcomeTitle\\\": \\\"Welcome to BrainMessenger!\\\",\\n  \\\"sendButton\\\": \\\"Send\\\",\\n  \\\"errors\\\": {\\n    \\\"unauthorized\\\": \\\"Please log in again to continue.\\\",\\n    \\\"notFound\\\": \\\"The requested item could not be found.\\\"\\n  },\\n  \\\"chat\\\": {\\n    \\\"newMessageNotification\\\": \\\"New message from {{name}}\\\",\\n    \\\"unreadCount\\\": \\\"{{count}} unread messages\\\"\\n  },\\n  \\\"settings\\\": {\\n    \\\"language\\\": \\\"Language\\\",\\n    \\\"theme\\\": \\\"Theme\\\"\\n  }\\n}\\n```",
         "rtl_flag_title": "4.3. RTL-флаг: Адаптация Интерфейса",
         "rtl_flag_content": "Для языков с направлением справа налево в начало соответствующего JSON-файла добавляется метаданные для индикации:",
-        "rtl_flag_example": "```json\n{\n  \"rtl\": true,\n  \"welcomeTitle\": \"مرحبًا بك في BrainMessenger!\"\n  // ... остальные переводы\n}\n```\n\nЭтот флаг используется Frontend-приложением для соответствующей адаптации стилей и макета."
+        "rtl_flag_example": "```json\\n{\\n  \\\"rtl\\\": true,\\n  \\\"welcomeTitle\\\": \\\"مرحبًا بك في BrainMessenger!\\\"\\n  // ... остальные переводы\\n}\\n```\\n\\nЭтот флаг используется Frontend-приложением для соответствующей адаптации стилей и макета."
       },
       "section5": {
         "title": "5. Настройка Локализации: Интеграция в Систему (Принцип 9)",
         "intro": "Локализация интегрируется как в Frontend (для отображения переведенного UI), так и в Backend (для возврата локализованных ошибок или уведомлений).",
         "frontend_title": "5.1. Frontend (React Native): Использование i18next",
         "frontend_init_title": "Инициализация i18next:",
-        "frontend_init_code": "В главном файле приложения или файла конфигурации (frontend/src/index.ts или подобном):\n\n```jsx\nimport i18n from 'i18next'\nimport { initReactI18next } from 'react-i18next'\n\n// Импорт всех файлов локалей\nimport en from './locales/en.json'\nimport es from './locales/es.json'\nimport fr from './locales/fr.json'\nimport ru from './locales/ru.json'\nimport ar from './locales/ar.json'\n\n// Определение ресурсов\nconst resources = {\n  en: { translation: en },\n  es: { translation: es },\n  fr: { translation: fr },\n  ru: { translation: ru },\n  ar: { translation: ar },\n};\n\ni18n\n  .use(initReactI18next) // Подключение react-i18next\n  .init({\n    resources,\n    lng: 'en', // Язык по умолчанию при первом запуске (может определяться по системным настройкам или выбору пользователя)\n    fallbackLng: 'en', // Резервный язык, если текущий перевод отсутствует\n    interpolation: {\n      escapeValue: false // Позволяет использовать HTML теги в переводах (осторожно!)\n    }\n  });\n\nexport default i18n;\n```",
+        "frontend_init_code": "В главном файле приложения или файла конфигурации (frontend/src/index.ts или подобном):\\n\\n```jsx\\nimport i18n from 'i18next'\\nimport { initReactI18next } from 'react-i18next'\\n\\n// Импорт всех файлов локалей\\nimport en from './locales/en.json'\\nimport es from './locales/es.json'\\nimport fr from './locales/fr.json'\\nimport ru from './locales/ru.json'\\nimport ar from './locales/ar.json'\\n\\n// Определение ресурсов\\nconst resources = {\\n  en: { translation: en },\\n  es: { translation: es },\\n  fr: { translation: fr },\\n  ru: { translation: ru },\\n  ar: { translation: ar },\\n};\\n\\ni18n\\n  .use(initReactI18next) // Подключение react-i18next\\n  .init({\\n    resources,\\n    lng: 'en', // Язык по умолчанию при первом запуске (может определяться по системным настройкам или выбору пользователя)\\n    fallbackLng: 'en', // Резервный язык, если текущий перевод отсутствует\\n    interpolation: {\\n      escapeValue: false // Позволяет использовать HTML теги в переводах (осторожно!)\\n    }\\n  });\\n\\nexport default i18n;\\n```",
         "frontend_usage_title": "Использование перевода в компонентах:",
-        "frontend_usage_code": "Используйте хук useTranslation для доступа к функции t и объекту i18n.\n\n```jsx\nimport { useTranslation } from 'react-i18next';\nimport { Text, Button, View } from 'react-native';\n\nconst WelcomeScreen = () => {\n  const { t, i18n } = useTranslation(); // Получаем функцию t и объект i18n\n\n  return (\n    <View>\n      {/* Использование простого перевода */}\n      <Text>{t('welcomeTitle')}</Text>\n      \n      {/* Использование перевода с интерполяцией */}\n      {/* Предполагается, что где-то есть состояние unreadCount */}\n      <Text>{t('chat.unreadCount', { count: 5 })}</Text> \n\n      {/* Использование перевода для текста кнопки */}\n      <Button title={t('sendButton')} onPress={sendMessage} />\n      \n      {/* Пример смены языка */}\n      <Button title={t('settings.language')} onPress={() => i18n.changeLanguage('ar')} />\n    </View>\n  );\n};\n```",
+        "frontend_usage_code": "Используйте хук useTranslation для доступа к функции t и объекту i18n.\\n\\n```jsx\\nimport { useTranslation } from 'react-i18next';\\nimport { Text, Button, View } from 'react-native';\\n\\nconst WelcomeScreen = () => {\\n  const { t, i18n } = useTranslation(); // Получаем функцию t и объект i18n\\n\\n  return (\\n    <View>\\n      {/* Использование простого перевода */}\\n      <Text>{t('welcomeTitle')}</Text>\\n      \\n      {/* Использование перевода с интерполяцией */}\\n      {/* Предполагается, что где-то есть состояние unreadCount */}\\n      <Text>{t('chat.unreadCount', { count: 5 })}</Text> \\n\\n      {/* Использование перевода для текста кнопки */}\\n      <Button title={t('sendButton')} onPress={sendMessage} />\\n      \\n      {/* Пример смены языка */}\\n      <Button title={t('settings.language')} onPress={() => i18n.changeLanguage('ar')} />\\n    </View>\\n  );\\n};\\n```",
         "frontend_change_title": "Смена языка:",
         "frontend_change_content": "Язык меняется вызовом i18n.changeLanguage('код_языка'). Обычно это делается в настройках пользователя.",
         "backend_title": "5.2. Backend (NestJS): Локализация Ошибок и Уведомлений",
         "backend_intro": "Backend может возвращать локализованные сообщения об ошибках или уведомления, опираясь на язык, переданный Frontend (например, в заголовке Accept-Language или настройках пользователя).",
-        "backend_code": "Использование локализованных сообщений при выбрасывании ошибок:\n\n```typescript\nimport { HttpException, HttpStatus } from '@nestjs/common';\nimport { t } from 'i18next'; // Предполагается, что i18next инициализирован и в Backend\n\n// В сервисе или контроллере\nif (!user) {\n  // Определяем язык пользователя (например, из request.headers['accept-language'])\n  const userLang = determineUserLanguage(request); \n  throw new HttpException(t('errors.unauthorized', { lng: userLang }), HttpStatus.UNAUTHORIZED);\n}\n```",
+        "backend_code": "Использование локализованных сообщений при выбрасывании ошибок:\\n\\n```typescript\\nimport { HttpException, HttpStatus }n from '@nestjs/common';\\nimport { t } from 'i18next'; // Предполагается, что i18next инициализирован и в Backend\\n\\n// В сервисе или контроллере\\nif (!user) {\\n  // Определяем язык пользователя (например, из request.headers['accept-language'])\\n  const userLang = determineUserLanguage(request); \\n  throw new HttpException(t('errors.unauthorized', { lng: userLang }), HttpStatus.UNAUTHORIZED);\\n}\\n```",
         "backend_note": "Локаль пользователя определяется из заголовка Accept-Language (стандартный подход) или сохраняется в профиле пользователя в базе данных после его выбора в настройках приложения.",
         "rtl_adaptation_title": "5.3. RTL-адаптация (Справа Налево): Зеркальное Отображение Системы",
         "rtl_adaptation_intro": "Для языков с RTL (арабский, иврит и др.) необходимо зеркально отобразить макет и некоторые элементы интерфейса.",
         "rtl_css_title": "Стили (CSS/CSS-in-JS):",
-        "rtl_css_code": "Используйте rtlcss в процессе сборки или условные стили в коде. rtlcss автоматически преобразует свойства вроде margin-left, padding-right, text-align: left и т.п. в их RTL-эквиваленты (margin-right, padding-left, text-align: right).\n\n```css\n/* Исходный CSS для LTR */\n.message-bubble {\n  margin-left: 10px;\n  text-align: left;\n}\n/* После обработки rtlcss для RTL */\n.message-bubble {\n  margin-right: 10px;\n  text-align: right;\n}\n```",
+        "rtl_css_code": "Используйте rtlcss в процессе сборки или условные стили в коде. rtlcss автоматически преобразует свойства вроде margin-left, padding-right, text-align: left и т.п. в их RTL-эквиваленты (margin-right, padding-left, text-align: right).\\n\\n```css\\n/* Исходный CSS для LTR */\\n.message-bubble {\\n  margin-left: 10px;\\n  text-align: left;\\n}\\n/* После обработки rtlcss для RTL */\\n.message-bubble {\\n  margin-right: 10px;\\n  text-align: right;\\n}\\n```",
         "rtl_rn_title": "React Native:",
-        "rtl_rn_code": "React-Native имеет встроенную поддержку RTL через I18nManager.\n\n```jsx\nimport { I18nManager } from 'react-native';\nimport i18n from './index'; // Ваш файл инициализации i18next\n\n// В главном файле приложения, перед рендером\nconst isRTL = i18n.language === 'ar' || i18n.language === 'he'; // Проверяем, является ли текущий язык RTL\n\n// ForceRTL может потребовать перезагрузки приложения для полной силы\nif (isRTL !== I18nManager.isRTL) {\n  I18nManager.forceRTL(isRTL);\n  // Optional: Restart the app to apply RTL layout fully\n  // RNRestart.Restart(); \n}\n\n// Некоторые стили могут требовать ручной адаптации, если auto-conversion недостаточно\nconst containerStyle = {\n  flexDirection: isRTL ? 'row-reverse' : 'row',\n  textAlign: isRTL ? 'right' : 'left',\n};\n```",
+        "rtl_rn_code": "React-Native имеет встроенную поддержку RTL через I18nManager.\\n\\n```jsx\\nimport { I18nManager } from 'react-native';\\nimport i18n from './index'; // Ваш файл инициализации i18next\\n\\n// В главном файле приложения, перед рендером\\nconst isRTL = i18n.language === 'ar' || i18n.language === 'he'; // Проверяем, является ли текущий язык RTL\\n\\n// ForceRTL может потребовать перезагрузки приложения для полной силы\\nif (isRTL !== I18nManager.isRTL) {\\n  I18nManager.forceRTL(isRTL);\\n  // Optional: Restart the app to apply RTL layout fully\\n  // RNRestart.Restart(); \\n}\\n\\n// Некоторые стили могут требовать ручной адаптации, если auto-conversion недостаточно\\nconst containerStyle = {\\n  flexDirection: isRTL ? 'row-reverse' : 'row',\\n  textAlign: isRTL ? 'right' : 'left',\\n};\\n```",
         "rtl_icons_title": "Иконки:",
         "rtl_icons_content": "Некоторые иконки (например, стрелки \"назад\", \"далее\") должны быть зеркально отображены для RTL. Это можно делать условно в коде или использовать RTL-ready наборы иконок."
       },
@@ -567,13 +551,13 @@
         "title": "6. Процесс Добавления Нового Языка: Масштабируемая Система (Принцип 9)",
         "intro": "Процесс добавления нового языка построен как четкая, повторяемая последовательность действий для обеспечения эффективности (Принцип 9).",
         "file_title": "Создание базового файла перевода:",
-        "file_content": "Скопируйте актуальный en.json (или другой наиболее полный файл) в frontend/src/locales/<code>.json, где <code> — двухбуквенный код нового языка (например, de.json для немецкого).\nДобавьте rtl: true в начало файла, если новый язык RTL.",
+        "file_content": "Скопируйте актуальный en.json (или другой наиболее полный файл) в frontend/src/locales/<code>.json, где <code> — двухбуквенный код нового языка (например, de.json для немецкого).\\nДобавьте rtl: true в начало файла, если новый язык RTL.",
         "transifex_title": "Загрузка на платформу переводов (Transifex):",
         "transifex_content": "Загрузите новый файл <code>.json в проект BrainMessenger на Transifex. Система автоматически определит, какие строки нуждаются в переводе.",
         "process_title": "Организация процесса перевода:",
-        "process_content": "Назначьте переводчиков (профессионалов или проверенных участников сообщества, Принцип 14) для нового языка в Transifex.\nОтвечайте на их вопросы по контексту строк.\nКонтролируйте прогресс перевода в Transifex.",
+        "process_content": "Назначьте переводчиков (профессионалов или проверенных участников сообщества, Принцип 14) для нового языка в Transifex.\\nОтвечайте на их вопросы по контексту строк.\\nКонтролируйте прогресс перевода в Transifex.",
         "export_title": "Экспорт и Интеграция перевода:",
-        "export_content": "После завершения перевода экспортируйте готовый файл <code>.json из Transifex.\nПоместите его обратно в директорию frontend/src/locales/.\nИмпортируйте новый ресурс в файле инициализации i18next (frontend/src/index.ts) и добавьте его в объект resources.",
+        "export_content": "После завершения перевода экспортируйте готовый файл <code>.json из Transifex.\\nПоместите его обратно в директорию frontend/src/locales/.\\nИмпортируйте новый ресурс в файле инициализации i18next (frontend/src/index.ts) и добавьте его в объект resources.",
         "ui_title": "Добавление опции выбора языка в UI:",
         "ui_content": "Добавьте новый язык в список доступных языков в разделе \"Настройки\" > \"Язык\".",
         "testing_title": "Тестирование:",
@@ -593,7 +577,7 @@
           ["Код", "Язык", "Направление", "Статус", "План (Q 2025)"],
           ["en", "Английский", "LTR", "Реализован (Базовый)", "-"],
           ["es", "Испанский", "LTR", "В плане (Q3)", "Q3"],
-          ["fr", "Французский", "LTR", "В плане (Q3)", "Q3"],
+          ["fr", "Франглийский", "LTR", "В плане (Q3)", "Q3"],
           ["ru", "Русский", "LTR", "В плане (Q3)", "Q3"],
           ["ar", "Арабский", "RTL", "В плане (Q3, требуется RTL)", "Q3"]
         ],
@@ -626,9 +610,9 @@
         "title": "9. Форматирование (Даты, Числа, Валюты): Детали, Создающие Качество (Принцип 3)",
         "intro": "Корректное отображение локализованных данных критически важно для качества (Принцип 3) и удобства (Принцип 2).",
         "dates_title": "Даты и Время:",
-        "dates_code": "```jsx\nimport { FormattedDate, FormattedTime } from 'react-intl';\n\n// Отобразит дату в формате, соответствующем текущей локали\n<FormattedDate value={new Date()} /> // Например, \"3/14/2025\" (en-US) или \"14.3.2025\" (de-DE)\n<FormattedDate value={new Date()} weekday=\"long\" year=\"numeric\" month=\"long\" day=\"numeric\" /> // \"Friday, March 14, 2025\"\n\n// Отобразит время\n<FormattedTime value={new Date()} /> // Например, \"3:00:00 PM\" (en-US) или \"15:00:00\" (de-DE)\n```",
+        "dates_code": "```jsx\\nimport { FormattedDate, FormattedTime } from 'react-intl';\\n\\n// Отобразит дату в формате, соответствующем текущей локали\\n<FormattedDate value={new Date()} /> // Например, \\\"3/14/2025\\\" (en-US) или \\\"14.3.2025\\\" (de-DE)\\n<FormattedDate value={new Date()} weekday=\\\"long\\\" year=\\\"numeric\\\" month=\\\"long\\\" day=\\\"numeric\\\" /> // \\\"Friday, March 14, 2025\\\"\\n\\n// Отобразит время\\n<FormattedTime value={new Date()} /> // Например, \\\"3:00:00 PM\\\" (en-US) или \\\"15:00:00\\\" (de-DE)\\n```",
         "numbers_title": "Числа и Валюты:",
-        "numbers_code": "```jsx\nimport { FormattedNumber, FormattedCurrency } from 'react-intl';\n\n// Отобразит число с локальным разделителем тысяч и десятичным знаком\n<FormattedNumber value={1234.56} /> // \"1,234.56\" (en-US) или \"1.234,56\" (de-DE)\n\n// Отобразит число как процент\n<FormattedNumber value={0.75} style=\"percent\" /> // \"75%\"\n\n// Отобразит число как валюту (требует кода валюты)\n<FormattedCurrency value={123.45} currency=\"USD\" /> // \"$123.45\" (en-US)\n```\n\nДля работы с react-intl необходимо обернуть ваше приложение в IntlProvider и загрузить соответствующие данные локали (react-intl/locale-data)."
+        "numbers_code": "```jsx\\nimport { FormattedNumber, FormattedCurrency } from 'react-intl';\\n\\n// Отобразит число с локальным разделителем тысяч и десятичным знаком\\n<FormattedNumber value={1234.56} /> // \\\"1,234.56\\\" (en-US) или \\\"1.234,56\\\" (de-DE)\\n\\n// Отобразит число как процент\\n<FormattedNumber value={0.75} style=\\\"percent\\\" /> // \\\"75%\\\"\\n\\n// Отобразит число как валюту (требует кода валюты)\\n<FormattedCurrency value={123.45} currency=\\\"USD\\\" /> // \\\"$123.45\\\" (en-US)\\n```\\n\\nДля работы с react-intl необходимо обернуть ваше приложение в IntlProvider и загрузить соответствующие данные локали (react-intl/locale-data)."
       },
       "section10": {
         "title": "10. Тестирование Локализации: Гарантия Качества (Принцип 3, 9)",
@@ -637,187 +621,32 @@
         "scenarios_points": [
           "Переключение языка: Убедитесь, что смена языка в настройках мгновенно (или после перезапуска, если требуется I18nManager) применяет новый перевод и RTL-макет.",
           "Отображение всех строк: Проверьте основные экраны и диалоги, чтобы убедиться, что все видимые пользователю строки переведены.",
-          "Длинный текст: Проверьте UI с языками, известными своей длиной (например, немецкий, русский), чтобы убедиться, что текст не обрезается, элементы не накладываются друг на друга.",
+          "Длинный текст: Проверьте UI с языками, известными своей длиной (например, немецкий, который часто длиннее английского) и RTL-языками, чтобы убедиться, что текст не обрезается, элементы не накладываются друг на друга.",
           "RTL-интерфейс: Тщательно проверьте UI на арабском (или другом RTL-языке): направление текста, выравнивание элементов, отображение иконок направлений, положение скроллбаров.",
           "Интерполяция и Форматирование: Проверьте экраны, где используются динамические данные (имена, счетчики, даты, числа), убедитесь, что они форматируются правильно для текущей локали.",
           "Локализованные ошибки: Инициируйте различные ошибки (неправильный логин, отсутствие элемента), проверьте, что сообщения об ошибках приходят на выбранном языке."
-        ],
-        "tools_title": "Инструменты:",
-        "tools_points": [
-          "Ручное тестирование: Основной метод. Тестирование на реальных устройствах с разными локалями.",
-          "Автоматизированные тесты (Cypress/detox): Можно написать тесты, которые проверяют наличие определенных ключей перевода на странице или даже делают скриншоты UI для сравнения LTR/RTL макетов (Принцип 9: Система)."
-        ],
-        "criteria_title": "Критерии Успеха Тестирования:",
-        "criteria_points": [
-          "100% пользовательских строк переведены.",
-          "Отсутствие обрезки или наложения текста в UI.",
-          "Корректное и полное RTL-отображение для соответствующих языков.",
-          "Правильное локализованное форматирование дат, чисел, валют."
         ]
       },
-      "section11": {
-        "title": "11. Примечания",
-        "notes": [
-          "План: Полная реализация поддержки 5 ключевых языков запланирована на Q3 2025 (см. Дорожную карту), после завершения этапа построения технологического фундамента и начала разработки MVP.",
-          "Масштабирование: Система разработана так, чтобы добавление новых языков в будущем было эффективным (Принцип 9). Основные затраты — это сам перевод.",
-          "Ограничения: Технические логи, сообщения сервера для отладки не переводятся. Локализация касается только пользовательского интерфейса и сообщений, предназначенных для конечного пользователя."
-        ]
-      }
+      "tools_title": "Инструменты:",
+      "tools_points": [
+        "Ручное тестирование: Основной метод. Тестирование на реальных устройствах с разными локалями.",
+        "Автоматизированные тесты (Cypress/detox): Можно написать тесты, которые проверяют наличие определенных ключей перевода на странице или даже делают скриншоты UI для сравнения LTR/RTL макетов (Принцип 9: Система)."
+      ],
+      "criteria_title": "Критерии Успеха Тестирования:",
+      "criteria_points": [
+        "100% пользовательских строк переведены.",
+        "Отсутствие обрезки или наложения текста в UI.",
+        "Корректное и полное RTL-отображение для соответствующих языков.",
+        "Правильное локализованное форматирование дат, чисел, валют."
+      ]
     },
-    "userGuide": {
-      "title": "Руководство Пользователя BrainMessenger",
-      "subtitle": "Ваш Центр Эффективного Общения и Роста",
-      "introduction": {
-        "title": "1. Введение: Добро Пожаловать в Вашу Систему Взаимодействия",
-        "p1": "<strong>Добро пожаловать в BrainMessenger!</strong>",
-        "p2": "BrainMessenger — это не просто мессенджер, а <strong>ваша личная система</strong> для безопасного, удобного и <strong>эффективного общения и взаимодействия</strong> (Принцип 2: Создание Ценности, Принцип 9: Система). Мы создали этот <strong>цифровой АКТИВ</strong> (Принцип 10), чтобы <strong>упростить сложное</strong> (Маргулан), предоставив вам надежный инструмент для связи с другими людьми и организации вашей коммуникации.",
-        "p3": "Это руководство — ваш компас в мире BrainMessenger. Оно структурировано, чтобы вы могли быстро освоить ключевые функции и использовать приложение максимально <strong>эффективно</strong> (Принцип 9).",
-        "p4": "<strong>Для кого:</strong> BrainMessenger разработан для широкой аудитории и доступен на всех основных платформах: iOS (версия 13+), Android (версия 9+), а также в виде полноценной веб-версии для современных браузеров (Chrome, Firefox, Safari, Edge). Мы стремимся к максимальной <strong>доступности</strong> (Принцип 5) для всех.",
-        "p5": "<strong>Как начать:</strong> Самый <strong>прагматичный</strong> (Принцип 12) способ — установить приложение из соответствующего магазина приложений или открыть веб-сайт `https://brainmessenger.com`."
-      },
-      "gettingStarted": {
-        "title": "2. Начало Работы: Первые Шаги в Системе BrainMessenger",
-        "p1": "Ваш процесс регистрации и входа разработан как <strong>простая и безопасная система</strong> (Принцип 9, 5).",
-        "registration": {
-          "title": "2.1. Регистрация: Создание Вашего Профиля в Системе",
-          "steps": [
-            "1. Откройте приложение или перейдите на веб-сайт.",
-            "2. Нажмите кнопку <strong>\"Get Started\"</strong> (Зарегистрироваться) на приветственном экране.",
-            "3. Следуйте пошаговым инструкциям:",
-            "<strong>Введите Email:</strong> Ваш действующий адрес электронной почты (например, `user@example.com`). Он будет использоваться для уведомлений, входа и восстановления доступа. Убедитесь, что формат email корректен.",
-            "<strong>Создайте Пароль:</strong> Придумайте <strong>надежный пароль</strong> (минимум 8 символов, включающий хотя бы одну цифру и один специальный символ, например, `MyStrongP@ss!1`). Безопасность вашего аккаунта — часть нашего <strong>фундамента</strong> (Принцип 5, 8).",
-            "<strong>Введите Имя:</strong> Ваше отображаемое имя в BrainMessenger.",
-            "<strong>Подтвердите Email:</strong> Мы отправим 8-значный код подтверждения на указанный email (см. Спецификацию API, DocInt). Проверьте вашу почту (включая папку \"Спам\"). Введите код в приложении.",
-            "4. Нажмите кнопку подтверждения на каждом шаге."
-          ],
-          "result": "*Результат:* Ваша учетная запись успешно создана. Вы становитесь частью <strong>системы BrainMessenger</strong>."
-        },
-        "login": {
-          "title": "2.2. Вход: Доступ к Вашей Сети Взаимодействия",
-          "steps": [
-            "1. На приветственном экране выберите <strong>\"Log In\"</strong> (Войти).",
-            "2. Введите зарегистрированный email и пароль.",
-            "3. Нажмите <strong>\"Log In\"</strong> (Войти)."
-          ],
-          "note": "*Примечание:* Если у вас включена двухфакторная аутентификация (2FA) для дополнительной безопасности (см. раздел 3.5), вам потребуется ввести дополнительный код, полученный по email, после ввода пароля."
-        },
-        "logout": {
-          "title": "2.3. Выход: Завершение Текущей Сессии",
-          "steps": [
-            "1. Откройте главное меню (обычно иконка \"бургер\" или ваш аватар в верхнем углу).",
-            "2. Перейдите в раздел <strong>\"Settings\"</strong> (Настройки).",
-            "3. Прокрутите вниз и выберите <strong>\"Log Out\"</strong> (Выйти).",
-            "4. Подтвердите ваше действие, если потребуется."
-          ]
-        }
-      },
-      "mainFunctions": {
-        "title": "3. Основные Функции: Инструменты для Эффективного Общения (Принцип 2)",
-        "p1": "BrainMessenger предоставляет набор <strong>инструментов</strong> (Принцип 10) для различных видов коммуникации, сфокусированных на предоставлении вам <strong>ценности</strong> (Принцип 2).",
-        "chatsAndMessages": {
-          "title": "3.1. Чаты и Сообщения: Ваше Личное Пространство Системы Общения",
-          "sections": [
-            "<strong>Просмотр чатов:</strong> На главном экране отображается <strong>системно организованный</strong> (Принцип 9) список всех ваших чатов (личные, групповые, каналы). Чаты с новыми сообщениями всегда сверху.",
-            "<strong>Создание нового чата:</strong>",
-            "1. Нажмите иконку <strong>\"+\"</strong> (обычно в правом верхнем углу).",
-            "2. Выберите <strong>\"New Chat\"</strong> (Новый чат) или \"New Group\" (Новая группа), \"New Channel\" (Новый канал).",
-            "3. Выберите контакты или добавьте участников, укажите название (для групп/каналов).",
-            "4. Нажмите <strong>\"Create\"</strong> (Создать).",
-            "<strong>Отправка сообщения:</strong>",
-            "1. Откройте нужный чат.",
-            "2. Введите текст в поле ввода сообщения внизу.",
-            "3. Нажмите иконку <strong>\"Send\"</strong> (Отправить).",
-            "<strong>Отправка файлов:</strong>",
-            "1. В поле ввода сообщения нажмите на иконку скрепки.",
-            "2. Выберите файл (фото, видео, документ). Максимальный размер файла для загрузки — 100 МБ.",
-            "3. Нажмите <strong>\"Send\"</strong>. Файлы надежно хранятся в Cloudflare R2 (см. DocInt).",
-            "<strong>Поиск по чатам и сообщениям:</strong> Используйте строку поиска в верхней части Главного экрана. Поиск осуществляется быстро и <strong>эффективно</strong> (Принцип 9).",
-            "<strong>Архивирование чатов:</strong> Чтобы убрать чат из основного списка, не удаляя его, смахните его влево (на мобильных) или используйте контекстное меню и выберите <strong>\"Archive\"</strong> (Архивировать). Доступ к архиву — через главное меню. Часть <strong>системы организации</strong> вашего рабочего пространства (Принцип 9)."
-          ]
-        },
-        "calls": {
-          "title": "3.2. Звонки и Видеозвонки: Прямое Взаимодействие",
-          "sections": [
-            "<strong>Начать звонок:</strong> В открытом чате нажмите значок телефона (аудио) или камеры (видео).",
-            "<strong>Конференции:</strong> Создайте групповой чат и используйте функцию \"Start Call\" (Начать звонок).",
-            "<strong>История звонков:</strong> Просматривайте список всех прошлых звонков в разделе <strong>\"Calls\"</strong> (Звонки) главного меню.",
-            "<strong>Настройки качества:</strong> Во время звонка вы можете выбрать качество видео/аудио (низкое, среднее, высокое) для <strong>прагматичного</strong> (Принцип 12) использования интернет-трафика."
-          ]
-        },
-        "filesAndMedia": {
-          "title": "3.3. Файлы и Медиа: Централизованный Доступ к Обмену",
-          "sections": [
-            "<strong>Просмотр файлов из чата:</strong> В открытом чате перейдите в информацию о чате (клик по названию/аватару в шапке) и выберите раздел <strong>\"Media\"</strong> (Медиа). Здесь собраны все файлы, которыми вы обменивались в этом чате. Вы можете фильтровать их по типу."
-          ]
-        },
-        "contacts": {
-          "title": "3.4. Контакты: Управление Вашей Сетью Связей",
-          "sections": [
-            "<strong>Список контактов:</strong> Доступен в разделе <strong>\"Contacts\"</strong> (Контакты) главного меню.",
-            "<strong>Поиск и добавление:</strong> Ищите существующих пользователей или добавляйте новых по email/телефону."
-          ]
-        },
-        "settings": {
-          "title": "3.5. Настройки: Адаптация Системы под Себя (Принцип 2)",
-          "p1": "Раздел \"Настройки\" позволяет персонализировать BrainMessenger, делая его более <strong>ценным и удобным</strong> именно для вас.",
-          "sections": [
-            "<strong>Профиль:</strong> Измените имя, фото, email, пароль. Настройте параметры безопасности (например, включите <strong>двухфакторную аутентификацию (2FA)</strong> для дополнительной защиты аккаунта). Связано с <strong>ответственностью</strong> (Принцип 6) за безопасность своих данных.",
-            "<strong>Уведомления:</strong> Настройте типы уведомлений, звуки, вибрацию.",
-            "<strong>Внешний вид (Тема):</strong> Выберите <strong>\"Light\"</strong> (Светлая) или <strong>\"Dark\"</strong> (Тёмная) тему оформления. Темная тема может снизить нагрузку на глаза (связь с Принципом 5: Здоровье).",
-            "<strong>Язык:</strong> Выберите язык интерфейса из списка доступных языков. Изменения применяются быстро. Поддерживаются языки с написанием справа налево (RTL), делая приложение <strong>доступным</strong> (Принцип 2, 5) для разных регионов (см. DocLocIn).",
-            "<strong>Настройки Батареи и Анимации:</strong> Включите или отключите анимации интерфейса. Это <strong>прагматичное</strong> (Принцип 12) решение для экономии заряда батареи и ресурсов устройства (Принцип 5).",
-            "<strong>Настройки Чата (Кастомизация):</strong> В каждом чате вы можете изменить его визуальное оформление (цвета фона, шрифты), что добавляет <strong>ценности</strong> (Принцип 2) за счет персонализации."
-          ]
-        },
-        "premiumSubscription": {
-          "title": "3.6. Premium-подписка: Дополнительные Возможности и Поддержка Развития Актива (Принцип 2, 10)",
-          "p1": "Premium-подписка предоставляет доступ к расширенным функциям, повышающим <strong>ценность</strong> (Принцип 2) вашего опыта, и является способом поддержать <strong>долгосрочное развитие</strong> (Принцип 8) BrainMessenger как <strong>цифрового Актива</strong> (Принцип 10).",
-          "sections": [
-            "<strong>Преимущества:</strong> Ознакомьтесь с эксклюзивными функциями Premium в разделе <strong>\"Settings\" → \"Premium\"</strong>.",
-            "<strong>Оформление:</strong> Выберите тарифный план и оформите подписку через безопасную платежную систему (Stripe, см. DocInt).",
-            "<strong>История платежей:</strong> Просматривайте информацию о ваших транзакциях."
-          ]
-        }
-      },
-      "faq": {
-        "title": "4. Часто Задаваемые Вопросы (FAQ): Быстрые Ответы Системы Знаний",
-        "p1": "Этот раздел содержит ответы на типовые вопросы, основанные на нашем <strong>накопленном опыте</strong> (Принцип 1, 14).",
-        "q1": {
-          "question": "Q: Что делать, если я не получил код подтверждения при регистрации?",
-          "answer": "A: Проверьте папку \"Спам\" в вашей электронной почте. Если кода нет, вернитесь на экран ввода кода и нажмите <strong>\"Resend Code\"</strong> (Отправить код снова)."
-        },
-        "q2": {
-          "question": "Q: Как восстановить пароль?",
-          "answer": "A: На экране входа нажмите <strong>\"Forgot Password?\"</strong> (Забыли пароль?) и следуйте инструкциям, отправленным на ваш email."
-        },
-        "q3": {
-          "question": "Q: Как удалить свой аккаунт и данные?",
-          "answer": "A: Вы можете инициировать удаление аккаунта в <strong>\"Settings\" → \"Profile\"</strong> выбрав <strong>\"Delete Account\"</strong> (Удалить аккаунт). Ваши данные будут безопасно удалены в соответствии с политикой конфиденциальности (см. DocSecurity)."
-        },
-        "q4": {
-          "question": "Q: Поддерживает ли BrainMessenger сквозное шифрование?",
-          "answer": "A: Да, безопасность и <strong>целостность</strong> (Принцип 7) ваших данных — наш приоритет. Все личные чаты используют сквозное шифрование."
-        }
-      },
-      "tips": {
-        "title": "5. Полезные Советы: Оптимизация Вашего Опыта (Принцип 9)",
-        "p1": "Несколько советов для более <strong>эффективного</strong> (Принцип 9) использования BrainMessenger:",
-        "sections": [
-          "<strong>Используйте онбординг:</strong> Первый экран со слайдером содержит полезную информацию о приложении.",
-          "<strong>Оптимизируйте производительность на своем устройстве:</strong> Если приложение работает медленно или расходует много батареи, попробуйте отключить анимации в <strong>\"Settings\" → \"Battery & Animations\"</strong>. Это <strong>прагматичный</strong> шаг для сохранения <strong>здоровья</strong> вашего устройства (Принцип 5).",
-          "<strong>Поддерживайте порядок в чатах:</strong> Используйте функцию архивирования для скрытия менее актуальных диалогов.",
-          "<strong>Изучайте настройки:</strong> Исследуйте все опции в \"Settings\", чтобы полностью адаптировать приложение под себя."
-        ]
-      },
-      "support": {
-        "title": "6. Поддержка: Мы Готовы Содействовать (Принцип 2, 14)",
-        "p1": "Если у вас возникли вопросы или проблемы, пожалуйста, свяжитесь с нами. Ваша <strong>обратная связь</strong> помогает нам <strong>улучшать систему</strong> (Принцип 9).",
-        "sections": [
-          "<strong>Через приложение:</strong> Откройте главное меню, выберите <strong>\"Support\"</strong> (Помощь) → <strong>\"Contact Us\"</strong> (Связаться с нами).",
-          "<strong>По электронной почте:</strong> Вы также можете написать нам напрямую на адрес `support@brainmessenger.com`."
-        ],
-        "p2": "Мы стремимся отвечать на запросы быстро и предоставить вам максимально полезное <strong>содействие</strong> (Маргулан)."
-      }
+    "section11": {
+      "title": "11. Примечания",
+      "notes": [
+        "План: Полная реализация поддержки 5 ключевых языков запланирована на Q3 2025 (см. Дорожную карту), после завершения этапа построения технологического фундамента и начала разработки MVP.",
+        "Масштабирование: Система разработана так, чтобы добавление новых языков в будущем было эффективным (Принцип 9). Основные затраты — это сам перевод.",
+        "Ограничения: Технические логи, сообщения сервера для отладки не переводятся. Локализация касается только пользовательского интерфейса и сообщений, предназначенных для конечного пользователя."
+      ]
     }
   }
 }
