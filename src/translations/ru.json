@@ -118,7 +118,7 @@
           "answer": "Качество кода обеспечивается через код-ревью, статический анализ (линтеры, форматеры), соблюдение стандартов кодирования и написание тестов."
         },
         "q3": {
-          "question": "Какая стратегия тестирования используется?",
+          "question": "Какая стратегия тестування используется?",
           "answer": "Наша стратегия включает юнит-тесты, интеграционные тесты и E2E-тесты для обеспечения надежности всех компонентів системы."
         },
         "q4": {
@@ -384,7 +384,7 @@
             "title": "Переключение темы:",
             "items": [
               "Реализовано через глобальный флаг `themeMode` (`Light`/`Dark`).",
-              "Пример в React Native:\n```jsx\nimport { useColorScheme } from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Пример выбора фона\n```"
+              "Пример в React Native:\n```jsx\nimport { useColorScheme }s from 'react-native';\nconst themeMode = useColorScheme() === 'dark' ? 'Dark' : 'Light';\nconst backgroundColor = themeMode === 'Dark' ? '#1A1A1A' : '#FFFFFF'; // Пример выбора фона\n```"
             ]
           }
         ],

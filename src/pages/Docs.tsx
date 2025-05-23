@@ -52,7 +52,7 @@ const RenderContent: React.FC<{ contentKey: string }> = ({ contentKey }) => {
 
 const Docs: React.FC = () => {
   const { t } = useLanguage();
-  const [activeDocId, setActiveDocId] = useState('general_docs'); // 'general_docs', 'design_system_docs', or 'localization_guide_docs'
+  const [activeDocId, setActiveDocId] = useState('general_docs'); // 'general_docs', 'design_system_docs', 'localization_guide_docs', or 'user_guide_docs'
 
   const generalSections = [
     { id: 'introduction', titleKey: 'docs.general.introduction.title', contentKey: 'docs.general.introduction.content' },
