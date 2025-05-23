@@ -1850,6 +1850,270 @@
         "cultureTitle": "Культура:",
         "cultureContent": "Создайте культуру, где каждый разработчик несет ответственность за производительность своего кода и активно участвует в поиске и устранении узких мест (Принцип 6)."
       }
+    },
+    "apiSpec": {
+      "title": "Спецификация API BrainMessenger (Интерфейс Системы)",
+      "subtitle": "Интерфейс Системы",
+      "generalInfo": {
+        "title": "1. Общая Информация: API как Точка Взаимодействия с Системой",
+        "description": "Этот документ описывает GraphQL API BrainMessenger — <strong>основной интерфейс</strong> (Принцип 9), через который клиентские приложения (Web, Mobile, Desktop) взаимодействуют с серверной частью системы и получают доступ к данным и функциональности. GraphQL выбран за его <strong>эффективность и гибкость</strong> (Принцип 9, 2), позволяя клиентам запрашивать только те данные, которые им необходимы.",
+        "projectNameTitle": "Название проекта:",
+        "projectNameContent": "BrainMessenger",
+        "apiPurposeTitle": "Цель:",
+        "apiPurposeContent": "Предоставить четкое и полное описание доступных запросов (Queries) и мутаций (Mutations), их входных и выходных данных, а также правил аутентификации и форматов ошибок. Это обеспечивает <strong>системность</strong> (Принцип 9) взаимодействия между Frontend и Backend и повышает <strong>качество</strong> (Принцип 3) разработки.",
+        "baseUrlTitle": "Базовый URL:",
+        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адрес API Gateway, который перенаправляет запросы на Backend Service).",
+        "requestFormatTitle": "Формат запросов:",
+        "requestFormatContent": "GraphQL-запросы (POST-запросы с `Content-Type: application/json` и телом в формате GraphQL).",
+        "authenticationTitle": "Аутентификация:",
+        "authenticationContent": "Для большинства методов требуется передать JWT-токен в заголовке `Authorization: Bearer <token>`. Токен получается после успешного логина. Это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5).",
+        "relatedDocsTitle": "Связь с другими документами:",
+        "relatedDocsContent": [
+          "DocTech.md: Общая архитектура системы, включая Backend и API Gateway.",
+          "DocDevIn.md: Детали реализации Backend на NestJS и GraphQL.",
+          "DocInt.md: Описание интеграций, которые Backend использует (Neon, R2, Firebase и др.).",
+          "DocOptimizationIn.md: Подходы к оптимизации производительности API."
+        ]
+      },
+      "graphqlSchema": {
+        "title": "2. Схема GraphQL: Структура Доступных Данных и Операций",
+        "description": "Полная схема GraphQL доступна по адресу API через инструменты интроспекции (например, GraphQL Playground, Apollo Studio). Ниже приведены основные типы и операции.",
+        "dataTypes": {
+          "title": "2.1. Типы Данных (Schemas): Описание Структуры Информации",
+          "user": {
+            "title": "User:",
+            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара пользователя (хранится в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, статус онлайн/оффлайн)\n}"
+          },
+          "chat": {
+            "title": "Chat:",
+            "code": "type Chat {\n  id: ID!\n  name: String! # Название чата (для групп/каналов)\n  type: String! # Тип чата (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список участников чата\n  messages(pagination: PaginationInput): [Message!] # Сообщения в чате (с пагинацией)\n  lastMessageAt: DateTime # Время последнего сообщения (для сортировки списка чатов)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, фото группы/канала, описание)\n}"
+          },
+          "message": {
+            "title": "Message:",
+            "code": "type Message {\n  id: ID!\n  content: String! # Текст сообщения (для текстовых сообщений)\n  fileUrl: String # URL файла, если сообщение является файлом (хранится в R2)\n  fileMetadata: JSON # Метаданные файла (тип, размер, имя) (хранится в Neon/R2)\n  sender: User! # Отправитель сообщения\n  chat: Chat! # Чат, которому принадлежит сообщение\n  createdAt: DateTime! # Время отправки сообщения\n  updatedAt: DateTime!\n  # ... другие поля (например, статус прочтения, реакции)\n}"
+          },
+          "paginationInput": {
+            "title": "PaginationInput:",
+            "code": "input PaginationInput {\n  take: Int # Максимальное количество элементов\n  skip: Int # Пропустить элементов (для offset-based пагинации)\n  cursor: String # Курсор (ID) для cursor-based пагинации\n}"
+          },
+          "authPayload": {
+            "title": "AuthPayload:",
+            "code": "type AuthPayload {\n  token: String! # JWT токен доступа\n  user: User! # Данные аутентифицированного пользователя\n}"
+          },
+          "dateTimeJson": {
+            "title": "DateTime, JSON:",
+            "content": "Стандартные скалярные типы или кастомные скаляры, определенные на Backend."
+          }
+        },
+        "operations": {
+          "title": "2.2. Операции (Queries и Mutations): Доступ к Функционалу Системы",
+          "authentication": {
+            "title": "2.2.1. Аутентификация (Authentication)",
+            "registerUser": {
+              "title": "`mutation registerUser(input: RegisterInput!): AuthPayload!`",
+              "description": "Регистрирует нового пользователя в системе.",
+              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - см. валидацию).",
+              "authRequired": "Требуется аутентификация: Нет.",
+              "scenario": "Сценарий: Пользователь заполняет форму регистрации.",
+              "errors": "Ошибки: `400 Bad Request` (неверный формат данных/валидация), `409 Conflict` (email уже используется)."
+            },
+            "loginUser": {
+              "title": "`mutation loginUser(input: LoginInput!): AuthPayload!`",
+              "description": "Аутентифицирует пользователя по email и паролю.",
+              "input": "`LoginInput`: `{ email: String!, password: String! }`.",
+              "authRequired": "Требуется аутентификация: Нет.",
+              "scenario": "Сценарий: Пользователь вводит учетные данные для входа.",
+              "errors": "Ошибки: `401 Unauthorized` (неверный email или пароль)."
+            },
+            "logoutUser": {
+              "title": "`mutation logoutUser: Boolean!`",
+              "description": "Инвалидирует текущий JWT токен на сервере (если реализовано хранение токенов или их черных списков).",
+              "authRequired": "Требуется аутентификация: Да (используется текущий токен).",
+              "scenario": "Сценарий: Пользователь нажимает \"Выйти\".",
+              "returns": "Возвращает: `true` при успешном выходе.",
+              "errors": "Ошибки: `401 Unauthorized` (токен недействителен)."
+            }
+          },
+          "user": {
+            "title": "2.2.2. Пользователь (User)",
+            "getUser": {
+              "title": "`query getUser(id: ID!): User`",
+              "description": "Получает данные пользователя по его уникальному ID.",
+              "authRequired": "Требуется аутентификация: Да (для доступа к любым данным пользователя, кроме, возможно, публичного профиля).",
+              "scenario": "Сценарий: Просмотр профиля пользователя.",
+              "errors": "Ошибки: `404 Not Found` (пользователь с таким ID не найден)."
+            },
+            "getCurrentUser": {
+              "title": "`query getCurrentUser: User!`",
+              "description": "Получает данные текущего аутентифицированного пользователя.",
+              "authRequired": "Требуется аутентификация: Да.",
+              "scenario": "Сценарий: Загрузка профиля текущего пользователя при старте приложения.",
+              "errors": "Ошибки: `401 Unauthorized`."
+            },
+            "updateUser": {
+              "title": "`mutation updateUser(id: ID!, input: UserInput!): User!`",
+              "description": "Обновляет данные профиля пользователя.",
+              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опциональны.",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем профиля или иметь права администратора).",
+              "scenario": "Сценарий: Пользователь редактирует свой профиль.",
+              "errors": "Ошибки: `400 Bad Request` (неверный формат данных), `401 Unauthorized`, `403 Forbidden` (нет прав на редактирование этого пользователя), `404 Not Found`."
+            },
+            "deleteUser": {
+              "title": "`mutation deleteUser(id: ID!): Boolean!`",
+              "description": "Удаляет аккаунт пользователя.",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем аккаунта).",
+              "scenario": "Сценарий: Пользователь решает удалить свою учетную запись.",
+              "returns": "Возвращает: `true` при успешном удалении.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+            }
+          },
+          "chats": {
+            "title": "2.2.3. Чаты (Chats)",
+            "getChats": {
+              "title": "`query getChats: [Chat!]!`",
+              "description": "Получает список всех чатов, в которых участвует текущий пользователь.",
+              "authRequired": "Требуется аутентификация: Да.",
+              "scenario": "Сценарий: Загрузка списка чатов на главном экране.",
+              "errors": "Ошибки: `401 Unauthorized`."
+            },
+            "getChat": {
+              "title": "`query getChat(id: ID!): Chat`",
+              "description": "Получает данные конкретного чата по ID.",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником этого чата).",
+              "scenario": "Сценарий: Открытие конкретного чата.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+            },
+            "createChat": {
+              "title": "`mutation createChat(input: CreateChatInput!): Chat!`",
+              "description": "Создает новый чат.",
+              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` может быть \"personal\", \"group\", \"channel\". `name` обязателен для \"group\" и \"channel\". `userIds` включает ID создателя и других участников (для \"personal\" и \"group\").",
+              "authRequired": "Требуется аутентификация: Да.",
+              "scenario": "Сценарий: Пользователь создает новый чат или группу.",
+              "errors": "Ошибки: `400 Bad Request` (неверный тип, отсутствуют userIds и т.п.), `401 Unauthorized`, `403 Forbidden` (нет прав на создание такого типа чата)."
+            },
+            "getMessages": {
+              "title": "`query getMessages(chatId: ID!, pagination: PaginationInput): [Message!]!`",
+              "description": "Получает список сообщений для заданного чата. Поддерживает пагинацию.",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
+              "scenario": "Сценарий: Открытие чата, подгрузка старых сообщений при прокрутке.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+            },
+            "sendMessage": {
+              "title": "`mutation sendMessage(chatId: ID!, content: String!, fileUrl: String, fileMetadata: JSON): Message!`",
+              "description": "Отправляет новое сообщение в чат. Может содержать текст или ссылку на файл.",
+              "input": "`chatId`: ID чата. `content`: Текст сообщения. `fileUrl`: URL файла в R2 (опционально). `fileMetadata`: Метаданные файла (опционально).",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
+              "scenario": "Сценарий: Пользователь отправляет текстовое сообщение или файл.",
+              "errors": "Ошибки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (нет прав писать в этот чат), `404 Not Found` (чат не найден)."
+            },
+            "deleteMessage": {
+              "title": "`mutation deleteMessage(messageId: ID!): Boolean!`",
+              "description": "Удаляет сообщение.",
+              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть отправителем сообщения или иметь права администратора чата).",
+              "scenario": "Сценарий: Пользователь удаляет свое сообщение.",
+              "returns": "Возвращает: `true` при успешном удалении.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+            }
+          },
+          "externalIntegrations": {
+            "title": "2.2.4. Внешние Интеграции (через API Backend)",
+            "sendVerificationCode": {
+              "title": "`mutation sendVerificationCode(email: String!): Boolean!`",
+              "description": "Запускает процесс отправки кода подтверждения на указанный email (используя Gmail API). Используется при регистрации или сбросе пароля.",
+              "authRequired": "Требуется аутентификация: Нет.",
+              "scenario": "Сценарий: Пользователь вводит email на экране регистрации/восстановления пароля.",
+              "returns": "Возвращает: `true` при успешной постановке задачи на отправку.",
+              "errors": "Ошибки: `400 Bad Request` (неверный формат email), `429 Too Many Requests` (защита от спама)."
+            },
+            "verifyEmailCode": {
+              "title": "`mutation verifyEmailCode(email: String!, code: String!): Boolean!`",
+              "description": "Проверяет код подтверждения, полученный по email.",
+              "authRequired": "Требуется аутентификация: Нет.",
+              "scenario": "Сценарий: Пользователь вводит код из email.",
+              "returns": "Возвращает: `true` при успешной проверке.",
+              "errors": "Ошибки: `400 Bad Request` (неверный код или email), `404 Not Found` (для данного email нет активного кода)."
+            },
+            "enableTwoFactorAuth": {
+              "title": "`mutation enableTwoFactorAuth(userId: ID!): Boolean!`",
+              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
+              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
+              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+            },
+            "disableTwoFactorAuth": {
+              "title": "`mutation disableTwoFactorAuth(userId: ID!): Boolean!`",
+              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
+              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
+              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
+              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+            },
+            "sendTwoFactorCode": {
+              "title": "`mutation sendTwoFactorCode(userId: ID!): Boolean!`",
+              "description": "Отправляет код двухфакторной аутентификации на email пользователя.",
+              "authRequired": "Требуется аутентификация: Частичная (например, после ввода пароля, но до ввода 2FA кода). Логика зависит от флоу аутентификации.",
+              "scenario": "Сценарий: Пользователь входит в аккаунт с включенной 2FA.",
+              "errors": "Ошибки: `404 Not Found` (пользователь не найден или 2FA не включена), `429 Too Many Requests`."
+            },
+            "createPaymentSession": {
+              "title": "`mutation createPaymentSession(input: PaymentInput!): PaymentSessionPayload!`",
+              "description": "Создает сессию оплаты через Stripe для оформления Premium подписки.",
+              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID выбранного тарифного плана, URL для редиректа после оплаты).",
+              "authRequired": "Требуется аутентификация: Да.",
+              "scenario": "Сценарий: Пользователь нажимает \"Подписаться\" на Premium экране.",
+              "errors": "Ошибки: `400 Bad Request` (неверный planId), `401 Unauthorized`."
+            }
+          }
+        }
+      },
+      "errorHandling": {
+        "title": "3. Обработка Ошибок API: Ясная Обратная Связь (Принцип 3, 14)",
+        "description": "API возвращает стандартизированные ошибки для <strong>ясной обратной связи</strong> (Принцип 14) с клиентом и поддержания <strong>качества</strong> (Принцип 3).",
+        "errorFormatTitle": "Формат ошибок (в соответствии со спецификацией GraphQL):",
+        "errorFormatCode": "{\n  \"data\": null, // Обычно null при ошибках верхнего уровня\n  \"errors\": [\n    {\n      \"message\": \"Описание ошибки (может быть локализовано - см. DocLocIn)\",\n      \"locations\": [...], // Расположение ошибки в запросе\n      \"path\": [...],      // Путь к полю, вызвавшему ошибку\n      \"extensions\": {\n        \"code\": \"КОД_ОШИБКИ\", // Стандартизированный код ошибки (например, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Если применимо, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Дополнительные детали об ошибке (опционально)\n      }\n    }\n    // ... могут быть другие ошибки\n  ]\n}",
+        "keyErrorCodesTitle": "Ключевые коды ошибок (extensions.code):",
+        "keyErrorCodesList": [
+          "`UNAUTHENTICATED`: Требуется аутентификация, но токен отсутствует или недействителен (`HTTP 401`).",
+          "`FORBIDDEN`: Аутентификация пройдена, но у пользователя нет прав на выполнение операции (`HTTP 403`).",
+          "`BAD_USER_INPUT`: Ошибка валидации входных данных (`HTTP 400`). Детали могут быть в `extensions.details`.",
+          "`NOT_FOUND`: Запрошенный ресурс не найден (`HTTP 404`).",
+          "`CONFLICT`: Конфликт данных (например, попытка зарегистрировать email, который уже существует) (`HTTP 409`).",
+          "`INTERNAL_SERVER_ERROR`: Неожиданная ошибка на сервере (`HTTP 500`).",
+          "`RATE_LIMITED`: Превышен лимит запросов (`HTTP 429`)."
+        ],
+        "localizationErrorsTitle": "Локализация ошибок:",
+        "localizationErrorsContent": "Сообщения об ошибках (`message`) могут быть локализованы на стороне Backend на основе заголовка `Accept-Language` или предпочтений пользователя (см. DocLocIn)."
+      },
+      "notes": {
+        "title": "4. Примечания",
+        "dataTypes": {
+          "title": "Типы данных:",
+          "list": [
+            "`ID`: Уникальный идентификатор ресурса (обычно строка).",
+            "`String`: Текстовая строка.",
+            "`Int`, `Float`: Числа.",
+            "`Boolean`: Логическое значение (`true`/`false`).",
+            "`DateTime`: Дата и время в формате ISO 8601 (например, \"2025-03-14T10:30:00Z\").",
+            "`JSON`: Кастомный скаляр для передачи произвольных JSON-объектов (например, для `fileMetadata`).",
+            "`!` в конце типа означает, что поле <strong>не может быть null</strong>."
+          ]
+        },
+        "pagination": {
+          "title": "Пагинация:",
+          "content": "Для списков, которые могут быть длинными (`messages`), используйте пагинацию для эффективной загрузки данных (Принцип 9)."
+        },
+        "validation": {
+          "title": "Валидация:",
+          "content": "Backend выполняет строгую валидацию всех входных данных (через DTO и `class-validator`), возвращая ошибки `BAD_USER_INPUT` при их некорректности. Это часть <strong>системы обеспечения качества</strong> (Принцип 3)."
+        },
+        "security": {
+          "title": "Безопасность:",
+          "content": "Все запросы, работающие с чувствительными данными или изменяющие состояние системы (кроме регистрации/логина), требуют аутентификации."
+        },
+        "testingTools": {
+          "title": "Инструменты тестирования API:",
+          "content": "Используйте GraphQL Playground (часто доступен по адресу `/graphql` в dev-режиме Backend), Postman или Apollo Studio для отправки запросов и тестирования API."
+        }
+      }
     }
   }
 }

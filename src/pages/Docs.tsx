@@ -467,6 +467,111 @@ const Docs: React.FC = () => {
     ]},
   ];
 
+  const apiSpecSections = [
+    {
+      id: 'general-info',
+      titleKey: 'docs.apiSpec.generalInfo.title',
+      contentKey: 'docs.apiSpec.generalInfo.description',
+      subSections: [
+        { id: 'project-name', titleKey: 'docs.apiSpec.generalInfo.projectNameTitle', contentKey: 'docs.apiSpec.generalInfo.projectNameContent' },
+        { id: 'api-purpose', titleKey: 'docs.apiSpec.generalInfo.apiPurposeTitle', contentKey: 'docs.apiSpec.generalInfo.apiPurposeContent' },
+        { id: 'base-url', titleKey: 'docs.apiSpec.generalInfo.baseUrlTitle', contentKey: 'docs.apiSpec.generalInfo.baseUrlContent' },
+        { id: 'request-format', titleKey: 'docs.apiSpec.generalInfo.requestFormatTitle', contentKey: 'docs.apiSpec.generalInfo.requestFormatContent' },
+        { id: 'authentication', titleKey: 'docs.apiSpec.generalInfo.authenticationTitle', contentKey: 'docs.apiSpec.generalInfo.authenticationContent' },
+        { id: 'related-docs', titleKey: 'docs.apiSpec.generalInfo.relatedDocsTitle', listKey: 'docs.apiSpec.generalInfo.relatedDocsContent' },
+      ],
+    },
+    {
+      id: 'graphql-schema',
+      titleKey: 'docs.apiSpec.graphqlSchema.title',
+      contentKey: 'docs.apiSpec.graphqlSchema.description',
+      subSections: [
+        {
+          id: 'data-types',
+          titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.title',
+          subSections: [
+            { id: 'user-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.user.code' },
+            { id: 'chat-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.chat.code' },
+            { id: 'message-type', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.message.code' },
+            { id: 'pagination-input', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.paginationInput.code' },
+            { id: 'auth-payload', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.title', codeExampleKey: 'docs.apiSpec.graphqlSchema.dataTypes.authPayload.code' },
+            { id: 'datetime-json', titleKey: 'docs.apiSpec.graphqlSchema.dataTypes.dateTimeJson.title', contentKey: 'docs.apiSpec.graphqlSchema.dataTypes.dateTimeJson.content' },
+          ],
+        },
+        {
+          id: 'operations',
+          titleKey: 'docs.apiSpec.graphqlSchema.operations.title',
+          subSections: [
+            {
+              id: 'authentication-ops',
+              titleKey: 'docs.apiSpec.graphqlSchema.operations.authentication.title',
+              subSections: [
+                { id: 'register-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.authentication.registerUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.authentication.registerUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.authentication.registerUser.input', 'docs.apiSpec.graphqlSchema.operations.authentication.registerUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.authentication.registerUser.scenario', 'docs.apiSpec.graphqlSchema.operations.authentication.registerUser.errors'] },
+                { id: 'login-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.authentication.loginUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.authentication.loginUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.authentication.loginUser.input', 'docs.apiSpec.graphqlSchema.operations.authentication.loginUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.authentication.loginUser.scenario', 'docs.apiSpec.graphqlSchema.operations.authentication.loginUser.errors'] },
+                { id: 'logout-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.scenario', 'docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.returns', 'docs.apiSpec.graphqlSchema.operations.authentication.logoutUser.errors'] },
+              ],
+            },
+            {
+              id: 'user-ops',
+              titleKey: 'docs.apiSpec.graphqlSchema.operations.user.title',
+              subSections: [
+                { id: 'get-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.user.getUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.user.getUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.user.getUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.user.getUser.scenario', 'docs.apiSpec.graphqlSchema.operations.user.getUser.errors'] },
+                { id: 'get-current-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.user.getCurrentUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.user.getCurrentUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.user.getCurrentUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.user.getCurrentUser.scenario', 'docs.apiSpec.graphqlSchema.operations.user.getCurrentUser.errors'] },
+                { id: 'update-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.user.updateUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.user.updateUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.user.updateUser.input', 'docs.apiSpec.graphqlSchema.operations.user.updateUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.user.updateUser.scenario', 'docs.apiSpec.graphqlSchema.operations.user.updateUser.errors'] },
+                { id: 'delete-user', titleKey: 'docs.apiSpec.graphqlSchema.operations.user.deleteUser.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.user.deleteUser.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.user.deleteUser.authRequired', 'docs.apiSpec.graphqlSchema.operations.user.deleteUser.scenario', 'docs.apiSpec.graphqlSchema.operations.user.deleteUser.returns', 'docs.apiSpec.graphqlSchema.operations.user.deleteUser.errors'] },
+              ],
+            },
+            {
+              id: 'chat-ops',
+              titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.title',
+              subSections: [
+                { id: 'get-chats', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.getChats.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.getChats.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.getChats.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.getChats.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.getChats.errors'] },
+                { id: 'get-chat', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.getChat.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.getChat.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.getChat.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.getChat.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.getChat.errors'] },
+                { id: 'create-chat', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.createChat.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.createChat.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.createChat.input', 'docs.apiSpec.graphqlSchema.operations.chats.createChat.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.createChat.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.createChat.errors'] },
+                { id: 'get-messages', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.getMessages.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.getMessages.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.getMessages.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.getMessages.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.getMessages.errors'] },
+                { id: 'send-message', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.sendMessage.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.sendMessage.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.sendMessage.input', 'docs.apiSpec.graphqlSchema.operations.chats.sendMessage.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.sendMessage.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.sendMessage.errors'] },
+                { id: 'delete-message', titleKey: 'docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.authRequired', 'docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.scenario', 'docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.returns', 'docs.apiSpec.graphqlSchema.operations.chats.deleteMessage.errors'] },
+              ],
+            },
+            {
+              id: 'external-integrations-ops',
+              titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.title',
+              subSections: [
+                { id: 'send-verification-code', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.returns', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendVerificationCode.errors'] },
+                { id: 'verify-email-code', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.returns', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.verifyEmailCode.errors'] },
+                { id: 'enable-two-factor-auth', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.enableTwoFactorAuth.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.enableTwoFactorAuth.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.enableTwoFactorAuth.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.enableTwoFactorAuth.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.enableTwoFactorAuth.errors'] },
+                { id: 'disable-two-factor-auth', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.disableTwoFactorAuth.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.disableTwoFactorAuth.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.disableTwoFactorAuth.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.disableTwoFactorAuth.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.disableTwoFactorAuth.errors'] },
+                { id: 'send-two-factor-code', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendTwoFactorCode.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendTwoFactorCode.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendTwoFactorCode.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendTwoFactorCode.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.sendTwoFactorCode.errors'] },
+                { id: 'create-payment-session', titleKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.title', contentKey: 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.description', additionalContentKeys: ['docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.input', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.authRequired', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.scenario', 'docs.apiSpec.graphqlSchema.operations.externalIntegrations.createPaymentSession.errors'] },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'error-handling',
+      titleKey: 'docs.apiSpec.errorHandling.title',
+      contentKey: 'docs.apiSpec.errorHandling.description',
+      subSections: [
+        { id: 'error-format', titleKey: 'docs.apiSpec.errorHandling.errorFormatTitle', codeExampleKey: 'docs.apiSpec.errorHandling.errorFormatCode' },
+        { id: 'key-error-codes', titleKey: 'docs.apiSpec.errorHandling.keyErrorCodesTitle', listKey: 'docs.apiSpec.errorHandling.keyErrorCodesList' },
+        { id: 'localization-errors', titleKey: 'docs.apiSpec.errorHandling.localizationErrorsTitle', contentKey: 'docs.apiSpec.errorHandling.localizationErrorsContent' },
+      ],
+    },
+    {
+      id: 'notes',
+      titleKey: 'docs.apiSpec.notes.title',
+      subSections: [
+        { id: 'data-types-notes', titleKey: 'docs.apiSpec.notes.dataTypes.title', listKey: 'docs.apiSpec.notes.dataTypes.list' },
+        { id: 'pagination-notes', titleKey: 'docs.apiSpec.notes.pagination.title', contentKey: 'docs.apiSpec.notes.pagination.content' },
+        { id: 'validation-notes', titleKey: 'docs.apiSpec.notes.validation.title', contentKey: 'docs.apiSpec.notes.validation.content' },
+        { id: 'security-notes', titleKey: 'docs.apiSpec.notes.security.title', contentKey: 'docs.apiSpec.notes.security.content' },
+        { id: 'testing-tools-notes', titleKey: 'docs.apiSpec.notes.testingTools.title', contentKey: 'docs.apiSpec.notes.testingTools.content' },
+      ],
+    },
+  ];
+
   const docsConfig = [
     {
       id: 'general_docs',
@@ -510,9 +615,15 @@ const Docs: React.FC = () => {
       subtitleKey: 'docs.optimizationGuide.subtitle',
       sections: optimizationGuideSections,
     },
+    {
+      id: 'api_spec_docs',
+      titleKey: 'docs.apiSpec.title',
+      subtitleKey: 'docs.apiSpec.subtitle',
+      sections: apiSpecSections,
+    },
   ];
 
-  const activeDoc = docsConfig.find(doc => doc.id === activeDocId);
+  const activeDoc = docsConfig.find((doc: any) => doc.id === activeDocId);
   const sectionsToRender = activeDoc ? activeDoc.sections : [];
 
   const renderSectionContent = (section: any) => {
