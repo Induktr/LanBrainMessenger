@@ -158,6 +158,31 @@ const Docs: React.FC = () => {
     { id: 'localization-notes', titleKey: 'docs.localizationGuide.section11.title', listKey: 'docs.localizationGuide.section11.notes' },
   ];
 
+  const userGuideSections = [
+    { id: 'user-guide-introduction', titleKey: 'docs.userGuide.introduction.title', contentKey: 'docs.userGuide.introduction.p1', additionalContentKeys: ['docs.userGuide.introduction.p2', 'docs.userGuide.introduction.p3', 'docs.userGuide.introduction.p4', 'docs.userGuide.introduction.p5'] },
+    { id: 'getting-started', titleKey: 'docs.userGuide.gettingStarted.title', contentKey: 'docs.userGuide.gettingStarted.p1', subSections: [
+        { id: 'registration', titleKey: 'docs.userGuide.gettingStarted.registration.title', listKey: 'docs.userGuide.gettingStarted.registration.steps', additionalContentKeys: ['docs.userGuide.gettingStarted.registration.result'] },
+        { id: 'login', titleKey: 'docs.userGuide.gettingStarted.login.title', listKey: 'docs.userGuide.gettingStarted.login.steps', additionalContentKeys: ['docs.userGuide.gettingStarted.login.note'] },
+        { id: 'logout', titleKey: 'docs.userGuide.gettingStarted.logout.title', listKey: 'docs.userGuide.gettingStarted.logout.steps' },
+    ]},
+    { id: 'main-functions', titleKey: 'docs.userGuide.mainFunctions.title', contentKey: 'docs.userGuide.mainFunctions.p1', subSections: [
+        { id: 'chats-messages', titleKey: 'docs.userGuide.mainFunctions.chatsAndMessages.title', listKey: 'docs.userGuide.mainFunctions.chatsAndMessages.sections' },
+        { id: 'calls', titleKey: 'docs.userGuide.mainFunctions.calls.title', listKey: 'docs.userGuide.mainFunctions.calls.sections' },
+        { id: 'files-media', titleKey: 'docs.userGuide.mainFunctions.filesAndMedia.title', listKey: 'docs.userGuide.mainFunctions.filesAndMedia.sections' },
+        { id: 'contacts', titleKey: 'docs.userGuide.mainFunctions.contacts.title', listKey: 'docs.userGuide.mainFunctions.contacts.sections' },
+        { id: 'settings', titleKey: 'docs.userGuide.mainFunctions.settings.title', contentKey: 'docs.userGuide.mainFunctions.settings.p1', listKey: 'docs.userGuide.mainFunctions.settings.sections' },
+        { id: 'premium-subscription', titleKey: 'docs.userGuide.mainFunctions.premiumSubscription.title', contentKey: 'docs.userGuide.mainFunctions.premiumSubscription.p1', listKey: 'docs.userGuide.mainFunctions.premiumSubscription.sections' },
+    ]},
+    { id: 'faq', titleKey: 'docs.userGuide.faq.title', contentKey: 'docs.userGuide.faq.p1', subSections: [
+        { id: 'faq-q1', titleKey: 'docs.userGuide.faq.q1.question', contentKey: 'docs.userGuide.faq.q1.answer' },
+        { id: 'faq-q2', titleKey: 'docs.userGuide.faq.q2.question', contentKey: 'docs.userGuide.faq.q2.answer' },
+        { id: 'faq-q3', titleKey: 'docs.userGuide.faq.q3.question', contentKey: 'docs.userGuide.faq.q3.answer' },
+        { id: 'faq-q4', titleKey: 'docs.userGuide.faq.q4.question', contentKey: 'docs.userGuide.faq.q4.answer' },
+    ]},
+    { id: 'tips', titleKey: 'docs.userGuide.tips.title', contentKey: 'docs.userGuide.tips.p1', listKey: 'docs.userGuide.tips.sections' },
+    { id: 'support', titleKey: 'docs.userGuide.support.title', contentKey: 'docs.userGuide.support.p1', listKey: 'docs.userGuide.support.sections', additionalContentKeys: ['docs.userGuide.support.p2'] },
+  ];
+
   const docsConfig = [
     {
       id: 'general_docs',
@@ -176,6 +201,12 @@ const Docs: React.FC = () => {
       titleKey: 'docs.localizationGuide.title',
       subtitleKey: 'docs.localizationGuide.subtitle',
       sections: localizationGuideSections,
+    },
+    {
+      id: 'user_guide_docs',
+      titleKey: 'docs.userGuide.title',
+      subtitleKey: 'docs.userGuide.subtitle',
+      sections: userGuideSections,
     },
   ];
 
