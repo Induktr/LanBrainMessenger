@@ -1486,6 +1486,370 @@
           "content": "Поддерживайте эту документацию в актуальном состоянии, отражая изменения в используемых сервисах или добавлении новых интеграций (Принцип 1: Обучение, Принцип 9: Система)."
         }
       }
+    },
+    "optimizationGuide": {
+      "title": "Руководство по Оптимизации BrainMessenger (Принцип Кайдзен в Действии)",
+      "subtitle": "Введение: Оптимизация как Непрерывный Процесс Улучшения",
+      "introduction": {
+        "title": "1. Введение: Оптимизация как Непрерывный Процесс Улучшения",
+        "description": "Этот документ подробно описывает подходы, инструменты и техники, которые мы используем для оптимизации производительности BrainMessenger. Оптимизация — это не одноразовая задача, а <strong>непрерывный процесс улучшения</strong> (Принцип 1, 9: Кайдзен), который позволяет нам обеспечить <strong>высокое качество, надежность и масштабируемость</strong> (Принцип 3, 8) приложения.",
+        "goalTitle": "Цель:",
+        "goalContent": "Идентифицировать и устранять узкие места в производительности на всех уровнях системы (Frontend, Backend, База данных, Инфраструктура), чтобы BrainMessenger оставался <strong>быстрым, отзывчивым и эффективным</strong> (Принцип 2) даже при значительной нагрузке (цель — 1 миллион активных пользователей), поддерживая <strong>здоровье системы</strong> (Принцип 5, применительно к технике).",
+        "audienceTitle": "Аудитория:",
+        "audienceContent": "Backend, Frontend, Mobile, Desktop и DevOps разработчики, сфокусированные на производительности и масштабировании.",
+        "principlesTitle": "Принципы, которыми руководствуется оптимизация:",
+        "principles": [
+          "<strong>Система и Оптимизация (Принцип 9: Кайдзен):</strong> Оптимизация является ключевым аспектом нашей системы разработки. Используется цикличный подход: Измерение → Анализ → Улучшение → Проверка.",
+          "<strong>Качество > Количество (Принцип 3):</strong> Лучше иметь несколько критически важных оптимизаций, чем много мелких, не дающих значительного эффекта.",
+          "<strong>Прагматизм и Реализм (Принцип 12):</strong> Оптимизируем то, что действительно влияет на производительность и пользовательский опыт, основываясь на реальных данных, а не на догадках.",
+          "<strong>Постоянное Обучение (Принцип 1):</strong> Изучение новых техник и инструментов оптимизации, анализ результатов и уроков.",
+          "<strong>Настойчивость (Принцип 13):</strong> Оптимизация может быть сложной. Требуется упорство для выявления и решения глубоких проблем производительности.",
+          "<strong>Здоровье как Фундамент (Принцип 5):</strong> Оптимизация системы (например, снижение потребления памяти/CPU) напрямую влияет на \"здоровье\" серверов и устройств пользователей.",
+          "<strong>Внешняя Экспертиза (Принцип 14):</strong> Использование стандартных инструментов (Prometheus, Grafana, V8 Profiler), изучение опыта других команд (Google, Next.js и т.д.)."
+        ]
+      },
+      "generalPrinciple": {
+        "title": "2. Общий Принцип Оптимизации (Цикл Кайдзен)",
+        "intro": "Наш подход к оптимизации следует <strong>циклу Кайдзен (Принцип 9)</strong>:",
+        "step1": {
+          "title": "1. Измерение (Measure):",
+          "content": "Соберите данные о производительности. Используйте инструменты мониторинга (Prometheus, Sentry), профилирования (V8 Profiler), анализа бандлов (Webpack Bundle Analyzer, `@next/bundle-analyzer`)."
+        },
+        "step2": {
+          "title": "2. Анализ (Analyze):",
+          "content": "Определите <strong>узкие места (bottlenecks)</strong> на основе собранных данных. Где система тратит больше всего времени или ресурсов?"
+        },
+        "step3": {
+          "title": "3. Улучшение (Improve):",
+          "content": "Примените конкретные техники оптимизации, описанные в этом руководстве, для устранения выявленных узких мест."
+        },
+        "step4": {
+          "title": "4. Проверка (Verify):",
+          "content": "Снова измерьте производительность после внесенных изменений. Убедитесь, что оптимизация дала ожидаемый эффект и не вызвала регрессий (не ухудшила другие аспекты)."
+        },
+        "step5": {
+          "title": "5. Повторение:",
+          "content": "Производительность может меняться с ростом нагрузки и функционала. Повторяйте цикл Кайдзен непрерывно."
+        }
+      },
+      "imageProcessing": {
+        "title": "3. Оптимизация Обработки Изображений: Эффективность и Скорость (Принцип 9, 2)",
+        "intro": "Обработка изображений может быть ресурсоемкой. <strong>Оптимизация этого процесса напрямую влияет на скорость загрузки контента и отзывчивость приложения</strong> (Принцип 2: Ценность).",
+        "libraryTitle": "Библиотека:",
+        "libraryContent": "`sharp` (на базе `libvips`). Выбран как <strong>прагматичное</strong> (Принцип 12) и <strong>высокопроизводительное</strong> (Принцип 9) решение для Node.js.",
+        "applicationAreasTitle": "Области применения:",
+        "applicationAreasContent": "Изменение размера, сжатие, конвертация формата для аватаров, изображений в чатах.",
+        "keyTechniqueTitle": "Ключевая техника:",
+        "keyTechniqueContent": "<strong>Асинхронная обработка</strong> в фоновом режиме через Kafka.",
+        "implementationStepsTitle": "Шаги по внедрению (Backend):",
+        "step1": {
+          "title": "1. Установите `sharp`:",
+          "content": "Убедитесь, что `libvips` установлен в вашей операционной системе или Docker-образе.",
+          "code": "```bash\\nnpm install sharp\\n```"
+        },
+        "step2": {
+          "title": "2. Создайте сервис обработки изображений:",
+          "content": "Инкапсулируйте логику в отдельном сервисе (часть <strong>системы</strong> - Принцип 9).",
+          "code": "```typescript\\n// backend/src/image-processing/image-processing.service.ts\\nimport { Injectable } from '@nestjs/common';\\nimport sharp from 'sharp';\\n\\n@Injectable()\\nexport class ImageProcessingService {\\n  // Метод для изменения размера, сжатия и конвертации в WebP\\n  async processImage(buffer: Buffer, width: number, height?: number): Promise<Buffer> {\\n    // resize({ width, height, withoutEnlargement: true }) - избегаем увеличения, если исходник меньше\\n    // webp({ quality: 80 }) - сжатие в формат WebP (хорошее сжатие при сохранении качества)\\n    // withMetadata({ orientation: true }) - сохраняем ориентацию из EXIF, остальное удаляем (экономия размера - Принцип 9)\\n    return sharp(buffer)\\n      .resize(width, height, { withoutEnlargement: true })\\n      .webp({ quality: 80 })\\n      .withMetadata({ orientation: true })\\n      .toBuffer();\\n  }\\n\\n  // Метод для простого изменения размера\\n  async resizeImage(buffer: Buffer, width: number, height?: number): Promise<Buffer> {\\n       return sharp(buffer)\\n           .resize(width, height, { withoutEnlargement: true })\\n           .toBuffer();\\n  }\\n\\n   // Метод для конвертации в определенный формат\\n   async convertToFormat(buffer: Buffer, format: keyof sharp.Format): Promise<Buffer> {\\n       return sharp(buffer).toFormat(format).toBuffer();\\n   }\\n}\\n```"
+        },
+        "step3": {
+          "title": "3. Интеграция с загрузкой файлов (Backend Controller/Service):",
+          "content": "",
+          "code": "```typescript\\n// backend/src/upload/upload.controller.ts (пример обработки загрузки аватара)\\nimport { Controller, Post, UploadedFile, UseInterceptors, Body, Inject } from '@nestjs/common';\\nimport { FileInterceptor } from '@nestjs/platform-express';\\nimport { ImageProcessingService } from '../image-processing/image-processing.service';\\nimport { StorageService } from '../storage/storage.service';\\nimport { UserService } from '../user/user.service';\\n\\n@Controller('upload')\\nexport class UploadController {\\n  constructor(\\n    private imageProcessingService: ImageProcessingService,\\n    private storageService: StorageService,\\n    private userService: UserService,\\n    // ... инъекция Kafka продюсера для асинхронной обработки\\n  ) {}\\n\\n  @Post('avatar')\\n  @UseInterceptors(FileInterceptor('file')) // 'file' - имя поля формы\\n  async uploadAvatar(@UploadedFile() file: Express.Multer.File, @Body('userId') userId: string) {\\n    // Оптимизация: Обработка изображения перед загрузкой в R2\\n    const processedImageBuffer = await this.imageProcessingService.processImage(file.buffer, 300, 300); // Изменить размер и сжать\\n    const fileName = `avatars/${userId}-${Date.now()}.webp`; // Уникальное имя файла в папке avatars\\n    const mimeType = 'image/webp'; // Соответствует формату WebP\\n\\n    // Загрузка обработанного файла в Cloudflare R2\\n    const avatarUrl = await this.storageService.uploadFile(processedImageBuffer, fileName, mimeType);\\n\\n    // Обновление ссылки на аватар в профиле пользователя в Neon\\n    await this.userService.updateUserAvatar(userId, avatarUrl);\\n\\n    // Возвращаем URL аватара клиенту\\n    return { avatarUrl };\\n  }\\n\\n  @Post('chat-image')\\n  @UseInterceptors(FileInterceptor('file'))\\n  async uploadChatImage(@UploadedFile() file: Express.Multer.File, @Body('chatId') chatId: string, @Body('userId') userId: string) {\\n      // Отправка задачи на обработку изображения в Kafka для асинхронной обработки (Принцип 9)\\n      const taskPayload = { fileBuffer: file.buffer.toString('base64'), fileName: file.originalname, mimeType: file.mimetype, chatId, userId };\\n      // Предполагается, что у вас есть Kafka продюсер сервис\\n      // await this.kafkaProducerService.sendMessage('image-processing-topic', JSON.stringify(taskPayload));\\n\\n      // Немедленный ответ клиенту, что файл принят в обработку\\n      return { status: 'processing', originalFileName: file.originalname };\\n\\n      // ИЛИ, если синхронная обработка приемлема для небольших файлов:\\n      /*\\n      const processedImageBuffer = await this.imageProcessingService.processImage(file.buffer, 800); // Изменить размер\\n      const fileName = `chat-images/${chatId}-${Date.now()}.webp`;\\n      const mimeType = 'image/webp';\\n      const imageUrl = await this.storageService.uploadFile(processedImageBuffer, fileName, mimeType);\\n\\n      // Создание сообщения типа 'image' в чате\\n      // await this.chatService.sendImageMessage(chatId, userId, imageUrl);\\n\\n      return { imageUrl };\\n      */\\n  }\\n}\\n```"
+        },
+        "step4": {
+          "title": "4. Асинхронность через Kafka (для тяжелых задач):",
+          "content": "Для обработки изображений в чатах (которые могут быть большими) используйте <strong>Kafka</strong> (см. раздел 8) для <strong>асинхронной обработки</strong>. Backend быстро принимает файл от клиента и ставит задачу в очередь Kafka. Отдельный воркер (consumer Kafka) забирает задачу, обрабатывает изображение с помощью `sharp`, загружает в R2 и только после этого создает сообщение в чате через API. Это <strong>снижает время ответа API</strong> (Принцип 9) и улучшает пользовательский опыт."
+        }
+      },
+      "dbOptimization": {
+        "title": "4. Оптимизация Базы Данных (Neon/PostgreSQL): Ускорение Доступа к Данным (Принцип 9, 8)",
+        "intro": "База данных часто становится узким местом. Оптимизация запросов и структуры БД критически важна для <strong>долгосрочной производительности</strong> (Принцип 8) и <strong>эффективности системы</strong> (Принцип 9).",
+        "platformTitle": "Платформа:",
+        "platformContent": "Neon (управляемый PostgreSQL).",
+        "toolTitle": "Инструмент:",
+        "toolContent": "Prisma ORM.",
+        "analysisToolTitle": "Инструмент анализа:",
+        "analysisToolContent": "`EXPLAIN ANALYZE` в SQL-клиенте Neon или `prisma.queryRaw` с `EXPLAIN ANALYZE`.",
+        "monitoringToolTitle": "Инструмент мониторинга:",
+        "monitoringToolContent": "Prometheus + `postgres_exporter` (см. раздел 14).",
+        "indexing": {
+          "title": "4.1. Индексация: Ускорение Поиска и Фильтрации",
+          "intro": "Индексы позволяют базе данных быстрее находить нужные строки.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "На полях, которые часто используются в `WHERE`, `JOIN`, `ORDER BY`.",
+          "applicationAreasTitle": "Области применения в BrainMessenger:",
+          "applicationAreasContent": "`userId`, `chatId`, `createdAt` (в таблице `Message`), `email` (в таблице `User`), поля для поиска.",
+          "prismaTitle": "Реализация (Prisma):",
+          "prismaContent": "Добавляйте `@index` в `schema.prisma`.",
+          "prismaCode": "```prisma\\n// schema.prisma\\nmodel Message {\\n  id        String   @id @default(cuid())\\n  content   String\\n  createdAt DateTime @default(now()) @map(\\\"created_at\\\") // Пример @map для snake_case в БД\\n  chatId    String @map(\\\"chat_id\\\")\\n  userId    String @map(\\\"user_id\\\")\\n  chat      Chat     @relation(fields: [chatId], references: [id])\\n  user      User     @relation(fields: [userId], references: [id])\\n\\n  // Комбинированный индекс для быстрых запросов сообщений в чате по времени\\n  @@index([chatId, createdAt])\\n  // Индекс для быстрого получения сообщений по пользователю (например, для статистики)\\n  @@index([userId])\\n  // Индекс для поиска по содержимому (если требуется полнотекстовый поиск - рассмотреть tsearch)\\n  // @@index([content]) // Только для простых фильтров LIKE\\n}\\n\\nmodel User {\\n    id    String @id @default(cuid())\\n    email String @unique // Уникальный индекс для быстрого поиска по email (логин, регистрация)\\n    name  String\\n    // ... другие поля\\n}\\n\\nmodel Chat {\\n   id          String @id @default(cuid())\\n   lastMessageAt DateTime? @map(\\\"last_message_at\\\") // Для сортировки чатов (нужен индекс)\\n   // ... другие поля\\n   @@index([lastMessageAt]) // Индекс для сортировки списка чатов\\n}\\n```",
+          "applicationTitle": "Применение:",
+          "applicationContent": "После изменения `schema.prisma` выполните миграцию (`npx prisma migrate dev`)."
+        },
+        "queryOptimization": {
+          "title": "4.2. Оптимизация Запросов (Prisma): Пишем Эффективный Код Взаимодействия с БД",
+          "intro": "",
+          "selectFieldsTitle": "Выбирайте только нужные поля (`select`):",
+          "selectFieldsContent": "Не запрашивайте `SELECT *`. Указывайте поля, которые вам действительно нужны. Это уменьшает объем данных, передаваемых по сети и обрабатываемых БД.",
+          "selectFieldsCode": "```typescript\\n// Плохо\\nconst user = await prisma.user.findUnique({ where: { id: userId } }); // Выберет все поля\\n\\n// Хорошо (если нужен только email и name)\\nconst user = await prisma.user.findUnique({\\n  where: { id: userId },\\n  select: {\\n    email: true,\\n    name: true,\\n  },\\n});\\n```",
+          "nPlus1Title": "Избегайте N+1 проблем (`include`):",
+          "nPlus1Content": "Если вам нужны связанные данные (например, автор сообщения при получении списка сообщений), используйте `include` или `select` со вложенными полями вместо выполнения отдельного запроса для каждого элемента.",
+          "nPlus1Code": "```typescript\\n// Плохо (N+1 проблема - отдельный запрос за каждым пользователем)\\nconst messages = await prisma.message.findMany({ where: { chatId: chatId } });\\nfor (const message of messages) {\\n  const sender = await prisma.user.findUnique({ where: { id: message.userId } });\\n  // ... использовать sender\\n}\\n\\n// Хорошо (используем include для получения автора сообщения одним запросом)\\nconst messagesWithSender = await prisma.message.findMany({\\n  where: { chatId: chatId },\\n  include: {\\n    user: { // Включаем данные пользователя, связанного с сообщением через поле 'user' в модели Message\\n      select: { id: true, name: true, avatarUrl: true } // Выбираем только нужные поля пользователя\\n    },\\n  },\\n  orderBy: { createdAt: 'asc' }, // Пример: сообщения в хронологическом порядке\\n  take: 50, // Пример: пагинация\\n});\\n```",
+          "paginationTitle": "Пагинация (`skip`, `take`, `cursor`):",
+          "paginationContent": "Для получения больших списков (сообщения в чате, список чатов) используйте пагинацию, чтобы не загружать все данные сразу. `cursor`-пагинация предпочтительнее для бесконечной прокрутки.",
+          "paginationCode": "```typescript\\n// Пример пагинации с take и skip\\nconst messages = await prisma.message.findMany({\\n    where: { chatId: chatId },\\n    orderBy: { createdAt: 'asc' },\\n    skip: (page - 1) * pageSize, // Пропустить N сообщений\\n    take: pageSize, // Взять M сообщений\\n});\\n\\n// Пример Cursor-based пагинации (для \\\"показать еще\\\")\\nconst messages = await prisma.message.findMany({\\n    where: { chatId: chatId },\\n    orderBy: { createdAt: 'asc' },\\n    cursor: { id: lastMessageId }, // Начать после последнего сообщения\\n    skip: 1, // Пропустить само последнее сообщение\\n    take: pageSize,\\n});\\n```"
+        },
+        "prismaAccelerate": {
+          "title": "4.3. Prisma Accelerate: Глобальный Кэш и Пул Соединений",
+          "intro": "Prisma Accelerate предоставляет глобальную сеть серверов (Edge locations), которые кэшируют результаты запросов и управляют пулом соединений к вашей БД Neon.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "Для снижения задержки запросов (latency) для пользователей по всему миру и оптимизации использования пула соединений БД.",
+          "implementationTitle": "Реализация:",
+          "implementationContent": "Настраивается в консоли Prisma. Ваша `DATABASE_URL` заменяется на URL Prisma Accelerate."
+        },
+        "materializedViews": {
+          "title": "4.4. Материализованные Представления: Кэширование Сложных Агрегаций",
+          "intro": "Материализованные представления — это по сути кэшированные результаты сложных запросов или агрегаций (например, количество сообщений в чате, последние активные пользователи в группе). Они хранятся на диске и могут быть быстро прочитаны.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "Для запросов, которые выполняются часто, но требуют сложных вычислений (JOINs, GROUP BY, агрегатные функции) над большими таблицами, и данные в которых не должны быть абсолютно актуальными каждую миллисекунду.",
+          "applicationAreasTitle": "Области применения:",
+          "applicationAreasContent": "Статистика чатов (общее количество сообщений, участников), списки \"топ\" пользователей (например, по количеству отправленных сообщений).",
+          "implementationTitle": "Реализация (SQL, через Prisma `queryRaw` или SQL-клиент Neon):",
+          "implementationContent": "```sql\\n-- Создать материализованное представление для подсчета сообщений в каждом чате\\nCREATE MATERIALIZED VIEW chat_message_counts AS\\nSELECT\\n    \\\"chatId\\\",\\n    COUNT(*) as \\\"messageCount\\\"\\nFROM \\\"Message\\\"\\nGROUP BY \\\"chatId\\\";\\n\\n-- Создать индекс на представлении для быстрого поиска по chatId (необязательно, но часто полезно)\\nCREATE INDEX idx_chat_message_counts_chat_id ON chat_message_counts (\\\"chatId\\\");\\n```",
+          "updateTitle": "Обновление:",
+          "updateContent": "Материализованные представления нужно <strong>периодически обновлять</strong>, чтобы отразить изменения в базовых таблицах. Это делается командой `REFRESH MATERIALIZED VIEW <view_name>;`. Частота обновления зависит от того, насколько актуальными должны быть данные (например, раз в час, раз в день).",
+          "updateCode": "```sql\\n-- Обновить представление (может блокировать чтение во время выполнения)\\nREFRESH MATERIALIZED VIEW chat_message_counts;\\n\\n-- Обновить представление без блокировки чтения (для больших представлений)\\nREFRESH MATERIALIZED VIEW CONCURRENTLY chat_message_counts; -- Требует уникального индекса\\n```",
+          "usageTitle": "Использование в Prisma:",
+          "usageContent": "Запрашивайте как обычную таблицу.",
+          "usageCode": "```typescript\\nconst chatStats = await prisma.chatMessageCounts.findMany({\\n  select: { chatId: true, messageCount: true },\\n  where: { chatId: 'some-chat-id' },\\n});\\n```"
+        },
+        "partitioning": {
+          "title": "4.5. Партиционирование Таблиц: Разделение Больших Объемов Данных",
+          "intro": "Партиционирование физически разделяет очень большие таблицы (например, `Message`) на более мелкие части (партиции) на основе значения в определенном столбце (например, `createdAt` или `chatId`).",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "Когда таблица становится настолько большой (миллиарды строк), что индексы уже не справляются, и запросы начинают замедляться из-за необходимости сканировать слишком много данных.",
+          "applicationAreasTitle": "Области применения:",
+          "applicationAreasContent": "Таблица `Message` — идеальный кандидат для партиционирования по времени создания (`createdAt`) или по ID чата (`chatId`).",
+          "implementationTitle": "Реализация (SQL, через Prisma `queryRaw` или SQL-клиент Neon):",
+          "implementationContent": "PostgreSQL поддерживает нативное партиционирование.",
+          "implementationCode": "```sql\\n-- Создать главную партиционированную таблицу по диапазону дат\\nCREATE TABLE messages (\\n    id TEXT NOT NULL,\\n    content TEXT NOT NULL,\\n    created_at TIMESTAMP WITH TIME ZONE NOT NULL,\\n    chat_id TEXT NOT NULL,\\n    user_id TEXT NOT NULL,\\n    PRIMARY KEY (id, created_at) -- Ключ партиционирования должен быть частью первичного ключа\\n) PARTITION BY RANGE (created_at); -- Партиционируем по диапазону поля created_at\\n\\n-- Создать партиции (например, по месяцам)\\nCREATE TABLE messages_2025_03 PARTITION OF messages\\n    FOR VALUES FROM ('2025-03-01 00:00:00+00') TO ('2025-04-01 00:00:00+00');\\n\\nCREATE TABLE messages_2025_04 PARTITION OF messages\\n    FOR VALUES FROM ('2025-04-01 00:00:00+00') TO ('2025-05-01 00:00:00+00');\\n\\n-- ... создавать новые партиции по мере необходимости (автоматически или вручную)\\n\\n-- Создать индексы для партиционированной таблицы (применяются ко всем партициям)\\nCREATE INDEX ON messages (\\\"chat_id\\\", \\\"created_at\\\");\\nCREATE INDEX ON messages (\\\"user_id\\\");\\n```",
+          "advantagesTitle": "Преимущества:",
+          "advantagesContent": "Запросы, включающие фильтр по ключу партиционирования (например, `WHERE created_at BETWEEN ...`), будут сканировать только нужные партиции, что значительно ускоряет их выполнение. Управление старыми данными (удаление) становится проще (можно просто удалить старые партиции).",
+          "prismaRelationTitle": "Связь с Prisma:",
+          "prismaRelationContent": "Prisma работает с партиционированной таблицей как с обычной."
+        }
+      },
+      "graphqlOptimization": {
+        "title": "5. Оптимизация GraphQL API (NestJS + Prisma): Эффективная Передача Данных",
+        "intro": "GraphQL сам по себе является инструментом <strong>оптимизации</strong> (Принцип 9) по сравнению с REST (клиент запрашивает только нужные данные). Однако и его можно оптимизировать.",
+        "analysisToolTitle": "Инструмент анализа:",
+        "analysisToolContent": "`graphql-query-complexity` для защиты от сложных запросов.",
+        "dataloader": {
+          "title": "5.1. DataLoader: Решение Проблемы N+1 в GraphQL",
+          "intro": "DataLoader — это утилита, которая помогает решить проблему N+1 запросов при работе с графами данных. Если у вас есть список объектов, и для каждого объекта нужно подтянуть связанный с ним объект (например, список сообщений и для каждого сообщения его автора), DataLoader соберет все ID связанных объектов и сделает один пакетный запрос к БД.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "В резолверах GraphQL, когда вам нужно получить связанные объекты для списка родительских объектов.",
+          "applicationAreasTitle": "Области применения:",
+          "applicationAreasContent": "Получение данных автора для каждого сообщения в чате, получение списка участников для каждого чата в списке чатов пользователя.",
+          "implementationTitle": "Реализация:",
+          "implementationContent": "Создайте отдельные DataLoader для каждого типа объекта, который нужно подтягивать. Интегрируйте их в контекст GraphQL запроса.",
+          "implementationCode": "```typescript\\n// backend/src/graphql/loaders/user.loader.ts\\nimport { Injectable, Scope } from '@nestjs/common';\\nimport DataLoader from 'dataloader';\\nimport { PrismaService } from 'nestjs-prisma';\\nimport { User } from '@prisma/client'; // Импорт модели Prisma\\n\\n// Scope.REQUEST - важно, чтобы DataLoader был уникален для каждого запроса GraphQL\\n@Injectable({ scope: Scope.REQUEST })\\nexport class UserLoader {\\n  private loader: DataLoader<string, User>;\\n\\n  constructor(private prisma: PrismaService) {\\n    // Создаем новый DataLoader. Функция batchLoadFn принимает массив ключей (user IDs)\\n    this.loader = new DataLoader<string, User>(\\n      async (ids: readonly string[]) => {\\n        // Выполняем ОДИН запрос к БД, чтобы получить ВСЕх пользователей по их ID\\n        const users = await this.prisma.user.findMany({\\n          where: {\\n            id: { in: Array.from(ids) }, // Array.from(ids) для совместимости с Prisma\\n          },\\n        });\\n\\n        // Важно: Вернуть массив результатов, упорядоченный по исходному массиву ids\\n        const userMap = new Map(users.map(user => [user.id, user]));\\n        return ids.map(id => userMap.get(id)); // Возвращаем пользователей в том же порядке, что и запросили\\n      },\\n      { cache: true } // Включаем кэширование внутри запроса GraphQL\\n    );\\n  }\\n\\n  // Метод для загрузки одного пользователя по ID\\n  load(id: string): Promise<User> {\\n    return this.loader.load(id);\\n  }\\n\\n  // Метод для загрузки списка пользователей по ID\\n  loadMany(ids: string[]): Promise<(Error | User)[]> {\\n      return this.loader.loadMany(ids);\\n  }\\n}\\n```\\nИнтегрируйте лоадеры в контекст GraphQL (`backend/src/graphql/graphql.module.ts` или `app.module.ts`):\\n```typescript\\n// backend/src/graphql/graphql.module.ts\\nimport { Module } from '@nestjs/common';\\nimport { GraphQLModule } from '@nestjs/graphql';\\nimport { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';\\nimport { UserLoader } from './loaders/user.loader'; // Импорт лоадера\\n// ... другие импорты резолверов и модулей\\n\\n@Module({\\n  imports: [\\n    GraphQLModule.forRoot<ApolloDriverConfig>({\\n      driver: ApolloDriver,\\n      // ... другие настройки GraphQL (schema path, context, etc.)\\n      context: ({ req, connection }) => {\\n        // Создаем контекст для каждого запроса\\n        const context = { req }; // Добавляем объект запроса\\n         if (connection) {\\n           // Для WebSocket (подписки)\\n           // context.loaders = new Loaders(); // Если лоадеры создаются здесь\\n         } else {\\n           // Для HTTP запросов (queries/mutations)\\n           // Создаем лоадеры и добавляем их в контекст\\n           context.loaders = {\\n              userLoader: new UserLoader(/* зависимости */), // Нужно инжектить PrismaService\\n              // ... другие лоадеры\\n           };\\n           // Пример инъекции зависимостей в лоадер (может потребовать FactoryProvider)\\n           // context.loaders = {\\n           //     userLoader: req.loaders.userLoader, // Если используете Request-scoped провайдеры NestJS\\n           // };\\n         }\\n        return context;\\n      },\\n      // plugins: [complexityPlugin], // Плагин для анализа сложности запросов\\n    }),\\n    // ... импорт других модулей\\n  ],\\n   providers: [UserLoader], // Добавляем лоадер как провайдер (для Request scope)\\n})\\nexport class GraphqlModule {}\\n```",
+          "usageTitle": "Используйте лоадеры в резолверах:",
+          "usageContent": "",
+          "usageCode": "```typescript\\n// backend/src/message/message.resolver.ts\\nimport { Resolver, ResolveField, Parent, Context } from '@nestjs/graphql';\\nimport { Message } from '@prisma/client'; // Импорт модели Prisma\\nimport { UserLoader } from '../graphql/loaders/user.loader'; // Импорт лоадера\\n\\n@Resolver('Message') // Указываем GraphQL тип, к которому относится резолвер\\nexport class MessageResolver {\\n  @ResolveField('user') // Определяем резолвер для поля 'user' в типе Message\\n  async resolveUser(@Parent() message: Message, @Context() context: any) {\\n    // Используем userLoader из контекста для загрузки пользователя по message.userId\\n    // DataLoader автоматически соберет все message.userId в текущем запросе и загрузит их батчем\\n    return context.loaders.userLoader.load(message.userId);\\n  }\\n}\\n```"
+        },
+        "queryComplexityAnalysis": {
+          "title": "5.2. Анализ Сложности Запросов: Защита от \"Тяжелых\" Запросов",
+          "intro": "GraphQL позволяет клиенту запрашивать данные произвольной вложенности, что может привести к очень \"тяжелым\" запросам, сильно нагружающим сервер и БД.",
+          "toolTitle": "Инструмент:",
+          "toolContent": "`graphql-query-complexity`.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "Всегда включайте защиту от сложности в продакшене.",
+          "principleTitle": "Принцип работы:",
+          "principleContent": "Плагин анализирует запрос до его выполнения и вычисляет его \"сложность\" (например, как сумму \"стоимости\" каждого поля). Если сложность превышает заданный порог, запрос отклоняется.",
+          "implementationTitle": "Реализация:",
+          "implementationContent": "Настройте плагин в NestJS GraphQLModule (см. Руководство по разработке)."
+        },
+        "persistedQueries": {
+          "title": "5.3. Persisted Queries: Кэширование Запросов на Уровне Сети",
+          "intro": "Persisted Queries позволяют клиенту отправлять на сервер не полный текст GraphQL запроса, а только его хэш. Сервер по этому хэшу находит полный запрос (если он ему знаком) и выполняет его.",
+          "whyTitle": "Почему:",
+          "whyContent": "Уменьшает объем данных, передаваемых по сети, что ускоряет запросы, особенно на мобильных устройствах. Улучшает эффективность кэширования на CDN.",
+          "whenTitle": "Когда использовать:",
+          "whenContent": "Для часто повторяющихся запросов из клиента.",
+          "implementationTitle": "Реализация:",
+          "implementationContent": "Требует поддержки как на стороне клиента (Apollo Client поддерживает), так и на стороне сервера (Apollo Server поддерживает). На сервере нужно хранить соответствие хэшей и запросов (например, в Redis)."
+        }
+      },
+      "backendLogicOptimization": {
+        "title": "6. Оптимизация Backend Логики (NestJS): Эффективность Кода",
+        "intro": "",
+        "toolsTitle": "Инструменты:",
+        "toolsContent": "Профилирование Node.js (V8 Profiler), обнаружение утечек памяти (`heapdump`).",
+        "whenTitle": "Когда использовать:",
+        "whenContent": "Для выявления \"горячих\" участков кода, потребляющих много CPU или памяти, и диагностики проблем с памятью.",
+        "processTitle": "Процесс:",
+        "processContent": "Используйте инструменты профилирования для <strong>измерения</strong> (Шаг 1 Кайдзен). Анализируйте результаты (Шаг 2). Вносите изменения в код (Шаг 3). Повторите (Шаг 4).",
+        "recommendationsTitle": "Рекомендации:",
+        "recommendationsContent": "Избегайте синхронных операций, блокирующих основной поток Node.js. Используйте асинхронные API. Оптимизируйте циклы, работу с большими массивами/объектами."
+      },
+      "caching": {
+        "title": "7. Кэширование (Redis): Снижение Нагрузки на БД и Ускорение (Принцип 9)",
+        "intro": "Кэширование позволяет хранить часто запрашиваемые данные в быстрой памяти (Redis), чтобы не обращаться к более медленной БД (Neon) при каждом запросе. Это ключевой <strong>рычаг</strong> для повышения <strong>эффективности системы</strong> (Принцип 9).",
+        "libraryTitle": "Библиотека:",
+        "libraryContent": "`ioredis`, `@nestjs/cache-manager`, `cache-manager-redis-store`.",
+        "patternTitle": "Pаттерн:",
+        "patternContent": "Cache-Aside (чтение из кэша, если нет — чтение из БД и запись в кэш).",
+        "applicationAreasTitle": "Области применения:",
+        "applicationAreasContent": "Часто запрашиваемые, относительно редко изменяющиеся данные (профили пользователей, настройки приложения, результаты сложных запросов/агрегаций, материализованных представлений).",
+        "implementationTitle": "Реализация:",
+        "implementationContent": "Настройте Redis в NestJS и используйте его в сервисах.",
+        "invalidationTitle": "Ключевой аспект:",
+        "invalidationContent": "<strong>Инвалидация кэша</strong>. При изменении данных в БД, удаляйте соответствующие ключи из Redis, чтобы клиенты не получали устаревшие данные."
+      },
+      "asyncProcessing": {
+        "title": "8. Асинхронная Обработка (Kafka): Надежность и Отзывчивость (Принцип 9, 2)",
+        "intro": "Используйте <strong>Kafka</strong> для выполнения задач, которые не требуют немедленного ответа пользователю (отправка email, обработка изображений, нотификации, аналитика).",
+        "libraryTitle": "Библиотека:",
+        "libraryContent": "`kafkajs`.",
+        "whyTitle": "Почему:",
+        "whyContent": "Kafka — <strong>надежная распределенная система очередей</strong>, гарантирующая доставку сообщений и позволяющая масштабировать обработку задач независимо от основного API (воркеры-консьюмеры).",
+        "applicationAreasTitle": "Области применения:",
+        "applicationAreasContent": [
+          "Обработка изображений/видео после загрузки.",
+          "Отправка больших объемов push-уведомлений.",
+          "Генерация отчетов или статистики.",
+          "Архивирование старых сообщений/файлов."
+        ],
+        "patternTitle": "Паттерн:",
+        "patternContent": "<strong>Producer-Consumer</strong>. Backend-API ставит задачи в топик Kafka (Producer). Отдельные сервисы/воркеры (Consumer) читают задачи из топика и выполняют их в фоновом режиме.",
+        "partitioningTitle": "Партиционирование в Kafka:",
+        "partitioningContent": "Используйте ключи сообщений (например, `userId`, `chatId`), чтобы сообщения, относящиеся к одному пользователю/чату, попадали в одну партицию. Это гарантирует порядок обработки внутри партиции, что может быть важно для некоторых задач.",
+        "monitoringTitle": "Мониторинг:",
+        "monitoringContent": "Используйте <strong>Kafdrop</strong> для визуального мониторинга топиков, сообщений и состояния консьюмер-групп."
+      },
+      "pushNotificationsOptimization": {
+        "title": "9. Оптимизация Push-уведомлений (Firebase FCM): Эффективная Доставка Информации (Принцип 2)",
+        "intro": "Push-уведомления — важный канал связи с пользователем (Принцип 2: Ценность). Оптимизация их доставки важна для пользовательского опыта.",
+        "platformTitle": "Платформа:",
+        "platformContent": "Firebase Cloud Messaging (FCM).",
+        "techniquesTitle": "Техники:",
+        "techniquesContent": [
+          "<strong>Батчинг:</strong> Отправляйте несколько уведомлений одним вызовом API FCM (`sendMulticast`) для снижения сетевых накладных расходов.",
+          "<strong>Темы (Topics):</strong> Используйте темы для массовых рассылок (например, уведомление о новом сообщении в канале), чтобы FCM управлял списком подписчиков.",
+          "<strong>Data Messages:</strong> Используйте Data Messages для полного контроля над отображением уведомления на клиенте и возможности прикреплять кастомные данные."
+        ]
+      },
+      "clientApiDbInteraction": {
+        "title": "10. Оптимизация Взаимодействия Клиент-API-БД: Сокращение Пути Данных (Принцип 9)",
+        "intro": "",
+        "clientLevelTitle": "На Уровне Клиента:",
+        "clientLevelContent": "Используйте библиотеки для управления состоянием и кэширования данных, полученных по сети (`@apollo/client`, `react-query`/`@tanstack/react-query`). Это позволяет избежать повторных запросов за одними и теми же данными и быстро показывать кэшированные данные.",
+        "networkLevelTitle": "На Уровне Сети:",
+        "networkLevelContent": "Включите современные протоколы (HTTP/2, HTTP/3) и сжатие (Gzip/Brotli) на вашем API Gateway или Backend сервере для уменьшения объема передаваемых данных и снижения задержки.",
+        "backendLevelTitle": "На Уровне Backend:",
+        "backendLevelContent": "Оптимизируйте взаимодействие с БД (раздел 4) и внешними сервисами (раздел 7)."
+      },
+      "authenticationOptimization": {
+        "title": "11. Оптимизация Аутентификации: Быстрота и Безопасность",
+        "intro": "",
+        "statelessJwtTitle": "Stateless (JWT):",
+        "statelessJwtContent": "Использование JWT снижает нагрузку на сервер, так как ему не нужно хранить состояние сессий пользователей.",
+        "rateLimitingTitle": "Rate Limiting (`@nestjs/throttler`):",
+        "rateLimitingContent": "Защита эндпоинтов аутентификации от Brute Force атак, что также снижает нагрузку.",
+        "secureHeadersTitle": "Безопасные Заголовки (`helmet`):",
+        "secureHeadersContent": "Добавление HTTP-заголовков для защиты от XSS, CSRF и других атак."
+      },
+      "chatWebSocketOptimization": {
+        "title": "12. Оптимизация Чатов (WebSocket): Низкая Задержка и Масштабирование",
+        "intro": "WebSocket используется для обмена сообщениями в реальном времени. <strong>Оптимизация WebSocket-соединений критична для отзывчивости чатов</strong> (Принцип 2).",
+        "libraryTitle": "Библиотека:",
+        "libraryContent": "NestJS Gateways (`@nestjs/websockets`), Socket.IO (если нужна кросс-браузерная совместимость и fallback).",
+        "techniquesTitle": "Техники:",
+        "techniquesContent": [
+          "<strong>Бинарные Форматы:</strong> Передача сообщений в бинарном формате (например, MessagePack) вместо текстового JSON может уменьшить объем данных.",
+          "<strong>Батчинг Сообщений:</strong> Буферизируйте сообщения на клиенте и сервере и отправляйте их пачками (например, каждые 50 мс), а не по одному. Снижает количество пакетов.",
+          "<strong>Управление Присутствием:</strong> Используйте Redis для быстрого отслеживания статуса онлайн/офлайн пользователей. Heartbeats (пинг-понг) для поддержания соединения и обнаружения отключений.",
+          "<strong>Вертикальное/Горизонтальное Масштабирование:</strong> NestJS Gateways могут работать в кластерном режиме. Используйте Redis или другой Pub/Sub механизм (например, Kafka) для обмена сообщениями между инстансами Backend, чтобы сообщения доставлялись всем подписчикам, независимо от того, к какому инстансу Backend они подключены."
+        ]
+      },
+      "animationsOptimization": {
+        "title": "13. Оптимизация Анимаций: Плавность и Производительность (Принцип 3, 5)",
+        "intro": "Производительные анимации делают интерфейс <strong>качественным</strong> (Принцип 3) и снижают нагрузку на устройство (Принцип 5: Здоровье).",
+        "mobileDesktopTitle": "Mobile-Desktop (React Native):",
+        "mobileDesktopContent": "Используйте `react-native-reanimated` для анимаций, которые выполняются на нативном потоке, не блокируя поток JavaScript.",
+        "webTitle": "Web (Next.js):",
+        "webContent": "Используйте `framer-motion` для декларативного создания плавных анимаций.",
+        "docDesignTitle": "DocDesign:",
+        "docDesignContent": "В DocDesign описаны принципы и параметры анимаций, включая возможность их отключения пользователем (Принцип 12: Прагматизм)."
+      },
+      "monitoring": {
+        "title": "14. Мониторинг с Prometheus и Grafana: Измерение как Основа Кайдзен (Принцип 9)",
+        "intro": "Система мониторинга — это ваши <strong>глаза</strong> и <strong>измерительные инструменты</strong> (Шаг 1 Кайдзен).",
+        "toolsTitle": "Инструменты:",
+        "toolsContent": "Prometheus (сбор метрик), Grafana (визуализация), Alertmanager (уведомления об аномалиях).",
+        "whenTitle": "Когда использовать:",
+        "whenContent": "Всегда. Настройте мониторинг на всех уровнях: Backend (задержки API, ошибки), БД (время запросов, нагрузка), Redis (попадания в кэш, использование памяти), Kafka (количество сообщений в топиках, лаг консьюмеров), Инфраструктура (CPU, RAM, сеть).",
+        "implementationTitle": "Реализация:",
+        "implementationContent": "См. подробные шаги по настройке в Руководстве по разработке (раздел 14).",
+        "principleTitle": "Принцип:",
+        "principleContent": "Используйте метрики для <strong>выявления узких мест</strong> (Шаг 2 Кайдзен) и оценки <strong>эффективности</strong> (Принцип 9) ваших оптимизаций. Настройте <strong>алерты</strong> для проактивного обнаружения проблем."
+      },
+      "ciCdOptimization": {
+        "title": "15. Оптимизация CI/CD: Ускорение Цикла Разработки (Принцип 9)",
+        "intro": "Эффективный CI/CD пайплайн ускоряет доставку кода, что является частью <strong>оптимизации всего процесса разработки</strong> (Принцип 9).",
+        "toolsTitle": "Инструменты:",
+        "toolsContent": "Turborepo (кэширование, параллелизация), GitHub Actions (автоматизация).",
+        "techniquesTitle": "Техники:",
+        "techniquesContent": [
+          "<strong>Кэширование с Turborepo:</strong> Кэшируйте результаты сборки и тестов между запусками в CI и локально.",
+          "<strong>Параллельное выполнение:</strong> Запускайте задачи (lint, build, test) для разных пакетов или частей тестов параллельно.",
+          "<strong>Оптимизация Docker-образов:</strong> Используйте многоступенчатую сборку и `.dockerignore` для уменьшения размера образов и ускорения сборки/деплоя."
+        ]
+      },
+      "frontendOptimization": {
+        "title": "16. Оптимизация Фронтенда: Быстрота и Отзывчивость для Пользователя (Принцип 2, 3)",
+        "intro": "Фронтенд должен быть <strong>быстрым и отзывчивым</strong>, чтобы пользователь ощутил <strong>ценность</strong> (Принцип 2) продукта.",
+        "webTechniquesTitle": "Техники (Web - Next.js):",
+        "webTechniquesContent": [
+          "<strong>Code Splitting / Dynamic Imports:</strong> Загружайте код только тогда, когда он нужен (`next/dynamic`).",
+          "<strong>SSR/SSG:</strong> Используйте серверный рендеринг или генерацию статики для ускорения первой отрисовки и SEO (`getStaticProps`, `getServerSideProps`).",
+          "<strong>Оптимизация Изображений:</strong> Используйте `next/image` или `<picture>` и современные форматы (WebP).",
+          "<strong>Анализ Бандла:</strong> Используйте `@next/bundle-analyzer` для выявления самых тяжелых модулей."
+        ],
+        "reactNativeTechniquesTitle": "Техники (React Native):",
+        "reactNativeTechniquesContent": [
+          "<strong>Ленивая Загрузка:</strong> Используйте `React.lazy` и `Suspense` для экранов и компонентов, которые не нужны при старте.",
+          "<strong>Производительные Списки:</strong> Используйте `FlatList` или `SectionList` с правильной настройкой (`getItemLayout`, `windowSize`) для больших списков сообщений или чатов.",
+          "<strong>Оптимизация Изображений:</strong> Используйте `react-native-fast-image`.",
+          "<strong>Профилирование:</strong> Используйте Performance Monitor в Debugger Menu React Native для выявления узких мест UI."
+        ],
+        "generalTechniquesTitle": "Общие техники:",
+        "generalTechniquesContent": [
+          "Удаление неиспользуемого кода (Tree Shaking), замена тяжелых библиотек на легкие аналоги (например, `dayjs` вместо `moment`), сжатие бандлов (Gzip/Brotli)."
+        ]
+      },
+      "dbScaling": {
+        "title": "17. Масштабирование Базы Данных (Репликация и Шардинг): Подготовка к Росту (Принцип 8)",
+        "intro": "Эти техники становятся актуальными при значительном росте объема данных и нагрузки. Они являются частью <strong>долгосрочной стратегии масштабирования</strong> (Принцип 8).",
+        "replicationTitle": "Репликация (Master-Slave):",
+        "replicationContent": "Создание копий БД только для чтения (read replicas). Позволяет распределить нагрузку на чтение.",
+        "shardingTitle": "Шардинг:",
+        "shardingContent": "Разделение данных большой таблицы на части (шарды) по определенному ключу (`chatId`, `userId`), распределяя их по разным серверам. Позволяет масштабировать как чтение, так и запись. Реализуется логически (в приложении) или с помощью расширений (Citus для PostgreSQL).",
+        "whenToApplyTitle": "Когда применять:",
+        "whenToApplyContent": "Основываясь на <strong>измерениях</strong> нагрузки и производительности БД (Принцип 9), а не заранее."
+      },
+      "notes": {
+        "title": "18. Примечания: Непрерывный Кайдзен в Оптимизации",
+        "prioritizationTitle": "Приоритезация:",
+        "prioritizationContent": "Начинайте оптимизацию с тех мест, которые приносят наибольший эффект на текущем этапе проекта (Принцип 12). Для MVP это может быть скорость загрузки Frontend, производительность основных API-запросов.",
+        "automationTitle": "Автоматизация:",
+        "automationContent": "Максимально автоматизируйте процессы измерения и проверки оптимизаций (CI/CD, алерты в мониторинге) — это часть <strong>Системы</strong> (Принцип 9).",
+        "documentationNotesTitle": "Документирование:",
+        "documentationNotesContent": "Фиксируйте проведенные оптимизации, их эффект и уроки в этой документации или в задачах/коммитах (Принцип 1: Обучение, Принцип 9: Кайдзен).",
+        "cultureTitle": "Культура:",
+        "cultureContent": "Создайте культуру, где каждый разработчик несет ответственность за производительность своего кода и активно участвует в поиске и устранении узких мест (Принцип 6)."
+      }
     }
   }
 }
