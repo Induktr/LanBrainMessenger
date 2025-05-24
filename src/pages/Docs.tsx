@@ -727,6 +727,91 @@ const Docs: React.FC = () => {
     },
   ];
 
+  const uiDocsSections = [
+    {
+      id: 'general-info',
+      titleKey: 'docs.uiDocs.generalInfo.title',
+      contentKey: 'docs.uiDocs.generalInfo.description',
+      subSections: [
+        { id: 'ui-purpose', titleKey: 'docs.uiDocs.generalInfo.uiPurposeTitle', contentKey: 'docs.uiDocs.generalInfo.uiPurposeContent' },
+        { id: 'ui-goal', titleKey: 'docs.uiDocs.generalInfo.uiGoalTitle', contentKey: 'docs.uiDocs.generalInfo.uiGoalContent' },
+        { id: 'ui-principles', titleKey: 'docs.uiDocs.generalInfo.uiPrinciplesTitle', listKey: 'docs.uiDocs.generalInfo.uiPrinciplesList' },
+      ],
+    },
+    {
+      id: 'main-screens',
+      titleKey: 'docs.uiDocs.mainScreens.title',
+      contentKey: 'docs.uiDocs.mainScreens.description',
+      subSections: [
+        { id: 'welcome-screen', titleKey: 'docs.uiDocs.mainScreens.welcomeScreen.title', contentKey: 'docs.uiDocs.mainScreens.welcomeScreen.purpose', listKey: 'docs.uiDocs.mainScreens.welcomeScreen.elements', additionalContentKeys: ['docs.uiDocs.mainScreens.welcomeScreen.connection'] },
+        { id: 'auth-screens', titleKey: 'docs.uiDocs.mainScreens.authScreens.title', contentKey: 'docs.uiDocs.mainScreens.authScreens.purpose', listKey: 'docs.uiDocs.mainScreens.authScreens.elements', additionalContentKeys: ['docs.uiDocs.mainScreens.authScreens.requirements'] },
+        { id: 'main-chat-list-screen', titleKey: 'docs.uiDocs.mainScreens.mainChatListScreen.title', contentKey: 'docs.uiDocs.mainScreens.mainChatListScreen.purpose', listKey: 'docs.uiDocs.mainScreens.mainChatListScreen.elements', additionalContentKeys: ['docs.uiDocs.mainScreens.mainChatListScreen.organization', 'docs.uiDocs.mainScreens.mainChatListScreen.actions'] },
+        { id: 'chat-screen', titleKey: 'docs.uiDocs.mainScreens.chatScreen.title', contentKey: 'docs.uiDocs.mainScreens.chatScreen.purpose', listKey: 'docs.uiDocs.mainScreens.chatScreen.elements', additionalContentKeys: ['docs.uiDocs.mainScreens.chatScreen.messages', 'docs.uiDocs.mainScreens.chatScreen.settings'] },
+        { id: 'contacts-screen', titleKey: 'docs.uiDocs.mainScreens.contactsScreen.title', contentKey: 'docs.uiDocs.mainScreens.contactsScreen.purpose', listKey: 'docs.uiDocs.mainScreens.contactsScreen.elements' },
+        { id: 'profile-settings', titleKey: 'docs.uiDocs.mainScreens.profileSettings.title', contentKey: 'docs.uiDocs.mainScreens.profileSettings.purpose', listKey: 'docs.uiDocs.mainScreens.profileSettings.elements' },
+        { id: 'app-settings', titleKey: 'docs.uiDocs.mainScreens.appSettings.title', contentKey: 'docs.uiDocs.mainScreens.appSettings.purpose', listKey: 'docs.uiDocs.mainScreens.appSettings.elements' },
+        { id: 'premium-screen', titleKey: 'docs.uiDocs.mainScreens.premiumScreen.title', contentKey: 'docs.uiDocs.mainScreens.premiumScreen.purpose', listKey: 'docs.uiDocs.mainScreens.premiumScreen.elements' },
+        { id: 'call-screens', titleKey: 'docs.uiDocs.mainScreens.callScreens.title', contentKey: 'docs.uiDocs.mainScreens.callScreens.purpose', listKey: 'docs.uiDocs.mainScreens.callScreens.elements' },
+        { id: 'files-media-screen', titleKey: 'docs.uiDocs.mainScreens.filesMediaScreen.title', contentKey: 'docs.uiDocs.mainScreens.filesMediaScreen.purpose', listKey: 'docs.uiDocs.mainScreens.filesMediaScreen.elements' },
+        { id: 'archived-chats-screen', titleKey: 'docs.uiDocs.mainScreens.archivedChatsScreen.title', contentKey: 'docs.uiDocs.mainScreens.archivedChatsScreen.purpose', listKey: 'docs.uiDocs.mainScreens.archivedChatsScreen.elements' },
+        { id: 'language-settings', titleKey: 'docs.uiDocs.mainScreens.languageSettings.title', contentKey: 'docs.uiDocs.mainScreens.languageSettings.purpose', listKey: 'docs.uiDocs.mainScreens.languageSettings.elements' },
+        { id: 'battery-animation-settings', titleKey: 'docs.uiDocs.mainScreens.batteryAnimationSettings.title', contentKey: 'docs.uiDocs.mainScreens.batteryAnimationSettings.purpose', listKey: 'docs.uiDocs.mainScreens.batteryAnimationSettings.elements' },
+        { id: 'chat-customization-settings', titleKey: 'docs.uiDocs.mainScreens.chatCustomizationSettings.title', contentKey: 'docs.uiDocs.mainScreens.chatCustomizationSettings.purpose', listKey: 'docs.uiDocs.mainScreens.chatCustomizationSettings.elements' },
+      ],
+    },
+    {
+      id: 'navigation-principles',
+      titleKey: 'docs.uiDocs.navigationPrinciples.title',
+      contentKey: 'docs.uiDocs.navigationPrinciples.description',
+      listKey: 'docs.uiDocs.navigationPrinciples.principlesList',
+    },
+    {
+      id: 'ui-structure',
+      titleKey: 'docs.uiDocs.uiStructure.title',
+      contentKey: 'docs.uiDocs.uiStructure.description',
+      subSections: [
+        { id: 'ui-elements', titleKey: 'docs.uiDocs.uiStructure.uiElements.title', listKey: 'docs.uiDocs.uiStructure.uiElements.list' },
+        { id: 'alignment-grid', titleKey: 'docs.uiDocs.uiStructure.alignmentGrid.title', contentKey: 'docs.uiDocs.uiStructure.alignmentGrid.baseGrid', listKey: 'docs.uiDocs.uiStructure.alignmentGrid.alignmentList', additionalContentKeys: ['docs.uiDocs.uiStructure.alignmentGrid.adaptabilityTitle', 'docs.uiDocs.uiStructure.alignmentGrid.adaptabilityList'] },
+      ],
+    },
+    {
+      id: 'functional-requirements',
+      titleKey: 'docs.uiDocs.functionalRequirements.title',
+      contentKey: 'docs.uiDocs.functionalRequirements.description',
+      subSections: [
+        { id: 'password-input', titleKey: 'docs.uiDocs.functionalRequirements.passwordInput.title', contentKey: 'docs.uiDocs.functionalRequirements.passwordInput.content' },
+        { id: 'email-input', titleKey: 'docs.uiDocs.functionalRequirements.emailInput.title', contentKey: 'docs.uiDocs.functionalRequirements.emailInput.content' },
+        { id: 'code-input', titleKey: 'docs.uiDocs.functionalRequirements.codeInput.title', contentKey: 'docs.uiDocs.functionalRequirements.codeInput.content' },
+        { id: 'search-function', titleKey: 'docs.uiDocs.functionalRequirements.searchFunction.title', contentKey: 'docs.uiDocs.functionalRequirements.searchFunction.content' },
+        { id: 'profile-management', titleKey: 'docs.uiDocs.functionalRequirements.profileManagement.title', contentKey: 'docs.uiDocs.functionalRequirements.profileManagement.content' },
+        { id: 'subscription-payment', titleKey: 'docs.uiDocs.functionalRequirements.subscriptionPayment.title', contentKey: 'docs.uiDocs.functionalRequirements.subscriptionPayment.content' },
+        { id: 'slider-transition', titleKey: 'docs.uiDocs.functionalRequirements.sliderTransition.title', contentKey: 'docs.uiDocs.functionalRequirements.sliderTransition.content' },
+        { id: 'language-change', titleKey: 'docs.uiDocs.functionalRequirements.languageChange.title', contentKey: 'docs.uiDocs.functionalRequirements.languageChange.content' },
+        { id: 'animation-setting', titleKey: 'docs.uiDocs.functionalRequirements.animationSetting.title', contentKey: 'docs.uiDocs.functionalRequirements.animationSetting.content' },
+        { id: 'chat-customization', titleKey: 'docs.uiDocs.functionalRequirements.chatCustomization.title', contentKey: 'docs.uiDocs.functionalRequirements.chatCustomization.content' },
+        { id: 'error-handling', titleKey: 'docs.uiDocs.functionalRequirements.errorHandling.title', contentKey: 'docs.uiDocs.functionalRequirements.errorHandling.validation', additionalContentKeys: ['docs.uiDocs.functionalRequirements.errorHandling.networkErrors'] },
+      ],
+    },
+    {
+      id: 'user-scenarios',
+      titleKey: 'docs.uiDocs.userScenarios.title',
+      contentKey: 'docs.uiDocs.userScenarios.description',
+      subSections: [
+        { id: 'registration-scenario', titleKey: 'docs.uiDocs.userScenarios.registrationScenario.title', listKey: 'docs.uiDocs.userScenarios.registrationScenario.steps' },
+        { id: 'login-scenario', titleKey: 'docs.uiDocs.userScenarios.loginScenario.title', listKey: 'docs.uiDocs.userScenarios.loginScenario.steps' },
+        { id: 'send-text-message', titleKey: 'docs.uiDocs.userScenarios.sendTextMessage.title', listKey: 'docs.uiDocs.userScenarios.sendTextMessage.steps' },
+        { id: 'send-file', titleKey: 'docs.uiDocs.userScenarios.sendFile.title', listKey: 'docs.uiDocs.userScenarios.sendFile.steps' },
+        { id: 'search-chat', titleKey: 'docs.uiDocs.userScenarios.searchChat.title', listKey: 'docs.uiDocs.userScenarios.searchChat.steps' },
+        { id: 'change-theme', titleKey: 'docs.uiDocs.userScenarios.changeTheme.title', listKey: 'docs.uiDocs.userScenarios.changeTheme.steps' },
+      ],
+    },
+    {
+      id: 'notes',
+      titleKey: 'docs.uiDocs.notes.title',
+      listKey: 'docs.uiDocs.notes.notesList',
+    },
+  ]
+
   const docsConfig = [
     {
       id: 'general_docs',
@@ -781,6 +866,12 @@ const Docs: React.FC = () => {
       titleKey: 'docs.technicalDocs.title',
       subtitleKey: 'docs.technicalDocs.subtitle',
       sections: technicalDocsSections,
+    },
+    {
+      id: 'ui_docs',
+      titleKey: 'docs.uiDocs.title',
+      subtitleKey: 'docs.uiDocs.subtitle',
+      sections: uiDocsSections,
     },
   ];
 

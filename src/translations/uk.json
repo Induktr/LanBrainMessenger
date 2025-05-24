@@ -428,16 +428,7 @@
         "orchestrationTitle": "Оркестрація:",
         "orchestrationContent": "Kubernetes керує контейнерами в хмарі.",
         "iacTitle": "Інфраструктура як Код:",
-        "iacContent": "Terraform (IaC). Автоматизує створення та управління хмарними ресурсами.",
-        "ciCdTitle": "CI/CD:",
-        "ciCdContent": "GitHub Actions автоматизує збірку, тестування та деплой.",
-        "webAppDeploymentTitle": "Веб-додаток може деплоїтися окремо (наприклад, на Vercel або Cloudflare Pages).",
-        "webAppDeploymentContent": "",
-        "detailedDescriptionTitle": "Детальний опис процесу деплою див. у:",
-        "detailedDescriptionList": [
-          "DocDevIn.md (розділ 9)",
-          "Посібнику з розгортання"
-        ]
+        "iacContent": "Terraform (IaC). Автоматизує створення та управління хмарними ресурсами."
       },
       "monitoringLogging": {
         "title": "10. Моніторинг та Логування: Видимість Стану Системи",
@@ -540,8 +531,6 @@
           "<strong>Канали та Групи:</strong> Базове створення груп/каналів, приєднання до публічних каналів та читання контенту.",
           "<strong>Базове Управління Обліковим Записом:</strong> Реєстрація, вхід/вихід, редагування профілю (ім'я, аватар), базові налаштування безпеки.",
           "<strong>Основні Налаштування UI:</strong> Вибір теми (Світла/Темна), базові налаштування сповіщень та мови.",
-          "<strong>Базова Безпека:</strong> Шифрування даних (TLS, хешування паролів, базові заходи проти SQLi/XSS/DDoS), підтвердження електронної пошти під час реєстрації.",
-          "<strong>Адаптивний UI:</strong> Інтерфейс, адаптований для мобільних (Android, iOS) та веб-платформ.",
           "<strong>Базова Багатомовність:</strong> Підтримка кількох мов інтерфейсу (англійська, російська та інші згідно DocLocIn.md)."
         ],
         "outro": "Функціонал за межами MVP (аудіо/відеодзвінки, розширені функції безпеки/конфіденційності, преміум-підписка, повний набір анімацій, інтеграції ШІ) заплановано на наступні етапи Дорожньої карти."
@@ -967,7 +956,7 @@
     }
   },
   "integrationsGuide": {
-    "title": "Документация Интеграций BrainMessenger",
+    "title": "Документація Інтеграцій BrainMessenger",
     "subtitle": "Построение Надежной Системы с Внешними Рычагами",
     "introduction": {
       "title": "1. Введение: Интеграции как Часть Фундамента Системы",
@@ -1509,7 +1498,7 @@
       },
       "animationsOptimization": {
         "title": "13. Оптимизация Анимаций: Плавность и Производительность (Принцип 3, 5)",
-        "intro": "Производительные анимации делают интерфейс <strong>качественным</strong> (Принцип 3) и снижают нагрузку на устройство (Принцип 5: Здоровье).",
+        "intro": "Производительные анимации делают интерфейс <strong>качественным</strong> (Принцип 3) и снижают нагрузку на устройство (Принцип 5: Здоров'я).",
         "mobileDesktopTitle": "Mobile-Desktop (React Native):",
         "mobileDesktopContent": "Используйте `react-native-reanimated` для анимаций, которые выполняются на нативном потоке, не блокируя поток JavaScript.",
         "webTitle": "Web (Next.js):",
@@ -1518,8 +1507,8 @@
         "docDesignContent": "В DocDesign описаны принципы и параметры анимаций, включая возможность их отключения пользователем (Принцип 12: Прагматизм)."
       },
       "monitoring": {
-        "title": "14. Мониторинг с Prometheus и Grafana: Измерение как Основа Кайдзен (Принцип 9)",
-        "intro": "Система мониторинга — это ваши <strong>глаза</strong> и <strong>измерительные инструменты</strong> (Шаг 1 Кайдзен).",
+        "title": "14. Моніторинг з Prometheus та Grafana: Вимірювання як Основа Кайдзен (Принцип 9)",
+        "intro": "Система моніторингу — це ваші <strong>глаза</strong> и <strong>измерительные инструменты</strong> (Шаг 1 Кайдзен).",
         "toolsTitle": "Инструменты:",
         "toolsContent": "Prometheus (сбор метрик), Grafana (визуализация), Alertmanager (уведомления об аномалиях).",
         "whenTitle": "Когда использовать:",
@@ -1530,7 +1519,7 @@
         "principleContent": "Используйте метрики для <strong>выявления узких мест</strong> (Шаг 2 Кайдзен) и оценки <strong>эффективности</strong> (Принцип 9) ваших оптимизаций. Настройте <strong>алерты</strong> для проактивного обнаружения проблем."
       },
       "ciCdOptimization": {
-        "title": "15. Оптимизация CI/CD: Ускорение Цикла Разработки (Принцип 9)",
+        "title": "15. Оптимізація CI/CD: Ускорение Цикла Разработки (Принцип 9)",
         "intro": "Эффективный CI/CD пайплайн ускоряет доставку кода, что является частью <strong>оптимизации всего процесса разработки</strong> (Принцип 9).",
         "toolsTitle": "Инструменты:",
         "toolsContent": "Turborepo (кэширование, параллелизация), GitHub Actions (автоматизация).",
@@ -1542,7 +1531,7 @@
         ]
       },
       "frontendOptimization": {
-        "title": "16. Оптимизация Фронтенда: Быстрота и Отзывчивость для Пользователя (Принцип 2, 3)",
+        "title": "16. Оптимізація Фронтенда: Быстрота и Отзывчивость для Пользователя (Принцип 2, 3)",
         "intro": "Фронтенд должен быть <strong>быстрым и отзывчивым</strong>, чтобы пользователь ощутил <strong>ценность</strong> (Принцип 2) продукта.",
         "webTechniquesTitle": "Техники (Web - Next.js):",
         "webTechniquesContent": [
@@ -1586,267 +1575,773 @@
       }
     },
     "apiSpec": {
-      "title": "Спецификация API BrainMessenger (Интерфейс Системы)",
-      "subtitle": "Интерфейс Системы",
+      "title": "Специфікація API BrainMessenger (Інтерфейс Системи)",
+      "subtitle": "Інтерфейс Системи",
       "generalInfo": {
-        "title": "1. Общая Информация: API как Точка Взаимодействия с Системой",
-        "description": "Этот документ описывает GraphQL API BrainMessenger — <strong>основной интерфейс</strong> (Принцип 9), через который клиентские приложения (Web, Mobile, Desktop) взаимодействуют с серверной частью системы и получают доступ к данным и функциональности. GraphQL выбран за его <strong>эффективность и гибкость</strong> (Принцип 9, 2), позволяя клиентам запрашивать только те данные, которые им необходимы.",
-        "projectNameTitle": "Название проекта:",
+        "title": "1. Загальна Інформація: API як Точка Взаємодії з Системою",
+        "description": "Цей документ описує GraphQL API BrainMessenger — <strong>основний інтерфейс</strong> (Принцип 9), через який клієнтські додатки (Web, Mobile, Desktop) взаємодіють з серверною частиною системи та отримують доступ до даних і функціональності. GraphQL обраний за його <strong>ефективність і гнучкість</strong> (Принцип 9, 2), дозволяючи клієнтам запитувати лише ті дані, які їм необхідні.",
+        "projectNameTitle": "Назва проекту:",
         "projectNameContent": "BrainMessenger",
-        "apiPurposeTitle": "Цель:",
-        "apiPurposeContent": "Предоставить четкое и полное описание доступных запросов (Queries) и мутаций (Mutations), их входных и выходных данных, а также правил аутентификации и форматов ошибок. Это обеспечивает <strong>системность</strong> (Принцип 9) взаимодействия между Frontend и Backend и повышает <strong>качество</strong> (Принцип 3) разработки.",
-        "baseUrlTitle": "Базовый URL:",
-        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адрес API Gateway, который перенаправляет запросы на Backend Service).",
-        "requestFormatTitle": "Формат запросов:",
-        "requestFormatContent": "GraphQL-запросы (POST-запросы с `Content-Type: application/json` и телом в формате GraphQL).",
-        "authenticationTitle": "Аутентификация:",
-        "authenticationContent": "Для большинства методов требуется передать JWT-токен в заголовке `Authorization: Bearer <token>`. Токен получается после успешного логина. Это часть нашей <strong>системы безопасности</strong> (Принцип 3, 5).",
-        "relatedDocsTitle": "Связь с другими документами:",
+        "apiPurposeTitle": "Мета:",
+        "apiPurposeContent": "Надати чіткий і повний опис доступних запитів (Queries) і мутацій (Mutations), їх вхідних і вихідних даних, а також правил автентифікації та форматів помилок. Це забезпечує <strong>системність</strong> (Принцип 9) взаємодії між Frontend і Backend та підвищує <strong>якість</strong> (Принцип 3) розробки.",
+        "baseUrlTitle": "Базовий URL:",
+        "baseUrlContent": "`https://api.brainmessenger.com/graphql` (адреса API Gateway, який перенаправляє запити на Backend Service).",
+        "requestFormatTitle": "Формат запитів:",
+        "requestFormatContent": "GraphQL-запити (POST-запити з `Content-Type: application/json` та тілом у форматі GraphQL).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT-токени в заголовку `Authorization: Bearer <token>`. Токен отримується після успішного логіна. Це частина нашої <strong>системи безпеки</strong> (Принцип 3, 5).",
+        "relatedDocsTitle": "Зв'язок з іншими документами:",
         "relatedDocsContent": [
-          "DocTech.md: Общая архитектура системы, включая Backend и API Gateway.",
-          "DocDevIn.md: Детали реализации Backend на NestJS и GraphQL.",
-          "DocInt.md: Описание интеграций, которые Backend использует (Neon, R2, Firebase и др.).",
-          "DocOptimizationIn.md: Подходы к оптимизации производительности API."
+          "DocTech.md: Загальна архітектура системи, включаючи Backend і API Gateway.",
+          "DocDevIn.md: Деталі реалізації Backend на NestJS і GraphQL.",
+          "DocInt.md: Опис інтеграцій, які Backend використовує (Neon, R2, Firebase та ін.).",
+          "DocOptimizationIn.md: Підходи до оптимізації продуктивності API."
         ]
       },
       "graphqlSchema": {
-        "title": "2. Схема GraphQL: Структура Доступных Данных и Операций",
-        "description": "Полная схема GraphQL доступна по адресу API через инструменты интроспекции (например, GraphQL Playground, Apollo Studio). Ниже приведены основные типы и операции.",
+        "title": "2. Схема GraphQL: Структура Доступних Даних та Операцій",
+        "description": "Повна схема GraphQL доступна за адресою API через інструменти інтроспекції (наприклад, GraphQL Playground, Apollo Studio). Нижче наведено основні типи та операції.",
         "dataTypes": {
-          "title": "2.1. Типы Данных (Schemas): Описание Структуры Информации",
+          "title": "2.1. Типи Даних (Schemas): Опис Структури Інформації",
           "user": {
             "title": "User:",
-            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара пользователя (хранится в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, статус онлайн/оффлайн)\n}"
+            "code": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  avatarUrl: String # URL аватара користувача (зберігається в R2)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, статус онлайн/офлайн)\n}"
           },
           "chat": {
             "title": "Chat:",
-            "code": "type Chat {\n  id: ID!\n  name: String! # Название чата (для групп/каналов)\n  type: String! # Тип чата (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список участников чата\n  messages(pagination: PaginationInput): [Message!] # Сообщения в чате (с пагинацией)\n  lastMessageAt: DateTime # Время последнего сообщения (для сортировки списка чатов)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... другие поля (например, фото группы/канала, описание)\n}"
+            "code": "type Chat {\n  id: ID!\n  name: String! # Назва чату (для груп/каналів)\n  type: String! # Тип чату (\"personal\", \"group\", \"channel\")\n  users: [User!] # Список учасників чату\n  messages(pagination: PaginationInput): [Message!] # Повідомлення в чаті (з пагінацією)\n  lastMessageAt: DateTime # Час останнього повідомлення (для сортування списку чатів)\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, фото групи/каналу, опис)\n}"
           },
           "message": {
             "title": "Message:",
-            "code": "type Message {\n  id: ID!\n  content: String! # Текст сообщения (для текстовых сообщений)\n  fileUrl: String # URL файла, если сообщение является файлом (хранится в R2)\n  fileMetadata: JSON # Метаданные файла (тип, размер, имя) (хранится в Neon/R2)\n  sender: User! # Отправитель сообщения\n  chat: Chat! # Чат, которому принадлежит сообщение\n  createdAt: DateTime! # Время отправки сообщения\n  updatedAt: DateTime!\n  # ... другие поля (например, статус прочтения, реакции)\n}"
+            "code": "type Message {\n  id: ID!\n  content: String! # Текст повідомлення (для текстових повідомлень)\n  fileUrl: String # URL файлу, якщо повідомлення є файлом (зберігається в R2)\n  fileMetadata: JSON # Метадані файлу (тип, розмір, ім'я) (зберігається в Neon/R2)\n  sender: User! # Відправник повідомлення\n  chat: Chat! # Чат, якому належить повідомлення\n  createdAt: DateTime! # Час відправлення повідомлення\n  updatedAt: DateTime!\n  # ... інші поля (наприклад, статус прочтення, реакції)\n}"
           },
           "paginationInput": {
             "title": "PaginationInput:",
-            "code": "input PaginationInput {\n  take: Int # Максимальное количество элементов\n  skip: Int # Пропустить элементов (для offset-based пагинации)\n  cursor: String # Курсор (ID) для cursor-based пагинации\n}"
+            "code": "input PaginationInput {\n  take: Int # Максимальна кількість елементів\n  skip: Int # Пропустити елементів (для offset-based пагінації)\n  cursor: String # Курсор (ID) для cursor-based пагінації\n}"
           },
           "authPayload": {
             "title": "AuthPayload:",
-            "code": "type AuthPayload {\n  token: String! # JWT токен доступа\n  user: User! # Данные аутентифицированного пользователя\n}"
+            "code": "type AuthPayload {\n  token: String! # JWT токен доступу\n  user: User! # Дані автентифікованого користувача\n}"
           },
           "dateTimeJson": {
             "title": "DateTime, JSON:",
-            "content": "Стандартные скалярные типы или кастомные скаляры, определенные на Backend."
+            "content": "Стандартні скалярні типи або кастомні скаляри, визначені на Backend."
           }
         },
         "operations": {
-          "title": "2.2. Операции (Queries и Mutations): Доступ к Функционалу Системы",
+          "title": "2.2. Операції (Queries та Mutations): Доступ до Функціоналу Системи",
           "authentication": {
-            "title": "2.2.1. Аутентификация (Authentication)",
+            "title": "2.2.1. Автентифікація (Authentication)",
             "registerUser": {
               "title": "`mutation registerUser(input: RegisterInput!): AuthPayload!`",
-              "description": "Регистрирует нового пользователя в системе.",
-              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - см. валидацию).",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь заполняет форму регистрации.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных/валидация), `409 Conflict` (email уже используется)."
+              "description": "Реєструє нового користувача в системі.",
+              "input": "`RegisterInput`: `{ email: String!, password: String!, name: String! }` (password min 8 chars, digit, special char - див. валідацію).",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач заповнює форму реєстрації.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат даних/валідація), `409 Conflict` (email вже використовується)."
             },
             "loginUser": {
               "title": "`mutation loginUser(input: LoginInput!): AuthPayload!`",
-              "description": "Аутентифицирует пользователя по email и паролю.",
+              "description": "Автентифікує користувача за email та паролем.",
               "input": "`LoginInput`: `{ email: String!, password: String! }`.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит учетные данные для входа.",
-              "errors": "Ошибки: `401 Unauthorized` (неверный email или пароль)."
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить облікові дані для входу.",
+              "errors": "Помилки: `401 Unauthorized` (невірний email або пароль)."
             },
             "logoutUser": {
               "title": "`mutation logoutUser: Boolean!`",
-              "description": "Инвалидирует текущий JWT токен на сервере (если реализовано хранение токенов или их черных списков).",
-              "authRequired": "Требуется аутентификация: Да (используется текущий токен).",
-              "scenario": "Сценарий: Пользователь нажимает \"Выйти\".",
-              "returns": "Возвращает: `true` при успешном выходе.",
-              "errors": "Ошибки: `401 Unauthorized` (токен недействителен)."
+              "description": "Інвалідує поточний JWT токен на сервері (якщо реалізовано зберігання токенів або їх чорних списків).",
+              "authRequired": "Потрібна автентифікація: Так (використовується поточний токен).",
+              "scenario": "Сценарій: Користувач натискає \"Вийти\".",
+              "returns": "Повертає: `true` при успішному виході.",
+              "errors": "Помилки: `401 Unauthorized` (токен недійсний)."
             }
           },
           "user": {
-            "title": "2.2.2. Пользователь (User)",
+            "title": "2.2.2. Користувач (User)",
             "getUser": {
               "title": "`query getUser(id: ID!): User`",
-              "description": "Получает данные пользователя по его уникальному ID.",
-              "authRequired": "Требуется аутентификация: Да (для доступа к любым данным пользователя, кроме, возможно, публичного профиля).",
-              "scenario": "Сценарий: Просмотр профиля пользователя.",
-              "errors": "Ошибки: `404 Not Found` (пользователь с таким ID не найден)."
+              "description": "Отримує дані користувача за його унікальним ID.",
+              "authRequired": "Потрібна автентифікація: Так (для доступу до будь-яких даних користувача, крім, можливо, публічного профілю).",
+              "scenario": "Сценарій: Перегляд профілю користувача.",
+              "errors": "Помилки: `404 Not Found` (користувача з таким ID не знайдено)."
             },
             "getCurrentUser": {
               "title": "`query getCurrentUser: User!`",
-              "description": "Получает данные текущего аутентифицированного пользователя.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка профиля текущего пользователя при старте приложения.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Отримує дані поточного автентифікованого користувача.",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Завантаження профілю поточного користувача при старті додатку.",
+              "errors": "Помилки: `401 Unauthorized`."
             },
             "updateUser": {
               "title": "`mutation updateUser(id: ID!, input: UserInput!): User!`",
-              "description": "Обновляет данные профиля пользователя.",
-              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опциональны.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем профиля или иметь права администратора).",
-              "scenario": "Сценарий: Пользователь редактирует свой профиль.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат данных), `401 Unauthorized`, `403 Forbidden` (нет прав на редактирование этого пользователя), `404 Not Found`."
+              "description": "Оновлює дані профілю користувача.",
+              "input": "`UserInput`: `{ name: String, email: String, password: String, avatarUrl: String }`. Поля опціональні.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути власником профілю або мати права адміністратора).",
+              "scenario": "Сценарій: Користувач редагує свій профіль.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат даних), `401 Unauthorized`, `403 Forbidden` (немає прав на редагування цього користувача), `404 Not Found`."
             },
             "deleteUser": {
               "title": "`mutation deleteUser(id: ID!): Boolean!`",
-              "description": "Удаляет аккаунт пользователя.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть владельцем аккаунта).",
-              "scenario": "Сценарий: Пользователь решает удалить свою учетную запись.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Видаляє обліковий запис користувача.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути власником облікового запису).",
+              "scenario": "Сценарій: Користувач вирішує видалити свій обліковий запис.",
+              "returns": "Повертає: `true` при успішному видаленні.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "chats": {
-            "title": "2.2.3. Чаты (Chats)",
+            "title": "2.2.3. Чати (Chats)",
             "getChats": {
               "title": "`query getChats: [Chat!]!`",
-              "description": "Получает список всех чатов, в которых участвует текущий пользователь.",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Загрузка списка чатов на главном экране.",
-              "errors": "Ошибки: `401 Unauthorized`."
+              "description": "Отримує список усіх чатів, в яких бере участь поточний користувач.",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Завантаження списку чатів на головному екрані.",
+              "errors": "Помилки: `401 Unauthorized`."
             },
             "getChat": {
               "title": "`query getChat(id: ID!): Chat`",
-              "description": "Получает данные конкретного чата по ID.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником этого чата).",
-              "scenario": "Сценарий: Открытие конкретного чата.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Отримує дані конкретного чату за ID.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути учасником цього чату).",
+              "scenario": "Сценарій: Відкриття конкретного чату.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "createChat": {
               "title": "`mutation createChat(input: CreateChatInput!): Chat!`",
-              "description": "Создает новый чат.",
-              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` может быть \"personal\", \"group\", \"channel\". `name` обязателен для \"group\" и \"channel\". `userIds` включает ID создателя и других участников (для \"personal\" и \"group\").",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь создает новый чат или группу.",
-              "errors": "Ошибки: `400 Bad Request` (неверный тип, отсутствуют userIds и т.п.), `401 Unauthorized`, `403 Forbidden` (нет прав на создание такого типа чата)."
+              "description": "Створює новий чат.",
+              "input": "`CreateChatInput`: `{ type: String!, name: String, userIds: [ID!]! }`. `type` може бути \"personal\", \"group\", \"channel\". `name` обов'язковий для \"group\" і \"channel\". `userIds` включає ID творця та інших учасників (для \"personal\" і \"group\").",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Користувач створює новий чат або групу.",
+              "errors": "Помилки: `400 Bad Request` (невірний тип, відсутні userIds тощо), `401 Unauthorized`, `403 Forbidden` (немає прав на створення такого типу чату)."
             },
             "getMessages": {
               "title": "`query getMessages(chatId: ID!, pagination: PaginationInput): [Message!]!`",
-              "description": "Получает список сообщений для заданного чата. Поддерживает пагинацию.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Открытие чата, подгрузка старых сообщений при прокрутке.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Отримує список повідомлень для заданого чату. Підтримує пагінацію.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути учасником чату).",
+              "scenario": "Сценарій: Відкриття чату, підвантаження старих повідомлень при прокручуванні.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             },
             "sendMessage": {
               "title": "`mutation sendMessage(chatId: ID!, content: String!, fileUrl: String, fileMetadata: JSON): Message!`",
-              "description": "Отправляет новое сообщение в чат. Может содержать текст или ссылку на файл.",
-              "input": "`chatId`: ID чата. `content`: Текст сообщения. `fileUrl`: URL файла в R2 (опционально). `fileMetadata`: Метаданные файла (опционально).",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть участником чата).",
-              "scenario": "Сценарий: Пользователь отправляет текстовое сообщение или файл.",
-              "errors": "Ошибки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (нет прав писать в этот чат), `404 Not Found` (чат не найден)."
+              "description": "Відправляє нове повідомлення в чат. Може містити текст або посилання на файл.",
+              "input": "`chatId`: ID чату. `content`: Текст повідомлення. `fileUrl`: URL файлу в R2 (опціонально). `fileMetadata`: Метадані файлу (опціонально).",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути учасником чату).",
+              "scenario": "Сценарій: Користувач відправляє текстове повідомлення або файл.",
+              "errors": "Помилки: `400 Bad Request`, `401 Unauthorized`, `403 Forbidden` (немає прав писати в цей чат), `404 Not Found` (чат не знайдено)."
             },
             "deleteMessage": {
               "title": "`mutation deleteMessage(messageId: ID!): Boolean!`",
-              "description": "Удаляет сообщение.",
-              "authRequired": "Требуется аутентификация: Да (и пользователь должен быть отправителем сообщения или иметь права администратора чата).",
-              "scenario": "Сценарий: Пользователь удаляет свое сообщение.",
-              "returns": "Возвращает: `true` при успешном удалении.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
+              "description": "Видаляє повідомлення.",
+              "authRequired": "Потрібна автентифікація: Так (і користувач повинен бути відправником повідомлення або мати права адміністратора чату).",
+              "scenario": "Сценарій: Користувач видаляє своє повідомлення.",
+              "returns": "Повертає: `true` при успішному видаленні.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`."
             }
           },
           "externalIntegrations": {
-            "title": "2.2.4. Внешние Интеграции (через API Backend)",
+            "title": "2.2.4. Зовнішні Інтеграції (через API Backend)",
             "sendVerificationCode": {
               "title": "`mutation sendVerificationCode(email: String!): Boolean!`",
-              "description": "Запускает процесс отправки кода подтверждения на указанный email (используя Gmail API). Используется при регистрации или сбросе пароля.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит email на экране регистрации/восстановления пароля.",
-              "returns": "Возвращает: `true` при успешной постановке задачи на отправку.",
-              "errors": "Ошибки: `400 Bad Request` (неверный формат email), `429 Too Many Requests` (защита от спама)."
+              "description": "Запускає процес відправлення коду підтвердження на вказаний email (використовуючи Gmail API). Використовується при реєстрації або скиданні пароля.",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить email на екрані реєстрації/відновлення пароля.",
+              "returns": "Повертає: `true` при успішній постановці задачі на відправлення.",
+              "errors": "Помилки: `400 Bad Request` (невірний формат email), `429 Too Many Requests` (захист від спаму)."
             },
             "verifyEmailCode": {
               "title": "`mutation verifyEmailCode(email: String!, code: String!): Boolean!`",
-              "description": "Проверяет код подтверждения, полученный по email.",
-              "authRequired": "Требуется аутентификация: Нет.",
-              "scenario": "Сценарий: Пользователь вводит код из email.",
-              "returns": "Возвращает: `true` при успешной проверке.",
-              "errors": "Ошибки: `400 Bad Request` (неверный код или email), `404 Not Found` (для данного email нет активного кода)."
+              "description": "Перевіряє код підтвердження, отриманий по email.",
+              "authRequired": "Потрібна автентифікація: Ні.",
+              "scenario": "Сценарій: Користувач вводить код з email.",
+              "returns": "Повертає: `true` при успішній перевірці.",
+              "errors": "Помилки: `400 Bad Request` (невірний код або email), `404 Not Found` (для даного email немає активного коду)."
             },
             "enableTwoFactorAuth": {
               "title": "`mutation enableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Вмикає/вимикає двофакторну автентифікацію для користувача. Потребує попередньої верифікації email. Код для 2FA відправляється на email (Gmail API) при кожному логіні після ввімкнення.",
+              "authRequired": "Потрібна автентифікація: Так (користувач повинен керувати своїм обліковим записом).",
+              "scenario": "Сценарій: Користувач налаштовує безпеку облікового запису.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифіковано)."
             },
             "disableTwoFactorAuth": {
               "title": "`mutation disableTwoFactorAuth(userId: ID!): Boolean!`",
-              "description": "Включает/отключает двухфакторную аутентификацию для пользователя. Требует предварительной верификации email. Код для 2FA отправляется на email (Gmail API) при каждом логине после включения.",
-              "authRequired": "Требуется аутентификация: Да (пользователь должен управлять своим аккаунтом).",
-              "scenario": "Сценарий: Пользователь настраивает безопасность аккаунта.",
-              "errors": "Ошибки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифицирован)."
+              "description": "Вмикає/вимикає двофакторну автентифікацію для користувача. Потребує попередньої верифікації email. Код для 2FA відправляється на email (Gmail API) при кожному логіні після ввімкнення.",
+              "authRequired": "Потрібна автентифікація: Так (користувач повинен керувати своїм обліковим записом).",
+              "scenario": "Сценарій: Користувач налаштовує безпеку облікового запису.",
+              "errors": "Помилки: `401 Unauthorized`, `403 Forbidden`, `404 Not Found`, `400 Bad Request` (email не верифіковано)."
             },
             "sendTwoFactorCode": {
               "title": "`mutation sendTwoFactorCode(userId: ID!): Boolean!`",
-              "description": "Отправляет код двухфакторной аутентификации на email пользователя.",
-              "authRequired": "Требуется аутентификация: Частичная (например, после ввода пароля, но до ввода 2FA кода). Логика зависит от флоу аутентификации.",
-              "scenario": "Сценарий: Пользователь входит в аккаунт с включенной 2FA.",
-              "errors": "Ошибки: `404 Not Found` (пользователь не найден или 2FA не включена), `429 Too Many Requests`."
+              "description": "Відправляє код двофакторної автентифікації на email користувача.",
+              "authRequired": "Потрібна автентифікація: Часткова (наприклад, після введення пароля, але до введення 2FA коду). Логіка залежить від флоу автентифікації.",
+              "scenario": "Сценарій: Користувач входить в обліковий запис з увімкненою 2FA.",
+              "errors": "Помилки: `404 Not Found` (користувача не знайдено або 2FA не ввімкнено), `429 Too Many Requests`."
             },
             "createPaymentSession": {
               "title": "`mutation createPaymentSession(input: PaymentInput!): PaymentSessionPayload!`",
-              "description": "Создает сессию оплаты через Stripe для оформления Premium подписки.",
-              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID выбранного тарифного плана, URL для редиректа после оплаты).",
-              "authRequired": "Требуется аутентификация: Да.",
-              "scenario": "Сценарий: Пользователь нажимает \"Подписаться\" на Premium экране.",
-              "errors": "Ошибки: `400 Bad Request` (неверный planId), `401 Unauthorized`."
+              "description": "Створює сесію оплати через Stripe для оформлення Premium підписки.",
+              "input": "`PaymentInput`: `{ planId: ID!, returnUrl: String! }` (ID обраного тарифного плану, URL для редиректу після оплати).",
+              "authRequired": "Потрібна автентифікація: Так.",
+              "scenario": "Сценарій: Користувач натискає \"Підписатися\" на Premium екрані.",
+              "errors": "Помилки: `400 Bad Request` (невірний planId), `401 Unauthorized`."
             }
           }
         }
       },
       "errorHandling": {
-        "title": "3. Обработка Ошибок API: Ясная Обратная Связь (Принцип 3, 14)",
-        "description": "API возвращает стандартизированные ошибки для <strong>ясной обратной связи</strong> (Принцип 14) с клиентом и поддержания <strong>качества</strong> (Принцип 3).",
-        "errorFormatTitle": "Формат ошибок (в соответствии со спецификацией GraphQL):",
-        "errorFormatCode": "{\n  \"data\": null, // Обычно null при ошибках верхнего уровня\n  \"errors\": [\n    {\n      \"message\": \"Описание ошибки (может быть локализовано - см. DocLocIn)\",\n      \"locations\": [...], // Расположение ошибки в запросе\n      \"path\": [...],      // Путь к полю, вызвавшему ошибку\n      \"extensions\": {\n        \"code\": \"КОД_ОШИБКИ\", // Стандартизированный код ошибки (например, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Если применимо, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Дополнительные детали об ошибке (опционально)\n      }\n    }\n    // ... могут быть другие ошибки\n  ]\n}",
-        "keyErrorCodesTitle": "Ключевые коды ошибок (extensions.code):",
+        "title": "3. Обробка Помилок API: Ясна Зворотній Зв'язок (Принцип 3, 14)",
+        "description": "API повертає стандартизовані помилки для <strong>ясної зворотного зв'язку</strong> (Принцип 14) з клієнтом та підтримання <strong>якості</strong> (Принцип 3).",
+        "errorFormatTitle": "Формат помилок (відповідно до специфікації GraphQL):",
+        "errorFormatCode": "{\n  \"data\": null, // Зазвичай null при помилках верхнього рівня\n  \"errors\": [\n    {\n      \"message\": \"Опис помилки (може бути локалізовано - див. DocLocIn)\",\n      \"locations\": [...], // Розташування помилки в запиті\n      \"path\": [...],      // Шлях до поля, що викликало помилку\n      \"extensions\": {\n        \"code\": \"КОД_ПОМИЛКИ\", // Стандартизований код помилки (наприклад, \"UNAUTHENTICATED\", \"FORBIDDEN\", \"BAD_USER_INPUT\", \"NOT_FOUND\")\n        \"http\": { // Якщо застосовно, HTTP статус код\n          \"status\": 401,\n          \"headers\": {}\n        },\n         \"details\": {} // Додаткові деталі про помилку (опціонально)\n      }\n    }\n    // ... можуть бути інші помилки\n  ]\n}",
+        "keyErrorCodesTitle": "Ключові коди помилок (extensions.code):",
         "keyErrorCodesList": [
-          "`UNAUTHENTICATED`: Требуется аутентификация, но токен отсутствует или недействителен (`HTTP 401`).",
-          "`FORBIDDEN`: Аутентификация пройдена, но у пользователя нет прав на выполнение операции (`HTTP 403`).",
-          "`BAD_USER_INPUT`: Ошибка валидации входных данных (`HTTP 400`). Детали могут быть в `extensions.details`.",
-          "`NOT_FOUND`: Запрошенный ресурс не найден (`HTTP 404`).",
-          "`CONFLICT`: Конфликт данных (например, попытка зарегистрировать email, который уже существует) (`HTTP 409`).",
-          "`INTERNAL_SERVER_ERROR`: Неожиданная ошибка на сервере (`HTTP 500`).",
-          "`RATE_LIMITED`: Превышен лимит запросов (`HTTP 429`)."
+          "`UNAUTHENTICATED`: Потрібна автентифікація, але токен відсутній або недійсний (`HTTP 401`).",
+          "`FORBIDDEN`: Автентифікація пройдена, але у користувача немає прав на виконання операції (`HTTP 403`).",
+          "`BAD_USER_INPUT`: Помилка валідації вхідних даних (`HTTP 400`). Деталі можуть бути в `extensions.details`.",
+          "`NOT_FOUND`: Запитуваний ресурс не знайдено (`HTTP 404`).",
+          "`CONFLICT`: Конфлікт даних (наприклад, спроба зареєструвати email, який вже існує) (`HTTP 409`).",
+          "`INTERNAL_SERVER_ERROR`: Неочікувана помилка на сервері (`HTTP 500`).",
+          "`RATE_LIMITED`: Перевищено ліміт запитів (`HTTP 429`)."
         ],
-        "localizationErrorsTitle": "Локализация ошибок:",
-        "localizationErrorsContent": "Сообщения об ошибках (`message`) могут быть локализованы на стороне Backend на основе заголовка `Accept-Language` или предпочтений пользователя (см. DocLocIn)."
+        "localizationErrorsTitle": "Локалізація помилок:",
+        "localizationErrorsContent": "Повідомлення про помилки (`message`) можуть бути локалізовані на стороні Backend на основі заголовка `Accept-Language` або переваг користувача (див. DocLocIn)."
       },
       "notes": {
-        "title": "4. Примечания",
+        "title": "4. Примітки",
         "dataTypes": {
-          "title": "Типы данных:",
+          "title": "Типи даних:",
           "list": [
-            "`ID`: Уникальный идентификатор ресурса (обычно строка).",
-            "`String`: Текстовая строка.",
+            "`ID`: Унікальний ідентифікатор ресурсу (зазвичай рядок).",
+            "`String`: Текстовий рядок.",
             "`Int`, `Float`: Числа.",
-            "`Boolean`: Логическое значение (`true`/`false`).",
-            "`DateTime`: Дата и время в формате ISO 8601 (например, \"2025-03-14T10:30:00Z\").",
-            "`JSON`: Кастомный скаляр для передачи произвольных JSON-объектов (например, для `fileMetadata`).",
-            "`!` в конце типа означает, что поле <strong>не может быть null</strong>."
+            "`Boolean`: Логічне значення (`true`/`false`).",
+            "`DateTime`: Дата і час у форматі ISO 8601 (наприклад, \"2025-03-14T10:30:00Z\").",
+            "`JSON`: Кастомний скаляр для передачі довільних JSON-об'єктів (наприклад, для `fileMetadata`).",
+            "`!` в кінці типу означає, що поле <strong>не може бути null</strong>."
           ]
         },
         "pagination": {
-          "title": "Пагинация:",
-          "content": "Для списков, которые могут быть длинными (`messages`), используйте пагинацию для эффективной загрузки данных (Принцип 9)."
+          "title": "Пагінація:",
+          "content": "Для списків, які можуть бути довгими (`messages`), використовуйте пагінацію для ефективної завантаження даних (Принцип 9)."
         },
         "validation": {
-          "title": "Валидация:",
-          "content": "Backend выполняет строгую валидацию всех входных данных (через DTO и `class-validator`), возвращая ошибки `BAD_USER_INPUT` при их некорректности. Это часть <strong>системы обеспечения качества</strong> (Принцип 3)."
+          "title": "Валідація:",
+          "content": "Backend виконує строгу валідацію всіх вхідних даних (через DTO і `class-validator`), повертаючи помилки `BAD_USER_INPUT` при їх некоректності. Це частина <strong>системи забезпечення якості</strong> (Принцип 3)."
         },
         "security": {
-          "title": "Безопасность:",
-          "content": "Все запросы, работающие с чувствительными данными или изменяющие состояние системы (кроме регистрации/логина), требуют аутентификации."
+          "title": "Безпека:",
+          "content": "Всі запити, що працюють з чутливими даними або змінюють стан системи (крім реєстрації/логіна), потребують автентифікації."
         },
         "testingTools": {
-          "title": "Инструменты тестирования API:",
-          "content": "Используйте GraphQL Playground (часто доступен по адресу `/graphql` в dev-режиме Backend), Postman или Apollo Studio для отправки запросов и тестирования API."
+          "title": "Інструменти тестування API:",
+          "content": "Використовуйте GraphQL Playground (часто доступний за адресою `/graphql` в dev-режимі Backend), Postman або Apollo Studio для відправлення запитів та тестування API."
         }
       }
+    },
+    "technicalDocs": {
+      "title": "BrainMessenger Technical Documentation (System and Foundation)",
+      "subtitle": "General Information: Architecture of a Digital Asset",
+      "generalInfo": {
+        "title": "1. General Information: Architecture of a Digital Asset",
+        "description": "BrainMessenger is a modern messenger built as a <strong>reliable, scalable, and secure system</strong> (Principle 9), which serves as a <strong>key digital ASSET</strong> (Principle 10). This document provides a high-level overview of the project's <strong>technical foundation</strong> (Principle 8), describing the main components, technologies, and their interaction.",
+        "projectNameTitle": "Project Name:",
+        "projectNameContent": "BrainMessenger",
+        "purposeTitle": "Purpose:",
+        "purposeContent": "To provide a general understanding of BrainMessenger's structure, the technology stack used, and the principles underlying its construction, for all team members and stakeholders.",
+        "principlesTitle": "Principles reflected in the technical structure:",
+        "principlesList": [
+          "<strong>System and Optimization (Principle 9):</strong> The project is designed as a set of interconnected, optimized components.",
+          "<strong>Long-Term Thinking (Principle 8):</strong> Selection of technologies and architecture considering future scaling and development needs.",
+          "<strong>Quality > Quantity (Principle 3):</strong> Use of proven, reliable solutions and focus on code and infrastructure quality.",
+          "<strong>Pragmatism and Realism (Principle 12):</strong> Use of ready-made services (Neon, R2, Firebase) where justified, instead of building everything from scratch.",
+          "<strong>Value Creation (Principle 2):</strong> The technical structure aims to provide key messenger functions (communication, files, calls) at a high level."
+        ]
+      },
+      "techStack": {
+        "title": "2. Technology Stack: Tools for Building the System",
+        "description": "We use a modern and flexible set of technologies, allowing us to effectively build and scale BrainMessenger.",
+        "frontend": {
+          "title": "Frontend (Client Applications):",
+          "list": [
+            "<strong>React Native (Android, Windows Desktop):</strong> A single codebase for mobile and desktop applications. Chosen for cross-platform compatibility and a large set of ready-made libraries.",
+            "<strong>Next.js (Web):</strong> React-framework for web application with SSR/SSG support for performance and SEO.",
+            "<strong>TypeScript:</strong> Strict typing for all Frontend code. Increases reliability and simplifies refactoring."
+          ]
+        },
+        "backend": {
+          "title": "Backend (Server Logic):",
+          "list": [
+            "<strong>Node.js:</strong> High-performance JavaScript/TypeScript runtime environment.",
+            "<strong>NestJS:</strong> Modular framework for Node.js. Provides a structured architecture (modules, services, controllers/resolvers) and TypeScript support.",
+            "<strong>GraphQL:</strong> API protocol. Allows clients to request exactly the data they need, reducing redundancy."
+          ]
+        },
+        "databaseCaching": {
+          "title": "Database and Caching:",
+          "list": [
+            "<strong>PostgreSQL (via Neon):</strong> Reliable relational DBMS. Used as the main storage for structured data (users, chats, messages, metadata). Neon provides a managed service with scaling and replication features.",
+            "<strong>Prisma ORM:</strong> Tool for interacting with PostgreSQL from NestJS. Provides typing and query security.",
+            "<strong>Redis:</strong> In-memory data store. Used for caching, Rate Limiting, managing WebSocket connection state (user presence)."
+          ]
+        },
+        "fileStorage": {
+          "title": "File Storage:",
+          "list": [
+            "<strong>Cloudflare R2:</strong> Object storage, compatible with S3 API. Used for storing user files (photos, videos, documents, avatars, call recordings), encrypted data. Chosen for low cost and no egress fees."
+          ]
+        },
+        "asyncProcessing": {
+          "title": "Asynchronous Processing:",
+          "list": [
+            "<strong>Kafka:</strong> Distributed message queue system. Used for reliable asynchronous task processing (e.g., image processing, sending notifications) outside the main API thread."
+          ]
+        },
+        "infrastructureDeployment": {
+          "title": "Infrastructure and Deployment:",
+          "list": [
+            "<strong>Docker:</strong> Application containerization. Provides isolation and portability.",
+            "<strong>Kubernetes:</strong> Container orchestration. Manages deployment, scaling, and self-healing of services in a cluster.",
+            "<strong>Terraform:</strong> Infrastructure as Code (IaC). Automates the creation and management of cloud resources."
+          ]
+        },
+        "testingMonitoringLogging": {
+          "title": "Testing, Monitoring, Logging:",
+          "list": [
+            "<strong>Jest, Cypress, Detox:</strong> Tools for unit, integration, and E2E testing.",
+            "<strong>Prometheus, Grafana:</strong> Monitoring system. Collection and visualization of performance metrics and system status.",
+            "<strong>Winston, Sentry:</strong> Logging and error tracking system."
+          ]
+        }
+      },
+      "architecture": {
+        "title": "3. Project Architecture: Interconnection of System Components",
+        "description": "BrainMessenger's architecture follows the principles of <strong>modularity and separation of concerns</strong> (Principle 9).",
+        "clientApplications": {
+          "title": "Client Applications (Frontend):",
+          "list": [
+            "Web (Next.js), Mobile & Desktop (React Native).",
+            "Contain the user interface and user interaction logic.",
+            "Interact with the Backend exclusively via <strong>GraphQL API</strong>.",
+            "Can directly download files from Cloudflare R2 (if public access) or via Backend (if authentication or URL signing is required)."
+          ]
+        },
+        "apiGateway": {
+          "title": "API Gateway (In the future):",
+          "content": "Single entry point for all client requests. Can perform authentication, Rate Limiting, routing to the necessary Backend services. At startup, the Backend itself acts as the Gateway."
+        },
+        "backendService": {
+          "title": "Backend Service (NestJS):",
+          "list": [
+            "Main server component.",
+            "Contains <strong>BrainMessenger's business logic</strong> (user management, chats, messages, calls, payments).",
+            "Provides <strong>GraphQL API</strong> for client applications.",
+            "Interacts with the <strong>Database (Neon/PostgreSQL via Prisma)</strong> for reading/writing structured data.",
+            "Interacts with <strong>File Storage (Cloudflare R2)</strong> for uploading/retrieving files (via AWS SDK).",
+            "Interacts with <strong>Cache (Redis)</strong> for fast operations.",
+            "Queues tasks in <strong>Queue (Kafka)</strong> for asynchronous processing.",
+            "Uses external services (Firebase, Stripe, Gmail API)."
+          ]
+        },
+        "database": {
+          "title": "Database (Neon/PostgreSQL):",
+          "content": "Stores structured data. Scales independently."
+        },
+        "fileStorage": {
+          "title": "File Storage (Cloudflare R2):",
+          "content": "Stores unstructured binary data. Scales by volume."
+        },
+        "caching": {
+          "title": "Caching (Redis):",
+          "content": "Fast access to temporary data."
+        },
+        "messageQueue": {
+          "title": "Message Queue (Kafka):",
+          "content": "Buffering and reliable message delivery between services for asynchronous processing."
+        },
+        "workers": {
+          "title": "Workers (Kafka Consumers):",
+          "list": [
+            "Separate services that read tasks from Kafka and perform heavy or long operations (image processing, sending large mailings).",
+            "Scale independently."
+          ]
+        },
+        "externalServices": {
+          "title": "External Services (Firebase, Stripe, Gmail API):",
+          "list": [
+            "Provide specialized functionality (notifications, payments, email).",
+            "Used by the Backend service."
+          ]
+        },
+        "mermaidDiagram": {
+          "title": "Architecture Diagram:",
+          "code": "graph TD\n    A[Frontend Web (Next.js)] -->|GraphQL API| B(API Gateway / Backend);\n    A -->|Direct File Access (Opt.)| E(Cloudflare R2);\n    F[Frontend Mobile/Desktop (React Native)] -->|GraphQL API| B;\n    F -->|Direct File Access (Opt.)| E;\n    B -->|Prisma Queries/Mutations| C(Neon/PostgreSQL);\n    B -->|AWS SDK (S3 API)| E;\n    B -->|ioredis| D(Redis Cache);\n    B -->|kafkajs Producer| G(Kafka Queue);\n    B -->|Firebase Admin SDK| H(Firebase FCM);\n    B -->|Stripe SDK| I(Stripe);\n    B -->|Google APIs Client| J(Gmail API);\n    G -->|kafkajs Consumer| K(Kafka Workers);\n    K -->|sharp| K; % Image processing\n    K -->|AWS SDK (S3 API)| E;\n    K -->|GraphQL API / Other Service Calls| B; % Report completion, send chat message\n    C -->|Replication (for scaling)| C;\n    C -->|Partitioning/Sharding (for scaling)| C;\n    E -->|CDN| A; % File delivery to Frontend\n    Prometheus(Prometheus) -->|Scrape Metrics| B;\n    Prometheus -->|Scrape Metrics| C;\n    Prometheus -->|Scrape Metrics| D;\n    Prometheus -->|Scrape Metrics| G;\n    Grafana(Grafana) -->|Visualize Metrics| Prometheus;\n    Sentry(Sentry) -->|Error Reports| B;\n    Sentry -->|Error Reports| A;"
+        }
+      },
+      "api": {
+        "title": "4. API: Інтерфейс Взаємодії",
+        "description": "API BrainMessenger реалізовано на GraphQL з використанням NestJS.",
+        "endpointTitle": "Endpoint:",
+        "endpointContent": "`/graphql`",
+        "structureTitle": "Структура:",
+        "structureContent": "Визначається GraphQL Схемою (типи User, Chat, Message тощо) та набором Queries (для отримання даних) і Mutations (для зміни даних).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT-токени в заголовку `Authorization: Bearer <token>`.",
+        "externalApiIntegrationsTitle": "Зовнішні API Інтеграції:",
+        "externalApiIntegrationsContent": "Взаємодія із зовнішніми сервісами (Gmail, Stripe) здійснюється через Backend, який надає відповідні Mutations в GraphQL API (див. Специфікацію API).",
+        "keyFunctionalAreas": {
+          "title": "Ключові функціональні області API:",
+          "list": [
+            "Автентифікація (реєстрація, логін, логаут, 2FA).",
+            "Управління користувачами (отримання/оновлення/видалення профілю).",
+            "Управління чатами (створення, отримання списку, отримання даних чату).",
+            "Робота з повідомленнями (надсилання текстових повідомлень, надсилання файлів, отримання історії).",
+            "Управління контактами.",
+            "Налаштування додатку (тема, сповіщення, мова).",
+            "Управління Premium-підпискою.",
+            "Управління файлами (завантаження в R2 через Backend).",
+            "(У майбутньому) Дзвінки та відеодзвінки (управління сесіями дзвінків)."
+          ]
+        },
+        "detailedSpecTitle": "Детальна специфікація API описана в:",
+        "detailedSpecContent": "DocSpec.md"
+      },
+      "database": {
+        "title": "5. База Даних (Neon/PostgreSQL): Сховище Основних Даних",
+        "description": "",
+        "technologyTitle": "Технологія:",
+        "technologyContent": "PostgreSQL 15.x.",
+        "hostingTitle": "Хостинг:",
+        "hostingContent": "Neon.",
+        "roleTitle": "Роль:",
+        "roleContent": "Реляційна база даних для всіх структурованих даних.",
+        "keyTables": {
+          "title": "Ключові таблиці (визначені в backend/prisma/schema.prisma):",
+          "list": [
+            "User: Інформація про користувачів (id, email, password_hash, name, avatarUrl, createdAt, updatedAt, is2FaEnabled).",
+            "Chat: Інформація про чати (id, type, name, createdAt, updatedAt, lastMessageAt).",
+            "UserChat: Зв'язуюча таблиця для Many-to-Many зв'язку між User та Chat (userId, chatId, joinedAt, lastReadMessageId).",
+            "Message: Повідомлення в чатах (id, chatId, senderId, content, fileUrl, fileMetadata (JSON), createdAt, updatedAt).",
+            "Contact: Список контактів користувача (id, userId, contactId).",
+            "Transaction: Історія платежів (для Premium) (id, userId, amount, currency, status, provider, createdAt).",
+            "Code: Тимчасові коди (для email верифікації, 2FA) (id, userId/email, code, type, expiresAt)."
+          ]
+        },
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Тільки Backend через Prisma ORM.",
+        "optimizationScalingTitle": "Оптимізація та Масштабування:",
+        "optimizationScalingContent": "Використовуються індекси, оптимізація запитів Prisma, матеріалізовані представлення, партиціонування, реплікація (див. DocOptimizationIn)."
+      },
+      "fileStorage": {
+        "title": "6. Сховище Файлів (Cloudflare R2): Сховище Медіа та Бінарних Активів",
+        "description": "",
+        "technologyTitle": "Технологія:",
+        "technologyContent": "Об'єктне сховище, S3-сумісний API.",
+        "hostingTitle": "Хостинг:",
+        "hostingContent": "Cloudflare R2.",
+        "roleTitle": "Роль:",
+        "roleContent": "Зберігання всіх неструктурованих даних (файли користувачів, аватарки, записи дзвінків).",
+        "interactionTitle": "Взаємодія:",
+        "interactionContent": "Backend завантажує файли, Backend або Frontend отримує файли (безпосередньо або через підписані URL).",
+        "structureTitle": "Структура:",
+        "structureContent": "Файли організовані за папками/ключами (наприклад, `avatars/`, `chat-images/`, `sensitive-data/`).",
+        "securityTitle": "Безпека:",
+        "securityContent": "Шифрування в спокої, обмежений доступ, шифрування чутливих даних на рівні додатку перед завантаженням (див. DocInt, DocSecurity)."
+      },
+      "projectStructure": {
+        "title": "7. Проектна Структура (Монорепозиторій): Організація Коду",
+        "description": "Проект організований як монорепозиторій з використанням Turborepo.",
+        "purposeTitle": "Мета:",
+        "purposeContent": "Спростити управління кількома додатками/пакетами (backend, web, mobile-desktop, core) та перевикористання коду.",
+        "packages": {
+          "title": "Пакети:",
+          "list": [
+            "core: Спільний код.",
+            "backend: Серверна логіка.",
+            "web: Веб-додаток.",
+            "mobile-desktop: Мобільний/десктопний додаток (React Native).",
+            "Інфраструктура: Файли конфігурації для розгортання (infrastructure/).",
+            "Документація: Проектна документація (docs/)."
+          ]
+        },
+        "detailedDescriptionTitle": "Детальний опис структури монорепозиторію див. у:",
+        "detailedDescriptionContent": "DocDevIn.md (розділ 2)."
+      },
+      "security": {
+        "title": "8. Безпека: Фундаментальний Аспект Системи",
+        "description": "Безпека вбудована на всіх рівнях (див. докладніше в Посібнику з безпеки BrainMessenger).",
+        "authenticationTitle": "Автентифікація:",
+        "authenticationContent": "JWT, 2FA через email.",
+        "authorizationTitle": "Авторизація:",
+        "authorizationContent": "Перевірка прав доступу до ресурсів на Backend.",
+        "encryptionTitle": "Шифрування:",
+        "encryptionContent": "TLS/SSL для передачі даних, шифрування паролів (bcrypt/argon2), шифрування чутливих даних на рівні додатку перед зберіганням в R2.",
+        "validationTitle": "Валідація:",
+        "validationContent": "Сувора валідація вхідних даних на Backend.",
+        "attackProtectionTitle": "Захист від Атак:",
+        "attackProtectionContent": "Rate Limiting, безпечні HTTP-заголовки.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Безпека — це постійний процес навчання (Принцип 1) та вдосконалення (Принцип 9), заснований на відповідальності (Принцип 6)."
+      },
+      "deployment": {
+        "title": "9. Розгортання: Доставка Системи Користувачам",
+        "description": "Процес розгортання автоматизований.",
+        "containerizationTitle": "Контейнеризація:",
+        "containerizationContent": "Docker-образи для Backend, Kafka Consumers.",
+        "orchestrationTitle": "Оркестрація:",
+        "orchestrationContent": "Kubernetes керує контейнерами в хмарі.",
+        "iacTitle": "Інфраструктура як Код:",
+        "iacContent": "Terraform (IaC). Автоматизує створення та управління хмарними ресурсами."
+      },
+      "monitoringLogging": {
+        "title": "10. Моніторинг та Логування: Видимість Стану Системи",
+        "description": "",
+        "monitoringTitle": "Моніторинг:",
+        "monitoringList": [
+          "Збір та візуалізація метрик продуктивності та здоров'я системи (CPU, RAM, затримки API/БД, помилки).",
+          "Інструменти: Prometheus, Grafana. Дозволяє виявляти проблеми на ранній стадії (Принцип 9: Кайдзен)."
+        ],
+        "loggingTitle": "Логування:",
+        "loggingList": [
+          "Збір структурованих логів від усіх компонентів (Backend, воркери).",
+          "Інструменти: Winston (для Node.js), Sentry (для відстеження помилок)."
+        ],
+        "detailedDescriptionTitle": "Детальний опис див. у:",
+        "detailedDescriptionList": [
+          "Посібнику з оптимізації BrainMessenger (розділ 14)",
+          "Посібнику з моніторингу"
+        ]
+      },
+      "externalApiIntegrations": {
+        "title": "11. Зовнішні API Інтеграції: Використання Зовнішніх Важелів",
+        "description": "Backend взаємодіє з кількома зовнішніми сервісами через їх API.",
+        "gmailApiTitle": "Gmail API:",
+        "gmailApiContent": "Надсилання транзакційних email (підтвердження, 2FA).",
+        "stripeTitle": "Stripe:",
+        "stripeContent": "Обробка платежів та підписок.",
+        "firebaseFCMTitle": "Firebase FCM:",
+        "firebaseFCMContent": "Надсилання push-сповіщень на мобільні пристрої.",
+        "principleTitle": "Принцип:",
+        "principleContent": "Використання цих сервісів — прагматичний (Принцип 12) спосіб швидко додати функціонал, використовуючи готові, надійні (Принцип 3) рішення.",
+        "detailedDescriptionTitle": "Детальний опис інтеграцій див. у:",
+        "detailedDescriptionContent": "DocInt.md"
+      },
+      "notes": {
+        "title": "12. Примітки",
+        "description": "Ця документація надає високорівневий огляд технічної системи BrainMessenger. Для більш детального розуміння окремих частин звертайтеся до пов'язаних документів:",
+        "apiSpecLinkTitle": "Специфікація API:",
+        "apiSpecLinkContent": "DocSpec.md",
+        "devGuideLinkTitle": "Посібник з розробки:",
+        "devGuideLinkContent": "DocDevIn.md",
+        "optimizationGuideLinkTitle": "Посібник з оптимізації:",
+        "optimizationGuideLinkContent": "DocOptimizationIn.md",
+        "integrationsDocsLinkTitle": "Документація інтеграцій:",
+        "integrationsDocsLinkContent": "DocInt.md",
+        "designDocsLinkTitle": "Документація дизайну:",
+        "designDocsLinkContent": "DocDesign.md",
+        "userGuideLinkTitle": "Посібник користувача:",
+        "userGuideLinkContent": "DocUser.md",
+        "longTermInvestmentTitle": "Розробка та підтримка цієї технічної системи — це довгострокова інвестиція (Принцип 8) та безперервний процес навчання та вдосконалення (Принцип 1, 9)."
+      }
+    },
+    "uiDocs": {
+    "generalInfo": {
+      "title": "Загальна Інформація: UI як Обличчя Системи",
+      "projectNameTitle": "Назва проекту:",
+      "projectName": "BrainMessenger",
+      "description": "Цей документ описує користувацький інтерфейс (UI) BrainMessenger. UI — це **обличчя нашої системи** (Принцип 9), через яке користувачі взаємодіють з програмою та сприймають її **цінність** (Принцип 2). Ми прагнемо створити UI, який буде **інтуїтивно зрозумілим, ефективним та доступним**, відображаючи принципи **якості > кількості** (Принцип 3) та **спрощення складного**.",
+      "purposeTitle": "Мета:",
+      "purpose": "Надати чіткий опис основних екранів, принципів навігації, використовуваних елементів UI, функціональних вимог до інтерфейсу та типових користувацьких сценаріїв. Це допомагає забезпечити **єдність** (Принцип 7) та **якість** (Принцип 3) користувацького досвіду на всіх платформах.",
+      "principlesTitle": "Принципи, відображені в UI:",
+      "principlesList": {
+        "p2": "**Створення Цінності** (Принцип 2): UI сфокусований на наданні ключових функцій (спілкування, файли, дзвінки) максимально зручним способом.",
+        "p3": "**Якість > Кількість** (Принцип 3): Перевага надається чистому дизайну з чіткою ієрархією елементів, а не перевантаженому інтерфейсу.",
+        "p9": "**Система та Оптимізація** (Принцип 9): UI побудований на модульній системі компонентів і слідує чітким правилам вирівнювання та сітки (див. DocDesign). Навігація та робочі процеси оптимізовані.",
+        "p8": "**Довгострокове Мислення** (Принцип 8): Дизайн враховує можливість додавання нового функціоналу в майбутньому, не порушуючи загальну структуру.",
+        "p5": "**Здоров'я як Фундамент** (Принцип 5): Приділяється увага доступності (WCAG), використанню темної теми, налаштуванням анімацій для зниження навантаження на користувача.",
+        "p12": "**Прагматизм та Реалізм** (Принцип 12): Дизайн враховує технічні обмеження та можливості кросплатформної розробки."
+      }
+    },
+    "mainScreens": {
+      "title": "Основні Екрани: Шлях Користувача по Системі",
+      "welcomeScreen": {
+        "title": "Welcome Screen",
+        "purpose": "Представити BrainMessenger, його основні переваги та **цінність** (Принцип 2). Онбординг нових користувачів.",
+        "elements": "Заголовок, короткий опис, слайдер з інформацією (переваги, функції, оновлення), кнопки \"Sign Up\" (Реєстрація) та \"Log In\" (Вхід).",
+        "connection": "Використовує градієнт та шрифти з DocDesign для привернення уваги. Наявність слайдера з описом функціоналу — частина стратегії **створення цінності** (Принцип 2)."
+      },
+      "authScreens": {
+        "title": "Екрани Автентифікації (Реєстрація / Вхід / Підтвердження коду / Скидання пароля)",
+        "purpose": "Надати безпечний та зрозумілий процес доступу до системи.",
+        "elements": "Поля вводу (Email, Пароль, Ім'я, Код), кнопки дії, посилання (\"Забули пароль?\").",
+        "requirements": "Сувора валідація вводу (див. Функціональні вимоги), чіткі повідомлення про помилки. Пов'язано з **безпекою** (Принцип 5) та **якістю** (Принцип 3)."
+      },
+      "mainChatList": {
+        "title": "Головний Екран (Список Чатів)",
+        "purpose": "Забезпечити швидкий доступ до всіх поточних діалогів користувача.",
+        "elements": "Список чатів (особисті, групові, канали) з короткою інформацією (назва, аватар, останнє повідомлення, час, лічильник непрочитаних), рядок пошуку, кнопка створення нового чату (\"+\"), доступ до головного меню (\"бургер\" або аватар).",
+        "organization": "Чати сортуються за часом останнього повідомлення для **ефективності** (Принцип 9).",
+        "actions": "Відкриття чату (кліком), архівування/видалення (свайпом або контекстним меню)."
+      },
+      "chatScreen": {
+        "title": "Екран Чату",
+        "purpose": "Забезпечити зручний обмін повідомленнями та файлами.",
+        "elements": "Шапка чату (назва, аватар, кнопки дзвінка/відеодзвінка/інформації), область повідомлень, поле вводу повідомлення, кнопки прикріплення файлу/відправки/голосового повідомлення.",
+        "messages": "Відображення текстових повідомлень, зображень, файлів. Індикатори статусу (відправлено, доставлено, прочитано).",
+        "chatSettings": "Доступні через шапку чату (зміна теми, шрифту - див. розділ 13)."
+      },
+      "contactScreen": {
+        "title": "Екран Контактів",
+        "purpose": "Управління списком контактів та пошук нових користувачів.",
+        "elements": "Список контактів, рядок пошуку, кнопка додавання нового контакту."
+      },
+      "profileSettings": {
+        "title": "Налаштування Профілю",
+        "purpose": "Дозволити користувачеві управляти своєю особистою інформацією та налаштуваннями облікового запису.",
+        "elements": "Поля для редагування імені, email, пароля, завантаження аватара, опції безпеки (2FA), кнопка видалення облікового запису. Пов'язано з **відповідальністю** (Принцип 6) користувача за свої дані."
+      },
+      "appSettings": {
+        "title": "Налаштування Програми",
+        "purpose": "Налаштувати загальну поведінку програми під уподобання користувача.",
+        "elements": "Розділи налаштувань (Повідомлення, Зовнішній вигляд/Тема, Мова, Батарея та Анімації, Сховище даних). Надання вибору підвищує **цінність** (Принцип 2)."
+      },
+      "premiumScreen": {
+        "title": "Екран Premium",
+        "purpose": "Пояснити переваги Premium-підписки та надати можливість її оформлення.",
+        "elements": "Опис функцій Premium (наприклад, глітч-ефект, нейронні зв'язки в UI - див. DocDesign), інформація про тарифи, кнопка \"Підписатися\", посилання на історію платежів. Пов'язано зі **створенням цінності** (Принцип 2) та **монетизацією Активу** (Принцип 10)."
+      },
+      "callsScreen": {
+        "title": "Екрани Дзвінків (Історія / Екран дзвінка / Конференція)",
+        "purpose": "Забезпечити функціональність аудіо- та відеозв'язку.",
+        "elements": "Список минулих дзвінків, інтерфейс активного дзвінка (відеопотік, кнопки Mute/Unmute, відео вкл/викл, завершити дзвінок, переключити камеру), інтерфейс конференції."
+      },
+      "filesMediaScreen": {
+        "title": "Екран Файлів та Медіа",
+        "purpose": "Надати зручний доступ до всіх файлів, якими користувач обмінювався в чатах.",
+        "elements": "Список файлів (з попереднім переглядом для медіа), фільтрація за типом (фото, відео, документи), пошук. Організовано **системно** (Принцип 9)."
+      },
+      "archiveChatScreen": {
+        "title": "Екран Архіву Чатів",
+        "purpose": "Приховати менш актуальні чати з основного списку, зберігаючи до них доступ.",
+        "elements": "Список архівних чатів, можливість відновлення. Частина **системи організації** (Принцип 9)."
+      },
+      "languageSettings": {
+        "title": "Налаштування Мови",
+        "purpose": "Дозволити користувачеві вибрати мову інтерфейсу.",
+        "elements": "Список доступних мов. Зміна мови відбувається **миттєво** або після швидкого перезапуску, що підвищує **цінність** (Принцип 2) та **доступність** (Принцип 5) програми. Підтримується RTL (справа наліво) для деяких мов (див. DocLocIn)."
+      },
+      "batteryAnimationSettings": {
+        "title": "Налаштування Батареї та Анімації",
+        "purpose": "Дозволити користувачеві контролювати споживання ресурсів пристроєм.",
+        "elements": "Перемикач для повного вимкнення анімацій, можливо, регулювання окремих ефектів. Це **прагматичне** (Принцип 12) рішення, що враховує **здоров'я** пристрою (Принцип 5)."
+      },
+      "chatCustomizationSettings": {
+        "title": "Налаштування Чату (Кастомізація)",
+        "purpose": "Дозволити користувачеві персоналізувати зовнішній вигляд окремих чатів.",
+        "elements": "Опції вибору кольору фону чату, вибору шрифту для повідомлень. Це додає **цінність** (Принцип 2) за рахунок кастомізації."
+      }
+    },
+    "navigationPrinciples": {
+      "title": "Принципи Навігації: Зрозумілий Шлях по Системі",
+      "description": "Навігація спроектована так, щоб бути **інтуїтивно зрозумілою** (Принцип 2) та слідувати **системним правилам** (Принцип 9).",
+      "list": {
+        "item1": "**Послідовність:** Екрани автентифікації та реєстрації проходять послідовно.",
+        "item2": "**Головне Меню:** Забезпечує доступ до основних розділів програми (Чати, Контакти, Дзвінки, Налаштування, Архів).",
+        "item3": "**Всередині Чату:** Доступ до інформації про чат/користувача та налаштувань чату зазвичай через шапку.",
+        "item4": "**Повернення:** Чіткий спосіб повернутися на попередній екран (кнопка \"Назад\").",
+        "item5": "**Welcome Screen:** Слайдер для покрокового ознайомлення з функціями."
+      }
+    },
+    "uiStructure": {
+      "title": "Структура Інтерфейсу: Побудова на Системі Компонентів (Принцип 9)",
+      "description": "UI побудований на **модульній системі компонентів**, що забезпечує **єдність, швидкість розробки та підтримку** (Принцип 9).",
+      "uiElements": {
+        "title": "Елементи UI:",
+        "list": {
+          "item1": "**Текстові блоки (Text):** Використовуються для відображення тексту. Слідують типографічній шкалі з DocDesign.",
+          "item2": "**Кнопки (Button):** Інтерактивні елементи для виконання дій. Мають чіткі стани (нормальний, натиснутий, вимкнений - див. DocDesign для стилів).",
+          "item3": "**Поля вводу (Input):** Для вводу тексту, паролів, чисел. Включають плейсхолдери, мітки, індикатори помилок.",
+          "item4": "**Іконки (Icon):** Використовуються для навігації, дій (відправити, дзвонити) та декоративних цілей. Єдиний набір та стиль (див. DocDesign). Можуть мати анімації.",
+          "item5": "**Зображення (Image):** Відображення аватарів, зображень у чатах. Використовується оптимізоване завантаження.",
+          "item6": "**Слайдер (Carousel):** Використовується на Welcome Screen.",
+          "item7": "**Перемикачі (Toggle):** Для налаштувань типу вкл/викл."
+        }
+      },
+      "alignmentGrid": {
+        "title": "Вирівнювання та Сітка:",
+        "description": "UI будується на основі **системи сітки 8px** (див. DocDesign).",
+        "list": {
+          "item1": "**Вертикальний потік:** Елементи на екранах розташовуються зверху вниз з чіткими вертикальними відступами.",
+          "item2": "**Горизонтальне вирівнювання:** Елементи вирівнюються по лівому або правому краю контейнерів (з урахуванням RTL).",
+          "item3": "**Відступи (Padding/Margin):** Використовуються значення зі шкали, кратні 8px, для створення гармонійного простору."
+        }
+      },
+      "adaptiveDesign": "**Адаптивний Дизайн:** UI адаптується під різні розміри екрана та орієнтацію пристрою для забезпечення **цінності** (Принцип 2) на будь-якому пристрої."
+    },
+    "functionalRequirements": {
+      "title": "Функціональні Вимоги до UI: Деталізація Взаємодії",
+      "passwordInput": "**Ввід Пароля:** Повинен бути маскованим (`*` або `•`). Повинна бути опція показати/приховати пароль. Мінімальна довжина 8 символів, вимога наявності цифри та спецсимволу — валідація на клієнті та сервері.",
+      "emailInput": "**Ввід Email:** Перевірка формату (`user@domain.com`).",
+      "codeInput": "**Ввід Коду Підтвердження:** Поле вводу для 8-значного коду. Автоматичне перемикання на наступне поле при вводу цифри (зручність - Принцип 2). Перевірка коректності коду при відправленні на сервер.",
+      "search": "**Пошук:** Фільтрація списків (чатів, контактів) у міру вводу запиту (чутливість - Принцип 9).",
+      "profileManagement": "**Управління Профілем:** Поля для редагування, кнопка збереження, валідація нового email/пароля.",
+      "subscription": "**Оформлення Підписки:** Перенаправлення на сторінку оплати Stripe (див. DocInt).",
+      "slideSwitching": "**Перемикання Слайдів:** Слайдер на Welcome Screen повинен плавно перемикатися свайпом або кліком на стрілки/індикатори.",
+      "languageChange": "**Зміна Мови:** Вибір мови зі списку. UI повинен оновитися миттєво або після запиту на перезапуск (див. DocLocIn).",
+      "animationSettings": "**Налаштування Анімацій:** Перемикач повинен вмикати/вимикати основні анімації.",
+      "chatCustomization": "**Кастомізація Чату:** Зміна кольорів/шрифтів повинна застосовуватися до конкретного чату.",
+      "errorHandling": {
+        "title": "Обробка помилок в UI:",
+        "validation": "**Валідація вводу:** При некоректному вводу (наприклад, невірний формат email, занадто короткий пароль) під полем вводу з'являється **ясне візуальне повідомлення** з описом проблеми (Принцип 3, 14). Кнопка дії може бути вимкнена до виправлення.",
+        "apiErrors": "**Помилки мережі/API:** При помилках взаємодії з Backend (наприклад, \"Невірний логін/пароль\", \"Користувач не знайдений\", \"Помилка мережі\") у верхній частині екрану з'являється **неблокуюче повідомлення (Snackbar/Toast)** з описом помилки, отриманої з API (див. DocSpec, локалізація - див. DocLocIn)."
+      }
+    },
+    "userScenarios": {
+      "title": "Користувацькі Сценарії: Приклади Взаємодії з Системою",
+      "description": "Типові шляхи користувачів, що демонструють роботу системи з точки зору кінцевого користувача.",
+      "registrationScenario": {
+        "title": "Реєстрація нового користувача:",
+        "steps": [
+          "Користувач відкриває програму → Натискає \"Sign Up\" → Вводить пароль (валідація) → Натискає \"Next\" → Вводить ім'я → Натискає \"Next\" → Вводить email (валідація) → Натискає \"Sign Up\" → Отримує email з кодом → Повертається до програми → Вводить код → Натискає \"Confirm\" → Успішний вхід на Головний екран."
+        ]
+      },
+      "loginScenario": {
+        "title": "Вхід існуючого користувача:",
+        "steps": [
+          "Користувач відкриває програму → Натискає \"Log In\" → Вводить email та пароль → Натискає \"Log In\" → (Якщо 2FA включена: Отримує email з кодом → Вводить код → Натискає \"Confirm\") → Успішний вхід на Головний екран. При помилці логіна/пароля - повідомлення."
+        ]
+      },
+      "sendMessage": {
+        "title": "Відправлення текстового повідомлення:",
+        "steps": [
+          "Користувач на Головному екрані → Відкриває чат (клік) → Вводить текст у поле вводу → Натискає \"Відправити\" → Повідомлення з'являється у чаті."
+        ]
+      },
+      "sendFile": {
+        "title": "Відправлення файлу:",
+        "steps": [
+          "У відкритому чаті → Користувач натискає \"скріпку\" → Вибирає тип файлу (фото) → Вибирає файл з галереї → (Можливо, попередній перегляд) → Натискає \"Відправити\" → У чаті з'являється індикатор завантаження/файл з попереднім переглядом."
+        ]
+      },
+      "searchChat": {
+        "title": "Пошук чату:",
+        "steps": [
+          "На Головному екрані → Користувач вводить запит у рядок пошуку → Список чатів фільтрується в реальному часі."
+        ]
+      },
+      "changeTheme": {
+        "title": "Зміна теми оформлення:",
+        "steps": [
+          "На Головному екрані → Користувач відкриває Головне меню → Переходить до \"Налаштування\" → \"Зовнішній вигляд\" → Вибирає \"Dark\" → UI миттєво перемикається на темну тему."
+        ]
+      }
+    },
+    "notes": {
+      "title": "Примітки: Фокус на Користувацькому Досвіді",
+      "testing": "**Тестування:** Важливо тестувати UI на реальних пристроях з різними розмірами екрана, роздільною здатністю та налаштуваннями доступності (розмір шрифту, інверсія кольорів) для забезпечення **якості** (Принцип 3) та **доступності** (Принцип 5).",
+      "feedback": "**Зворотній Зв'язок:** UI буде розвиватися на основі **зворотного зв'язку** (Принцип 14) від користувачів та аналізу їхньої поведінки.",
+      "consistency": "**Послідовність:** UI на всіх платформах (Web, Mobile, Desktop) повинен бути максимально **послідовним** (Принцип 7), щоб користувач, освоївши одну версію, міг легко використовувати інші.",
+      "animations": "**Анімації:** Анімації використовуються для покращення сприйняття, але можуть бути вимкнені. Вони повинні бути **оптимізованими** (Принцип 9) і не викликати дискомфорту.",
+      "customization": "**Кастомізація:** Надання опцій кастомізації (тема, шрифт) підвищує **цінність** (Принцип 2) програми для користувача."
     }
   }
+}
