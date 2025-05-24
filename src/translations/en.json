@@ -2420,72 +2420,13 @@
         "devGuideLinkContent": "DocDevIn.md",
         "optimizationGuideLinkTitle": "Optimization Guide:",
         "optimizationGuideLinkContent": "DocOptimizationIn.md",
-        "integrationsDocsLinkLinkTitle": "Integrations Documentation:",
+        "integrationsDocsLinkTitle": "Integrations Documentation:",
         "integrationsDocsLinkContent": "DocInt.md",
         "designDocsLinkTitle": "Design Documentation:",
         "designDocsLinkContent": "DocDesign.md",
         "userGuideLinkTitle": "User Guide:",
         "userGuideLinkContent": "DocUser.md",
         "longTermInvestmentTitle": "Development and maintenance of this technical system is a long-term investment (Principle 8) and a continuous process of learning and improvement (Principle 1, 9)."
-      }
-    },
-    "uiDocs": {
-      "title": "BrainMessenger UI Documentation",
-      "subtitle": "Interface, Creating Value",
-      "generalInfo": {
-        "title": "1. General Information: UI as the Face of the System",
-        "description": "This document describes the user interface (UI) of BrainMessenger. The UI is the <strong>face of our system</strong> (Principle 9), through which users interact with the application and perceive its <strong>value</strong> (Principle 2). We strive to create a UI that is <strong>intuitive, efficient, and accessible</strong>, reflecting the principles of <strong>quality > quantity</strong> (Principle 3) and <strong>simplifying complexity</strong>.",
-        "uiPurposeTitle": "Project Name:",
-        "uiPurposeContent": "BrainMessenger",
-        "uiGoalTitle": "Purpose:",
-        "uiGoalContent": "To provide a clear description of the main screens, navigation principles, UI elements used, functional requirements for the interface, and typical user scenarios. This helps ensure <strong>consistency</strong> (Principle 7) and <strong>quality</strong> (Principle 3) of the user experience across all platforms.",
-        "uiPrinciplesTitle": "Principles reflected in the UI:",
-        "uiPrinciplesList": [
-          "<strong>Value Creation (Principle 2):</strong> The UI is focused on providing key functions (communication, files, calls) in the most convenient way possible.",
-          "<strong>Quality > Quantity (Principle 3):</strong> Preference is given to a clean design with a clear hierarchy of elements, rather than an overloaded interface.",
-          "<strong>System and Optimization (Principle 9):</strong> The UI is built on a modular component system and follows clear alignment and grid rules (see DocDesign). Navigation and workflows are optimized.",
-          "<strong>Long-Term Thinking (Principle 8):</strong> The design considers the possibility of adding new functionality in the future without disrupting the overall structure.",
-          "<strong>Health as a Foundation (Principle 5):</strong> Attention is paid to accessibility (WCAG), use of dark theme, animation settings to reduce user load.",
-          "<strong>Pragmatism and Realism (Principle 12):</strong> The design takes into account technical limitations and cross-platform development capabilities."
-        ]
-      },
-      "mainScreens": {
-        "title": "2. Main Screens: User's Path Through the System",
-        "description": "Main screens represent key points of user interaction with the BrainMessenger system.",
-        "welcomeScreen": {
-          "title": "Welcome Screen:",
-          "purpose": "<strong>Purpose:</strong> To introduce BrainMessenger, its main advantages, and <strong>value</strong> (Principle 2). Onboarding new users.",
-          "elements": [
-            "<strong>Elements:</strong> Title, brief description, information slider (advantages, functions, updates), \"Sign Up\" and \"Log In\" buttons.",
-            "<strong>Connection:</strong> Uses gradient and fonts from DocDesign to attract attention. The presence of a slider with functional description is part of the strategy of <strong>creating value</strong> (Principle 2)."
-          ]
-        },
-        "authScreens": {
-          "title": "Authentication Screens (Sign Up / Log In / Code Confirmation / Password Reset):",
-          "purpose": "<strong>Purpose:</strong> To provide a secure and clear process for accessing the system.",
-          "elements": [
-            "<strong>Elements:</strong> Input fields (Email, Password, Name, Code), action buttons, links (\"Forgot password?\").",
-            "<strong>Requirements:</strong> Strict input validation (see Functional Requirements), clear error messages. Related to <strong>security</strong> (Principle 5) and <strong>quality</strong> (Principle 3)."
-          ]
-        },
-        "mainChatListScreen": {
-          "title": "Main Screen (Chat List):",
-          "purpose": "<strong>Purpose:</strong> To provide quick access to all current user dialogues.",
-          "elements": [
-            "<strong>Elements:</strong> Chat list (personal, group, channels) with brief information (name, avatar, last message, time, unread counter), search bar, new chat creation button (\"+\"), access to main menu (\"burger\" or avatar)."
-          ],
-          "organization": "<strong>Organization:</strong> Chats are sorted by last message time for <strong>efficiency</strong> (Principle 9).",
-          "actions": "<strong>Actions:</strong> Opening a chat (by click), archiving/deleting (by swipe or context menu)."
-        },
-        "chatScreen": {
-          "title": "Chat Screen:",
-          "purpose": "<strong>Purpose:</strong> To provide convenient message and file exchange.",
-          "elements": [
-            "<strong>Elements:</strong> Chat header (name, avatar, call/video call/info buttons), message area, message input field, attach file/send/voice message buttons."
-          ],
-          "messages": "<strong>Messages:</strong> Display of text messages, images, files. Status indicators (sent, delivered, read).",
-          "settings": "<strong>Chat settings:</strong> Accessible via chat header (change theme, font - see section 13)."
-        }
       }
     }
   }
